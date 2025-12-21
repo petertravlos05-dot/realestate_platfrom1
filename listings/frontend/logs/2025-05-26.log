@@ -1,0 +1,94 @@
+[2025-05-26T08:44:32.465Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmadws8w70013nygkkwn1jlmy",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-05-07T12:22:39.367Z",
+    "updatedAt": "2025-05-07T12:22:39.387Z",
+    "buyerInfo": {
+      "id": "cmadrpnz0000enygknbcj2934",
+      "name": "πΑΝΑΓΟΣ ΔΓ",
+      "email": "PANAGOS@PANAGOS.GR",
+      "phone": "63936383"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 2
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-05-26T08:44:32.470Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmadws8w70013nygkkwn1jlmy",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-05-07T12:22:39.367Z",
+    "updatedAt": "2025-05-07T12:22:39.387Z",
+    "buyerInfo": {
+      "id": "cmadrpnz0000enygknbcj2934",
+      "name": "πΑΝΑΓΟΣ ΔΓ",
+      "email": "PANAGOS@PANAGOS.GR",
+      "phone": "63936383"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 2
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+

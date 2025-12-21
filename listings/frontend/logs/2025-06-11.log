@@ -1,0 +1,180 @@
+[2025-06-11T15:59:33.955Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "l38j4anrd56ajjghtlhxyf5x",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-07T11:12:14.538Z",
+    "updatedAt": "2025-06-11T15:59:03.939Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-11T15:59:33.957Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "l38j4anrd56ajjghtlhxyf5x",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-07T11:12:14.538Z",
+    "updatedAt": "2025-06-11T15:59:03.939Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-11T16:05:41.697Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmbjor4y1000inyegp1bls6zc",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-05T18:04:10.054Z",
+    "updatedAt": "2025-06-05T18:04:10.102Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΕΦΑΡΜΟΓΗ ΠΑΓΚΡΑΤΙ ",
+    "details": {
+      "id": "cmb9hg2cm0001ny4wwtburcfj",
+      "location": ", Πατησίων  142",
+      "price": 1500000,
+      "bedrooms": 3,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-11T16:05:41.695Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmbjor4y1000inyegp1bls6zc",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-05T18:04:10.054Z",
+    "updatedAt": "2025-06-05T18:04:10.102Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΕΦΑΡΜΟΓΗ ΠΑΓΚΡΑΤΙ ",
+    "details": {
+      "id": "cmb9hg2cm0001ny4wwtburcfj",
+      "location": ", Πατησίων  142",
+      "price": 1500000,
+      "bedrooms": 3,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+

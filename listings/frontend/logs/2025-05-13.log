@@ -1,0 +1,272 @@
+[2025-05-13T07:28:50.755Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-05-13T07:28:50.757Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-05-13T07:29:11.920Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "id": "cma3p8fi20012nync67juvpj1",
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 2
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-05-13T07:29:11.921Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "id": "cma3p8fi20012nync67juvpj1",
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 2
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-05-13T07:29:33.414Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "hmnbf3j35bi7fzzyqq7khm06",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-05-09T08:36:47.725Z",
+    "updatedAt": "2025-05-13T07:28:23.154Z",
+    "buyerInfo": {
+      "name": "nic",
+      "email": "nic@nic.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-05-13T07:29:33.415Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "hmnbf3j35bi7fzzyqq7khm06",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-05-09T08:36:47.725Z",
+    "updatedAt": "2025-05-13T07:28:23.154Z",
+    "buyerInfo": {
+      "name": "nic",
+      "email": "nic@nic.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+

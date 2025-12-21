@@ -1,0 +1,356 @@
+[2025-05-12T08:50:16.842Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qxjbo1wr8c62fhca5chryaz4",
+    "status": "PENDING",
+    "createdAt": "2025-05-09T09:59:08.238Z",
+    "updatedAt": "2025-05-09T09:59:08.238Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-12T08:50:16.847Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qxjbo1wr8c62fhca5chryaz4",
+    "status": "PENDING",
+    "createdAt": "2025-05-09T09:59:08.238Z",
+    "updatedAt": "2025-05-09T09:59:08.238Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-12T09:05:02.986Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qxjbo1wr8c62fhca5chryaz4",
+    "status": "PENDING",
+    "createdAt": "2025-05-09T09:59:08.238Z",
+    "updatedAt": "2025-05-09T09:59:08.238Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-12T09:05:02.992Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qxjbo1wr8c62fhca5chryaz4",
+    "status": "PENDING",
+    "createdAt": "2025-05-09T09:59:08.238Z",
+    "updatedAt": "2025-05-09T09:59:08.238Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-12T18:39:34.934Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "7119d613-b256-470b-bc93-0b85fe04266c",
+    "status": "PENDING",
+    "createdAt": "2025-05-09T10:14:56.716Z",
+    "updatedAt": "2025-05-10T17:19:44.598Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-12T18:39:34.936Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "7119d613-b256-470b-bc93-0b85fe04266c",
+    "status": "PENDING",
+    "createdAt": "2025-05-09T10:14:56.716Z",
+    "updatedAt": "2025-05-10T17:19:44.598Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-12T18:40:41.841Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qxjbo1wr8c62fhca5chryaz4",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-09T09:59:08.238Z",
+    "updatedAt": "2025-05-12T18:40:30.822Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-05-12T18:40:41.843Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qxjbo1wr8c62fhca5chryaz4",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-09T09:59:08.238Z",
+    "updatedAt": "2025-05-12T18:40:30.822Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+

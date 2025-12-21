@@ -1,0 +1,282 @@
+[2025-06-14T12:38:13.018Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "w9xq35nbptxvgqgtxcnbypsq",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-07T11:20:41.586Z",
+    "updatedAt": "2025-06-09T10:56:09.851Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-14T12:38:13.017Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "w9xq35nbptxvgqgtxcnbypsq",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-07T11:20:41.586Z",
+    "updatedAt": "2025-06-09T10:56:09.851Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-14T12:39:23.384Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "w9xq35nbptxvgqgtxcnbypsq",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-07T11:20:41.586Z",
+    "updatedAt": "2025-06-09T10:56:09.851Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-14T12:39:23.387Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "w9xq35nbptxvgqgtxcnbypsq",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-07T11:20:41.586Z",
+    "updatedAt": "2025-06-09T10:56:09.851Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-14T12:41:46.902Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "udim6tnbn073ta82lo3vnkad",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-09T17:53:50.482Z",
+    "updatedAt": "2025-06-09T18:00:12.375Z",
+    "buyerInfo": {
+      "id": "cmbpe4rc60022nyx08jxw71gp",
+      "name": "Νικόλας ",
+      "email": "nikolas@gmahsjajs.hd",
+      "phone": "6978089878"
+    },
+    "agentInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 1
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-14T12:41:46.904Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "udim6tnbn073ta82lo3vnkad",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-09T17:53:50.482Z",
+    "updatedAt": "2025-06-09T18:00:12.375Z",
+    "buyerInfo": {
+      "id": "cmbpe4rc60022nyx08jxw71gp",
+      "name": "Νικόλας ",
+      "email": "nikolas@gmahsjajs.hd",
+      "phone": "6978089878"
+    },
+    "agentInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 1
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+

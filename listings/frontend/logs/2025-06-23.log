@@ -1,0 +1,180 @@
+[2025-06-23T07:25:51.361Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc8rvgfs000bnynkcs1je7zr",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T07:25:44.825Z",
+    "updatedAt": "2025-06-23T07:25:44.825Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΕΦΑΡΜΟΓΗ ΠΑΓΚΡΑΤΙ ",
+    "details": {
+      "id": "cmb9hg2cm0001ny4wwtburcfj",
+      "location": ", Πατησίων  142",
+      "price": 1500000,
+      "bedrooms": 3,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-23T07:25:51.358Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc8rvgfs000bnynkcs1je7zr",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T07:25:44.825Z",
+    "updatedAt": "2025-06-23T07:25:44.825Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΕΦΑΡΜΟΓΗ ΠΑΓΚΡΑΤΙ ",
+    "details": {
+      "id": "cmb9hg2cm0001ny4wwtburcfj",
+      "location": ", Πατησίων  142",
+      "price": 1500000,
+      "bedrooms": 3,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-23T17:47:20.227Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "udim6tnbn073ta82lo3vnkad",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-09T17:53:50.482Z",
+    "updatedAt": "2025-06-09T18:00:12.375Z",
+    "buyerInfo": {
+      "id": "cmbpe4rc60022nyx08jxw71gp",
+      "name": "Νικόλας ",
+      "email": "nikolas@gmahsjajs.hd",
+      "phone": "6978089878"
+    },
+    "agentInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 1
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-23T17:47:20.229Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "udim6tnbn073ta82lo3vnkad",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-09T17:53:50.482Z",
+    "updatedAt": "2025-06-09T18:00:12.375Z",
+    "buyerInfo": {
+      "id": "cmbpe4rc60022nyx08jxw71gp",
+      "name": "Νικόλας ",
+      "email": "nikolas@gmahsjajs.hd",
+      "phone": "6978089878"
+    },
+    "agentInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 1
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+

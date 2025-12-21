@@ -1,0 +1,3284 @@
+[2025-06-25T11:10:36.896Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:10:36.899Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:10:40.225Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:10:40.227Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:10:45.346Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:10:45.347Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:32:22.498Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:32:22.502Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:32:24.549Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T11:32:24.550Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T12:04:24.159Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T12:04:24.161Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T12:47:12.125Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T12:47:12.127Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T12:47:53.618Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T12:47:53.619Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:00:01.688Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:00:01.691Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:00:11.196Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:00:11.197Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:07:23.896Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:07:23.898Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:07:47.082Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:07:47.084Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:07:58.455Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:07:58.456Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:10:18.734Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:10:18.737Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:10:32.819Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:10:32.821Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:10:39.175Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:10:39.176Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:10:45.699Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:10:45.700Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:19:05.906Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:19:05.908Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:19:21.198Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:19:21.199Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:22:33.346Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:22:33.348Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:22:45.566Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:22:45.567Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:22:51.721Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:22:51.722Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:23:00.750Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:23:00.751Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:25:40.893Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:25:40.895Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:26:18.762Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:26:18.763Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:28:51.926Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:28:51.929Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:29:19.841Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:29:19.842Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:29:22.080Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:29:22.081Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:29:27.606Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:29:27.607Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:31:39.466Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:31:39.468Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:31:50.181Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:31:50.183Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:33:36.983Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:33:36.986Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:33:55.667Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:33:55.669Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:34:03.103Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-13T06:58:47.494Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:34:03.104Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-13T06:58:47.494Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:34:07.366Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:34:07.367Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:34:24.053Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:34:24.055Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:34:26.285Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T13:34:26.286Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T17:59:53.599Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-13T06:58:47.494Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-25T17:59:53.596Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-13T06:58:47.494Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

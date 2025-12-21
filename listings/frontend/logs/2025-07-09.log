@@ -1,0 +1,634 @@
+[2025-07-09T07:28:46.461Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "z9b00dz4nwz1nk5mwa040p2n",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:28:46.411Z",
+    "updatedAt": "2025-07-09T07:28:46.411Z",
+    "buyerInfo": {
+      "name": "koulis",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-09T07:28:46.464Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "z9b00dz4nwz1nk5mwa040p2n",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:28:46.411Z",
+    "updatedAt": "2025-07-09T07:28:46.411Z",
+    "buyerInfo": {
+      "name": "koulis",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-09T07:29:38.312Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-09T07:29:38.315Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-09T07:29:40.674Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "z9b00dz4nwz1nk5mwa040p2n",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-09T07:28:40.446Z",
+    "updatedAt": "2025-07-09T07:29:14.956Z",
+    "buyerInfo": {
+      "name": "koulis",
+      "email": "koulis@koulis.gr",
+      "phone": "6900000087"
+    },
+    "agentInfo": {
+      "name": "koulis",
+      "email": "koulis@koulis.gr",
+      "phone": "6900000087"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-09T07:29:40.675Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "z9b00dz4nwz1nk5mwa040p2n",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-09T07:28:40.446Z",
+    "updatedAt": "2025-07-09T07:29:14.956Z",
+    "buyerInfo": {
+      "name": "koulis",
+      "email": "koulis@koulis.gr",
+      "phone": "6900000087"
+    },
+    "agentInfo": {
+      "name": "koulis",
+      "email": "koulis@koulis.gr",
+      "phone": "6900000087"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-09T07:29:44.774Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "z9b00dz4nwz1nk5mwa040p2n",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-09T07:29:44.745Z",
+    "updatedAt": "2025-07-09T07:29:44.745Z",
+    "buyerInfo": {
+      "name": "koulis",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-09T07:29:44.776Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "z9b00dz4nwz1nk5mwa040p2n",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-09T07:29:44.745Z",
+    "updatedAt": "2025-07-09T07:29:44.745Z",
+    "buyerInfo": {
+      "name": "koulis",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-09T07:37:12.437Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcvnbf36000gny5su763gn1c",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:36:53.537Z",
+    "updatedAt": "2025-07-09T07:36:53.537Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-09T07:37:12.439Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcvnbf36000gny5su763gn1c",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:36:53.537Z",
+    "updatedAt": "2025-07-09T07:36:53.537Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-09T07:38:45.194Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcvnbf36000gny5su763gn1c",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:38:45.166Z",
+    "updatedAt": "2025-07-09T07:38:45.166Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-09T07:38:45.198Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcvnbf36000gny5su763gn1c",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:38:45.166Z",
+    "updatedAt": "2025-07-09T07:38:45.166Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-09T08:12:50.672Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcvnh5ep000xny5smmaymn02",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:41:20.929Z",
+    "updatedAt": "2025-07-09T07:41:20.919Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "agentInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Κρητη",
+    "details": {
+      "id": "cmcdl172j000pny7sabliynte",
+      "location": "Σωλονος 67, ΗΡΑΚΛΕΙΟ, ΚΡΗΤΗ",
+      "price": 80000,
+      "bedrooms": 8,
+      "bathrooms": 8,
+      "area": 192,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-09T08:12:50.675Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcvnh5ep000xny5smmaymn02",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:41:20.929Z",
+    "updatedAt": "2025-07-09T07:41:20.919Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "agentInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Κρητη",
+    "details": {
+      "id": "cmcdl172j000pny7sabliynte",
+      "location": "Σωλονος 67, ΗΡΑΚΛΕΙΟ, ΚΡΗΤΗ",
+      "price": 80000,
+      "bedrooms": 8,
+      "bathrooms": 8,
+      "area": 192,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

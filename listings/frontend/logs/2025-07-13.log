@@ -1,0 +1,94 @@
+[2025-07-13T12:03:31.817Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd1mfkcj0005nyeobic22kvg",
+    "status": "PENDING",
+    "createdAt": "2025-07-13T11:58:44.419Z",
+    "updatedAt": "2025-07-13T11:58:44.419Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-13T12:03:31.838Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd1mfkcj0005nyeobic22kvg",
+    "status": "PENDING",
+    "createdAt": "2025-07-13T11:58:44.419Z",
+    "updatedAt": "2025-07-13T11:58:44.419Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

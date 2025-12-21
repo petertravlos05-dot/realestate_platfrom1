@@ -1,0 +1,564 @@
+[2025-06-29T08:48:58.028Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:48:58.032Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:49:17.975Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:49:17.977Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:49:43.898Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:49:43.901Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:50:04.615Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:50:04.616Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:50:10.201Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T08:50:10.203Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.911Z",
+    "buyerInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T16:05:35.530Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.927Z",
+    "buyerInfo": {
+      "id": "cmchfh0mk0004nyjwourq3atm",
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 1500,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-29T16:05:35.534Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ifoqr7u4boy7jz0tl3hnpmg5",
+    "status": "PENDING",
+    "createdAt": "2025-06-29T08:48:53.927Z",
+    "updatedAt": "2025-06-29T08:48:53.927Z",
+    "buyerInfo": {
+      "id": "cmchfh0mk0004nyjwourq3atm",
+      "name": "ερεγρ εγ ",
+      "email": "dhdhdh@gdjdnd.fhdhe",
+      "phone": "43639292"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 1500,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

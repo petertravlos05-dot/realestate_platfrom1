@@ -1,0 +1,94 @@
+[2025-05-15T10:45:55.100Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmap8tbr00001nyl0e6bzwcot",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-05-15T10:44:53.048Z",
+    "updatedAt": "2025-05-15T10:44:53.099Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-15T10:45:55.102Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmap8tbr00001nyl0e6bzwcot",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-05-15T10:44:53.048Z",
+    "updatedAt": "2025-05-15T10:44:53.099Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+

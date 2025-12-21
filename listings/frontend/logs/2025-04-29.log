@@ -1,0 +1,170 @@
+[2025-04-29T09:33:51.800Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "obkj6mnsab06gu4d97p9nxlg",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-29T09:32:59.050Z",
+    "updatedAt": "2025-04-29T09:33:22.137Z",
+    "buyerInfo": {
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-29T09:33:51.801Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "obkj6mnsab06gu4d97p9nxlg",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-29T09:32:59.050Z",
+    "updatedAt": "2025-04-29T09:33:22.137Z",
+    "buyerInfo": {
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-29T09:34:32.574Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "obkj6mnsab06gu4d97p9nxlg",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-29T09:32:59.050Z",
+    "updatedAt": "2025-04-29T09:33:22.132Z",
+    "buyerInfo": {
+      "id": "cma1hmscl0012nyng0blfe719",
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": "69090988926"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 1
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-29T09:34:32.575Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "obkj6mnsab06gu4d97p9nxlg",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-29T09:32:59.050Z",
+    "updatedAt": "2025-04-29T09:33:22.132Z",
+    "buyerInfo": {
+      "id": "cma1hmscl0012nyng0blfe719",
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": "69090988926"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 1
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+

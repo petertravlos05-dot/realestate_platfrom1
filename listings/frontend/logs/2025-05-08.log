@@ -1,0 +1,608 @@
+[2025-05-08T15:27:28.737Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmafitf7q0004nye8a0wnpine",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-05-08T15:27:11.940Z",
+    "updatedAt": "2025-05-08T15:27:11.971Z",
+    "buyerInfo": {
+      "name": "papi",
+      "email": "papi@papi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-05-08T15:27:28.738Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmafitf7q0004nye8a0wnpine",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-05-08T15:27:11.940Z",
+    "updatedAt": "2025-05-08T15:27:11.971Z",
+    "buyerInfo": {
+      "name": "papi",
+      "email": "papi@papi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-05-08T15:34:52.409Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-07T12:35:19.258Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T15:34:52.412Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-07T12:35:19.258Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T16:41:32.554Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "8059189f-f4bf-4f17-be32-6d1347c79fa7",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:41:22.865Z",
+    "updatedAt": "2025-05-08T16:41:22.865Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T16:41:32.557Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "8059189f-f4bf-4f17-be32-6d1347c79fa7",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:41:22.865Z",
+    "updatedAt": "2025-05-08T16:41:22.865Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T16:46:32.165Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "8059189f-f4bf-4f17-be32-6d1347c79fa7",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:41:22.865Z",
+    "updatedAt": "2025-05-08T16:41:22.865Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T16:46:32.169Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "8059189f-f4bf-4f17-be32-6d1347c79fa7",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:41:22.865Z",
+    "updatedAt": "2025-05-08T16:41:22.865Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T16:50:46.510Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "500f8d39-0080-436c-86db-5360a9271605",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:50:35.547Z",
+    "updatedAt": "2025-05-08T16:50:35.547Z",
+    "buyerInfo": {
+      "name": "MATRA",
+      "email": "matra@matra.gr",
+      "phone": "6988888888"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T16:50:46.513Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "500f8d39-0080-436c-86db-5360a9271605",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:50:35.547Z",
+    "updatedAt": "2025-05-08T16:50:35.547Z",
+    "buyerInfo": {
+      "name": "MATRA",
+      "email": "matra@matra.gr",
+      "phone": "6988888888"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T16:50:52.295Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "500f8d39-0080-436c-86db-5360a9271605",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:50:35.547Z",
+    "updatedAt": "2025-05-08T16:50:35.547Z",
+    "buyerInfo": {
+      "name": "MATRA",
+      "email": "matra@matra.gr",
+      "phone": "6988888888"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T16:50:52.297Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "500f8d39-0080-436c-86db-5360a9271605",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:50:35.547Z",
+    "updatedAt": "2025-05-08T16:50:35.547Z",
+    "buyerInfo": {
+      "name": "MATRA",
+      "email": "matra@matra.gr",
+      "phone": "6988888888"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T17:11:38.514Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "dil8s1bd4wfh95b1ykrn7fbh",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T09:49:59.991Z",
+    "updatedAt": "2025-05-07T09:49:59.991Z",
+    "buyerInfo": {
+      "name": "PeterTr",
+      "email": "petertravlos05@gmail.com",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-08T17:11:38.517Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "dil8s1bd4wfh95b1ykrn7fbh",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T09:49:59.991Z",
+    "updatedAt": "2025-05-07T09:49:59.991Z",
+    "buyerInfo": {
+      "name": "PeterTr",
+      "email": "petertravlos05@gmail.com",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

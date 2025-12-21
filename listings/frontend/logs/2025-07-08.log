@@ -1,0 +1,1604 @@
+[2025-07-08T08:31:22.387Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "udim6tnbn073ta82lo3vnkad",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-09T17:53:50.482Z",
+    "updatedAt": "2025-06-09T18:00:12.375Z",
+    "buyerInfo": {
+      "name": "Νικόλας ",
+      "email": "nikolas@gmahsjajs.hd",
+      "phone": "6978089878"
+    },
+    "agentInfo": {
+      "name": "Νικόλας ",
+      "email": "nikolas@gmahsjajs.hd",
+      "phone": "6978089878"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": "Ματραγκου 15, , ",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-08T08:31:22.393Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "udim6tnbn073ta82lo3vnkad",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-09T17:53:50.482Z",
+    "updatedAt": "2025-06-09T18:00:12.375Z",
+    "buyerInfo": {
+      "name": "Νικόλας ",
+      "email": "nikolas@gmahsjajs.hd",
+      "phone": "6978089878"
+    },
+    "agentInfo": {
+      "name": "Νικόλας ",
+      "email": "nikolas@gmahsjajs.hd",
+      "phone": "6978089878"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": "Ματραγκου 15, , ",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-08T09:31:02.401Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:31:02.326Z",
+    "updatedAt": "2025-07-08T09:31:02.326Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:02.406Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:31:02.326Z",
+    "updatedAt": "2025-07-08T09:31:02.326Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:05.572Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:05.568Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:08.858Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:31:08.833Z",
+    "updatedAt": "2025-07-08T09:31:08.833Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:08.860Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:31:08.833Z",
+    "updatedAt": "2025-07-08T09:31:08.833Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:15.943Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:15.945Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:21.694Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:31:21.665Z",
+    "updatedAt": "2025-07-08T09:31:21.665Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:31:21.696Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:31:21.665Z",
+    "updatedAt": "2025-07-08T09:31:21.665Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:22.660Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:33:22.603Z",
+    "updatedAt": "2025-07-08T09:33:22.603Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:22.664Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:33:22.603Z",
+    "updatedAt": "2025-07-08T09:33:22.603Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:31.738Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:33:31.694Z",
+    "updatedAt": "2025-07-08T09:33:31.694Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:31.740Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:33:31.694Z",
+    "updatedAt": "2025-07-08T09:33:31.694Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:35.965Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:35.968Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:41.016Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:33:40.975Z",
+    "updatedAt": "2025-07-08T09:33:40.975Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:41.020Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:33:40.975Z",
+    "updatedAt": "2025-07-08T09:33:40.975Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:33:56.707Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-08T09:33:56.670Z",
+    "updatedAt": "2025-07-08T09:33:56.670Z",
+    "buyerInfo": {
+      "name": "Άγνωστος ενδιαφερόμενος",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Άγνωστο ακίνητο",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-08T09:33:56.709Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-08T09:33:56.670Z",
+    "updatedAt": "2025-07-08T09:33:56.670Z",
+    "buyerInfo": {
+      "name": "Άγνωστος ενδιαφερόμενος",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Άγνωστο ακίνητο",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-08T09:34:01.577Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T09:34:01.542Z",
+    "updatedAt": "2025-07-08T09:34:01.542Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T09:34:01.579Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T09:34:01.542Z",
+    "updatedAt": "2025-07-08T09:34:01.542Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T09:34:06.397Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcub7jp80005nykopttbrafx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T09:34:06.367Z",
+    "updatedAt": "2025-07-08T09:34:06.367Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T09:34:06.399Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcub7jp80005nykopttbrafx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T09:34:06.367Z",
+    "updatedAt": "2025-07-08T09:34:06.367Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T09:34:10.172Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcub7jp80005nykopttbrafx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T09:10:11.324Z",
+    "updatedAt": "2025-07-08T09:10:11.312Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "location": "- -, Φισκαρδο, Κεφαλονια",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 345,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T09:34:10.174Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcub7jp80005nykopttbrafx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T09:10:11.324Z",
+    "updatedAt": "2025-07-08T09:10:11.312Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "location": "- -, Φισκαρδο, Κεφαλονια",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 345,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T09:40:16.175Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:40:16.182Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T09:18:22.754Z",
+    "updatedAt": "2025-07-08T09:28:11.973Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "agentInfo": {
+      "name": "terry",
+      "email": "terry@terry.gr",
+      "phone": "6977777766"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T09:40:18.226Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcub7jp80005nykopttbrafx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T09:10:11.324Z",
+    "updatedAt": "2025-07-08T09:10:11.312Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "location": "- -, Φισκαρδο, Κεφαλονια",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 345,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T09:40:18.229Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcub7jp80005nykopttbrafx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T09:10:11.324Z",
+    "updatedAt": "2025-07-08T09:10:11.312Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "location": "- -, Φισκαρδο, Κεφαλονια",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 345,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T11:19:12.348Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T11:19:12.322Z",
+    "updatedAt": "2025-07-08T11:19:12.322Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T11:19:12.353Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-07-08T11:19:12.322Z",
+    "updatedAt": "2025-07-08T11:19:12.322Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-07-08T11:19:14.877Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T11:19:14.837Z",
+    "updatedAt": "2025-07-08T11:19:14.837Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-08T11:19:14.879Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "qz3oelq72vmjxim0qzkb5qhx",
+    "status": "PENDING",
+    "createdAt": "2025-07-08T11:19:14.837Z",
+    "updatedAt": "2025-07-08T11:19:14.837Z",
+    "buyerInfo": {
+      "name": "terry",
+      "email": "",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "",
+      "price": 0,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

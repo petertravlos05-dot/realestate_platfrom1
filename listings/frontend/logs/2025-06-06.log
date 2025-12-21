@@ -1,0 +1,4230 @@
+[2025-06-06T10:53:06.619Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T10:53:06.621Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:08:16.444Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:08:16.447Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:10:11.504Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-05T18:48:48.417Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:10:11.507Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-05T18:48:48.417Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:15:28.684Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:15:09.400Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 8,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:15:28.687Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:15:09.400Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 8,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:16:09.708Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:16:09.711Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:18:28.491Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:18:28.498Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:19:11.378Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:19:11.381Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:21:10.260Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:21:10.263Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:21:51.666Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:21:51.670Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:23:05.785Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:23:05.788Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:23:32.192Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-05-18T17:03:17.272Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:23:32.195Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-05-18T17:03:17.272Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:23:34.066Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:23:34.067Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:24:24.346Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:24:24.348Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:26:11.559Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:26:11.562Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:28:09.810Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:28:09.813Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:28:43.344Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:28:43.346Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:32:32.181Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:32:32.184Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:33:39.343Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:33:39.346Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:38:45.732Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:38:30.524Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:38:30.527Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:39:03.618Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:38:48.553Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 9,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:39:03.621Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:38:48.553Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 9,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:42:53.732Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:42:53.734Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:45:21.824Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:45:21.826Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:46:57.044Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": "6090909091"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": "6090909091"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:46:57.048Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": "6090909091"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": "6090909091"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:46:59.295Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:46:59.298Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:47:34.708Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:47:34.711Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:49:34.815Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:49:34.817Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmb7zjv3r0001ny4cxsi18we8",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-28T13:33:12.371Z",
+    "updatedAt": "2025-06-05T18:35:56.617Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T11:53:35.161Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:38:48.553Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 9,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:53:35.164Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:38:48.553Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 9,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:56:58.147Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:56:35.190Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 11,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:56:58.151Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:56:35.190Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 11,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T11:59:17.637Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T11:59:17.640Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:06:42.648Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "2e988599-03b9-44e5-9219-023b53c23df5",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T18:12:44.216Z",
+    "updatedAt": "2025-06-05T18:12:44.207Z",
+    "buyerInfo": {
+      "name": "Kori",
+      "email": "kori@kori.gr",
+      "phone": "6945787808"
+    },
+    "agentInfo": {
+      "name": "Kori",
+      "email": "kori@kori.gr",
+      "phone": "6945787808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:06:42.651Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "2e988599-03b9-44e5-9219-023b53c23df5",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T18:12:44.216Z",
+    "updatedAt": "2025-06-05T18:12:44.207Z",
+    "buyerInfo": {
+      "name": "Kori",
+      "email": "kori@kori.gr",
+      "phone": "6945787808"
+    },
+    "agentInfo": {
+      "name": "Kori",
+      "email": "kori@kori.gr",
+      "phone": "6945787808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΑΚΙΝΗΤΟ ΟΙΚΟΠΕΔΟ ΤΖΑΝΑΤΑ ",
+    "details": {
+      "id": "cmbakiag50007ny04gl30rg5c",
+      "location": "Τζανατα  -, , ",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1500,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:10:58.234Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:10:58.238Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:21:47.640Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:56:35.190Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 11,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T12:21:47.643Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:56:35.190Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 11,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T12:22:01.691Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:22:01.693Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:25:53.993Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:25:53.996Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:27:20.628Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:27:20.630Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:28:33.520Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:28:33.523Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:31:47.989Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:31:47.992Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:35:56.062Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ajsx953kshmqifhn260mfkmn",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T12:14:56.922Z",
+    "updatedAt": "2025-04-28T12:23:38.199Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": "6090909091"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": "6090909091"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:35:56.068Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ajsx953kshmqifhn260mfkmn",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T12:14:56.922Z",
+    "updatedAt": "2025-04-28T12:23:38.199Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": "6090909091"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": "6090909091"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:36:21.811Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:36:21.815Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:48:23.173Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T12:48:23.176Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T13:02:50.703Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-06-06T13:02:29.911Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "agentInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T13:02:50.705Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-06-06T13:02:29.911Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "agentInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T13:04:45.940Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-06-06T13:02:29.911Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "agentInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T13:04:45.943Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-06-06T13:02:29.911Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "agentInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T13:05:53.349Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:56:35.190Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 11,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T13:05:53.352Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-06T11:56:35.190Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 11,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-06T13:06:10.677Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-06-06T13:02:29.911Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "agentInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T13:06:10.679Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-06-06T13:02:29.911Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "agentInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": "6931635270"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-06T13:14:04.802Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-06T13:14:04.805Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ovvo1b8m95koit6i1qm68hr8",
+    "status": "PENDING",
+    "createdAt": "2025-04-28T09:38:45.732Z",
+    "updatedAt": "2025-04-28T09:43:05.386Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

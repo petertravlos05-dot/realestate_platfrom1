@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "transactions" ADD COLUMN     "status" TEXT NOT NULL DEFAULT 'PENDING',
+ALTER COLUMN "stage" DROP NOT NULL;

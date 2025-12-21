@@ -1,0 +1,32 @@
+model Transaction {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  stage     String   @default("pending")
+  property  Property @relation(fields: [propertyId], references: [id])
+  propertyId String
+  buyer     User     @relation("BuyerTransactions", fields: [buyerId], references: [id])
+  buyerId   String
+  seller    User     @relation("SellerTransactions", fields: [sellerId], references: [id])
+  sellerId  String
+  agent     User?    @relation("AgentTransactions", fields: [agentId], references: [id])
+  agentId   String?
+  notifications TransactionNotification[]
+}
+
+model TransactionNotification {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  message     String
+  stage       String   // The stage this notification belongs to
+  category    String   // appointment, offer, contract, payment, completion, general
+  recipient   String   // buyer, seller, agent
+  isUnread    Boolean  @default(true)
+  transaction Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+  transactionId String
+}
+
+model Property {
+  visitSettings Json? @default("{}")
+} 

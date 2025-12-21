@@ -1,0 +1,4310 @@
+[2025-04-30T07:56:19.648Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T07:56:19.650Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T07:56:54.188Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.413Z",
+    "buyerInfo": {
+      "id": "cma3n56w30000nynclllgb3nv",
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": "6902638362"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 2
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T07:56:54.189Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.413Z",
+    "buyerInfo": {
+      "id": "cma3n56w30000nynclllgb3nv",
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": "6902638362"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 2
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T07:57:16.683Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.413Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": "6902638362"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T07:57:16.685Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.413Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": "6902638362"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:14:46.721Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "rdbb9um95g54e0taohszznnq",
+    "status": "pending",
+    "createdAt": "2025-04-30T08:02:53.876Z",
+    "updatedAt": "2025-04-30T08:02:53.876Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T08:14:46.724Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "rdbb9um95g54e0taohszznnq",
+    "status": "pending",
+    "createdAt": "2025-04-30T08:02:53.876Z",
+    "updatedAt": "2025-04-30T08:02:53.876Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T08:18:10.521Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "aotrn5a02hi1kfaxa1cnfmlw",
+    "status": "pending",
+    "createdAt": "2025-04-28T12:32:12.276Z",
+    "updatedAt": "2025-04-28T12:32:12.276Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T08:18:10.523Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "aotrn5a02hi1kfaxa1cnfmlw",
+    "status": "pending",
+    "createdAt": "2025-04-28T12:32:12.276Z",
+    "updatedAt": "2025-04-28T12:32:12.276Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T08:18:13.356Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:18:13.357Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:18:16.288Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:18:16.289Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:19:43.416Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:19:43.420Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:20:03.154Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9yaw24s0009nylkimltto88",
+    "status": "pending",
+    "createdAt": "2025-04-26T14:13:13.035Z",
+    "updatedAt": "2025-04-26T14:13:13.035Z",
+    "buyerInfo": {
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "MESITIS1",
+      "email": "mesitis1@mesitis.gr",
+      "phone": "60987670869"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T08:20:03.155Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9yaw24s0009nylkimltto88",
+    "status": "pending",
+    "createdAt": "2025-04-26T14:13:13.035Z",
+    "updatedAt": "2025-04-26T14:13:13.035Z",
+    "buyerInfo": {
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "MESITIS1",
+      "email": "mesitis1@mesitis.gr",
+      "phone": "60987670869"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T08:20:05.492Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.731Z",
+    "buyerInfo": {
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-04-30T08:20:05.493Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.731Z",
+    "buyerInfo": {
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-04-30T08:20:58.190Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3o21g1000rnync1x2vou7y",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T08:20:37.965Z",
+    "updatedAt": "2025-04-30T08:20:38.020Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T08:20:58.190Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3o21g1000rnync1x2vou7y",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T08:20:37.965Z",
+    "updatedAt": "2025-04-30T08:20:38.020Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T08:23:51.535Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3o21g1000rnync1x2vou7y",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T08:20:37.965Z",
+    "updatedAt": "2025-04-30T08:20:38.020Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T08:23:51.537Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3o21g1000rnync1x2vou7y",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T08:20:37.965Z",
+    "updatedAt": "2025-04-30T08:20:38.020Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T08:24:35.158Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:24:35.159Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:24:38.040Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:24:09.341Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-04-30T08:24:38.041Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:24:09.341Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-04-30T08:30:57.421Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:24:09.341Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 1
+    },
+    "unreadUpdates": 1
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-04-30T08:30:57.423Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:24:09.341Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 1
+    },
+    "unreadUpdates": 1
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-04-30T08:33:24.003Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:33:24.004Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:40:13.247Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:40:13.250Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:42:19.406Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:42:19.409Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T07:55:44.422Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T08:43:23.082Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T08:43:23.083Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T08:43:25.825Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:42:43.755Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-04-30T08:43:25.826Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:42:43.755Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-04-30T08:54:43.861Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T08:54:43.862Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T08:56:21.939Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "id": "cma3p8fi20012nync67juvpj1",
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 2
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T08:56:21.936Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "id": "cma3p8fi20012nync67juvpj1",
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 2
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T08:57:10.435Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T08:57:10.437Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T15:25:56.110Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T15:25:56.113Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T15:32:42.129Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T15:32:42.131Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:09:32.486Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:09:32.487Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:14:09.179Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:14:09.183Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:14:20.256Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:14:20.257Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:16:52.989Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "pending",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-04-28T10:05:43.719Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T18:16:52.991Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "ipw8vz7vc9df6mam2mjvspsd",
+    "status": "pending",
+    "createdAt": "2025-04-28T10:05:43.719Z",
+    "updatedAt": "2025-04-28T10:05:43.719Z",
+    "buyerInfo": {
+      "name": "buyer39",
+      "email": "buyer39@buyer39.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T18:17:11.912Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T18:17:11.913Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T18:17:17.589Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "aotrn5a02hi1kfaxa1cnfmlw",
+    "status": "pending",
+    "createdAt": "2025-04-28T12:32:12.276Z",
+    "updatedAt": "2025-04-28T12:32:12.276Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T18:17:17.590Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "aotrn5a02hi1kfaxa1cnfmlw",
+    "status": "pending",
+    "createdAt": "2025-04-28T12:32:12.276Z",
+    "updatedAt": "2025-04-28T12:32:12.276Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T18:18:48.664Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T18:18:48.666Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T18:18:58.270Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T18:18:58.271Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T18:19:04.392Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "aotrn5a02hi1kfaxa1cnfmlw",
+    "status": "pending",
+    "createdAt": "2025-04-28T12:32:12.276Z",
+    "updatedAt": "2025-04-28T12:32:12.276Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T18:19:04.393Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "aotrn5a02hi1kfaxa1cnfmlw",
+    "status": "pending",
+    "createdAt": "2025-04-28T12:32:12.276Z",
+    "updatedAt": "2025-04-28T12:32:12.276Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "pending"
+}
+
+[2025-04-30T18:21:01.710Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T18:21:01.713Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma11uua2000bny1cbkbhn16p",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-04-28T12:23:38.185Z",
+    "updatedAt": "2025-04-28T12:23:38.210Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 2",
+      "email": "agorastis2@agorastis.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-04-30T18:22:00.451Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:22:00.452Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:22:03.111Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:42:43.755Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-04-30T18:22:03.112Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:42:43.755Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-04-30T18:22:05.955Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:22:05.955Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:22:11.649Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:42:43.755Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-04-30T18:22:11.650Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "k8ax60eqtslvizt2zyumke88",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-30T07:57:55.664Z",
+    "updatedAt": "2025-04-30T08:42:43.755Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-04-30T18:22:19.524Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:22:19.525Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:22:25.485Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:22:25.485Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:22:53.038Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:22:53.042Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.780Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-04-30T18:22:59.232Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma17sdeu000hnyngbwl8tozo",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-28T15:09:40.708Z",
+    "updatedAt": "2025-04-28T19:43:01.541Z",
+    "buyerInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-04-30T18:22:59.234Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma17sdeu000hnyngbwl8tozo",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-28T15:09:40.708Z",
+    "updatedAt": "2025-04-28T19:43:01.541Z",
+    "buyerInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-04-30T18:23:03.634Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma0w4djo000jny9k8wit262a",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-28T09:43:05.361Z",
+    "updatedAt": "2025-04-28T09:45:41.232Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:23:03.636Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma0w4djo000jny9k8wit262a",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-28T09:43:05.361Z",
+    "updatedAt": "2025-04-28T09:45:41.232Z",
+    "buyerInfo": {
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:24:42.299Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-04-30T18:24:42.301Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-04-30T18:24:45.167Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9zi3k8n0004ny2se9d3gz05",
+    "status": "PENDING",
+    "createdAt": "2025-04-27T10:22:46.583Z",
+    "updatedAt": "2025-04-27T10:22:46.583Z",
+    "buyerInfo": {
+      "id": "cm9zi37te0000ny2sdppez14e",
+      "name": "buyer34",
+      "email": "buyer34@buyer34.gr",
+      "phone": "6931635271"
+    },
+    "agentInfo": {
+      "id": "cm9yatymc0004nylk9kun9l8x",
+      "name": "MESITIS1",
+      "email": "mesitis1@mesitis.gr",
+      "phone": "60987670869"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-04-30T18:24:45.168Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9zi3k8n0004ny2se9d3gz05",
+    "status": "PENDING",
+    "createdAt": "2025-04-27T10:22:46.583Z",
+    "updatedAt": "2025-04-27T10:22:46.583Z",
+    "buyerInfo": {
+      "id": "cm9zi37te0000ny2sdppez14e",
+      "name": "buyer34",
+      "email": "buyer34@buyer34.gr",
+      "phone": "6931635271"
+    },
+    "agentInfo": {
+      "id": "cm9yatymc0004nylk9kun9l8x",
+      "name": "MESITIS1",
+      "email": "mesitis1@mesitis.gr",
+      "phone": "60987670869"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-04-30T18:24:49.715Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma0w4djo000jny9k8wit262a",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-28T09:43:05.361Z",
+    "updatedAt": "2025-04-28T09:45:41.232Z",
+    "buyerInfo": {
+      "id": "cma0vyex9000fny9k6y7bc3jq",
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 4,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 4
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-04-30T18:24:49.716Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma0w4djo000jny9k8wit262a",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-28T09:43:05.361Z",
+    "updatedAt": "2025-04-28T09:45:41.232Z",
+    "buyerInfo": {
+      "id": "cma0vyex9000fny9k6y7bc3jq",
+      "name": "AGORASTIS 1",
+      "email": "agorastis1@agorastis.gr",
+      "phone": "6090909090"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 4,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 4
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+

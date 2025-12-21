@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model BuyerAgentConnection {
+  id         String   @id @default(cuid())
+  buyerId    String
+  agentId    String
+  propertyId String
+  status     String   @default("PENDING")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  buyer      User     @relation("BuyerConnections", fields: [buyerId], references: [id])
+  agent      User     @relation("AgentConnections", fields: [agentId], references: [id])
+  property   Property @relation(fields: [propertyId], references: [id])
+}
+
+model User {
+  id                 String                @id @default(cuid())
+  name               String
+  email              String                @unique
+  password           String
+  role               String                @default("BUYER")
+  phone              String?
+  companyName        String?
+  licenseNumber      String?
+  businessAddress    String?
+  createdAt          DateTime              @default(now())
+  updatedAt          DateTime              @updatedAt
+  properties         Property[]
+  messages           Message[]
+  buyerConnections   BuyerAgentConnection[] @relation("BuyerConnections")
+  agentConnections   BuyerAgentConnection[] @relation("AgentConnections")
+}
+
+model Property {
+  id                    String                 @id @default(cuid())
+  title                 String
+  description           String
+  price                 Float
+  location              String
+  type                  String
+  status               String                 @default("PENDING")
+  images               String[]
+  bedrooms             Int?
+  bathrooms            Int?
+  area                 Float
+  features             String[]
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+  userId               String
+  user                 User                   @relation(fields: [userId], references: [id])
+  messages             Message[]
+  buyerAgentConnections BuyerAgentConnection[]
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  content    String
+  createdAt  DateTime @default(now())
+  userId     String
+  propertyId String
+  user       User     @relation(fields: [userId], references: [id])
+  property   Property @relation(fields: [propertyId], references: [id])
+} 

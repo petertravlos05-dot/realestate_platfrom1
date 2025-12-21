@@ -1,0 +1,84 @@
+[2025-05-14T20:24:54.863Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmalfgj7e000znynol3ok6ajw",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-12T18:39:48.790Z",
+    "updatedAt": "2025-05-12T18:39:48.790Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-05-14T20:24:54.866Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmalfgj7e000znynol3ok6ajw",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-12T18:39:48.790Z",
+    "updatedAt": "2025-05-12T18:39:48.790Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+

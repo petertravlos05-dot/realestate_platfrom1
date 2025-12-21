@@ -1,0 +1,252 @@
+[2025-07-02T07:46:46.209Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-02T07:37:56.282Z",
+    "buyerInfo": {
+      "id": "cmadx8j2x001bnygk2zvqbape",
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "price": 500000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-02T07:46:46.212Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-02T07:37:56.282Z",
+    "buyerInfo": {
+      "id": "cmadx8j2x001bnygk2zvqbape",
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "price": 500000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-02T07:46:49.255Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-02T07:37:56.282Z",
+    "buyerInfo": {
+      "id": "cmadx8j2x001bnygk2zvqbape",
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "price": 500000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-02T07:46:49.256Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-02T07:37:56.282Z",
+    "buyerInfo": {
+      "id": "cmadx8j2x001bnygk2zvqbape",
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "price": 500000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-02T07:49:34.565Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-02T07:37:56.282Z",
+    "buyerInfo": {
+      "id": "cmadx8j2x001bnygk2zvqbape",
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "price": 500000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-07-02T07:49:34.568Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-02T07:37:56.282Z",
+    "buyerInfo": {
+      "id": "cmadx8j2x001bnygk2zvqbape",
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "price": 500000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+

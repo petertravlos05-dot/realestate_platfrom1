@@ -1,0 +1,94 @@
+[2025-05-20T16:59:50.689Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "dil8s1bd4wfh95b1ykrn7fbh",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T09:49:59.991Z",
+    "updatedAt": "2025-05-07T09:49:59.991Z",
+    "buyerInfo": {
+      "id": "cm9yapfar0000nylkl3a1a7we",
+      "name": "PeterTr",
+      "email": "petertravlos05@gmail.com",
+      "phone": null
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-05-20T16:59:50.687Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "dil8s1bd4wfh95b1ykrn7fbh",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T09:49:59.991Z",
+    "updatedAt": "2025-05-07T09:49:59.991Z",
+    "buyerInfo": {
+      "id": "cm9yapfar0000nylkl3a1a7we",
+      "name": "PeterTr",
+      "email": "petertravlos05@gmail.com",
+      "phone": null
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

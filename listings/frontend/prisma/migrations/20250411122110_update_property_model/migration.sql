@@ -1,0 +1,77 @@
+/*
+  Warnings:
+
+  - You are about to drop the column `amenities` on the `properties` table. All the data in the column will be lost.
+  - You are about to drop the column `description` on the `properties` table. All the data in the column will be lost.
+  - You are about to drop the column `features` on the `properties` table. All the data in the column will be lost.
+  - You are about to drop the column `heating` on the `properties` table. All the data in the column will be lost.
+  - You are about to drop the column `location` on the `properties` table. All the data in the column will be lost.
+  - You are about to drop the column `type` on the `properties` table. All the data in the column will be lost.
+  - Made the column `area` on table `properties` required. This step will fail if there are existing NULL values in that column.
+
+*/
+-- AlterTable
+ALTER TABLE "properties" DROP COLUMN "amenities",
+DROP COLUMN "description",
+DROP COLUMN "features",
+DROP COLUMN "heating",
+DROP COLUMN "location",
+DROP COLUMN "type",
+ADD COLUMN     "additionalPriceNotes" TEXT,
+ADD COLUMN     "alarm" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "balconyArea" DOUBLE PRECISION,
+ADD COLUMN     "buildableArea" DOUBLE PRECISION,
+ADD COLUMN     "buildingCoefficient" DOUBLE PRECISION,
+ADD COLUMN     "buildingPermit" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "city" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "commercialType" TEXT,
+ADD COLUMN     "condition" TEXT,
+ADD COLUMN     "coordinates" JSONB,
+ADD COLUMN     "coverageRatio" DOUBLE PRECISION,
+ADD COLUMN     "disabledAccess" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "elevator" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "elevatorType" TEXT,
+ADD COLUMN     "facadeLength" DOUBLE PRECISION,
+ADD COLUMN     "fireproofDoor" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "flooring" TEXT,
+ADD COLUMN     "fullDescription" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "furnished" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "garden" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "hasBalcony" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "heatingSystem" TEXT,
+ADD COLUMN     "heatingType" TEXT,
+ADD COLUMN     "isReserved" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "isSold" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "isVerified" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "keywords" TEXT[] DEFAULT ARRAY[]::TEXT[],
+ADD COLUMN     "multipleFloors" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "negotiable" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "neighborhood" TEXT,
+ADD COLUMN     "number" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "parkingSpaces" INTEGER,
+ADD COLUMN     "plotArea" DOUBLE PRECISION,
+ADD COLUMN     "plotCategory" TEXT,
+ADD COLUMN     "plotOwnershipType" TEXT,
+ADD COLUMN     "pool" TEXT,
+ADD COLUMN     "postalCode" TEXT,
+ADD COLUMN     "pricePerSquareMeter" DOUBLE PRECISION,
+ADD COLUMN     "propertyType" TEXT NOT NULL DEFAULT 'HOUSE',
+ADD COLUMN     "renovationYear" INTEGER,
+ADD COLUMN     "roadAccess" TEXT,
+ADD COLUMN     "rooms" INTEGER,
+ADD COLUMN     "securityDoor" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "shape" TEXT,
+ADD COLUMN     "shortDescription" TEXT,
+ADD COLUMN     "sides" INTEGER,
+ADD COLUMN     "soundproofing" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "state" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "storageType" TEXT,
+ADD COLUMN     "street" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "suitability" TEXT,
+ADD COLUMN     "terrain" TEXT,
+ADD COLUMN     "thermalInsulation" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "windows" TEXT,
+ADD COLUMN     "windowsType" TEXT,
+ALTER COLUMN "status" SET DEFAULT 'PENDING',
+ALTER COLUMN "area" SET NOT NULL,
+ALTER COLUMN "floor" SET DATA TYPE TEXT;

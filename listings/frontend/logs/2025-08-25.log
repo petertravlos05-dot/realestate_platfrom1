@@ -1,0 +1,2594 @@
+[2025-08-25T11:05:54.894Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdafbce50011ny5c2ovohxyf",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:49:25.757Z",
+    "updatedAt": "2025-07-19T15:49:25.757Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:05:54.892Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdafbce50011ny5c2ovohxyf",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:49:25.757Z",
+    "updatedAt": "2025-07-19T15:49:25.757Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:09:52.576Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1ma0007ny5cxg45eb50",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:31:18.706Z",
+    "updatedAt": "2025-07-19T15:31:18.706Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:09:52.575Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1ma0007ny5cxg45eb50",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:31:18.706Z",
+    "updatedAt": "2025-07-19T15:31:18.706Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:16:00.591Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf64kd000rny5cidutc0s0",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-19T15:45:22.330Z",
+    "updatedAt": "2025-08-25T11:15:26.769Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Katsarata New Built Exclusive Villa For Sale |",
+    "details": {
+      "id": "cmd08ul8d000bnyd4lpt18ngi",
+      "location": "Κατσαράτα,, Κατσαράτα -",
+      "price": 1200000,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "area": 125,
+      "featuresCount": 0,
+      "imagesCount": 9
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T11:16:00.593Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf64kd000rny5cidutc0s0",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-19T15:45:22.330Z",
+    "updatedAt": "2025-08-25T11:15:26.769Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Katsarata New Built Exclusive Villa For Sale |",
+    "details": {
+      "id": "cmd08ul8d000bnyd4lpt18ngi",
+      "location": "Κατσαράτα,, Κατσαράτα -",
+      "price": 1200000,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "area": 125,
+      "featuresCount": 0,
+      "imagesCount": 9
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T11:17:30.729Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf64kd000rny5cidutc0s0",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-19T15:45:22.330Z",
+    "updatedAt": "2025-08-25T11:16:39.921Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Katsarata New Built Exclusive Villa For Sale |",
+    "details": {
+      "id": "cmd08ul8d000bnyd4lpt18ngi",
+      "location": "Κατσαράτα,, Κατσαράτα -",
+      "price": 1200000,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "area": 125,
+      "featuresCount": 0,
+      "imagesCount": 9
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T11:17:30.731Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf64kd000rny5cidutc0s0",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-19T15:45:22.330Z",
+    "updatedAt": "2025-08-25T11:16:39.921Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Katsarata New Built Exclusive Villa For Sale |",
+    "details": {
+      "id": "cmd08ul8d000bnyd4lpt18ngi",
+      "location": "Κατσαράτα,, Κατσαράτα -",
+      "price": 1200000,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "area": 125,
+      "featuresCount": 0,
+      "imagesCount": 9
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T11:22:48.976Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf29vk000hny5cb7i5rnlb",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-19T15:42:22.591Z",
+    "updatedAt": "2025-08-25T11:22:19.868Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Scenic Village Plot in Vouni Village",
+    "details": {
+      "id": "cmd0aya2j0011nyd4uoxuz712",
+      "location": "Βούνι, Βούνι -",
+      "price": 50000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1000,
+      "featuresCount": 2,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:22:48.975Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf29vk000hny5cb7i5rnlb",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-19T15:42:22.591Z",
+    "updatedAt": "2025-08-25T11:22:19.868Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Scenic Village Plot in Vouni Village",
+    "details": {
+      "id": "cmd0aya2j0011nyd4uoxuz712",
+      "location": "Βούνι, Βούνι -",
+      "price": 50000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1000,
+      "featuresCount": 2,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:24:06.178Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf29vk000hny5cb7i5rnlb",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-19T15:42:22.591Z",
+    "updatedAt": "2025-08-25T11:23:37.114Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Scenic Village Plot in Vouni Village",
+    "details": {
+      "id": "cmd0aya2j0011nyd4uoxuz712",
+      "location": "Βούνι, Βούνι -",
+      "price": 50000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1000,
+      "featuresCount": 2,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T11:24:06.180Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf29vk000hny5cb7i5rnlb",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-19T15:42:22.591Z",
+    "updatedAt": "2025-08-25T11:23:37.114Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Scenic Village Plot in Vouni Village",
+    "details": {
+      "id": "cmd0aya2j0011nyd4uoxuz712",
+      "location": "Βούνι, Βούνι -",
+      "price": 50000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1000,
+      "featuresCount": 2,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T11:25:15.919Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1ma0007ny5cxg45eb50",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:31:18.706Z",
+    "updatedAt": "2025-07-19T15:31:18.706Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:25:15.921Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1ma0007ny5cxg45eb50",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:31:18.706Z",
+    "updatedAt": "2025-07-19T15:31:18.706Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:25:23.432Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcyuqsp00007nyrcgry2sj4w",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-11T13:28:06.853Z",
+    "updatedAt": "2025-07-11T17:10:19.139Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T11:25:23.436Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcyuqsp00007nyrcgry2sj4w",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-11T13:28:06.853Z",
+    "updatedAt": "2025-07-11T17:10:19.139Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T11:25:39.396Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf29vk000hny5cb7i5rnlb",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-19T15:42:22.591Z",
+    "updatedAt": "2025-08-25T11:23:37.114Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Scenic Village Plot in Vouni Village",
+    "details": {
+      "id": "cmd0aya2j0011nyd4uoxuz712",
+      "location": "Βούνι, Βούνι -",
+      "price": 50000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1000,
+      "featuresCount": 2,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T11:25:39.397Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf29vk000hny5cb7i5rnlb",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-19T15:42:22.591Z",
+    "updatedAt": "2025-08-25T11:23:37.114Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": "6900000098"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Scenic Village Plot in Vouni Village",
+    "details": {
+      "id": "cmd0aya2j0011nyd4uoxuz712",
+      "location": "Βούνι, Βούνι -",
+      "price": 50000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 1000,
+      "featuresCount": 2,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T11:27:20.741Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1ma0007ny5cxg45eb50",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:31:18.706Z",
+    "updatedAt": "2025-07-19T15:31:18.706Z",
+    "buyerInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "price": 150000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 2360,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:27:20.744Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1ma0007ny5cxg45eb50",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:31:18.706Z",
+    "updatedAt": "2025-07-19T15:31:18.706Z",
+    "buyerInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "price": 150000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 2360,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:29:25.666Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1iz0001ny5cpwg2ak98",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-19T15:31:18.578Z",
+    "updatedAt": "2025-08-25T11:28:57.958Z",
+    "buyerInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "price": 150000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 2360,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T11:29:25.668Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1iz0001ny5cpwg2ak98",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-19T15:31:18.578Z",
+    "updatedAt": "2025-08-25T11:28:57.958Z",
+    "buyerInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "price": 150000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 2360,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T11:30:36.610Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf64he000lny5cv59qmkye",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-19T15:45:22.223Z",
+    "updatedAt": "2025-08-25T11:15:56.918Z",
+    "buyerInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "price": 150000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 2360,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T11:30:36.612Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf64he000lny5cv59qmkye",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-19T15:45:22.223Z",
+    "updatedAt": "2025-08-25T11:15:56.918Z",
+    "buyerInfo": {
+      "id": "cm9yaqlg00001nylkww1jvys6",
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "price": 150000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 2360,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T11:37:29.173Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:35:41.861Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:37:29.169Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:35:41.861Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T11:37:56.560Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:37:23.237Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T11:37:56.562Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:37:23.237Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T12:10:32.980Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:35:41.861Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T12:10:32.978Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:35:41.861Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-25T12:11:02.266Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:37:23.237Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T12:11:02.268Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:37:23.237Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T12:15:49.805Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:37:23.237Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T12:15:49.808Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:37:23.237Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T12:18:01.412Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:37:23.237Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T12:18:01.414Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "CANCELLED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T11:37:23.237Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-08-25T12:20:29.946Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:20:29.947Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:20:48.049Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:20:48.059Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:21:24.249Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:21:24.250Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:23:40.759Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:23:40.761Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:29:27.525Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:29:27.522Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας, Αγκώνας -",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:36:16.947Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:36:16.949Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:36:41.772Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:36:41.773Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:36:51.895Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:36:51.896Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:37:35.810Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας -, Αγκώνας, Κεφαλληνιας",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:37:35.813Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας -, Αγκώνας, Κεφαλληνιας",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:39:58.435Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας -, Αγκώνας, Κεφαλληνιας",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-25T12:39:58.437Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd2twc7k000hnyccn6mgc1au",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-14T08:15:30.512Z",
+    "updatedAt": "2025-08-25T12:19:48.409Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "agentInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Mareal Sea-View Boutique Suites | Agkonas",
+    "details": {
+      "id": "cmd08j9cf0001nyd4cs2lod6v",
+      "location": "Αγκώνας -, Αγκώνας, Κεφαλληνιας",
+      "price": 800000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 180,
+      "featuresCount": 0,
+      "imagesCount": 5
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+

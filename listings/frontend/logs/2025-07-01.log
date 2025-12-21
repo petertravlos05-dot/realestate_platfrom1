@@ -1,0 +1,796 @@
+[2025-07-01T06:36:37.505Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "id": "cm9yc3cux000ynylkwlizl82x",
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:36:37.507Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "id": "cm9yc3cux000ynylkwlizl82x",
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:23.425Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "PENDING",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-01T06:38:17.611Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:23.423Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "PENDING",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-01T06:38:17.611Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:26.851Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:26.852Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:33.123Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:33.124Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9csarj000xnynk8a7ybii3",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:11:09.439Z",
+    "updatedAt": "2025-06-23T17:11:09.439Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:34.661Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:34.661Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc9db9se0019nynkvdw1ij0l",
+    "status": "PENDING",
+    "createdAt": "2025-06-23T17:25:54.638Z",
+    "updatedAt": "2025-06-23T17:25:54.638Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:36.334Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-13T06:58:47.494Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:36.335Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-13T06:58:47.494Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:43.260Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-13T06:58:47.494Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:43.261Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "sj6kivpqh1qtrds2l8ixjc2e",
+    "status": "PENDING",
+    "createdAt": "2025-05-07T12:35:19.258Z",
+    "updatedAt": "2025-05-13T06:58:47.494Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:46.280Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "PENDING",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-01T06:38:17.611Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:38:46.281Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "PENDING",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-01T06:38:17.611Z",
+    "buyerInfo": {
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:39:13.910Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "PENDING",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-01T06:38:17.611Z",
+    "buyerInfo": {
+      "id": "cmadx8j2x001bnygk2zvqbape",
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "price": 500000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-01T06:39:13.912Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmck5p8uj0022nyu4jl1rty0c",
+    "status": "PENDING",
+    "createdAt": "2025-07-01T06:38:17.611Z",
+    "updatedAt": "2025-07-01T06:38:17.611Z",
+    "buyerInfo": {
+      "id": "cmadx8j2x001bnygk2zvqbape",
+      "name": "πανα τρ",
+      "email": "panatr@pana.gr",
+      "phone": "6911111111"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "price": 500000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

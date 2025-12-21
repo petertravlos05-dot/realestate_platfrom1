@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  price       Float
+  status      String   @default("PENDING")
+  removalRequested Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  transactions Transaction[]
+  notifications Notification[]
+  documents   propertyDocument[]
+  visitSettings Json?
+}
+
+model Notification {
+  id          String   @id @default(uuid())
+  title       String
+  message     String
+  type        String
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  propertyId  String
+  user        User     @relation(fields: [userId], references: [id])
+  property    Property @relation(fields: [propertyId], references: [id])
+}
+
+model Transaction {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  stage     String   @default("pending")
+  property  Property @relation(fields: [propertyId], references: [id])
+  propertyId String
+  buyer     User     @relation("BuyerTransactions", fields: [buyerId], references: [id])
+  buyerId   String
+  seller    User     @relation("SellerTransactions", fields: [sellerId], references: [id])
+  sellerId  String
+  agent     User?    @relation("AgentTransactions", fields: [agentId], references: [id])
+  agentId   String?
+  notifications TransactionNotification[]
+}
+
+model TransactionNotification {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  message     String
+  stage       String   // The stage this notification belongs to
+  category    String   // appointment, offer, contract, payment, completion, general
+  recipient   String   // buyer, seller, agent
+  isUnread    Boolean  @default(true)
+  transaction Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+  transactionId String
+}
+
+model User {
+  id                  String   @id @default(uuid())
+  name                String
+  email               String   @unique
+  password            String
+  role                String   @default("BUYER")
+  phone               String?
+  companyName         String?
+  licenseNumber       String?
+  businessAddress     String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  properties         Property[]
+  notifications      Notification[]
+  documents          propertyDocument[]
+  buyerTransactions  Transaction[] @relation("BuyerTransactions")
+  agentTransactions  Transaction[] @relation("AgentTransactions")
+  sellerTransactions Transaction[] @relation("SellerTransactions")
+}
+
+model propertyDocument {
+  id          String   @id @default(cuid())
+  propertyId  String
+  type        String   // title, building_permit, topographic, energy_certificate, coverage_diagram
+  fileUrl     String
+  status      String   // pending, approved, rejected
+  uploadedAt  DateTime
+  uploadedBy  String
+  adminComment String?
+  property    Property @relation(fields: [propertyId], references: [id])
+  user        User     @relation(fields: [uploadedBy], references: [id])
+
+  @@index([propertyId])
+  @@index([uploadedBy])
+} 

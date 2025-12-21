@@ -1,0 +1,930 @@
+[2025-06-30T10:14:48.054Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "jenspyxuvhtzvs9r2rvjvicg",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:11:34.664Z",
+    "updatedAt": "2025-06-30T10:11:34.664Z",
+    "buyerInfo": {
+      "id": "cmcixvike000jnyu48vel1jyq",
+      "name": "vinie ",
+      "email": "vinie@vinie.gr",
+      "phone": "6909999999"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:14:48.056Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "jenspyxuvhtzvs9r2rvjvicg",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:11:34.664Z",
+    "updatedAt": "2025-06-30T10:11:34.664Z",
+    "buyerInfo": {
+      "id": "cmcixvike000jnyu48vel1jyq",
+      "name": "vinie ",
+      "email": "vinie@vinie.gr",
+      "phone": "6909999999"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:20:00.034Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "jenspyxuvhtzvs9r2rvjvicg",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:11:34.664Z",
+    "updatedAt": "2025-06-30T10:11:34.664Z",
+    "buyerInfo": {
+      "id": "cmcixvike000jnyu48vel1jyq",
+      "name": "vinie ",
+      "email": "vinie@vinie.gr",
+      "phone": "6909999999"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:20:00.038Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "jenspyxuvhtzvs9r2rvjvicg",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:11:34.664Z",
+    "updatedAt": "2025-06-30T10:11:34.664Z",
+    "buyerInfo": {
+      "id": "cmcixvike000jnyu48vel1jyq",
+      "name": "vinie ",
+      "email": "vinie@vinie.gr",
+      "phone": "6909999999"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:20:32.113Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "jenspyxuvhtzvs9r2rvjvicg",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:11:34.664Z",
+    "updatedAt": "2025-06-30T10:11:34.664Z",
+    "buyerInfo": {
+      "id": "cmcixvike000jnyu48vel1jyq",
+      "name": "vinie ",
+      "email": "vinie@vinie.gr",
+      "phone": "6909999999"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:20:32.116Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "jenspyxuvhtzvs9r2rvjvicg",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:11:34.664Z",
+    "updatedAt": "2025-06-30T10:11:34.664Z",
+    "buyerInfo": {
+      "id": "cmcixvike000jnyu48vel1jyq",
+      "name": "vinie ",
+      "email": "vinie@vinie.gr",
+      "phone": "6909999999"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:25:53.602Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmbpdme8e0013nyx02q47a4he",
+    "status": "PENDING",
+    "createdAt": "2025-06-09T17:39:10.094Z",
+    "updatedAt": "2025-06-09T17:39:10.094Z",
+    "buyerInfo": {
+      "id": "cm9yc3cux000ynylkwlizl82x",
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΕΦΑΡΜΟΓΗ ΠΑΓΚΡΑΤΙ ",
+    "details": {
+      "id": "cmb9hg2cm0001ny4wwtburcfj",
+      "price": 1500000,
+      "bedrooms": 3,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:25:53.604Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmbpdme8e0013nyx02q47a4he",
+    "status": "PENDING",
+    "createdAt": "2025-06-09T17:39:10.094Z",
+    "updatedAt": "2025-06-09T17:39:10.094Z",
+    "buyerInfo": {
+      "id": "cm9yc3cux000ynylkwlizl82x",
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "ΕΦΑΡΜΟΓΗ ΠΑΓΚΡΑΤΙ ",
+    "details": {
+      "id": "cmb9hg2cm0001ny4wwtburcfj",
+      "price": 1500000,
+      "bedrooms": 3,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:28:15.939Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "id": "cm9yc3cux000ynylkwlizl82x",
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:28:15.941Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "id": "cm9yc3cux000ynylkwlizl82x",
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:28:39.733Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "id": "cm9yc3cux000ynylkwlizl82x",
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:28:39.734Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "id": "cm9yc3cux000ynylkwlizl82x",
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:37:39.016Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:37:39.019Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:37:42.650Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:37:42.651Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:38:45.071Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:38:45.073Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.539Z",
+    "buyerInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:52:54.450Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.527Z",
+    "buyerInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-30T10:52:54.457Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmciyg0lv000tnyu48efhbzjr",
+    "status": "PENDING",
+    "createdAt": "2025-06-30T10:27:23.539Z",
+    "updatedAt": "2025-06-30T10:27:23.527Z",
+    "buyerInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "name": "buyer3",
+      "email": "buyer3@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

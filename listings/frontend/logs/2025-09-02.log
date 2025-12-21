@@ -1,0 +1,640 @@
+[2025-09-02T13:39:23.333Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmesvwllk0015ny4wjmbykyer",
+    "status": "PENDING",
+    "createdAt": "2025-08-26T18:33:24.822Z",
+    "updatedAt": "2025-08-26T18:33:24.711Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα -, Ζόλα, Κεφαλονιά",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 0,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T13:39:23.328Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmesvwllk0015ny4wjmbykyer",
+    "status": "PENDING",
+    "createdAt": "2025-08-26T18:33:24.822Z",
+    "updatedAt": "2025-08-26T18:33:24.711Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": "Connection established directly by buyer."
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα -, Ζόλα, Κεφαλονιά",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 0,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T13:41:05.709Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmbky9auf001xnyr8vqjur3kh",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-06T15:18:00.227Z",
+    "updatedAt": "2025-06-06T15:18:00.285Z",
+    "buyerInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-09-02T13:41:05.711Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmbky9auf001xnyr8vqjur3kh",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-06T15:18:00.227Z",
+    "updatedAt": "2025-06-06T15:18:00.285Z",
+    "buyerInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-09-02T13:41:15.304Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "edetdwg29nbqw6015ol3a7id",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-07T10:03:21.599Z",
+    "updatedAt": "2025-06-07T10:04:15.234Z",
+    "buyerInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-09-02T13:41:15.306Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "edetdwg29nbqw6015ol3a7id",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-07T10:03:21.599Z",
+    "updatedAt": "2025-06-07T10:04:15.234Z",
+    "buyerInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-09-02T14:36:48.012Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "kozzt0jj3lafhznep1kpmovv",
+    "status": "PENDING",
+    "createdAt": "2025-07-14T08:16:29.394Z",
+    "updatedAt": "2025-07-14T08:16:29.394Z",
+    "buyerInfo": {
+      "id": "cmd2tx7v3000onyccpimipsnt",
+      "name": "nikos",
+      "email": "nikos@nikos.gr",
+      "phone": "6900000000"
+    },
+    "agentInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 345,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T14:36:48.017Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "kozzt0jj3lafhznep1kpmovv",
+    "status": "PENDING",
+    "createdAt": "2025-07-14T08:16:29.394Z",
+    "updatedAt": "2025-07-14T08:16:29.394Z",
+    "buyerInfo": {
+      "id": "cmd2tx7v3000onyccpimipsnt",
+      "name": "nikos",
+      "email": "nikos@nikos.gr",
+      "phone": "6900000000"
+    },
+    "agentInfo": {
+      "id": "cmafkzs77000snye8erp52k48",
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": "6999999990"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 345,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T14:47:30.886Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "dqjg6geubig5okexcpy9tway",
+    "status": "PENDING",
+    "createdAt": "2025-04-29T17:33:49.116Z",
+    "updatedAt": "2025-04-29T17:33:49.116Z",
+    "buyerInfo": {
+      "id": "cm9yapfar0000nylkl3a1a7we",
+      "name": "PeterTr",
+      "email": "petertravlos05@gmail.com",
+      "phone": null
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 345,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T14:47:30.889Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "dqjg6geubig5okexcpy9tway",
+    "status": "PENDING",
+    "createdAt": "2025-04-29T17:33:49.116Z",
+    "updatedAt": "2025-04-29T17:33:49.116Z",
+    "buyerInfo": {
+      "id": "cm9yapfar0000nylkl3a1a7we",
+      "name": "PeterTr",
+      "email": "petertravlos05@gmail.com",
+      "phone": null
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 345,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T14:47:38.691Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "p456u36p2wzzni29tsmuq67t",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T15:33:38.293Z",
+    "updatedAt": "2025-05-08T15:33:38.293Z",
+    "buyerInfo": {
+      "id": "cmafis7fj0000nye8llo6qfvh",
+      "name": "papi",
+      "email": "papi@papi.gr",
+      "phone": "6922222222"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 345,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T14:47:38.693Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "p456u36p2wzzni29tsmuq67t",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T15:33:38.293Z",
+    "updatedAt": "2025-05-08T15:33:38.293Z",
+    "buyerInfo": {
+      "id": "cmafis7fj0000nye8llo6qfvh",
+      "name": "papi",
+      "email": "papi@papi.gr",
+      "phone": "6922222222"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 345,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T14:47:48.116Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmbqr2msi0009nyxodq8ycsf6",
+    "status": "PENDING",
+    "createdAt": "2025-06-10T16:43:28.866Z",
+    "updatedAt": "2025-06-10T16:43:28.866Z",
+    "buyerInfo": {
+      "id": "cma3neug6000nnyncjmfctkmz",
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": "630373939"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 345,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-02T14:47:48.117Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmbqr2msi0009nyxodq8ycsf6",
+    "status": "PENDING",
+    "createdAt": "2025-06-10T16:43:28.866Z",
+    "updatedAt": "2025-06-10T16:43:28.866Z",
+    "buyerInfo": {
+      "id": "cma3neug6000nnyncjmfctkmz",
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": "630373939"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "price": 2000000,
+      "bedrooms": null,
+      "bathrooms": null,
+      "area": 345,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

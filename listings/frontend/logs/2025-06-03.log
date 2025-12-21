@@ -1,0 +1,650 @@
+[2025-06-03T10:26:28.090Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmap8tbr00001nyl0e6bzwcot",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-15T10:44:53.048Z",
+    "updatedAt": "2025-05-15T10:56:35.263Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": "6933333333"
+    },
+    "agentInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": "6933333333"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-03T10:26:28.093Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmap8tbr00001nyl0e6bzwcot",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-15T10:44:53.048Z",
+    "updatedAt": "2025-05-15T10:56:35.263Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": "6933333333"
+    },
+    "agentInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": "6933333333"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-03T10:26:31.957Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-05-09T09:59:08.231Z",
+    "updatedAt": "2025-05-09T09:59:08.231Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-03T10:26:31.958Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-05-09T09:59:08.231Z",
+    "updatedAt": "2025-05-09T09:59:08.231Z",
+    "buyerInfo": {
+      "name": "lima ",
+      "email": "lima@lima.gr",
+      "phone": "6955555555"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-03T10:26:54.917Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmafitf7q0004nye8a0wnpine",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-05-08T15:27:11.940Z",
+    "updatedAt": "2025-05-08T15:27:11.971Z",
+    "buyerInfo": {
+      "name": "papi",
+      "email": "papi@papi.gr",
+      "phone": "6922222222"
+    },
+    "agentInfo": {
+      "name": "papi",
+      "email": "papi@papi.gr",
+      "phone": "6922222222"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-03T10:26:54.919Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmafitf7q0004nye8a0wnpine",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-05-08T15:27:11.940Z",
+    "updatedAt": "2025-05-08T15:27:11.971Z",
+    "buyerInfo": {
+      "name": "papi",
+      "email": "papi@papi.gr",
+      "phone": "6922222222"
+    },
+    "agentInfo": {
+      "name": "papi",
+      "email": "papi@papi.gr",
+      "phone": "6922222222"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-03T10:27:05.769Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmads03ac000nnygk5tmo339h",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-07T10:08:47.268Z",
+    "updatedAt": "2025-05-07T10:08:47.291Z",
+    "buyerInfo": {
+      "name": "τσισα",
+      "email": "tsisa@tsisa.gr",
+      "phone": "63936372"
+    },
+    "agentInfo": {
+      "name": "τσισα",
+      "email": "tsisa@tsisa.gr",
+      "phone": "63936372"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-03T10:27:05.771Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmads03ac000nnygk5tmo339h",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-07T10:08:47.268Z",
+    "updatedAt": "2025-05-07T10:08:47.291Z",
+    "buyerInfo": {
+      "name": "τσισα",
+      "email": "tsisa@tsisa.gr",
+      "phone": "63936372"
+    },
+    "agentInfo": {
+      "name": "τσισα",
+      "email": "tsisa@tsisa.gr",
+      "phone": "63936372"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-06-03T10:27:18.507Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma1hnka40016nyngm41adp93",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-28T19:45:52.493Z",
+    "updatedAt": "2025-04-28T19:47:30.920Z",
+    "buyerInfo": {
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": "69090988926"
+    },
+    "agentInfo": {
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": "69090988926"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-03T10:27:18.509Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma1hnka40016nyngm41adp93",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-28T19:45:52.493Z",
+    "updatedAt": "2025-04-28T19:47:30.920Z",
+    "buyerInfo": {
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": "69090988926"
+    },
+    "agentInfo": {
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": "69090988926"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-03T10:27:27.666Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma173eqc0001nyngpemstxu9",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-28T14:50:16.017Z",
+    "updatedAt": "2025-04-28T14:56:07.288Z",
+    "buyerInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "agentInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 6,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-06-03T10:27:27.668Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma173eqc0001nyngpemstxu9",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-28T14:50:16.017Z",
+    "updatedAt": "2025-04-28T14:56:07.288Z",
+    "buyerInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "agentInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ 7, τεστ1, τεστ1",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 6,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-06-03T10:27:33.048Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma17sdeu000hnyngbwl8tozo",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-28T15:09:40.708Z",
+    "updatedAt": "2025-04-28T19:43:01.562Z",
+    "buyerInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "agentInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 10,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-06-03T10:27:33.049Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma17sdeu000hnyngbwl8tozo",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-28T15:09:40.708Z",
+    "updatedAt": "2025-04-28T19:43:01.562Z",
+    "buyerInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "agentInfo": {
+      "name": "buyer6",
+      "email": "buyer6@buyer6.gr",
+      "phone": "69098765678"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 10,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+

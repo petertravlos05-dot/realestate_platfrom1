@@ -1,0 +1,84 @@
+[2025-05-28T13:39:47.186Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmap8tbr00001nyl0e6bzwcot",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-15T10:44:53.048Z",
+    "updatedAt": "2025-05-15T10:56:35.243Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": "6933333333"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+
+[2025-05-28T13:39:47.189Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmap8tbr00001nyl0e6bzwcot",
+    "status": "DEPOSIT_PAID",
+    "createdAt": "2025-05-15T10:44:53.048Z",
+    "updatedAt": "2025-05-15T10:56:35.243Z",
+    "buyerInfo": {
+      "name": "bobi",
+      "email": "bobi@bobi.gr",
+      "phone": "6933333333"
+    },
+    "agentInfo": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "αιολου  61, Αθηνα, Αττικη",
+      "price": 1200000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 0,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "DEPOSIT_PAID"
+}
+

@@ -1,0 +1,238 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String     @id @default(cuid())
+  name            String
+  email           String     @unique
+  password        String
+  role            String     @default("BUYER")
+  phone           String?
+  companyName     String?
+  licenseNumber   String?
+  businessAddress String?
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  properties      Property[]
+  messages        Message[]
+  buyerTransactions Transaction[] @relation("BuyerTransactions")
+  agentTransactions Transaction[] @relation("AgentTransactions")
+  sellerTransactions Transaction[] @relation("SellerTransactions")
+  transactionProgress TransactionProgress[]
+  supportTickets  SupportTicket[]
+  supportMessages SupportMessage[]
+}
+
+model Property {
+  id                String    @id @default(cuid())
+  title             String
+  shortDescription  String?
+  fullDescription   String
+  propertyType      String    // apartment, house, villa, commercial, plot
+  condition         String?   // underConstruction, renovated, needsRenovation
+  yearBuilt         Int?
+  renovationYear    Int?
+  
+  // Basic Details
+  area              Float
+  bedrooms          Int?
+  bathrooms         Int?
+  floor             String?
+  parkingSpaces     Int?
+  garden            Boolean   @default(false)
+  multipleFloors    Boolean   @default(false)
+  
+  // Commercial Specific
+  commercialType    String?   // store, office, warehouse, etc.
+  rooms             Int?      // for commercial spaces
+  
+  // Plot Specific
+  plotCategory      String?   // residential, agricultural, industrial, investment
+  plotOwnershipType String?   // private, corporate, shared
+  
+  // Features
+  heatingType       String?   // autonomous, central, heatpump
+  heatingSystem     String?   // gas, oil, electricity
+  windows           String?   // pvc, wooden, aluminum
+  windowsType       String?   // insulated, non_insulated
+  flooring          String?   // tiles, wooden, marble
+  energyClass       String?   // A+, A, B+, B, C, D, E, F, G
+  
+  // Additional Features
+  elevator          Boolean   @default(false)
+  furnished         Boolean   @default(false)
+  securityDoor      Boolean   @default(false)
+  alarm             Boolean   @default(false)
+  disabledAccess    Boolean   @default(false)
+  soundproofing     Boolean   @default(false)
+  thermalInsulation Boolean   @default(false)
+  pool              String?   // private, shared, none
+  balconyArea       Float?
+  hasBalcony        Boolean   @default(false)
+  
+  // Plot Features
+  plotArea          Float?
+  buildingCoefficient Float?
+  coverageRatio     Float?
+  facadeLength      Float?
+  sides             Int?
+  buildableArea     Float?
+  buildingPermit    Boolean   @default(false)
+  roadAccess        String?   // asphalt, dirt, municipal, rural
+  terrain           String?   // flat, sloped, amphitheater
+  shape             String?   // triangular, rectangular, corner
+  suitability       String?   // residential, professional, tourist, industrial
+  
+  // Commercial Features
+  storageType       String?   // internal, external, none
+  elevatorType      String?   // passenger, freight, both, none
+  fireproofDoor     Boolean   @default(false)
+  
+  // Location
+  state             String
+  city              String
+  neighborhood      String?
+  street            String
+  number            String
+  postalCode        String?
+  coordinates       Json?     // { lat: number, lng: number }
+  
+  // Pricing
+  price             Float
+  pricePerSquareMeter Float?
+  negotiable        Boolean   @default(false)
+  additionalNotes   String?
+  
+  // System Fields
+  status            String    @default("PENDING")
+  images            String[]
+  keywords          String[]
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  
+  // Relations
+  userId            String
+  user              User      @relation(fields: [userId], references: [id])
+  messages          Message[]
+  transactions      Transaction[]
+  supportTickets    SupportTicket[]
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  content    String
+  createdAt  DateTime @default(now())
+  userId     String
+  propertyId String
+  user       User     @relation(fields: [userId], references: [id])
+  property   Property @relation(fields: [propertyId], references: [id])
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  stage       String   @default("PENDING")
+  status      String   @default("IN_PROGRESS")
+  leadId      String?
+  propertyId  String
+  buyerId     String
+  agentId     String?
+  sellerId    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  property    Property @relation(fields: [propertyId], references: [id])
+  buyer       User     @relation("BuyerTransactions", fields: [buyerId], references: [id])
+  agent       User?    @relation("AgentTransactions", fields: [agentId], references: [id])
+  seller      User?    @relation("SellerTransactions", fields: [sellerId], references: [id])
+  progress    TransactionProgress[]
+  notifications Notification[]
+  supportTickets SupportTicket[]
+}
+
+model TransactionProgress {
+  id              String   @id @default(cuid())
+  transactionId   String
+  stage           String
+  completedAt     DateTime @default(now())
+  notes           String?
+  createdById     String
+  createdAt       DateTime @default(now())
+  
+  transaction     Transaction @relation(fields: [transactionId], references: [id])
+  createdBy       User        @relation(fields: [createdById], references: [id])
+}
+
+model Notification {
+  id              String   @id @default(cuid())
+  transactionId   String
+  message         String
+  type            String
+  read            Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  
+  transaction     Transaction @relation(fields: [transactionId], references: [id])
+}
+
+// Support System Models
+model SupportTicket {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  status      TicketStatus @default(OPEN)
+  priority    TicketPriority @default(MEDIUM)
+  category    TicketCategory @default(GENERAL)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  userId      String
+  user        User    @relation(fields: [userId], references: [id])
+  propertyId  String?
+  property    Property? @relation(fields: [propertyId], references: [id])
+  transactionId String?
+  transaction Transaction? @relation(fields: [transactionId], references: [id])
+  messages    SupportMessage[]
+}
+
+model SupportMessage {
+  id        String   @id @default(cuid())
+  content   String
+  isFromAdmin Boolean @default(false)
+  createdAt DateTime @default(now())
+  
+  // Relations
+  ticketId  String
+  ticket    SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User    @relation(fields: [userId], references: [id])
+}
+
+// Enums for Support System
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TicketCategory {
+  PROPERTY_INQUIRY
+  TRANSACTION_ISSUE
+  TECHNICAL_SUPPORT
+  ACCOUNT_ISSUE
+  PAYMENT_ISSUE
+  GENERAL
+} 

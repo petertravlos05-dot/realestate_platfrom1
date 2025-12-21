@@ -1,0 +1,86 @@
+[2025-07-12T13:21:39.420Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd09vepl000znyd4x5ieqhrz",
+    "status": "PENDING",
+    "createdAt": "2025-07-12T13:19:22.425Z",
+    "updatedAt": "2025-07-12T13:19:22.425Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-07-12T13:21:39.417Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd09vepl000znyd4x5ieqhrz",
+    "status": "PENDING",
+    "createdAt": "2025-07-12T13:19:22.425Z",
+    "updatedAt": "2025-07-12T13:19:22.425Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

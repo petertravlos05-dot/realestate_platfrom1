@@ -1,0 +1,814 @@
+[2025-06-21T10:36:20.251Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc63kyfw002bnyj0wx5ezv39",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T10:30:11.804Z",
+    "updatedAt": "2025-06-21T10:30:11.804Z",
+    "buyerInfo": {
+      "name": "Torog",
+      "email": "yuri@yuri.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T10:36:20.250Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc63kyfw002bnyj0wx5ezv39",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T10:30:11.804Z",
+    "updatedAt": "2025-06-21T10:30:11.804Z",
+    "buyerInfo": {
+      "name": "Torog",
+      "email": "yuri@yuri.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T10:39:41.250Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc63x3o1002nnyj0nmbjz7n6",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T10:39:38.450Z",
+    "updatedAt": "2025-06-21T10:39:38.450Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T10:39:41.248Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc63x3o1002nnyj0nmbjz7n6",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T10:39:38.450Z",
+    "updatedAt": "2025-06-21T10:39:38.450Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T10:39:43.393Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc63x3o1002nnyj0nmbjz7n6",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T10:39:38.450Z",
+    "updatedAt": "2025-06-21T10:39:38.450Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T10:39:43.393Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc63x3o1002nnyj0nmbjz7n6",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T10:39:38.450Z",
+    "updatedAt": "2025-06-21T10:39:38.450Z",
+    "buyerInfo": {
+      "name": "ag",
+      "email": "ag@ag.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T12:30:41.886Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "8059189f-f4bf-4f17-be32-6d1347c79fa7",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:41:22.865Z",
+    "updatedAt": "2025-05-08T16:41:22.865Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T12:30:41.885Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "8059189f-f4bf-4f17-be32-6d1347c79fa7",
+    "status": "PENDING",
+    "createdAt": "2025-05-08T16:41:22.865Z",
+    "updatedAt": "2025-05-08T16:41:22.865Z",
+    "buyerInfo": {
+      "name": "vovi",
+      "email": "vovi@vovi.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T13:05:29.423Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc693t360031nyj0rvntle92",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T13:04:49.409Z",
+    "updatedAt": "2025-06-21T13:04:49.409Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T13:05:29.421Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc693t360031nyj0rvntle92",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T13:04:49.409Z",
+    "updatedAt": "2025-06-21T13:04:49.409Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T13:06:33.874Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc693t360031nyj0rvntle92",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-21T13:04:49.409Z",
+    "updatedAt": "2025-06-21T13:05:49.732Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-21T13:06:33.876Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc693t360031nyj0rvntle92",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-21T13:04:49.409Z",
+    "updatedAt": "2025-06-21T13:05:49.732Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-21T13:08:11.399Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc697xsx003lnyj0laormndx",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T13:08:02.145Z",
+    "updatedAt": "2025-06-21T13:08:02.145Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T13:08:11.397Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc697xsx003lnyj0laormndx",
+    "status": "PENDING",
+    "createdAt": "2025-06-21T13:08:02.145Z",
+    "updatedAt": "2025-06-21T13:08:02.145Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Πατησίων Διαμέρισμα ",
+    "details": {
+      "id": "cmbky3o61001rnyr8ohdbhvex",
+      "location": ", Πατησιων  18",
+      "price": 60000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 135,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-21T13:08:20.548Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-21T13:08:20.550Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3p98u40016nynco22xoyat",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-04-30T08:54:13.753Z",
+    "updatedAt": "2025-04-30T08:54:13.784Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "location": "Αθηνα, αιολου  61",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 2,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-21T13:08:22.708Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc693t360031nyj0rvntle92",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-21T13:04:49.409Z",
+    "updatedAt": "2025-06-21T13:05:49.732Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-06-21T13:08:22.709Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmc693t360031nyj0rvntle92",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-06-21T13:04:49.409Z",
+    "updatedAt": "2025-06-21T13:05:49.732Z",
+    "buyerInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 1,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+

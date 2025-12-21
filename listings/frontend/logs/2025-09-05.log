@@ -1,0 +1,454 @@
+[2025-09-05T17:12:13.830Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcx3jmlc0007ny7serb8ysyd",
+    "status": "PENDING",
+    "createdAt": "2025-07-10T07:58:56.544Z",
+    "updatedAt": "2025-07-10T07:58:56.544Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:12:13.832Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcx3jmlc0007ny7serb8ysyd",
+    "status": "PENDING",
+    "createdAt": "2025-07-10T07:58:56.544Z",
+    "updatedAt": "2025-07-10T07:58:56.544Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:16:18.156Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcvnh5ep000xny5smmaymn02",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:41:20.929Z",
+    "updatedAt": "2025-07-09T07:41:20.929Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Κρητη",
+    "details": {
+      "id": "cmcdl172j000pny7sabliynte",
+      "location": "ΗΡΑΚΛΕΙΟ, Σωλονος 67",
+      "price": 80000,
+      "bedrooms": 8,
+      "bathrooms": 8,
+      "area": 192,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:16:18.154Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcvnh5ep000xny5smmaymn02",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T07:41:20.929Z",
+    "updatedAt": "2025-07-09T07:41:20.929Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Κρητη",
+    "details": {
+      "id": "cmcdl172j000pny7sabliynte",
+      "location": "ΗΡΑΚΛΕΙΟ, Σωλονος 67",
+      "price": 80000,
+      "bedrooms": 8,
+      "bathrooms": 8,
+      "area": 192,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:16:25.517Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "kl0izmsy32vf0ps1e5uh4jyj",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T08:13:34.554Z",
+    "updatedAt": "2025-07-09T08:13:34.554Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:16:25.518Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "kl0izmsy32vf0ps1e5uh4jyj",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T08:13:34.554Z",
+    "updatedAt": "2025-07-09T08:13:34.554Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Σπίτι Κεφαλονιά ",
+    "details": {
+      "id": "cmbpe220a0021nyx0d23qeq3q",
+      "location": ", Ματραγκου 15",
+      "price": 50000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:16:28.034Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "q2lic2xi9z1k5pjplelzfjjx",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T08:22:22.536Z",
+    "updatedAt": "2025-07-09T08:22:22.536Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "location": "Φισκαρδο, - -",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 345,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:16:28.035Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "q2lic2xi9z1k5pjplelzfjjx",
+    "status": "PENDING",
+    "createdAt": "2025-07-09T08:22:22.536Z",
+    "updatedAt": "2025-07-09T08:22:22.536Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": "6909898989"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Ακινητο Οικοπεδο Φισκαρδο ",
+    "details": {
+      "id": "cmcln7sv40001ny90bh70hule",
+      "location": "Φισκαρδο, - -",
+      "price": 2000000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 345,
+      "featuresCount": 0,
+      "imagesCount": 0
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:17:14.384Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd09vepl000znyd4x5ieqhrz",
+    "status": "PENDING",
+    "createdAt": "2025-07-12T13:19:22.425Z",
+    "updatedAt": "2025-07-12T13:19:22.425Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-09-05T17:17:14.385Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmd09vepl000znyd4x5ieqhrz",
+    "status": "PENDING",
+    "createdAt": "2025-07-12T13:19:22.425Z",
+    "updatedAt": "2025-07-12T13:19:22.425Z",
+    "buyerInfo": {
+      "name": "andreas",
+      "email": "andreas@andreas.gr",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

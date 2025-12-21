@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #001f3f;
+    --secondary: #003366;
+    --accent: #3B82F6;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply bg-white text-gray-900;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-blue-600 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors border border-blue-600;
+  }
+  
+  .nav-link {
+    @apply text-white hover:text-blue-200 transition-colors;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold text-center mb-4 text-gray-900;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-center mb-12 text-gray-600 max-w-3xl mx-auto;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-gray-100;
+  }
+
+  .card-icon {
+    @apply w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transform rotate-3 hover:rotate-0 transition-transform duration-300;
+  }
+}

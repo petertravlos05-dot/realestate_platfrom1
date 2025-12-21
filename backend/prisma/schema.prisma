@@ -1,0 +1,671 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model User {
+  id                 String                @id @default(cuid())
+  name               String
+  email              String                @unique
+  emailVerified      DateTime?
+  image              String?
+  password           String
+  role               String                @default("BUYER")
+  phone              String?
+  companyName        String?
+  companyTitle       String?
+  companyTaxId       String?
+  companyDou         String?
+  companyPhone       String?
+  companyEmail       String?
+  companyHeadquarters String?
+  companyWebsite     String?
+  companyWorkingHours String?
+  contactPersonName  String?
+  contactPersonEmail String?
+  contactPersonPhone String?
+  companyLogo        String?
+  licenseNumber      String?
+  businessAddress    String?
+  userType           String                @default("INDIVIDUAL") // INDIVIDUAL, COMPANY
+  createdAt          DateTime              @default(now())
+  updatedAt          DateTime              @updatedAt
+  accounts           Account[]
+  sessions           Session[]
+  properties         Property[]
+  favorites          Favorite[]
+  inquiries          Inquiry[]
+  buyerTransactions  Transaction[]         @relation("BuyerTransactions")
+  agentTransactions  Transaction[]         @relation("AgentTransactions")
+  progressUpdates    TransactionProgress[] @relation("CreatedByUser")
+  messages           Message[]
+  buyerConnections   BuyerAgentConnection[] @relation("BuyerConnections")
+  agentConnections   BuyerAgentConnection[] @relation("AgentConnections")
+  buyerLeads         PropertyLead[]        @relation("BuyerLeads")
+  agentLeads         PropertyLead[]        @relation("AgentLeads")
+  notifications      Notification[]
+  buyerViewings      ViewingRequest[]      @relation("BuyerViewings")
+  agentViewings      ViewingRequest[]      @relation("AgentViewings")
+  sellerTransactions Transaction[]         @relation("SellerTransactions")
+  propertyViews      PropertyView[]
+  propertyDocuments  PropertyDocument[] @relation("UserPropertyDocuments")
+  referralsMade      Referral[]           @relation("Referrer")
+  referralsReceived  Referral[]           @relation("Referred")
+  referralPoints     ReferralPoints[]
+  supportTickets     SupportTicket[]
+  supportMessages    SupportMessage[]
+  ticketsCreated     SupportTicket[]      @relation("TicketCreator")
+  subscription       Subscription?
+
+  @@map("users")
+}
+
+model Property {
+  id          String    @id @default(cuid())
+  
+  // Βασικά στοιχεία
+  title       String
+  shortDescription String?
+  fullDescription String    @default("")
+  propertyType String       @default("HOUSE")
+  condition   String?
+  yearBuilt   Int?
+  renovationYear Int?
+
+  // Βασικά χαρακτηριστικά
+  area        Float
+  bedrooms    Int?
+  bathrooms   Int?
+  floor       String?
+  parkingSpaces Int?
+  garden      Boolean   @default(false)
+  multipleFloors Boolean @default(false)
+
+  // Εμπορικά χαρακτηριστικά
+  commercialType String?
+  rooms       Int?
+
+  // Χαρακτηριστικά οικοπέδου
+  plotCategory String?
+  plotOwnershipType String?
+
+  // Χαρακτηριστικά
+  heatingType String?
+  heatingSystem String?
+  windows     String?
+  windowsType String?
+  flooring    String?
+  energyClass String?
+
+  // Επιπλέον χαρακτηριστικά
+  elevator    Boolean   @default(false)
+  furnished   Boolean   @default(false)
+  securityDoor Boolean  @default(false)
+  alarm       Boolean   @default(false)
+  disabledAccess Boolean @default(false)
+  soundproofing Boolean @default(false)
+  thermalInsulation Boolean @default(false)
+  pool        String?
+  balconyArea Float?
+  hasBalcony  Boolean   @default(false)
+
+  // Χαρακτηριστικά οικοπέδου
+  plotArea    Float?
+  buildingCoefficient Float?
+  coverageRatio Float?
+  facadeLength Float?
+  sides       Int?
+  buildableArea Float?
+  buildingPermit Boolean @default(false)
+  roadAccess  String?
+  terrain     String?
+  shape       String?
+  suitability String?
+
+  // Εμπορικά χαρακτηριστικά
+  storageType String?
+  elevatorType String?
+  fireproofDoor Boolean @default(false)
+
+  // Τοποθεσία
+  state       String    @default("")
+  city        String    @default("")
+  neighborhood String?
+  street      String    @default("")
+  number      String    @default("")
+  postalCode  String?
+  coordinates Json?
+
+  // Τιμή
+  price       Float
+  pricePerSquareMeter Float?
+  negotiable  Boolean   @default(false)
+  additionalPriceNotes String?
+
+  // Συστημικά πεδία
+  status      String    @default("PENDING")
+  isVerified  Boolean   @default(false)
+  isReserved  Boolean   @default(false)
+  isSold      Boolean   @default(false)
+  removalRequested Boolean @default(false)
+  images      String[]
+  keywords    String[]  @default([])
+  amenities   Json?     @default("{}")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  views       PropertyView[]
+
+  // Νομικά έγγραφα
+  uploadMethod String? @default("self")
+  lawyerInfo Json?
+  assignmentType String? @default("platform")
+  assignmentDocument Json?
+  lawyerName   String?
+  lawyerEmail  String?
+  lawyerPhone  String?
+  lawyerTaxId  String?
+
+  // Σχέσεις
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  availabilities PropertyAvailability[]
+  viewingRequests ViewingRequest[]
+  notifications Notification[]
+  favorites   Favorite[]
+  inquiryList Inquiry[]
+  transactions Transaction[]
+  messages    Message[]
+  connections BuyerAgentConnection[]
+  leads       PropertyLead[]
+  stats       PropertyStats?
+  visitSettings Json? @default("{}")
+  progress    PropertyProgress?
+  propertyDocuments PropertyDocument[]
+  referralPoints ReferralPoints[]
+  supportTickets SupportTicket[]
+
+  @@index([userId])
+  @@map("properties")
+}
+
+model Favorite {
+  id         String   @id @default(cuid())
+  userId     String
+  propertyId String
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+
+  @@unique([userId, propertyId])
+  @@index([userId])
+  @@index([propertyId])
+  @@map("favorites")
+}
+
+model Inquiry {
+  id         String   @id @default(cuid())
+  message    String
+  userId     String
+  propertyId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+
+  @@index([userId])
+  @@index([propertyId])
+  @@map("inquiries")
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  content    String
+  createdAt  DateTime @default(now())
+  userId     String
+  propertyId String
+  user       User     @relation(fields: [userId], references: [id])
+  property   Property @relation(fields: [propertyId], references: [id])
+}
+
+// Support Messaging System
+model SupportTicket {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  status      TicketStatus @default(OPEN)
+  priority    TicketPriority @default(MEDIUM)
+  category    TicketCategory
+  selectedRole String? // The role selected by the user when creating the ticket
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdBy   String   // ID of user who created the ticket (can be admin or user)
+  createdByUser User   @relation("TicketCreator", fields: [createdBy], references: [id])
+  propertyId  String?
+  property    Property? @relation(fields: [propertyId], references: [id])
+  transactionId String?
+  transaction Transaction? @relation(fields: [transactionId], references: [id])
+  
+  // Messages in this ticket
+  messages    SupportMessage[]
+  
+  @@index([userId])
+  @@index([createdBy])
+  @@index([propertyId])
+  @@index([transactionId])
+  @@index([status])
+  @@map("support_tickets")
+}
+
+model SupportMessage {
+  id        String   @id @default(cuid())
+  content   String
+  isFromAdmin Boolean @default(false)
+  metadata  Json?
+  createdAt DateTime @default(now())
+  
+  // Relations
+  ticketId  String
+  ticket    SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  
+  @@index([ticketId])
+  @@index([userId])
+  @@map("support_messages")
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TicketCategory {
+  PROPERTY_INQUIRY
+  TRANSACTION_ISSUE
+  TECHNICAL_SUPPORT
+  ACCOUNT_ISSUE
+  PAYMENT_ISSUE
+  GENERAL
+}
+
+model BuyerAgentConnection {
+  id         String   @id @default(cuid())
+  buyerId    String
+  agentId    String
+  propertyId String
+  status     String   @default("PENDING")
+  otpCode    String?
+  otpExpires DateTime?
+  interestCancelled Boolean @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  buyer      User     @relation("BuyerConnections", fields: [buyerId], references: [id])
+  agent      User     @relation("AgentConnections", fields: [agentId], references: [id])
+  property   Property @relation(fields: [propertyId], references: [id])
+
+  @@unique([buyerId, agentId, propertyId])
+  @@map("buyer_agent_connections")
+}
+
+enum TransactionStage {
+  PENDING
+  MEETING_SCHEDULED
+  DEPOSIT_PAID
+  FINAL_SIGNING
+  INITIAL_CONTACT
+  PROPERTY_VIEWING
+  OFFER_NEGOTIATION
+  CONTRACT_PREPARATION
+  CONTRACT_SIGNING
+  PAYMENT_PROCESSING
+  PROPERTY_TRANSFER
+  COMPLETED
+  CANCELLED
+}
+
+enum NotificationCategory {
+  APPOINTMENT
+  PAYMENT
+  CONTRACT
+  COMPLETION
+  GENERAL
+  OFFER
+}
+
+model PropertyLead {
+  id          String   @id @default(cuid())
+  propertyId  String
+  buyerId     String
+  agentId     String?
+  status      String   @default("PENDING") // PENDING, VIEWING_SCHEDULED, NEGOTIATING, CLOSED
+  notes       String?
+  interestCancelled Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  transactionId String?  @unique
+  transaction Transaction? @relation(fields: [transactionId], references: [id])
+
+  property    Property @relation(fields: [propertyId], references: [id])
+  buyer       User     @relation("BuyerLeads", fields: [buyerId], references: [id])
+  agent       User?    @relation("AgentLeads", fields: [agentId], references: [id])
+
+  @@index([propertyId])
+  @@index([buyerId])
+  @@index([agentId])
+  @@index([transactionId])
+  @@map("property_leads")
+}
+
+model PropertyStats {
+  id              String   @id @default(cuid())
+  propertyId      String   @unique
+  views           Int      @default(0)
+  interestedCount Int      @default(0)
+  viewingCount    Int      @default(0)
+  lastViewed      DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  property        Property @relation(fields: [propertyId], references: [id])
+
+  @@map("property_stats")
+}
+
+model PropertyAvailability {
+  id          String   @id @default(cuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id])
+  date        DateTime
+  startTime   String   // Format: "HH:mm"
+  endTime     String   // Format: "HH:mm"
+  isAvailable Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([propertyId])
+  @@index([date])
+}
+
+model Notification {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  title       String
+  message     String
+  type        String   // "VIEWING_REQUEST", "VIEWING_CONFIRMED", etc.
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  propertyId  String?
+  property    Property? @relation(fields: [propertyId], references: [id])
+  propertyProgressId String?
+  propertyProgress PropertyProgress? @relation(fields: [propertyProgressId], references: [id])
+  metadata    Json?
+
+  @@index([userId])
+  @@index([propertyId])
+}
+
+model ViewingRequest {
+  id          String   @id @default(cuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id])
+  buyerId     String
+  buyer       User     @relation("BuyerViewings", fields: [buyerId], references: [id])
+  agentId     String?
+  agent       User?    @relation("AgentViewings", fields: [agentId], references: [id])
+  date        DateTime
+  time        String
+  endTime     String
+  status      String   @default("PENDING")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([propertyId])
+  @@index([buyerId])
+  @@index([agentId])
+  @@map("viewing_requests")
+}
+
+model TransactionNotification {
+  id            String      @id @default(cuid())
+  transactionId String
+  type          String      // EMAIL, SMS, SYSTEM
+  message       String
+  status        String      @default("PENDING") // PENDING, SENT, FAILED
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  transaction   Transaction @relation(fields: [transactionId], references: [id])
+
+  @@index([transactionId])
+  @@map("transaction_notifications")
+}
+
+model TransactionProgress {
+  id            String      @id @default(cuid())
+  transactionId String
+  stage         TransactionStage
+  completedAt   DateTime?
+  notes         String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  createdById   String
+  transaction   Transaction @relation(fields: [transactionId], references: [id])
+  createdBy     User       @relation("CreatedByUser", fields: [createdById], references: [id])
+
+  @@index([transactionId])
+  @@index([createdById])
+  @@map("transaction_progress")
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  propertyId  String
+  buyerId     String
+  agentId     String?
+  sellerId    String?
+  status      String   @default("PENDING")
+  stage       TransactionStage?
+  interestCancelled Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  leadId      String?  @unique
+  lead        PropertyLead?
+
+  property    Property @relation(fields: [propertyId], references: [id])
+  buyer       User     @relation("BuyerTransactions", fields: [buyerId], references: [id])
+  agent       User?    @relation("AgentTransactions", fields: [agentId], references: [id])
+  seller      User?    @relation("SellerTransactions", fields: [sellerId], references: [id])
+
+  notifications TransactionNotification[]
+  progress    TransactionProgress[]
+  supportTickets SupportTicket[]
+
+  @@index([propertyId])
+  @@index([buyerId])
+  @@index([agentId])
+  @@index([sellerId])
+  @@index([leadId])
+  @@map("transactions")
+}
+
+model PropertyView {
+  id         String   @id @default(cuid())
+  propertyId String
+  buyerId    String
+  viewedAt   DateTime @default(now())
+  property   Property @relation(fields: [propertyId], references: [id])
+  buyer      User     @relation(fields: [buyerId], references: [id])
+
+  @@unique([propertyId, buyerId])
+  @@map("property_views")
+}
+
+model PropertyProgress {
+  id          String        @id @default(cuid())
+  legalDocumentsStatus String @default("pending")
+  legalDocumentsCompletedAt DateTime?
+  platformReviewStatus String @default("pending")
+  platformReviewCompletedAt DateTime?
+  platformAssignmentStatus String @default("pending")
+  platformAssignmentCompletedAt DateTime?
+  listingStatus String @default("pending")
+  listingCompletedAt DateTime?
+  updatedAt   DateTime      @updatedAt
+  propertyId  String        @unique
+  property    Property      @relation(fields: [propertyId], references: [id])
+  notifications Notification[]
+}
+
+model PropertyDocument {
+  id          String   @id @default(cuid())
+  propertyId  String
+  type        String   // title, building_permit, topographic, energy_certificate, coverage_diagram
+  fileUrl     String
+  status      String   // pending, approved, rejected
+  uploadedAt  DateTime
+  uploadedBy  String
+  adminComment String?
+  property    Property @relation(fields: [propertyId], references: [id])
+  user        User     @relation("UserPropertyDocuments", fields: [uploadedBy], references: [id])
+
+  @@index([propertyId])
+  @@index([uploadedBy])
+}
+
+model Referral {
+  id            String   @id @default(cuid())
+  referrerId    String   // Ο χρήστης που κάνει το referral
+  referredId    String   // Ο χρήστης που εγγράφεται μέσω του referral
+  referralCode  String   @unique // Μοναδικός κωδικός referral
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Σχέσεις
+  referrer      User     @relation("Referrer", fields: [referrerId], references: [id])
+  referred      User     @relation("Referred", fields: [referredId], references: [id])
+  
+  // Στατιστικά
+  totalPoints   Int      @default(0)
+  propertiesAdded Int    @default(0)
+  totalArea     Float    @default(0)
+  
+  points        ReferralPoints[]
+  
+  @@map("referrals")
+}
+
+model ReferralPoints {
+  id          String   @id @default(cuid())
+  referralId  String
+  referral    Referral @relation(fields: [referralId], references: [id], onDelete: Cascade)
+  userId      String   // Ο χρήστης στον οποίο ανήκουν οι πόντοι
+  user        User     @relation(fields: [userId], references: [id])
+  propertyId  String?
+  property    Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  points      Int
+  reason      String   // "registration", "property_added", "property_sold"
+  area        Float?   // Τετραγωνικά του ακινήτου
+  location    String?  // Περιοχή του ακινήτου
+  createdAt   DateTime @default(now())
+  
+  @@index([userId])
+  @@map("referral_points")
+}
+
+// Συνδρομητικά Πλάνα
+model SubscriptionPlan {
+  id                String   @id @default(cuid())
+  name              String   // "Basic", "Pro", "Enterprise"
+  description       String?
+  price             Float    // Τιμή ανά μήνα
+  priceQuarterly    Float?   // Τιμή ανά τρίμηνο (προαιρετική)
+  maxProperties     Int      // Μέγιστος αριθμός ακινήτων
+  benefits          String[] // Λίστα με τα benefits
+  stripePriceId     String?  // Stripe Price ID για μηνιαία συνδρομή
+  stripePriceIdQuarterly String? // Stripe Price ID για τριμηνιαία συνδρομή
+  isActive          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  subscriptions     Subscription[]
+
+  @@map("subscription_plans")
+}
+
+model Subscription {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planId            String
+  plan              SubscriptionPlan @relation(fields: [planId], references: [id])
+  status            String   @default("ACTIVE") // ACTIVE, CANCELLED, EXPIRED, PENDING
+  billingCycle      String   @default("MONTHLY") // MONTHLY, QUARTERLY
+  stripeSubscriptionId String? @unique
+  stripeCustomerId  String?
+  currentPeriodStart DateTime?
+  currentPeriodEnd   DateTime?
+  cancelAtPeriodEnd Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([userId])
+  @@index([planId])
+  @@map("subscriptions")
+}
+
+
+
+
+

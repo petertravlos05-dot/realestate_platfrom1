@@ -1,0 +1,880 @@
+[2025-05-01T06:48:47.168Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T06:48:47.171Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T13:06:06.802Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T13:06:06.804Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T13:06:18.089Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T13:06:18.090Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T13:06:40.333Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9zxag400022nyqkow9icvde",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-27T17:28:02.064Z",
+    "updatedAt": "2025-04-27T18:06:57.731Z",
+    "buyerInfo": {
+      "id": "cm9zwx4j9001wnyqkuy581h7j",
+      "name": "buyer3456",
+      "email": "buyer345@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "id": "cm9yatymc0004nylk9kun9l8x",
+      "name": "MESITIS1",
+      "email": "mesitis1@mesitis.gr",
+      "phone": "60987670869"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 4,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 4
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-05-01T13:06:40.334Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9zxag400022nyqkow9icvde",
+    "status": "CANCELLED",
+    "createdAt": "2025-04-27T17:28:02.064Z",
+    "updatedAt": "2025-04-27T18:06:57.731Z",
+    "buyerInfo": {
+      "id": "cm9zwx4j9001wnyqkuy581h7j",
+      "name": "buyer3456",
+      "email": "buyer345@buyer3.gr",
+      "phone": "6931635273"
+    },
+    "agentInfo": {
+      "id": "cm9yatymc0004nylk9kun9l8x",
+      "name": "MESITIS1",
+      "email": "mesitis1@mesitis.gr",
+      "phone": "60987670869"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "ΠΑΛΑΙΟ ΦΑΛΗΡΟ 1",
+    "details": {
+      "id": "cm9yasvxo0003nylk2b2lz8lb",
+      "price": 1200000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 370,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 4,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 4
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "CANCELLED"
+}
+
+[2025-05-01T13:06:51.453Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma1hnka40016nyngm41adp93",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-28T19:45:52.493Z",
+    "updatedAt": "2025-04-28T19:47:30.918Z",
+    "buyerInfo": {
+      "id": "cma1hmscl0012nyng0blfe719",
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": "69090988926"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 3
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T13:06:51.454Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma1hnka40016nyngm41adp93",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-28T19:45:52.493Z",
+    "updatedAt": "2025-04-28T19:47:30.918Z",
+    "buyerInfo": {
+      "id": "cma1hmscl0012nyng0blfe719",
+      "name": "agorastis3",
+      "email": "agorastis3@agorastis.gr",
+      "phone": "69090988926"
+    },
+    "agentInfo": {
+      "id": "cma0vxfvx000eny9kymzxgo66",
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 3,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 3
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T13:12:38.601Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-05-01T13:12:38.594Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-05-01T13:14:13.836Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-05-01T13:14:13.842Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cma3n60y20004nyncxmqbqqty",
+    "status": "COMPLETED",
+    "createdAt": "2025-04-30T07:55:44.327Z",
+    "updatedAt": "2025-04-30T08:42:57.799Z",
+    "buyerInfo": {
+      "name": "Agor",
+      "email": "agor@agor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "location": "τεστ1, τεστ 7",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "COMPLETED"
+}
+
+[2025-05-01T13:26:02.296Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T13:26:02.289Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T14:58:51.337Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T14:58:51.339Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T15:32:32.608Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-05-01T15:32:32.612Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cm9ybn36t000jnylk4cs1iakd",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-04-26T14:34:14.114Z",
+    "updatedAt": "2025-04-27T16:06:44.729Z",
+    "buyerInfo": {
+      "id": "cm9yaulti0005nylkb6gxpp77",
+      "name": "BUYER1",
+      "email": "BUYER1@BUYER.GR",
+      "phone": "6909786756"
+    },
+    "agentInfo": null,
+    "notes": ""
+  },
+  "property": {
+    "title": "AKINHTO 1",
+    "details": {
+      "id": "cm9ybmfo9000bnylkzzkct06l",
+      "price": 200000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 120,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 13
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+

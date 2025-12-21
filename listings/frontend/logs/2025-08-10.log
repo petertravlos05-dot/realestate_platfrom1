@@ -1,0 +1,446 @@
+[2025-08-10T11:53:18.258Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcyuqsp00007nyrcgry2sj4w",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-11T13:28:06.853Z",
+    "updatedAt": "2025-07-11T17:10:19.139Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-10T11:53:18.260Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcyuqsp00007nyrcgry2sj4w",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-11T13:28:06.853Z",
+    "updatedAt": "2025-07-11T17:10:19.139Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-10T11:53:21.369Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcyuqsp00007nyrcgry2sj4w",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-11T13:28:06.853Z",
+    "updatedAt": "2025-07-11T17:10:19.139Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-10T11:53:21.371Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcyuqsp00007nyrcgry2sj4w",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-11T13:28:06.853Z",
+    "updatedAt": "2025-07-11T17:10:19.139Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-10T12:00:32.020Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf64kd000rny5cidutc0s0",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:45:22.330Z",
+    "updatedAt": "2025-07-19T15:45:22.330Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Katsarata New Built Exclusive Villa For Sale |",
+    "details": {
+      "id": "cmd08ul8d000bnyd4lpt18ngi",
+      "location": "Κατσαράτα,, Κατσαράτα -",
+      "price": 1200000,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "area": 125,
+      "featuresCount": 0,
+      "imagesCount": 9
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-10T12:00:32.016Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaf64kd000rny5cidutc0s0",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:45:22.330Z",
+    "updatedAt": "2025-07-19T15:45:22.330Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Katsarata New Built Exclusive Villa For Sale |",
+    "details": {
+      "id": "cmd08ul8d000bnyd4lpt18ngi",
+      "location": "Κατσαράτα,, Κατσαράτα -",
+      "price": 1200000,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "area": 125,
+      "featuresCount": 0,
+      "imagesCount": 9
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-10T12:00:35.409Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcyuqsp00007nyrcgry2sj4w",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-11T13:28:06.853Z",
+    "updatedAt": "2025-07-11T17:10:19.139Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-10T12:00:35.411Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmcyuqsp00007nyrcgry2sj4w",
+    "status": "MEETING_SCHEDULED",
+    "createdAt": "2025-07-11T13:28:06.853Z",
+    "updatedAt": "2025-07-11T17:10:19.139Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": null,
+    "notes": null
+  },
+  "property": {
+    "title": "Countyside Villa Bonora",
+    "details": {
+      "id": "cmcx1zg4o0001nyy47yr0fhoy",
+      "location": "Skala, Ratzakli -",
+      "price": 1300000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 130,
+      "featuresCount": 0,
+      "imagesCount": 4
+    }
+  },
+  "updates": {
+    "totalUpdates": 13,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "MEETING_SCHEDULED"
+}
+
+[2025-08-10T12:00:46.033Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1ma0007ny5cxg45eb50",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:31:18.706Z",
+    "updatedAt": "2025-07-19T15:31:18.706Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-08-10T12:00:46.034Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "cmdaeo1ma0007ny5cxg45eb50",
+    "status": "PENDING",
+    "createdAt": "2025-07-19T15:31:18.706Z",
+    "updatedAt": "2025-07-19T15:31:18.706Z",
+    "buyerInfo": {
+      "name": "SELLER",
+      "email": "SELLER@SELLER.GR",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "Nick",
+      "email": "nikck@nick.gr",
+      "phone": "690282639327"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Unique Seaside Plot in Zola –With Building Permit & Panoramic Views",
+    "details": {
+      "id": "cmd09l1qp000pnyd45guecnz1",
+      "location": "Ζόλα, Ζόλα -",
+      "price": 150000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 2360,
+      "featuresCount": 1,
+      "imagesCount": 6
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+

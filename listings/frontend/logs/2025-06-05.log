@@ -1,0 +1,532 @@
+[2025-06-05T18:02:19.673Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T17:57:07.107Z",
+    "updatedAt": "2025-06-05T17:57:07.107Z",
+    "buyerInfo": {
+      "name": "Torog",
+      "email": "yuri@yuri.gr",
+      "phone": "6978645496"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:02:19.672Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T17:57:07.107Z",
+    "updatedAt": "2025-06-05T17:57:07.107Z",
+    "buyerInfo": {
+      "name": "Torog",
+      "email": "yuri@yuri.gr",
+      "phone": "6978645496"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:02:24.530Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T17:57:07.107Z",
+    "updatedAt": "2025-06-05T17:57:07.107Z",
+    "buyerInfo": {
+      "name": "Torog",
+      "email": "yuri@yuri.gr",
+      "phone": "6978645496"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:02:24.531Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T17:57:07.107Z",
+    "updatedAt": "2025-06-05T17:57:07.107Z",
+    "buyerInfo": {
+      "name": "Torog",
+      "email": "yuri@yuri.gr",
+      "phone": "6978645496"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:03:33.180Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "b4de73df-19cf-43ab-abbf-3df228848cbf",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T17:57:07.125Z",
+    "updatedAt": "2025-06-05T17:57:07.125Z",
+    "buyerInfo": {
+      "name": "Torog",
+      "email": "yuri@yuri.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:03:33.190Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "b4de73df-19cf-43ab-abbf-3df228848cbf",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T17:57:07.125Z",
+    "updatedAt": "2025-06-05T17:57:07.125Z",
+    "buyerInfo": {
+      "name": "Torog",
+      "email": "yuri@yuri.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:30:49.918Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T18:29:16.272Z",
+    "updatedAt": "2025-06-05T18:29:16.272Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:30:49.916Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T18:29:16.272Z",
+    "updatedAt": "2025-06-05T18:29:16.272Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:51:06.892Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T18:29:16.272Z",
+    "updatedAt": "2025-06-05T18:29:16.272Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:51:06.878Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "",
+    "status": "PENDING",
+    "createdAt": "2025-06-05T18:29:16.272Z",
+    "updatedAt": "2025-06-05T18:29:16.272Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": "6978987808"
+    },
+    "agentInfo": null,
+    "notes": "Initial connection established"
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": "Βυρωνος  7, , ",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 0,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "PENDING"
+}
+
+[2025-06-05T18:57:56.329Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-05T18:48:48.417Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
+[2025-06-05T18:57:56.330Z] LeadDetailsModal - INITIAL_DATA
+{
+  "lead": {
+    "id": "srckhob5rgz3hdy5n5hlk6mb",
+    "status": "FINAL_SIGNING",
+    "createdAt": "2025-06-05T18:29:16.287Z",
+    "updatedAt": "2025-06-05T18:48:48.417Z",
+    "buyerInfo": {
+      "name": "Hor",
+      "email": "hor@hor.gr",
+      "phone": null
+    },
+    "agentInfo": {
+      "name": "AGENT",
+      "email": "AGENT@AGENT.GR",
+      "phone": "6989786776"
+    },
+    "notes": null
+  },
+  "property": {
+    "title": "Επαγγελματικός Χώρος Αργοστόλι ",
+    "details": {
+      "id": "cmbakrrj60009ny04xxv8s3py",
+      "location": ", Βυρωνος  7",
+      "price": 500000,
+      "bedrooms": 0,
+      "bathrooms": 0,
+      "area": 120,
+      "featuresCount": 0,
+      "imagesCount": 1
+    }
+  },
+  "updates": {
+    "totalUpdates": 5,
+    "updatesByCategory": {
+      "appointment": 0,
+      "offer": 0,
+      "contract": 0,
+      "payment": 0,
+      "completion": 0,
+      "general": 0
+    },
+    "unreadUpdates": 0
+  },
+  "currentStage": "FINAL_SIGNING"
+}
+
