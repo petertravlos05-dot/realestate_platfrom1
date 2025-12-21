@@ -1318,3 +1318,4 @@
 {"location":"api-client.ts:fetchFromBackend","message":"Token added to headers","data":{"endpoint":"/notifications","hasToken":true},"timestamp":1766330716271,"sessionId":"debug-session","runId":"run1","hypothesisId":"C"}
 {"location":"api-client.ts:fetchFromBackend","message":"Token added to headers","data":{"endpoint":"/notifications","hasToken":true},"timestamp":1766330776265,"sessionId":"debug-session","runId":"run1","hypothesisId":"C"}
 {"location":"api-client.ts:fetchFromBackend","message":"Token added to headers","data":{"endpoint":"/notifications","hasToken":true},"timestamp":1766330836273,"sessionId":"debug-session","runId":"run1","hypothesisId":"C"}
+{"location":"api-client.ts:fetchFromBackend","message":"Token added to headers","data":{"endpoint":"/notifications","hasToken":true},"timestamp":1766333005215,"sessionId":"debug-session","runId":"run1","hypothesisId":"C"}
