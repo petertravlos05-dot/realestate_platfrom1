@@ -126,27 +126,15 @@ export default function AgentDashboard() {
 
   useEffect(() => {
     const fetchClients = async () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:127',message:'fetchClients started',data:{hasSession:!!session,hasToken:!!localStorage.getItem('token')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
       if (!session?.user) {
-        // #region agent log
-        fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:130',message:'No session found',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-        // #endregion
         console.log('No session found');
         setLoading(false);
         return;
       }
 
       try {
-        // #region agent log
-        fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:143',message:'Before apiClient.get',data:{endpoint:'/agents/clients',userId:session.user.id,token:localStorage.getItem('token')?localStorage.getItem('token')?.substring(0,20)+'...':'null'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-        // #endregion
         console.log('Fetching clients for user:', session.user);
         const { data } = await apiClient.get('/agents/clients');
-        // #region agent log
-        fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:146',message:'After apiClient.get',data:{hasData:!!data,isArray:Array.isArray(data),dataLength:Array.isArray(data)?data.length:0,firstClient:Array.isArray(data)&&data.length>0?{id:data[0].id,name:data[0].name}:null},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-        // #endregion
         
         if (!Array.isArray(data)) {
           console.error('Invalid response format:', data);
@@ -155,9 +143,6 @@ export default function AgentDashboard() {
         
         setClients(deduplicateClients(data));
       } catch (error) {
-        // #region agent log
-        fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:147',message:'Error fetching clients',data:{error:error instanceof Error?error.message:String(error)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-        // #endregion
         console.error('Error fetching clients:', error);
         setClients([]);
       } finally {
@@ -186,25 +171,13 @@ export default function AgentDashboard() {
 
   // Fetch referral stats when profile menu opens
   const fetchReferralStats = async () => {
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:188',message:'fetchReferralStats started',data:{hasSession:!!session,hasToken:!!localStorage.getItem('token')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-    // #endregion
     if (!session?.user?.id) return;
     
     setLoadingReferralStats(true);
     try {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:194',message:'Before apiClient.get referrals',data:{endpoint:'/referrals/stats',token:localStorage.getItem('token')?localStorage.getItem('token')?.substring(0,20)+'...':'null'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-      // #endregion
       const { data } = await apiClient.get(`/referrals/stats?userId=${session.user.id}`);
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:195',message:'After apiClient.get referrals',data:{hasData:!!data},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-      // #endregion
       setReferralStats(data);
     } catch (error) {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'agent-dashboard.tsx:198',message:'Error fetching referral stats',data:{error:error instanceof Error?error.message:String(error)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-      // #endregion
       console.error('Error fetching referral stats:', error);
     } finally {
       setLoadingReferralStats(false);

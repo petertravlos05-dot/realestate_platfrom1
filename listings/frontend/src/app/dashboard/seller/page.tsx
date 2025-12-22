@@ -925,31 +925,16 @@ export default function SellerDashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'seller-dashboard.tsx:926',message:'fetchData started',data:{hasSession:!!session,hasToken:!!localStorage.getItem('token')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
       try {
-        // #region agent log
-        fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'seller-dashboard.tsx:929',message:'Before fetchFromBackend',data:{endpoint:'/seller/leads',token:localStorage.getItem('token')?localStorage.getItem('token')?.substring(0,20)+'...':'null'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
         const response = await fetchFromBackend('/seller/leads');
-        // #region agent log
-        fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'seller-dashboard.tsx:932',message:'After fetchFromBackend',data:{ok:response.ok,status:response.status},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
         const data = await response.json();
 
         if (!response.ok) {
-          // #region agent log
-          fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'seller-dashboard.tsx:936',message:'Response not ok',data:{error:data.error,status:response.status},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-          // #endregion
           throw new Error(data.error || 'Failed to fetch data');
         }
 
         setProperties(data);
       } catch (err) {
-        // #region agent log
-        fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'seller-dashboard.tsx:940',message:'Error in fetchData',data:{error:err instanceof Error?err.message:String(err)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
         setError(err instanceof Error ? err.message : 'An error occurred');
       } finally {
         setLoading(false);

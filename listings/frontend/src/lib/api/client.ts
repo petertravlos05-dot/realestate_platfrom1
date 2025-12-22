@@ -1,10 +1,18 @@
 import axios from 'axios';
 
-// Backend API URL - default to localhost:3001 (Express backend)
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+// Backend API URL - must be set via NEXT_PUBLIC_API_URL environment variable
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL;
+
+if (!BACKEND_URL) {
+  console.error('NEXT_PUBLIC_API_URL is not set! Please configure it in your environment variables.');
+}
+
+if (!BACKEND_URL) {
+  console.error('NEXT_PUBLIC_API_URL is not set! API calls will fail.');
+}
 
 export const apiClient = axios.create({
-  baseURL: `${BACKEND_URL}/api`,
+  baseURL: BACKEND_URL ? `${BACKEND_URL}/api` : '/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -16,41 +24,22 @@ apiClient.interceptors.request.use(async (config) => {
   
   // If no token, try to get it from NextAuth session
   if (!token && typeof window !== 'undefined') {
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:interceptor',message:'No token in localStorage, fetching from NextAuth',data:{url:config.url},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-    // #endregion
     try {
       const response = await fetch('/api/auth/token');
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:interceptor',message:'Token fetch response',data:{ok:response.ok,status:response.status},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-      // #endregion
       if (response.ok) {
         const { token: newToken } = await response.json();
         if (newToken) {
           localStorage.setItem('token', newToken);
           token = newToken;
-          // #region agent log
-          fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:interceptor',message:'Token stored in localStorage',data:{tokenLength:newToken.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-          // #endregion
         }
       }
     } catch (error) {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:interceptor',message:'Error fetching token',data:{error:error instanceof Error?error.message:String(error)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-      // #endregion
       console.error('Error fetching token:', error);
     }
   }
   
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:interceptor',message:'Token added to headers',data:{url:config.url,hasToken:!!token},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-    // #endregion
-  } else {
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:interceptor',message:'No token available',data:{url:config.url},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-    // #endregion
   }
   return config;
 });
@@ -64,28 +53,16 @@ export const fetchFromBackend = async (
   
   // If no token, try to get it from NextAuth session
   if (!token && typeof window !== 'undefined') {
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:fetchFromBackend',message:'No token in localStorage, fetching from NextAuth',data:{endpoint},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-    // #endregion
     try {
       const response = await fetch('/api/auth/token');
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:fetchFromBackend',message:'Token fetch response',data:{ok:response.ok,status:response.status},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-      // #endregion
       if (response.ok) {
         const { token: newToken } = await response.json();
         if (newToken) {
           localStorage.setItem('token', newToken);
           token = newToken;
-          // #region agent log
-          fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:fetchFromBackend',message:'Token stored in localStorage',data:{tokenLength:newToken.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-          // #endregion
         }
       }
     } catch (error) {
-      // #region agent log
-      fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:fetchFromBackend',message:'Error fetching token',data:{error:error instanceof Error?error.message:String(error)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-      // #endregion
       console.error('Error fetching token:', error);
     }
   }
@@ -97,13 +74,10 @@ export const fetchFromBackend = async (
 
   if (token) {
     headers['Authorization'] = `Bearer ${token}`;
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:fetchFromBackend',message:'Token added to headers',data:{endpoint,hasToken:!!token},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-    // #endregion
-  } else {
-    // #region agent log
-    fetch('http://127.0.0.1:7243/ingest/211915cc-8ff4-43a8-b097-387c0e673837',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'api-client.ts:fetchFromBackend',message:'No token available',data:{endpoint},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-    // #endregion
+  }
+
+  if (!BACKEND_URL) {
+    throw new Error('NEXT_PUBLIC_API_URL is not configured. Please set it in your environment variables.');
   }
 
   // Αν το endpoint ξεκινάει με /api/, το αφαιρούμε γιατί το baseURL ήδη έχει /api
@@ -149,6 +123,10 @@ export const uploadToBackend = async (
 
   if (token) {
     headers['Authorization'] = `Bearer ${token}`;
+  }
+
+  if (!BACKEND_URL) {
+    throw new Error('NEXT_PUBLIC_API_URL is not configured. Please set it in your environment variables.');
   }
 
   // Αν το endpoint ξεκινάει με /api/, το αφαιρούμε
