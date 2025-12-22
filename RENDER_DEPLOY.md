@@ -514,7 +514,7 @@ git push -u origin main
 | `NODE_ENV` | `production` | - |
 | `DATABASE_URL` | `postgresql://...` | Το Internal Database URL από το βήμα 3.2 |
 | `JWT_SECRET` | `[generate]` | Δημιουργήστε με: `openssl rand -base64 32` |
-| `FRONTEND_URL` | `https://realestate-frontend.onrender.com` | Θα το αλλάξετε μετά το deploy |
+| `FRONTEND_URL` | `https://realestate-frontend.onrender.com` | **⚠️ ΑΠΑΡΑΙΤΗΤΟ** - URL του frontend service (με https://) |
 | `STRIPE_SECRET_KEY` | `sk_live_...` ή `sk_test_...` | Από το Stripe Dashboard |
 | `STRIPE_WEBHOOK_SECRET` | `whsec_...` | Από το Stripe Dashboard |
 | `AWS_ACCESS_KEY_ID` | `AKIA...` | Από το AWS IAM |
@@ -524,6 +524,8 @@ git push -u origin main
 
 ### 5.2 Frontend Service Environment Variables
 
+**⚠️ ΚΡΙΣΙΜΟ**: Το `NEXT_PUBLIC_API_URL` είναι **ΑΠΑΡΑΙΤΗΤΟ** - χωρίς αυτό το frontend δεν θα μπορεί να συνδεθεί με το backend και θα δείτε errors στο browser console!
+
 Πηγαίνετε στο service `realestate-frontend` → **"Environment"** → **"Add Environment Variable"**:
 
 | Variable | Value | Σημειώσεις |
@@ -532,7 +534,7 @@ git push -u origin main
 | `NEXTAUTH_URL` | `https://realestate-frontend.onrender.com` | Θα το αλλάξετε μετά το deploy |
 | `NEXTAUTH_SECRET` | `[generate]` | Δημιουργήστε με: `openssl rand -base64 32` |
 | `DATABASE_URL` | `postgresql://...` | **Το ίδιο** με το backend |
-| `NEXT_PUBLIC_API_URL` | `https://realestate-backend.onrender.com` | Θα το αλλάξετε μετά το deploy |
+| `NEXT_PUBLIC_API_URL` | `https://realestate-backend.onrender.com` | **⚠️ ΑΠΑΡΑΙΤΗΤΟ** - URL του backend service (με https://) |
 | `JWT_SECRET` | `[same as backend]` | **Το ίδιο** με το backend |
 | `STRIPE_PUBLISHABLE_KEY` | `pk_live_...` ή `pk_test_...` | Από το Stripe Dashboard |
 | `STRIPE_SECRET_KEY` | `sk_live_...` ή `sk_test_...` | Από το Stripe Dashboard |
@@ -722,11 +724,172 @@ repository-root/
 - Ελέγξτε ότι το DATABASE_URL είναι σωστό
 - Ελέγξτε ότι οι migrations έχουν τρέξει (`npx prisma migrate deploy`)
 
+### Database Tables Missing (P2021 Error)
+
+**Αν βλέπετε error: `The table 'public.users' does not exist in the current database`:**
+
+Αυτό σημαίνει ότι το database δεν έχει τα tables. Το `render.yaml` χρησιμοποιεί `prisma db push` για να δημιουργήσει τα tables από το schema.
+
+**⚠️ Βήμα 1: Ελέγξτε το DATABASE_URL**
+
+1. Πηγαίνετε στο Render dashboard → **Backend service** → **Environment**
+2. Βεβαιωθείτε ότι το `DATABASE_URL` είναι set και σωστό
+3. Το value πρέπει να είναι το **Internal Database URL** από το PostgreSQL database service
+4. Αν λείπει ή είναι λάθος, προσθέστε/διορθώστε το και **Save Changes**
+
+**🔧 Βήμα 2: Manual Database Setup (Συνιστάται)**
+
+Αν το automatic build δεν λειτουργεί, κάντε manual push:
+
+1. **Πηγαίνετε στο Render Shell**:
+   - Render dashboard → **Backend service** → **Shell** tab
+   - Ή πηγαίνετε στο service → **Settings** → **Shell**
+
+2. **Εκτελέστε**:
+   ```bash
+   cd backend
+   npx prisma db push
+   ```
+
+3. **Ελέγξτε το output**: Θα πρέπει να δείτε "All models are now in sync"
+
+4. **Redeploy** το backend service (για να βεβαιωθείτε ότι όλα είναι OK)
+
+**🔄 Βήμα 3: Automatic (Αν το manual λειτούργησε)**
+
+Μετά το manual push, το `render.yaml` θα κάνει automatic push σε μελλοντικά deploys. Απλά κάντε **Redeploy** του backend service.
+
+**📝 Βήμα 4: Με Migrations (Για Production - Προαιρετικό)**
+
+Αν θέλετε να χρησιμοποιήσετε migrations αντί για `db push`:
+
+1. **Τοπικά**, δημιουργήστε migrations:
+   ```powershell
+   cd backend
+   npx prisma migrate dev --name init
+   ```
+
+2. **Commit και push**:
+   ```powershell
+   git add backend/prisma/migrations
+   git commit -m "Add Prisma migrations"
+   git push origin main
+   ```
+
+3. **Στο `render.yaml`**, αλλάξτε το build command:
+   ```yaml
+   buildCommand: cd backend && npm install && npx prisma generate && npx prisma migrate deploy && npm run build
+   ```
+
+4. **Redeploy** το backend service
+
 ### Frontend Cannot Connect to Backend
 
-- Ελέγξτε ότι το `NEXT_PUBLIC_API_URL` δείχνει στο σωστό backend URL
+- **Ελέγξτε ότι το `NEXT_PUBLIC_API_URL` είναι set** στο Render dashboard
+  - Πηγαίνετε στο frontend service → **Environment** → Ελέγξτε ότι υπάρχει `NEXT_PUBLIC_API_URL`
+  - Το value πρέπει να είναι: `https://realestate-backend.onrender.com` (με https://)
+  - **Αν λείπει**, προσθέστε το και κάντε **Manual Deploy** ή **Redeploy**
 - Ελέγξτε ότι το `FRONTEND_URL` στο backend είναι σωστό
-- Ελέγξτε τα CORS settings
+- Ελέγξτε τα CORS settings στο backend
+
+### 404 Not Found στο Backend Endpoints
+
+**Αν βλέπετε 404 στο `/api/auth/register` ή άλλα backend endpoints:**
+
+1. **Ελέγξτε ότι το backend service είναι "Live"**:
+   - Πηγαίνετε στο Render dashboard → Backend service
+   - Ελέγξτε ότι το status είναι **"Live"** (όχι "Build failed" ή "Stopped")
+
+2. **Ελέγξτε το `FRONTEND_URL` στο backend**:
+   - Backend service → **Environment**
+   - Βεβαιωθείτε ότι το `FRONTEND_URL` είναι set
+   - Value: `https://realestate-frontend.onrender.com` (το URL του frontend σας)
+   - **Αν λείπει**, προσθέστε το και κάντε **Redeploy**
+
+3. **Ελέγξτε τα Backend Logs**:
+   - Backend service → **Logs**
+   - Ψάξτε για errors όπως "Route not found" ή CORS errors
+   - Ελέγξτε ότι το server έχει start-άρει σωστά
+
+4. **Test το Backend Health Check**:
+   - Ανοίξτε: `https://realestate-backend.onrender.com/health`
+   - Θα πρέπει να δείτε: `{"status":"ok","timestamp":"..."}`
+   - Αν δεν λειτουργεί, το backend δεν είναι deployed σωστά
+
+### 401 Unauthorized στο /api/auth/token
+
+Αυτό είναι **φυσιολογικό** όταν ο χρήστης δεν είναι logged in. Το endpoint `/api/auth/token` χρειάζεται NextAuth session.
+
+**Αν βλέπετε 401 κατά την εγγραφή:**
+- Ελέγξτε ότι το `NEXTAUTH_URL` είναι σωστό
+- Ελέγξτε ότι το `NEXTAUTH_SECRET` είναι set
+- Ελέγξτε ότι το `DATABASE_URL` είναι σωστό (το NextAuth χρειάζεται database)
+
+### Network Errors - localhost:3001 ή ERR_CONNECTION_REFUSED
+
+**Αν βλέπετε errors όπως:**
+- `POST http://localhost:3001/api/auth/register net::ERR_CONNECTION_REFUSED`
+- `GET http://localhost:3001/api/notifications net::ERR_CONNECTION_REFUSED`
+- `POST http://127.0.0.1:7243/ingest/... net::ERR_CONNECTION_REFUSED`
+
+**Αυτό σημαίνει ότι το `NEXT_PUBLIC_API_URL` δεν είναι set ή είναι λάθος!**
+
+#### Βήμα-βήμα Λύση:
+
+**1. Ελέγξτε το `NEXT_PUBLIC_API_URL` στο Render:**
+
+1. Πηγαίνετε στο [Render Dashboard](https://dashboard.render.com)
+2. Επιλέξτε το **frontend service** (π.χ. `realestate-frontend`)
+3. Κάντε κλικ στο **"Environment"** (αριστερά στο menu)
+4. Ελέγξτε αν υπάρχει `NEXT_PUBLIC_API_URL`:
+   - **Αν λείπει**: Προσθέστε το (βλέπε βήμα 2)
+   - **Αν υπάρχει**: Ελέγξτε ότι το value είναι σωστό
+
+**2. Προσθέστε/Ενημερώστε το `NEXT_PUBLIC_API_URL`:**
+
+1. Στο **"Environment"** tab, κάντε κλικ **"Add Environment Variable"**
+2. Συμπληρώστε:
+   - **Key**: `NEXT_PUBLIC_API_URL`
+   - **Value**: `https://realestate-backend.onrender.com` (ή το URL του backend σας)
+     - ⚠️ **Σημαντικό**: Χρησιμοποιήστε **https://** (όχι http://)
+     - ⚠️ **Σημαντικό**: Χωρίς trailing slash (όχι `https://.../`)
+     - ✅ **Σωστό**: `https://realestate-backend.onrender.com`
+     - ❌ **Λάθος**: `http://localhost:3001`
+     - ❌ **Λάθος**: `https://realestate-backend.onrender.com/`
+3. Κάντε κλικ **"Save Changes"**
+
+**3. Redeploy το Frontend:**
+
+Μετά την προσθήκη/αλλαγή του environment variable:
+
+1. Πηγαίνετε στο **"Events"** tab (ή **"Manual Deploy"**)
+2. Κάντε κλικ **"Manual Deploy"** → **"Deploy latest commit"**
+3. Περιμένετε να ολοκληρωθεί το deploy (2-5 λεπτά)
+4. Ελέγξτε τα **"Logs"** για errors
+
+**4. Clear Browser Cache:**
+
+Μετά το redeploy:
+
+1. **Hard Refresh**: `Ctrl+Shift+R` (Windows) ή `Cmd+Shift+R` (Mac)
+2. **Ή Clear Cache**:
+   - `Ctrl+Shift+Delete` (Windows) ή `Cmd+Shift+Delete` (Mac)
+   - Επιλέξτε "Cached images and files"
+   - Κάντε **"Clear data"**
+3. **Ή Incognito/Private Window**: Ανοίξτε το site σε incognito window
+
+**5. Επαλήθευση:**
+
+1. Ανοίξτε το browser console (F12)
+2. Ελέγξτε ότι δεν υπάρχουν errors για `localhost:3001`
+3. Προσπαθήστε να κάνετε register/login
+4. Ελέγξτε τα Network requests - θα πρέπει να δείτε requests στο backend URL (όχι localhost)
+
+**Αν τα errors συνεχίζονται:**
+
+- Ελέγξτε τα **Logs** του frontend service στο Render
+- Ελέγξτε ότι το backend service είναι **"Live"**
+- Ελέγξτε ότι το backend URL είναι σωστό (πηγαίνετε στο backend service → **"Settings"** → δείτε το **"URL"**)
 
 ## Notes
 
