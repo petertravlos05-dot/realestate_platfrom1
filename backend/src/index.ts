@@ -19,8 +19,11 @@ const corsOptions = {
       return callback(null, true);
     }
 
+    // Normalize origin (remove trailing slash)
+    const normalizedOrigin = origin.replace(/\/$/, '');
+
     const allowedOrigins = process.env.FRONTEND_URL 
-      ? [process.env.FRONTEND_URL]
+      ? [process.env.FRONTEND_URL.replace(/\/$/, '')] // Remove trailing slash from FRONTEND_URL
       : process.env.NODE_ENV === 'production'
       ? [] // In production, require FRONTEND_URL
       : ['http://localhost:3000', 'http://localhost:3001']; // Development defaults
@@ -31,11 +34,11 @@ const corsOptions = {
       return callback(null, true);
     }
 
-    // Check if origin is allowed
-    if (allowedOrigins.includes(origin)) {
+    // Check if origin is allowed (compare normalized versions)
+    if (allowedOrigins.includes(normalizedOrigin)) {
       callback(null, true);
     } else {
-      console.warn(`CORS blocked origin: ${origin}. Allowed origins: ${allowedOrigins.join(', ') || 'ALL (FRONTEND_URL not set)'}`);
+      console.warn(`CORS blocked origin: ${origin} (normalized: ${normalizedOrigin}). Allowed origins: ${allowedOrigins.join(', ') || 'ALL (FRONTEND_URL not set)'}`);
       callback(new Error('Not allowed by CORS'));
     }
   },
