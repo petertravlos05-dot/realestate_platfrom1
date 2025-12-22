@@ -11,10 +11,40 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true
-}));
+// CORS configuration
+const corsOptions = {
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    const allowedOrigins = process.env.FRONTEND_URL 
+      ? [process.env.FRONTEND_URL]
+      : process.env.NODE_ENV === 'production'
+      ? [] // In production, require FRONTEND_URL
+      : ['http://localhost:3000', 'http://localhost:3001']; // Development defaults
+
+    // If no specific origins set in production, allow all (for debugging - change in production)
+    if (allowedOrigins.length === 0 && process.env.NODE_ENV === 'production') {
+      console.warn('⚠️ WARNING: FRONTEND_URL not set! Allowing all origins. Set FRONTEND_URL in production!');
+      return callback(null, true);
+    }
+
+    // Check if origin is allowed
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.warn(`CORS blocked origin: ${origin}. Allowed origins: ${allowedOrigins.join(', ') || 'ALL (FRONTEND_URL not set)'}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 
 // Stripe webhook must use raw body parser (before JSON parser)
 import stripeRoutes, { stripeWebhookHandler } from './routes/stripe';
