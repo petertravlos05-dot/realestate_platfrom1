@@ -1107,14 +1107,24 @@ export default function SellerDashboard() {
   useEffect(() => {
     const fetchSubscriptionInfo = async () => {
       try {
+        // Fetch user profile from backend to get userType
+        let userType = 'INDIVIDUAL';
+        try {
+          const userResponse = await fetchFromBackend('/user/profile');
+          if (userResponse.ok) {
+            const userData = await userResponse.json();
+            userType = userData?.userType || 'INDIVIDUAL';
+          }
+        } catch (userError) {
+          console.error('Error fetching user profile:', userError);
+        }
+
         const { data: subscription } = await apiClient.get('/subscriptions');
-        // Get user info from session to determine userType
-        const userType = session?.user?.userType || 'INDIVIDUAL';
         
         if (subscription) {
           setSubscriptionInfo({
             ...subscription,
-            userType: userType,
+            userType: subscription.userType || userType,
             planName: subscription.plan?.name,
             price: subscription.plan?.price,
             billingCycle: subscription.billingCycle,
@@ -1133,9 +1143,8 @@ export default function SellerDashboard() {
       } catch (error) {
         console.error('Error fetching subscription info:', error);
         // Set basic info on error
-        const userType = session?.user?.userType || 'INDIVIDUAL';
         setSubscriptionInfo({
-          userType: userType,
+          userType: 'INDIVIDUAL',
           status: 'none',
           planName: null
         });

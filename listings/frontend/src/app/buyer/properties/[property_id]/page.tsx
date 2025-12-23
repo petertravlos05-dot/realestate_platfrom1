@@ -209,12 +209,8 @@ export default function PropertyDetailsPage() {
   const handleInquiry = async (message: string) => {
     try {
       await apiClient.post(`/buyer/properties/${propertyId}/inquiry`, {
-        body: JSON.stringify({ message }),
+        message,
       });
-
-      if (!response.ok) {
-        throw new Error('Αδυναμία αποστολής ερώτησης');
-      }
 
       setShowInquiryModal(false);
       alert('Η ερώτησή σας στάλθηκε με επιτυχία!');
