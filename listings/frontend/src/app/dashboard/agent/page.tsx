@@ -231,16 +231,6 @@ export default function AgentDashboard() {
     };
   }, []);
 
-  const handleRoleChange = (role: string) => {
-    localStorage.setItem('selectedRole', role);
-    window.dispatchEvent(new Event('selectedRoleChange'));
-    if (role === 'BUYER') {
-      router.push('/buyer');
-    } else if (role === 'SELLER') {
-      router.push('/seller');
-    }
-  };
-
   // Helper function to check if client is new (connected within last 7 days)
   const isNewClient = (connectionDate: string) => {
     return new Date(connectionDate) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
