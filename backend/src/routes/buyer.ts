@@ -126,13 +126,6 @@ router.post('/interested-properties', validateJwtToken, async (req: AuthRequest,
       });
     }
 
-    // Check if user is the property owner
-    if (property.userId === userId) {
-      return res.status(400).json({
-        error: 'Δεν μπορείτε να εκδηλώσετε ενδιαφέρον για ακίνητο που έχετε καταχωρήσει εσείς'
-      });
-    }
-
     // Check if lead already exists
     let lead = await prisma.propertyLead.findFirst({
       where: {
@@ -490,13 +483,6 @@ router.post('/properties/:property_id/express-interest', optionalAuth, async (re
     if (!property) {
       return res.status(404).json({
         error: 'Το ακίνητο δεν βρέθηκε'
-      });
-    }
-
-    // Check if user is the property owner
-    if (property.userId === userId) {
-      return res.status(400).json({
-        error: 'Δεν μπορείτε να εκδηλώσετε ενδιαφέρον για ακίνητο που έχετε καταχωρήσει εσείς'
       });
     }
 
@@ -1125,6 +1111,7 @@ router.post('/schedule-viewing/:id', validateJwtToken, async (req: AuthRequest, 
 });
 
 export default router;
+
 
 
 

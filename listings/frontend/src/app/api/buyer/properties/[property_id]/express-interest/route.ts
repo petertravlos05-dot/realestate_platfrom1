@@ -44,14 +44,6 @@ export async function POST(
       );
     }
 
-    // Έλεγχος αν ο χρήστης είναι ο ιδιοκτήτης του ακινήτου
-    if (property.userId === userId) {
-      return NextResponse.json(
-        { error: 'Δεν μπορείτε να εκδηλώσετε ενδιαφέρον για ακίνητο που έχετε καταχωρήσει εσείς' },
-        { status: 400 }
-      );
-    }
-
     // Έλεγχος αν ο χρήστης έχει ήδη εκδηλώσει ενδιαφέρον
     const existingLead = await prisma.propertyLead.findFirst({
       where: {

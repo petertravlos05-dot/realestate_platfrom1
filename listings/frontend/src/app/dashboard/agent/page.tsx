@@ -3,9 +3,9 @@
 import { useEffect, useState, useRef } from 'react';
 import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
-import { FaUsers, FaCalendarAlt, FaChartBar, FaBuilding, FaPhone, FaEnvelope, FaUserTie, FaHome, FaSignOutAlt, FaSearch, FaCopy, FaLink, FaShare, FaExternalLinkAlt, FaEllipsisH, FaPlus, FaCog, FaBell, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaUser, FaChevronDown, FaExchangeAlt, FaSort, FaSortUp, FaSortDown, FaGift, FaCoins, FaComments } from 'react-icons/fa';
+import { FaUsers, FaCalendarAlt, FaChartBar, FaBuilding, FaPhone, FaEnvelope, FaUserTie, FaHome, FaSignOutAlt, FaSearch, FaCopy, FaLink, FaShare, FaExternalLinkAlt, FaEllipsisH, FaPlus, FaCog, FaBell, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaUser, FaChevronDown, FaExchangeAlt, FaSort, FaSortUp, FaSortDown, FaGift, FaCoins, FaComments, FaUserCircle, FaInfoCircle, FaQuestionCircle } from 'react-icons/fa';
 import LeadDetailsModal from '@/components/leads/LeadDetailsModal';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
 import { Update } from '@/components/leads/LeadDetailsModal';
@@ -302,8 +302,8 @@ export default function AgentDashboard() {
       return <FaSort className="ml-1 text-gray-400" />;
     }
     return sortConfig.direction === 'asc' 
-      ? <FaSortUp className="ml-1 text-[#001f3f]" />
-      : <FaSortDown className="ml-1 text-[#001f3f]" />;
+      ? <FaSortUp className="ml-1 text-blue-600" />
+      : <FaSortDown className="ml-1 text-blue-600" />;
   };
 
   // Filter and sort clients
@@ -590,150 +590,231 @@ export default function AgentDashboard() {
     }
   };
 
+  const handleRoleChange = (role: string) => {
+    localStorage.setItem('selectedRole', role);
+    window.dispatchEvent(new Event('selectedRoleChange'));
+    if (role === 'BUYER') {
+      router.push('/dashboard/buyer');
+    } else if (role === 'SELLER') {
+      router.push('/dashboard/seller');
+    }
+  };
+
+  const handleSignOut = async () => {
+    await signOut({ redirect: false });
+    window.location.href = '/agent';
+  };
+
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#001f3f]"></div>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="flex flex-col items-center space-y-4">
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-600 border-t-transparent"></div>
+          <p className="text-gray-600 font-medium">Φόρτωση...</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <motion.header 
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm"
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-4">
-              <Link href="/agent" className="text-2xl font-bold text-[#001f3f]">
-                RealEstate
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* Enhanced Header */}
+      <header className="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-6">
+              <Link href="/agent" className="flex items-center space-x-3 group">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                  <FaHome className="text-white text-sm" />
+                </div>
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  RealEstate
+                </span>
               </Link>
+              
               <div className="relative" ref={roleMenuRef}>
-                <button
+                <button 
                   onClick={() => setIsRoleMenuOpen(!isRoleMenuOpen)}
-                  className="px-2 py-1 text-xs font-semibold bg-[#001f3f] text-white rounded-full hover:bg-[#003366] transition-all duration-300 flex items-center space-x-1"
+                  className="flex items-center px-4 py-2 text-sm font-medium bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transition-all duration-300"
                 >
-                  <span>Agent Mode</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <FaUserCircle className="mr-2" />
+                  Agent Mode
+                  <FaChevronDown className={`ml-2 text-xs transition-transform duration-200 ${isRoleMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
+                <AnimatePresence>
                 {isRoleMenuOpen && (
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl py-2 border border-gray-100 z-50">
-                    <div 
-                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+                    <motion.div
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      className="absolute left-0 mt-3 w-64 bg-white rounded-2xl shadow-2xl py-3 border border-gray-100 z-50 overflow-hidden"
+                    >
+                      {/* Header */}
+                      <div className="px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-100">
+                        <h3 className="text-sm font-semibold text-gray-900 flex items-center">
+                          <FaExchangeAlt className="mr-2 text-blue-500" />
+                          Αλλαγή Ρόλου
+                        </h3>
+                        <p className="text-xs text-gray-500 mt-1">Επιλέξτε τον ρόλο που θέλετε να χρησιμοποιήσετε</p>
+                    </div>
+                      
+                      {/* Options */}
+                      <div className="py-2">
+                    <Link
+                      href="/dashboard/buyer"
+                          className="flex items-center px-6 py-4 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-200 group"
                       onClick={() => handleRoleChange('BUYER')}
                     >
-                      <FaExchangeAlt className="mr-2 text-green-500" />
-                      <span className="text-green-500 font-medium">Buyer Mode</span>
-                    </div>
-                    <div 
-                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-200">
+                            <FaUserCircle className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors duration-200">
+                      Buyer Mode
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">
+                              Αναζήτηση και αγορά ακινήτων
+                            </div>
+                          </div>
+                          <FaExchangeAlt className="w-4 h-4 text-gray-400 group-hover:text-green-500 transition-colors duration-200" />
+                    </Link>
+                        
+                    <Link
+                      href="/dashboard/seller"
+                          className="flex items-center px-6 py-4 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 group"
                       onClick={() => handleRoleChange('SELLER')}
                     >
-                      <FaExchangeAlt className="mr-2 text-blue-500" />
-                      <span className="text-blue-500 font-medium">Seller Mode</span>
-                    </div>
-                    <div className="border-t border-gray-100 my-1"></div>
-                    <Link
-                      href="/"
-                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200"
-                    >
-                      <FaExchangeAlt className="mr-2 text-gray-500" />
-                      Επιλογή Ρόλου
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-200">
+                            <FaUserCircle className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors duration-200">
+                      Seller Mode
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">
+                              Διαχείριση ακινήτων και πωλήσεων
+                            </div>
+                          </div>
+                          <FaExchangeAlt className="w-4 h-4 text-gray-400 group-hover:text-purple-500 transition-colors duration-200" />
                     </Link>
                   </div>
+                      
+                      {/* Footer */}
+                      <div className="px-6 py-3 bg-gray-50 border-t border-gray-100">
+                        <p className="text-xs text-gray-500 text-center">
+                          Τρέχων: <span className="font-semibold text-blue-600">Agent Mode</span>
+                        </p>
+                      </div>
+                    </motion.div>
                 )}
+                </AnimatePresence>
               </div>
             </div>
-            <div className="flex items-center space-x-6">
+
+            <nav className="hidden md:flex items-center space-x-1">
+              <Link
+                href="/agent"
+                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
+              >
+                <FaHome className="mr-2" />
+                Αρχική
+              </Link>
               <Link
                 href="/agent/properties"
-                className="text-gray-700 hover:text-[#001f3f] font-medium flex items-center"
+                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
               >
                 <FaBuilding className="mr-2" />
                 Ακίνητα
               </Link>
-              <Link 
+              <Link
                 href="/agent/contact"
-                className="text-gray-700 hover:text-[#001f3f] font-medium flex items-center"
+                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
               >
                 <FaEnvelope className="mr-2" />
                 Επικοινωνία
               </Link>
-              <AgentNotificationBell />
-              <div className="relative">
-                <button 
-                  className="flex items-center space-x-2 text-gray-700 hover:text-[#001f3f]"
-                  onClick={() => {
-                    const newShowProfileMenu = !showProfileMenu;
-                    setShowProfileMenu(newShowProfileMenu);
-                    if (newShowProfileMenu && !referralStats) {
-                      fetchReferralStats();
-                    }
-                  }}
-                >
-                  <div className="h-8 w-8 rounded-full bg-[#001f3f] text-white flex items-center justify-center">
-                    <span className="font-medium text-sm">{session?.user?.name?.[0] || 'A'}</span>
-                  </div>
-                  <span className="font-medium">{session?.user?.name}</span>
-                  <FaChevronDown className={`w-3 h-3 transition-transform ${showProfileMenu ? 'rotate-180' : ''}`} />
-                </button>
-                
-                {showProfileMenu && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-xl py-2 z-20 border border-gray-200"
+              <Link
+                href="/agent/about"
+                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
+              >
+                <FaInfoCircle className="mr-2" />
+                Σχετικά
+              </Link>
+            </nav>
+
+            <div className="flex items-center space-x-3">
+              {session ? (
+                <>
+                  <Link
+                    href="/agent"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-all duration-300"
+                    title="Επιστροφή στην Αρχική"
                   >
-                    {/* Referral Points Section */}
-                    <div className="px-4 py-3 border-b border-gray-100">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-sm font-semibold text-gray-800 flex items-center">
-                          <FaGift className="mr-2 text-[#001f3f]" />
-                          Referral Πόντοι
-                        </h3>
-                        <div className="flex items-center space-x-2">
-                          {loadingReferralStats ? (
-                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-[#001f3f]"></div>
-                          ) : (
-                            <button
-                              onClick={fetchReferralStats}
-                              className="text-[#001f3f] hover:text-[#003366] transition-colors"
-                              title="Ανανέωση πόντων"
-                            >
-                              <FaExternalLinkAlt className="w-3 h-3" />
-                            </button>
-                          )}
+                    <FaHome className="w-4 h-4" />
+                  </Link>
+                  <AgentNotificationBell />
+                  <div className="relative" ref={profileMenuRef}>
+                    <button
+                      onClick={() => {
+                        const newShowProfileMenu = !showProfileMenu;
+                        setShowProfileMenu(newShowProfileMenu);
+                        if (newShowProfileMenu && !referralStats) {
+                          fetchReferralStats();
+                        }
+                      }}
+                      className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 shadow-md"
+                    >
+                      <FaUser className="w-4 h-4" />
+                    </button>
+                
+                    {showProfileMenu && (
+                      <div className="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-xl py-2 border border-gray-100">
+                        <div className="px-4 py-3 border-b border-gray-100">
+                          <p className="text-sm font-semibold text-gray-900">{session?.user?.name || 'Χρήστης'}</p>
+                          <p className="text-xs text-gray-500">{session?.user?.email}</p>
                         </div>
-                      </div>
-                      
-                      {referralStats ? (
-                        <div className="space-y-3">
-                          {/* Total Points Display */}
-                          <Link href="/agent/profile" className="block">
-                            <div className="bg-gradient-to-r from-[#001f3f] to-[#003366] rounded-lg p-3 text-white hover:from-[#003366] hover:to-[#004080] transition-all duration-200 cursor-pointer">
-                              <div className="flex items-center justify-between">
-                                <div>
-                                  <p className="text-xs text-blue-100 mb-1">Συνολικοί Πόντοι</p>
-                                  <p className="text-2xl font-bold">
-                                    {referralStats.totalPoints?.toLocaleString() || 0}
-                                  </p>
-                                  <p className="text-xs text-blue-200">
-                                    Αξία: €{((referralStats.totalPoints || 0) * 0.1).toFixed(0)}
-                                  </p>
-                                </div>
-                                <FaCoins className="text-3xl text-blue-200 opacity-80" />
-                              </div>
+                        {/* Referral Points Section */}
+                        <div className="px-4 py-3 border-b border-gray-100">
+                          <div className="flex items-center justify-between mb-2">
+                            <h3 className="text-sm font-semibold text-gray-800 flex items-center">
+                              <FaGift className="mr-2 text-blue-600" />
+                              Referral Πόντοι
+                            </h3>
+                            <div className="flex items-center space-x-2">
+                              {loadingReferralStats ? (
+                                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                              ) : (
+                                <button
+                                  onClick={fetchReferralStats}
+                                  className="text-blue-600 hover:text-blue-700 transition-colors"
+                                  title="Ανανέωση πόντων"
+                                >
+                                  <FaExternalLinkAlt className="w-3 h-3" />
+                                </button>
+                              )}
                             </div>
-                          </Link>
+                          </div>
+                          
+                          {referralStats ? (
+                            <div className="space-y-3">
+                              {/* Total Points Display */}
+                              <Link href="/agent/profile" className="block">
+                                <div className="bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg p-3 text-white hover:from-blue-600 hover:to-indigo-600 transition-all duration-200 cursor-pointer">
+                                  <div className="flex items-center justify-between">
+                                    <div>
+                                      <p className="text-xs text-blue-100 mb-1">Συνολικοί Πόντοι</p>
+                                      <p className="text-2xl font-bold">
+                                        {referralStats.totalPoints?.toLocaleString() || 0}
+                                      </p>
+                                      <p className="text-xs text-blue-200">
+                                        Αξία: €{((referralStats.totalPoints || 0) * 0.1).toFixed(0)}
+                                      </p>
+                                    </div>
+                                    <FaCoins className="text-3xl text-blue-200 opacity-80" />
+                                  </div>
+                                </div>
+                              </Link>
                           
                           {/* Progress Bar */}
                           <div className="space-y-1">
@@ -778,52 +859,63 @@ export default function AgentDashboard() {
                       )}
                     </div>
                     
-                    {/* Menu Items */}
-                    <div className="py-1">
-                      <Link 
-                        href="/agent/profile" 
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center transition-colors"
-                      >
-                        <FaUser className="mr-3 text-[#001f3f]" />
-                        Προφίλ
-                      </Link>
-                      <Link 
-                        href="/agent/settings" 
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center transition-colors"
-                      >
-                        <FaCog className="mr-3 text-[#001f3f]" />
-                        Ρυθμίσεις
-                      </Link>
-                      <Link 
-                        href="/" 
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center transition-colors"
-                      >
-                        <FaUserTie className="mr-3 text-[#001f3f]" />
-                        Αλλαγή Ρόλου
-                      </Link>
-                    </div>
-                    
-                    <div className="border-t border-gray-100 my-1"></div>
-                    
-                    <button 
-                      onClick={() => {
-                        signOut({ callbackUrl: '/' });
-                      }}
-                      className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center transition-colors"
-                    >
-                      <FaSignOutAlt className="mr-3" />
-                      Αποσύνδεση
-                    </button>
-                  </motion.div>
-                )}
-              </div>
+                        {/* Menu Items */}
+                        <Link
+                          href="/agent/profile"
+                          className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200"
+                        >
+                          <FaCog className="mr-3 text-blue-500" />
+                          Ρυθμίσεις
+                        </Link>
+                        <Link
+                          href="/agent/messages"
+                          className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200"
+                        >
+                          <FaComments className="mr-3 text-blue-500" />
+                          Μηνύματα
+                        </Link>
+                        <div className="border-t border-gray-100 my-1"></div>
+                        <Link
+                          href="/"
+                          className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200"
+                        >
+                          <FaExchangeAlt className="mr-3 text-blue-500" />
+                          Αλλαγή Ρόλων
+                        </Link>
+                        <button
+                          onClick={() => handleSignOut()}
+                          className="flex items-center w-full px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors duration-200"
+                        >
+                          <FaSignOutAlt className="mr-3" />
+                          Αποσύνδεση
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/agent/auth/login"
+                    className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition-all duration-300"
+                  >
+                    Σύνδεση
+                  </Link>
+                  <Link
+                    href="/agent/auth/register"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white hover:from-blue-600 hover:to-indigo-600 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-md"
+                  >
+                    Εγγραφή
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-6 pb-16">
+      <main className="container mx-auto px-4 py-6 pb-16 pt-20">
         {/* Quick Stats */}
         <motion.div 
           initial={{ y: 20, opacity: 0 }}
@@ -919,7 +1011,7 @@ export default function AgentDashboard() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-gradient-to-r from-[#001f3f] to-[#003366] rounded-xl shadow-sm p-6 mb-8"
+          className="bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl shadow-sm p-6 mb-8"
         >
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold text-white">Start Promoting Properties</h2>
@@ -949,7 +1041,7 @@ export default function AgentDashboard() {
           <div className="mt-4">
             <Link 
               href="/agent/properties"
-              className="inline-flex items-center justify-center px-4 py-2 bg-white text-[#001f3f] rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
             >
               <FaBuilding className="mr-2" />
               Browse Properties
@@ -970,7 +1062,7 @@ export default function AgentDashboard() {
               onClick={() => setActiveTab('clients')}
               className={`flex items-center py-4 px-6 text-center font-medium transition-all duration-200 ${
                 activeTab === 'clients'
-                  ? 'text-[#001f3f] border-b-2 border-[#001f3f] bg-[#001f3f]/5'
+                  ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -981,7 +1073,7 @@ export default function AgentDashboard() {
               onClick={() => setActiveTab('properties')}
               className={`flex items-center py-4 px-6 text-center font-medium transition-all duration-200 ${
                 activeTab === 'properties'
-                  ? 'text-[#001f3f] border-b-2 border-[#001f3f] bg-[#001f3f]/5'
+                  ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -992,7 +1084,7 @@ export default function AgentDashboard() {
               onClick={() => setActiveTab('statistics')}
               className={`flex items-center py-4 px-6 text-center font-medium transition-all duration-200 ${
                 activeTab === 'statistics'
-                  ? 'text-[#001f3f] border-b-2 border-[#001f3f] bg-[#001f3f]/5'
+                  ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -1003,7 +1095,7 @@ export default function AgentDashboard() {
               onClick={() => setActiveTab('support')}
               className={`flex items-center py-4 px-6 text-center font-medium transition-all duration-200 ${
                 activeTab === 'support'
-                  ? 'text-[#001f3f] border-b-2 border-[#001f3f] bg-[#001f3f]/5'
+                  ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -1024,12 +1116,12 @@ export default function AgentDashboard() {
                     placeholder="Αναζήτηση leads..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f3f] focus:border-transparent"
+                    className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                   <FaSearch className="absolute left-3 top-3 text-gray-400" />
                 </div>
                 <button
-                  className="flex items-center px-4 py-2 bg-[#001f3f] text-white rounded-lg hover:bg-[#00284d] transition-colors"
+                  className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg hover:from-blue-600 hover:to-indigo-600 transition-colors"
                   onClick={() => setIsAddBuyerModalOpen(true)}
                 >
                   <FaPlus className="w-4 h-4 mr-2" />
@@ -1045,7 +1137,7 @@ export default function AgentDashboard() {
                   <p className="text-gray-500 max-w-md mx-auto mb-6">
                     Μοιραστείτε το referral link σας με υποψήφιους αγοραστές ή προσθέστε τους χειροκίνητα
                   </p>
-                  <button className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#001f3f] hover:bg-[#00284d]">
+                  <button className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600">
                     <FaShare className="mr-2 -ml-1 h-4 w-4" />
                     Μοιραστείτε το link σας
                   </button>
@@ -1101,8 +1193,8 @@ export default function AgentDashboard() {
                       >
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div className="flex items-center">
-                              <div className="h-10 w-10 rounded-full bg-[#001f3f]/10 flex items-center justify-center">
-                                <span className="text-[#001f3f] font-medium">{client.name?.[0]}</span>
+                              <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                <span className="text-blue-600 font-medium">{client.name?.[0]}</span>
                               </div>
                               <div className="ml-4">
                                 <div className="text-sm font-medium text-gray-900 flex items-center">
@@ -1181,7 +1273,7 @@ export default function AgentDashboard() {
                                 e.stopPropagation();
                                 setSelectedClient(client);
                               }}
-                              className="text-[#001f3f] hover:text-[#00284d] mr-3"
+                              className="text-blue-600 hover:text-blue-700 mr-3"
                             >
                               Προβολή
                             </button>
@@ -1231,7 +1323,7 @@ export default function AgentDashboard() {
                                   <h4 className="text-lg font-medium text-gray-900">{client.property?.title || 'Μη διαθέσιμο'}</h4>
                                   <p className="text-sm text-gray-500">{client.property?.location || 'Μη διαθέσιμο'}</p>
                                   <div className="mt-1 flex items-center">
-                                    <span className="text-sm font-medium text-[#001f3f]">€{client.property?.price?.toLocaleString() || '-'}</span>
+                                    <span className="text-sm font-medium text-blue-600">€{client.property?.price?.toLocaleString() || '-'}</span>
                                     <span className="ml-2 text-xs text-gray-500">•</span>
                                     <span className="ml-2 text-xs text-gray-500">{client.property?.type || 'Μη διαθέσιμο'}</span>
                                     <span className="ml-2 text-xs text-gray-500">•</span>
@@ -1255,7 +1347,7 @@ export default function AgentDashboard() {
                                 </span>
                                 <Link 
                                   href={`/agent/properties/${client.property?.id}`}
-                                  className="ml-4 text-[#001f3f] hover:text-[#00284d] transition-colors"
+                                  className="ml-4 text-blue-600 hover:text-blue-700 transition-colors"
                                 >
                                   <FaExternalLinkAlt className="h-5 w-5" />
                                 </Link>
@@ -1381,67 +1473,6 @@ export default function AgentDashboard() {
         </motion.div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#001f3f] text-white py-12 mt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Σχετικά με εμάς</h3>
-              <p className="text-gray-300">
-                Η πλατφόρμα που συνδέει agents με αγοραστές και πωλητές ακινήτων.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Σύνδεσμοι</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/agent/properties" className="text-gray-300 hover:text-white transition-colors">
-                    Ακίνητα
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/agent/about" className="text-gray-300 hover:text-white transition-colors">
-                    Σχετικά
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/agent/contact" className="text-gray-300 hover:text-white transition-colors">
-                    Επικοινωνία
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Επικοινωνία</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Email: info@realestate.com</li>
-                <li>Τηλέφωνο: +30 210 1234567</li>
-                <li>Διεύθυνση: Αθήνα, Ελλάδα</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Social Media</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  <FaFacebook className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  <FaTwitter className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  <FaInstagram className="w-6 h-6" />
-                </a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  <FaLinkedin className="w-6 h-6" />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; {new Date().getFullYear()} Real Estate Platform. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
 
       {selectedClient && (
         <LeadDetailsModal
