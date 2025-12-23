@@ -37,12 +37,21 @@ export const validateJwtToken = async (
     try {
       const decoded = jwt.verify(token, secret) as JwtPayload;
       
+      console.log('[DEBUG] validateJwtToken - Decoded token:', {
+        userId: decoded.userId,
+        email: decoded.email,
+        role: decoded.role,
+        exp: decoded.exp,
+        timestamp: new Date().toISOString()
+      });
+      
       req.userId = decoded.userId;
       req.userRole = decoded.role;
       req.userEmail = decoded.email;
       
       next();
     } catch (error) {
+      console.error('[DEBUG] validateJwtToken - Token verification failed:', error);
       res.status(401).json({ error: 'Μη έγκυρο token' });
       return;
     }

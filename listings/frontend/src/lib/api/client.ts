@@ -20,27 +20,34 @@ export const apiClient = axios.create({
 
 // Προσθήκη interceptor για το authentication token
 apiClient.interceptors.request.use(async (config) => {
-  let token = localStorage.getItem('token');
-  
-  // If no token, try to get it from NextAuth session
-  if (!token && typeof window !== 'undefined') {
+  // Πάντα ενημερώνουμε το token από το session για να εξασφαλίσουμε ότι είναι συγχρονισμένο
+  if (typeof window !== 'undefined') {
     try {
       const response = await fetch('/api/auth/token');
       if (response.ok) {
         const { token: newToken } = await response.json();
         if (newToken) {
           localStorage.setItem('token', newToken);
-          token = newToken;
+          config.headers.Authorization = `Bearer ${newToken}`;
+          return config;
         }
       }
     } catch (error) {
       console.error('Error fetching token:', error);
+      // Fallback στο παλιό token αν υπάρχει
+      const oldToken = localStorage.getItem('token');
+      if (oldToken) {
+        config.headers.Authorization = `Bearer ${oldToken}`;
+      }
+    }
+  } else {
+    // Server-side: χρησιμοποιούμε το token από localStorage αν υπάρχει
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
     }
   }
   
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
   return config;
 });
 
@@ -51,8 +58,8 @@ export const fetchFromBackend = async (
 ): Promise<Response> => {
   let token = localStorage.getItem('token');
   
-  // If no token, try to get it from NextAuth session
-  if (!token && typeof window !== 'undefined') {
+  // Πάντα ενημερώνουμε το token από το session για να εξασφαλίσουμε ότι είναι συγχρονισμένο
+  if (typeof window !== 'undefined') {
     try {
       const response = await fetch('/api/auth/token');
       if (response.ok) {
@@ -64,6 +71,7 @@ export const fetchFromBackend = async (
       }
     } catch (error) {
       console.error('Error fetching token:', error);
+      // Fallback στο παλιό token αν υπάρχει
     }
   }
   
@@ -101,8 +109,8 @@ export const uploadToBackend = async (
 ): Promise<Response> => {
   let token = localStorage.getItem('token');
   
-  // If no token, try to get it from NextAuth session
-  if (!token && typeof window !== 'undefined') {
+  // Πάντα ενημερώνουμε το token από το session για να εξασφαλίσουμε ότι είναι συγχρονισμένο
+  if (typeof window !== 'undefined') {
     try {
       const response = await fetch('/api/auth/token');
       if (response.ok) {
@@ -114,6 +122,7 @@ export const uploadToBackend = async (
       }
     } catch (error) {
       console.error('Error fetching token:', error);
+      // Fallback στο παλιό token αν υπάρχει
     }
   }
   
