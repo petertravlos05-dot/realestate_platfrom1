@@ -76,49 +76,48 @@ router.get('/', optionalAuth, async (req: AuthRequest, res: Response) => {
     const baseQuery: Prisma.PropertyFindManyArgs = {
       where: {
         OR: [
-            OR: [
-              // Available properties
-              { status: { not: 'unavailable' } },
-              // Unavailable properties with special permissions
+          // Available properties
+          { status: { not: 'unavailable' } },
+          // Unavailable properties with special permissions
+          {
+            AND: [
+              { status: 'unavailable' },
               {
-                AND: [
-                  { status: 'unavailable' },
-                  {
-                    OR: [
-                      // 1. User is the owner
-                      { userId: userId },
-                      // 2. User is admin
-                      { user: { role: 'admin' } },
-                      // 3. User is interested buyer
-                      {
-                        favorites: {
-                          some: {
-                            userId: userId
-                          }
-                        }
-                      },
-                      // 4. User is agent with connection
-                      {
-                        connections: {
-                          some: {
-                            OR: [
-                              { agent: { id: userId } },
-                              {
-                                agent: {
-                                  buyerConnections: {
-                                    some: {
-                                      buyer: { id: userId }
-                                    }
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    ]
-                  }
-                ]
+              OR: [
+              // 1. User is the owner
+              { userId: userId },
+              // 2. User is admin
+              { user: { role: 'admin' } },
+              // 3. User is interested buyer
+              {
+              favorites: {
+              some: {
+              userId: userId
+              }
+              }
+              },
+              // 4. User is agent with connection
+              {
+              connections: {
+              some: {
+              OR: [
+              { agent: { id: userId } },
+              {
+              agent: {
+              buyerConnections: {
+              some: {
+              buyer: { id: userId }
+              }
+              }
+              }
+              }
+              ]
+              }
+              }
+              }
+              ]
+              }
+              ]
               }
             ]
           }
