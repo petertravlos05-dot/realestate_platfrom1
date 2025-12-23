@@ -72,57 +72,9 @@ router.get('/', optionalAuth, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
 
-    // Base query for all properties
+    // Base query for all properties - no status filtering
     const baseQuery: Prisma.PropertyFindManyArgs = {
-      where: {
-        OR: [
-          // Available properties
-          { status: { not: 'unavailable' } },
-          // Unavailable properties with special permissions
-          {
-            AND: [
-              { status: 'unavailable' },
-              {
-              OR: [
-              // 1. User is the owner
-              { userId: userId },
-              // 2. User is admin
-              { user: { role: 'admin' } },
-              // 3. User is interested buyer
-              {
-              favorites: {
-              some: {
-              userId: userId
-              }
-              }
-              },
-              // 4. User is agent with connection
-              {
-              connections: {
-              some: {
-              OR: [
-              { agent: { id: userId } },
-              {
-              agent: {
-              buyerConnections: {
-              some: {
-              buyer: { id: userId }
-              }
-              }
-              }
-              }
-              ]
-              }
-              }
-              }
-              ]
-              }
-              ]
-              }
-            ]
-          }
-        ]
-      },
+      where: {},
       include: {
         user: {
           select: {
@@ -138,13 +90,8 @@ router.get('/', optionalAuth, async (req: AuthRequest, res: Response) => {
       }
     };
 
-    // If no user, return only available and approved properties
-    const query = !userId ? {
-      ...baseQuery,
-      where: {
-        { status: { not: 'unavailable' } }
-      }
-    } : baseQuery;
+    // Return all properties regardless of status
+    const query = baseQuery;
 
     const properties = await prisma.property.findMany(query);
 
@@ -376,26 +323,7 @@ router.get('/:id', optionalAuth, async (req: AuthRequest, res: Response) => {
       return res.status(404).json({ error: 'Property not found' });
     }
 
-    // Check permissions for unavailable properties
-    if (property.status === 'unavailable') {
-      if (!userId) {
-        return res.status(404).json({ error: 'Property not found' });
-      }
-
-      const canView =
-        property.user.id === userId ||
-        userRole === 'ADMIN' ||
-        property.favorites.some(favorite => favorite.user.id === userId) ||
-        property.connections.some(conn =>
-          conn.agent.id === userId ||
-          conn.agent.buyerConnections.some(bc => bc.buyer.id === userId)
-        );
-
-      if (!canView) {
-        return res.status(404).json({ error: 'Property not found' });
-      }
-    }
-
+    // No status checks - return all properties
     res.json({ property });
   } catch (error) {
     console.error('Error fetching property:', error);
