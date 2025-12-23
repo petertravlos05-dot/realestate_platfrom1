@@ -2067,7 +2067,7 @@ export default function AddListing() {
       );
     }
 
-    return <div className="space-y-8">{content}</div>;
+    return <div className="space-y-8">{content || null}</div>;
   };
 
   const handleNextStep = () => {
@@ -2157,14 +2157,8 @@ export default function AddListing() {
                   onChange={(e) => handlePricingChange('negotiable', e.target.checked)}
                   className="sr-only"
                 />
-                <div className={`
-                  w-14 h-7 rounded-full transition-colors duration-200 ease-in-out
-                  ${pricing.negotiable ? 'bg-green-600' : 'bg-gray-200'}
-                `}>
-                  <div className={`
-                    w-5 h-5 rounded-full bg-white transform transition-transform duration-200 ease-in-out
-                    ${pricing.negotiable ? 'translate-x-8' : 'translate-x-1'} mt-1
-                  `} />
+                <div className={`w-14 h-7 rounded-full transition-colors duration-200 ease-in-out ${pricing.negotiable ? 'bg-green-600' : 'bg-gray-200'}`}>
+                  <div className={`w-5 h-5 rounded-full bg-white transform transition-transform duration-200 ease-in-out ${pricing.negotiable ? 'translate-x-8' : 'translate-x-1'} mt-1`} />
                 </div>
               </div>
               <span className="text-sm font-medium text-gray-700">Διαπραγματεύσιμη Τιμή</span>
@@ -3711,7 +3705,9 @@ export default function AddListing() {
               </motion.div>
             )}
           </div>
+        </div>
         )}
+        </div>
         </div>
       </main>
 
