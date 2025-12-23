@@ -53,14 +53,11 @@ const BuyerLandingPage = () => {
       try {
         const response = await fetchFromBackend('/properties');
         const data = await response.json();
-        
-        // Ensure data is an array
-        const propertiesArray = Array.isArray(data) ? data : [];
-        setProperties(propertiesArray.slice(0, 6));
+        setProperties(data.slice(0, 6));
         
         // Δημιουργία τυχαίων slides από τις φωτογραφίες των ακινήτων
-        const propertiesWithImages = propertiesArray.filter((property: any) => 
-          property && property.images && Array.isArray(property.images) && property.images.length > 0
+        const propertiesWithImages = data.filter((property: any) => 
+          property.images && property.images.length > 0
         );
         
         if (propertiesWithImages.length > 0) {
@@ -69,32 +66,35 @@ const BuyerLandingPage = () => {
             .sort(() => 0.5 - Math.random())
             .slice(0, 3);
           
-          const newSlides = shuffledProperties.map((property: any, index: number) => {
-            const propertyTypeLabels: { [key: string]: string } = {
-              'apartment': 'Διαμέρισμα',
-              'house': 'Μονοκατοικία',
-              'villa': 'Βίλα',
-              'commercial': 'Επαγγελματικός Χώρος',
-              'plot': 'Οικόπεδο'
-            };
-            
-            const propertyTypeLabel = propertyTypeLabels[property.propertyType] || property.propertyType;
-            
-            return {
-              image: property.images && property.images[0] ? property.images[0] : '/images/hero-1.jpg',
-              title: property.title || 'Εξαιρετικό Ακίνητο',
-              subtitle: `${propertyTypeLabel} σε ${property.city || 'Ελλάδα'} - ${property.price?.toLocaleString()}€`,
-              cta: index === 0 ? 'Ξεκινήστε την Αναζήτησή σας' : 
-                   index === 1 ? 'Δείτε τα Οικόπεδα' : 'Μάθετε Περισσότερα'
-            };
-          });
+          const newSlides = shuffledProperties
+            .filter((property: any) => property && property.images && property.images.length > 0 && property.images[0])
+            .map((property: any, index: number) => {
+              const propertyTypeLabels: { [key: string]: string } = {
+                'apartment': 'Διαμέρισμα',
+                'house': 'Μονοκατοικία',
+                'villa': 'Βίλα',
+                'commercial': 'Επαγγελματικός Χώρος',
+                'plot': 'Οικόπεδο'
+              };
+              
+              const propertyTypeLabel = propertyTypeLabels[property.propertyType] || property.propertyType;
+              
+              return {
+                image: property.images && property.images[0] ? property.images[0] : '/images/hero-1.jpg',
+                title: property.title || 'Εξαιρετικό Ακίνητο',
+                subtitle: `${propertyTypeLabel} σε ${property.city || 'Ελλάδα'} - ${property.price?.toLocaleString()}€`,
+                cta: index === 0 ? 'Ξεκινήστε την Αναζήτησή σας' : 
+                     index === 1 ? 'Δείτε τα Οικόπεδα' : 'Μάθετε Περισσότερα'
+              };
+            });
           
-          setSlides(newSlides);
-          // Reset currentSlide if it's out of bounds
-          setCurrentSlide((prev) => prev >= newSlides.length ? 0 : prev);
+          // Εξασφάλιση ότι έχουμε τουλάχιστον ένα slide
+          if (newSlides.length > 0) {
+            setSlides(newSlides);
+          }
         } else {
           // Fallback στα default slides αν δεν υπάρχουν ακίνητα με φωτογραφίες
-          const defaultSlides = [
+          setSlides([
             {
               image: '/images/hero-1.jpg',
               title: 'Βρείτε το Ιδανικό Ακίνητό Σας',
@@ -113,35 +113,10 @@ const BuyerLandingPage = () => {
               subtitle: 'Στο πλευρό σας σε κάθε βήμα της διαδικασίας',
               cta: 'Μάθετε Περισσότερα'
             }
-          ];
-          setSlides(defaultSlides);
-          setCurrentSlide(0);
+          ]);
         }
       } catch (error) {
         console.error('Error fetching properties:', error);
-        // Ensure slides are set even on error
-        const defaultSlides = [
-          {
-            image: '/images/hero-1.jpg',
-            title: 'Βρείτε το Ιδανικό Ακίνητό Σας',
-            subtitle: 'Ανακαλύψτε μοναδικές ευκαιρίες σε ακίνητα σε όλη την Ελλάδα',
-            cta: 'Ξεκινήστε την Αναζήτησή σας'
-          },
-          {
-            image: '/images/hero-2.jpg',
-            title: 'Όμορφα Οικόπεδα',
-            subtitle: 'Από την Ελλάδα και όλο τον κόσμο με τις καλύτερες τιμές',
-            cta: 'Δείτε τα Οικόπεδα'
-          },
-          {
-            image: '/images/hero-3.jpg',
-            title: 'Επαγγελματική Υποστήριξη',
-            subtitle: 'Στο πλευρό σας σε κάθε βήμα της διαδικασίας',
-            cta: 'Μάθετε Περισσότερα'
-          }
-        ];
-        setSlides(defaultSlides);
-        setCurrentSlide(0);
       } finally {
         setLoading(false);
       }
@@ -248,38 +223,40 @@ const BuyerLandingPage = () => {
         )}
 
         <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="max-w-5xl"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              {slides[currentSlide]?.title || 'Βρείτε το Ιδανικό Ακίνητό Σας'}
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-              {slides[currentSlide]?.subtitle || 'Ανακαλύψτε μοναδικές ευκαιρίες σε ακίνητα σε όλη την Ελλάδα'}
-            </p>
+          {slides.length > 0 && slides[currentSlide] && (
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="max-w-5xl"
             >
-              <Link
-                href="/properties"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl text-lg font-semibold
-                         hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                {slides[currentSlide]?.title || 'Βρείτε το Ιδανικό Ακίνητό Σας'}
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+                {slides[currentSlide]?.subtitle || 'Ανακαλύψτε μοναδικές ευκαιρίες σε ακίνητα σε όλη την Ελλάδα'}
+              </p>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               >
-                {slides[currentSlide]?.cta || 'Ξεκινήστε την Αναζήτησή σας'}
-                <FaArrowRight className="ml-2" />
-              </Link>
-              <button className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white rounded-xl text-lg font-semibold
-                         hover:bg-white/30 transition-all duration-300 border border-white/30">
-                <FaPlay className="mr-2" />
-                Δείτε Video
-              </button>
+                <Link
+                  href="/properties"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl text-lg font-semibold
+                           hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  {slides[currentSlide]?.cta || 'Ξεκινήστε την Αναζήτησή σας'}
+                  <FaArrowRight className="ml-2" />
+                </Link>
+                <button className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white rounded-xl text-lg font-semibold
+                           hover:bg-white/30 transition-all duration-300 border border-white/30">
+                  <FaPlay className="mr-2" />
+                  Δείτε Video
+                </button>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          )}
         </div>
 
         {/* Enhanced Slide Indicators */}
@@ -379,7 +356,7 @@ const BuyerLandingPage = () => {
           ) : (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {properties.filter((property: any) => property && property.id).slice(0, 6).map((property: any, index: number) => (
+                {properties.slice(0, 6).map((property: any, index: number) => (
                   <motion.div
                     key={property.id}
                     initial={{ opacity: 0, y: 20 }}
@@ -390,8 +367,8 @@ const BuyerLandingPage = () => {
                   >
                     <div className="relative h-56">
                       <Image
-                        src={property?.images && Array.isArray(property.images) && property.images.length > 0 ? property.images[0] : '/images/placeholder.jpg'}
-                        alt={property?.title || 'Property'}
+                        src={property.images && property.images.length > 0 ? property.images[0] : '/images/placeholder.jpg'}
+                        alt={property.title}
                         layout="fill"
                         objectFit="cover"
                         className="group-hover:scale-105 transition-transform duration-300"
@@ -412,32 +389,26 @@ const BuyerLandingPage = () => {
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
-                        {property?.title || 'Ακίνητο'}
+                        {property.title}
                       </h3>
                       <div className="flex items-center text-gray-600 mb-4">
                         <FaMapMarkerAlt className="mr-2 text-blue-500" />
-                        <span>{property?.location || property?.city || 'Ελλάδα'}</span>
+                        <span>{property.location}</span>
                       </div>
                       <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center space-x-4 text-sm text-gray-600">
-                          {property?.bedrooms !== undefined && (
-                            <div className="flex items-center">
-                              <FaBed className="mr-1 text-blue-500" />
-                              <span>{property.bedrooms || 0}</span>
-                            </div>
-                          )}
-                          {property?.bathrooms !== undefined && (
-                            <div className="flex items-center">
-                              <FaBath className="mr-1 text-blue-500" />
-                              <span>{property.bathrooms || 0}</span>
-                            </div>
-                          )}
-                          {property?.area && (
-                            <div className="flex items-center">
-                              <FaRulerCombined className="mr-1 text-blue-500" />
-                              <span>{property.area}m²</span>
-                            </div>
-                          )}
+                          <div className="flex items-center">
+                            <FaBed className="mr-1 text-blue-500" />
+                            <span>{property.bedrooms || 0}</span>
+                          </div>
+                          <div className="flex items-center">
+                            <FaBath className="mr-1 text-blue-500" />
+                            <span>{property.bathrooms || 0}</span>
+                          </div>
+                          <div className="flex items-center">
+                            <FaRulerCombined className="mr-1 text-blue-500" />
+                            <span>{property.area}m²</span>
+                          </div>
                         </div>
                       </div>
                       <motion.div
