@@ -646,6 +646,10 @@ export default function AdminDashboard() {
     try {
       await apiClient.put(`/admin/appointments/${appointmentId}/status`, { status });
 
+      if (!response.ok) {
+        throw new Error('Failed to update appointment status');
+      }
+
       // Ενημέρωση του state με το νέο status
       setAppointments(prevAppointments =>
         prevAppointments.map(app =>
@@ -748,9 +752,10 @@ export default function AdminDashboard() {
 
   const handleRejectProperty = async (id: string) => {
     try {
-      const { data } = await apiClient.put(`/admin/listings/${id}/reject`);
+      await apiClient.put(`/admin/listings/${id}/reject`);
       
-      toast.success(data?.message || 'Το ακίνητο απορρίφθηκε');
+      const data = await res.json();
+      toast.success(data.message || 'Το ακίνητο απορρίφθηκε');
       fetchData();
     } catch (err) {
       console.error(err);
@@ -773,6 +778,8 @@ export default function AdminDashboard() {
         : `/admin/listings/${selectedProperty.id}/${status}`;
 
       await apiClient.put(endpoint, { message });
+
+      if (!res.ok) throw new Error('Failed to update property status');
       
       // Refresh the listings data
       fetchData();
@@ -834,6 +841,8 @@ export default function AdminDashboard() {
 
     try {
       await apiClient.put(`/admin/listings/${selectedProperty.id}/unavailable`);
+
+      if (!res.ok) throw new Error('Failed to mark property as unavailable');
       
       // Refresh the listings data
       fetchData();

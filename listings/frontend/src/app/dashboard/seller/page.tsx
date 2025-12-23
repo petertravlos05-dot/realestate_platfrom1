@@ -941,10 +941,8 @@ export default function SellerDashboard() {
       }
     };
 
-    if (session?.user) {
-      fetchData();
-    }
-  }, [session]);
+    fetchData();
+  }, []);
 
   // useEffect για να ελέγχω ποια properties δεν έχουν πατηθεί τα κουμπιά τους
   useEffect(() => {
@@ -1110,14 +1108,8 @@ export default function SellerDashboard() {
     const fetchSubscriptionInfo = async () => {
       try {
         const { data: subscription } = await apiClient.get('/subscriptions');
-        // Get user info from API to determine userType
-        let userType = 'INDIVIDUAL';
-        try {
-          const { data: userData } = await apiClient.get('/user/profile');
-          userType = userData?.userType || 'INDIVIDUAL';
-        } catch (error) {
-          console.error('Error fetching user profile:', error);
-        }
+        // Get user info from session to determine userType
+        const userType = session?.user?.userType || 'INDIVIDUAL';
         
         if (subscription) {
           setSubscriptionInfo({
@@ -1141,7 +1133,7 @@ export default function SellerDashboard() {
       } catch (error) {
         console.error('Error fetching subscription info:', error);
         // Set basic info on error
-        const userType = 'INDIVIDUAL';
+        const userType = session?.user?.userType || 'INDIVIDUAL';
         setSubscriptionInfo({
           userType: userType,
           status: 'none',

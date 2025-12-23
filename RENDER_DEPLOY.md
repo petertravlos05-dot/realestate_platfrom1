@@ -737,9 +737,24 @@ repository-root/
 3. Το value πρέπει να είναι το **Internal Database URL** από το PostgreSQL database service
 4. Αν λείπει ή είναι λάθος, προσθέστε/διορθώστε το και **Save Changes**
 
-**🔧 Βήμα 2: Manual Database Setup (Συνιστάται)**
+**🔄 Βήμα 2: Automatic Database Setup**
 
-Αν το automatic build δεν λειτουργεί, κάντε manual push:
+Το `render.yaml` έχει `prisma db push` στο **start command**, οπότε θα τρέξει αυτόματα κάθε φορά που ξεκινάει το service.
+
+**Αν το error εξακολουθεί να εμφανίζεται:**
+
+1. **Redeploy** το backend service:
+   - Backend service → **Manual Deploy** → **Deploy latest commit**
+   - Ή κάντε push νέο commit στο GitHub
+
+2. **Ελέγξτε τα logs** κατά το start:
+   - Backend service → **Logs**
+   - Ψάξτε για "Running prisma db push" ή "All models are now in sync"
+   - Αν βλέπετε errors, δείτε παρακάτω
+
+**🔧 Βήμα 3: Manual Database Setup (Αν το automatic δεν λειτουργεί)**
+
+Αν το automatic δεν λειτουργεί, κάντε manual push:
 
 1. **Πηγαίνετε στο Render Shell**:
    - Render dashboard → **Backend service** → **Shell** tab
@@ -754,10 +769,6 @@ repository-root/
 3. **Ελέγξτε το output**: Θα πρέπει να δείτε "All models are now in sync"
 
 4. **Redeploy** το backend service (για να βεβαιωθείτε ότι όλα είναι OK)
-
-**🔄 Βήμα 3: Automatic (Αν το manual λειτούργησε)**
-
-Μετά το manual push, το `render.yaml` θα κάνει automatic push σε μελλοντικά deploys. Απλά κάντε **Redeploy** του backend service.
 
 **📝 Βήμα 4: Με Migrations (Για Production - Προαιρετικό)**
 

@@ -212,6 +212,10 @@ export default function PropertyDetailsPage() {
         body: JSON.stringify({ message }),
       });
 
+      if (!response.ok) {
+        throw new Error('Αδυναμία αποστολής ερώτησης');
+      }
+
       setShowInquiryModal(false);
       alert('Η ερώτησή σας στάλθηκε με επιτυχία!');
     } catch (err) {
