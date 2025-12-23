@@ -75,10 +75,7 @@ router.get('/', optionalAuth, async (req: AuthRequest, res: Response) => {
     // Base query for all properties
     const baseQuery: Prisma.PropertyFindManyArgs = {
       where: {
-        AND: [
-          // Only approved properties
-          { status: 'approved' },
-          {
+        OR: [
             OR: [
               // Available properties
               { status: { not: 'unavailable' } },
@@ -146,10 +143,7 @@ router.get('/', optionalAuth, async (req: AuthRequest, res: Response) => {
     const query = !userId ? {
       ...baseQuery,
       where: {
-        AND: [
-          { status: 'approved' },
-          { status: { not: 'unavailable' } }
-        ]
+        { status: { not: 'unavailable' } }
       }
     } : baseQuery;
 
@@ -1494,4 +1488,6 @@ router.put('/:id/progress', optionalAuth, async (req: AuthRequest, res: Response
 });
 
 export default router;
+
+
 
