@@ -39,23 +39,28 @@ const BuyerLandingPage = () => {
   ]);
 
   useEffect(() => {
+    if (slides.length === 0) return;
+    
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   useEffect(() => {
     const fetchProperties = async () => {
       try {
         const response = await fetchFromBackend('/properties');
         const data = await response.json();
-        setProperties(data.slice(0, 6));
+        
+        // Ensure data is an array
+        const propertiesArray = Array.isArray(data) ? data : [];
+        setProperties(propertiesArray.slice(0, 6));
         
         // Δημιουργία τυχαίων slides από τις φωτογραφίες των ακινήτων
-        const propertiesWithImages = data.filter((property: any) => 
-          property.images && property.images.length > 0
+        const propertiesWithImages = propertiesArray.filter((property: any) => 
+          property && property.images && Array.isArray(property.images) && property.images.length > 0
         );
         
         if (propertiesWithImages.length > 0) {
@@ -76,7 +81,7 @@ const BuyerLandingPage = () => {
             const propertyTypeLabel = propertyTypeLabels[property.propertyType] || property.propertyType;
             
             return {
-              image: property.images[0],
+              image: property.images && property.images[0] ? property.images[0] : '/images/hero-1.jpg',
               title: property.title || 'Εξαιρετικό Ακίνητο',
               subtitle: `${propertyTypeLabel} σε ${property.city || 'Ελλάδα'} - ${property.price?.toLocaleString()}€`,
               cta: index === 0 ? 'Ξεκινήστε την Αναζήτησή σας' : 
@@ -85,9 +90,11 @@ const BuyerLandingPage = () => {
           });
           
           setSlides(newSlides);
+          // Reset currentSlide if it's out of bounds
+          setCurrentSlide((prev) => prev >= newSlides.length ? 0 : prev);
         } else {
           // Fallback στα default slides αν δεν υπάρχουν ακίνητα με φωτογραφίες
-          setSlides([
+          const defaultSlides = [
             {
               image: '/images/hero-1.jpg',
               title: 'Βρείτε το Ιδανικό Ακίνητό Σας',
@@ -106,10 +113,35 @@ const BuyerLandingPage = () => {
               subtitle: 'Στο πλευρό σας σε κάθε βήμα της διαδικασίας',
               cta: 'Μάθετε Περισσότερα'
             }
-          ]);
+          ];
+          setSlides(defaultSlides);
+          setCurrentSlide(0);
         }
       } catch (error) {
         console.error('Error fetching properties:', error);
+        // Ensure slides are set even on error
+        const defaultSlides = [
+          {
+            image: '/images/hero-1.jpg',
+            title: 'Βρείτε το Ιδανικό Ακίνητό Σας',
+            subtitle: 'Ανακαλύψτε μοναδικές ευκαιρίες σε ακίνητα σε όλη την Ελλάδα',
+            cta: 'Ξεκινήστε την Αναζήτησή σας'
+          },
+          {
+            image: '/images/hero-2.jpg',
+            title: 'Όμορφα Οικόπεδα',
+            subtitle: 'Από την Ελλάδα και όλο τον κόσμο με τις καλύτερες τιμές',
+            cta: 'Δείτε τα Οικόπεδα'
+          },
+          {
+            image: '/images/hero-3.jpg',
+            title: 'Επαγγελματική Υποστήριξη',
+            subtitle: 'Στο πλευρό σας σε κάθε βήμα της διαδικασίας',
+            cta: 'Μάθετε Περισσότερα'
+          }
+        ];
+        setSlides(defaultSlides);
+        setCurrentSlide(0);
       } finally {
         setLoading(false);
       }
@@ -192,25 +224,27 @@ const BuyerLandingPage = () => {
             </div>
           </div>
         ) : (
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={slides[currentSlide].image}
-                alt={slides[currentSlide].title}
-                layout="fill"
-                objectFit="cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-            </motion.div>
-          </AnimatePresence>
+          slides.length > 0 && slides[currentSlide] && (
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={slides[currentSlide]?.image || '/images/hero-1.jpg'}
+                  alt={slides[currentSlide]?.title || 'Real Estate'}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+              </motion.div>
+            </AnimatePresence>
+          )
         )}
 
         <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
@@ -221,10 +255,10 @@ const BuyerLandingPage = () => {
             className="max-w-5xl"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              {slides[currentSlide].title}
+              {slides[currentSlide]?.title || 'Βρείτε το Ιδανικό Ακίνητό Σας'}
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-              {slides[currentSlide].subtitle}
+              {slides[currentSlide]?.subtitle || 'Ανακαλύψτε μοναδικές ευκαιρίες σε ακίνητα σε όλη την Ελλάδα'}
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -236,7 +270,7 @@ const BuyerLandingPage = () => {
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl text-lg font-semibold
                          hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                {slides[currentSlide].cta}
+                {slides[currentSlide]?.cta || 'Ξεκινήστε την Αναζήτησή σας'}
                 <FaArrowRight className="ml-2" />
               </Link>
               <button className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white rounded-xl text-lg font-semibold
@@ -249,7 +283,7 @@ const BuyerLandingPage = () => {
         </div>
 
         {/* Enhanced Slide Indicators */}
-        {!loading && (
+        {!loading && slides.length > 0 && (
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
             {slides.map((_, index) => (
               <button
@@ -345,7 +379,7 @@ const BuyerLandingPage = () => {
           ) : (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {properties.slice(0, 6).map((property: any, index: number) => (
+                {properties.filter((property: any) => property && property.id).slice(0, 6).map((property: any, index: number) => (
                   <motion.div
                     key={property.id}
                     initial={{ opacity: 0, y: 20 }}
@@ -356,8 +390,8 @@ const BuyerLandingPage = () => {
                   >
                     <div className="relative h-56">
                       <Image
-                        src={property.images && property.images.length > 0 ? property.images[0] : '/images/placeholder.jpg'}
-                        alt={property.title}
+                        src={property?.images && Array.isArray(property.images) && property.images.length > 0 ? property.images[0] : '/images/placeholder.jpg'}
+                        alt={property?.title || 'Property'}
                         layout="fill"
                         objectFit="cover"
                         className="group-hover:scale-105 transition-transform duration-300"
@@ -378,26 +412,32 @@ const BuyerLandingPage = () => {
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
-                        {property.title}
+                        {property?.title || 'Ακίνητο'}
                       </h3>
                       <div className="flex items-center text-gray-600 mb-4">
                         <FaMapMarkerAlt className="mr-2 text-blue-500" />
-                        <span>{property.location}</span>
+                        <span>{property?.location || property?.city || 'Ελλάδα'}</span>
                       </div>
                       <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center space-x-4 text-sm text-gray-600">
-                          <div className="flex items-center">
-                            <FaBed className="mr-1 text-blue-500" />
-                            <span>{property.bedrooms || 0}</span>
-                          </div>
-                          <div className="flex items-center">
-                            <FaBath className="mr-1 text-blue-500" />
-                            <span>{property.bathrooms || 0}</span>
-                          </div>
-                          <div className="flex items-center">
-                            <FaRulerCombined className="mr-1 text-blue-500" />
-                            <span>{property.area}m²</span>
-                          </div>
+                          {property?.bedrooms !== undefined && (
+                            <div className="flex items-center">
+                              <FaBed className="mr-1 text-blue-500" />
+                              <span>{property.bedrooms || 0}</span>
+                            </div>
+                          )}
+                          {property?.bathrooms !== undefined && (
+                            <div className="flex items-center">
+                              <FaBath className="mr-1 text-blue-500" />
+                              <span>{property.bathrooms || 0}</span>
+                            </div>
+                          )}
+                          {property?.area && (
+                            <div className="flex items-center">
+                              <FaRulerCombined className="mr-1 text-blue-500" />
+                              <span>{property.area}m²</span>
+                            </div>
+                          )}
                         </div>
                       </div>
                       <motion.div
