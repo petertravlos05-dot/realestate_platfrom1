@@ -2,8 +2,42 @@ import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { validateJwtToken, requireRole, AuthRequest } from '../middleware/auth';
 import { generateId } from '../lib/utils/id';
+import { summarizeDealRoomForAdmin } from '../lib/utils/admin-deal-room-participants';
 
 const router = Router();
+
+// Μόνο relation fields στο include· τα buyerId/sellerId είναι scalars και επιστρέφονται αυτόματα.
+const dealRoomAdminInclude = {
+  participants: {
+    where: { removedAt: null },
+    include: {
+      user: { select: { id: true, name: true, email: true, phone: true } },
+    },
+  },
+  requests: {
+    where: { status: 'ACCEPTED' as const },
+    include: {
+      professional: {
+        select: {
+          userId: true,
+          user: { select: { id: true, name: true, email: true, phone: true } },
+        },
+      },
+    },
+  },
+} as const;
+
+/** Explicit User columns only — avoids DB errors when optional columns (e.g. registeredViaProfessionalJoin) are missing. */
+const userSelectContact = {
+  id: true,
+  name: true,
+  email: true,
+  phone: true,
+} as const;
+
+function dealRoomKey(propertyId: string, buyerId: string) {
+  return `${propertyId}:${buyerId}`;
+}
 
 const VALID_STAGES = [
   'PENDING',
@@ -27,26 +61,25 @@ router.get('/', validateJwtToken, requireRole('ADMIN'), async (req: AuthRequest,
 
     const transactions = await prisma.transaction.findMany({
       where: {
-        interestCancelled: cancelled
+        interestCancelled: cancelled,
       },
       include: {
         property: {
           include: {
-            user: true
-          }
-        },
-        buyer: true,
-        seller: true,
-        agent: true,
-        progress: {
-          include: {
-            createdBy: true
+            user: { select: userSelectContact },
           },
+        },
+        buyer: { select: userSelectContact },
+        agent: { select: userSelectContact },
+        progress: {
           orderBy: {
-            createdAt: 'desc'
-          }
-        }
-      }
+            createdAt: 'desc',
+          },
+          include: {
+            createdBy: { select: { id: true, name: true, email: true } },
+          },
+        },
+      },
     });
 
     // Πρώτα παίρνουμε όλα τα PropertyLeads
@@ -109,6 +142,38 @@ router.get('/', validateJwtToken, requireRole('ADMIN'), async (req: AuthRequest,
       }
     });
 
+    const pairKeys = new Map<string, { propertyId: string; buyerId: string }>();
+    for (const t of transactions) {
+      const k = dealRoomKey(t.propertyId, t.buyerId);
+      pairKeys.set(k, { propertyId: t.propertyId, buyerId: t.buyerId });
+    }
+    for (const lead of leads) {
+      const k = dealRoomKey(lead.propertyId, lead.buyerId);
+      pairKeys.set(k, { propertyId: lead.propertyId, buyerId: lead.buyerId });
+    }
+    const uniquePairs = [...pairKeys.values()];
+
+    const dealRooms =
+      uniquePairs.length > 0
+        ? await prisma.dealRoom.findMany({
+            where: {
+              OR: uniquePairs.map((p) => ({
+                propertyId: p.propertyId,
+                buyerId: p.buyerId,
+              })),
+            },
+            include: dealRoomAdminInclude,
+          })
+        : [];
+
+    const participantsByDealKey = new Map<string, ReturnType<typeof summarizeDealRoomForAdmin>>();
+    const dealRoomIdByKey = new Map<string, string>();
+    for (const room of dealRooms) {
+      const k = dealRoomKey(room.propertyId, room.buyerId);
+      participantsByDealKey.set(k, summarizeDealRoomForAdmin(room));
+      dealRoomIdByKey.set(k, room.id);
+    }
+
     // Format leads and transactions
     const formattedTransactions = [
       ...leads.map((lead: any) => ({
@@ -141,7 +206,10 @@ router.get('/', validateJwtToken, requireRole('ADMIN'), async (req: AuthRequest,
           stage: lead.status ?? "",
           updatedAt: lead.updatedAt.toISOString(),
           notifications: []
-        }
+        },
+        dealRoomParticipants:
+          participantsByDealKey.get(dealRoomKey(lead.propertyId, lead.buyerId)) ?? null,
+        dealRoomId: dealRoomIdByKey.get(dealRoomKey(lead.propertyId, lead.buyerId)) ?? null
       })),
       ...transactions.map((transaction: any) => ({
         id: transaction.id,
@@ -180,7 +248,11 @@ router.get('/', validateJwtToken, requireRole('ADMIN'), async (req: AuthRequest,
                 p.createdBy.email === transaction.agent?.email ? 'agent' : '',
             createdAt: p.createdAt.toISOString()
           }))
-        }
+        },
+        dealRoomParticipants:
+          participantsByDealKey.get(dealRoomKey(transaction.propertyId, transaction.buyerId)) ?? null,
+        dealRoomId:
+          dealRoomIdByKey.get(dealRoomKey(transaction.propertyId, transaction.buyerId)) ?? null
       }))
     ].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
@@ -202,14 +274,12 @@ router.put('/', validateJwtToken, requireRole('ADMIN'), async (req: AuthRequest,
     const transaction = await prisma.transaction.findUnique({
       where: { id: transactionId },
       include: {
-        buyer: true,
-        agent: true,
         property: {
-          include: {
-            user: true
-          }
-        }
-      }
+          select: {
+            userId: true,
+          },
+        },
+      },
     });
 
     if (!transaction) {
@@ -329,7 +399,20 @@ router.get('/:id', validateJwtToken, requireRole('ADMIN'), async (req: AuthReque
       return res.status(404).json({ error: 'Transaction not found' });
     }
 
-    res.json(transaction);
+    const dealRoom = await prisma.dealRoom.findUnique({
+      where: {
+        propertyId_buyerId: {
+          propertyId: transaction.propertyId,
+          buyerId: transaction.buyerId,
+        },
+      },
+      include: dealRoomAdminInclude,
+    });
+
+    const dealRoomParticipants = dealRoom ? summarizeDealRoomForAdmin(dealRoom) : null;
+    const dealRoomId = dealRoom?.id ?? null;
+
+    res.json({ ...transaction, dealRoomParticipants, dealRoomId });
   } catch (error) {
     console.error('Error fetching transaction:', error);
     res.status(500).json({ error: 'Failed to fetch transaction' });
@@ -379,14 +462,14 @@ router.put('/:id/stage', validateJwtToken, requireRole('ADMIN'), async (req: Aut
       const propertyLead = await prisma.propertyLead.findUnique({
         where: { id },
         include: {
-          buyer: true,
           property: {
-            include: {
-              user: true
-            }
+            select: {
+              id: true,
+              userId: true,
+            },
           },
-          transaction: true
-        }
+          transaction: true,
+        },
       });
 
       if (propertyLead) {
@@ -413,13 +496,13 @@ router.put('/:id/stage', validateJwtToken, requireRole('ADMIN'), async (req: Aut
         const connection = await prisma.buyerAgentConnection.findUnique({
           where: { id },
           include: {
-            buyer: true,
             property: {
-              include: {
-                user: true
-              }
-            }
-          }
+              select: {
+                id: true,
+                userId: true,
+              },
+            },
+          },
         });
 
         if (!connection) {
@@ -448,11 +531,12 @@ router.put('/:id/stage', validateJwtToken, requireRole('ADMIN'), async (req: Aut
           include: {
             transaction: true,
             property: {
-              include: {
-                user: true
-              }
-            }
-          }
+              select: {
+                id: true,
+                userId: true,
+              },
+            },
+          },
         });
 
         if (lead) {

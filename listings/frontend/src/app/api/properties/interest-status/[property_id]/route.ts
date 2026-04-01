@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/auth';
 
 export async function GET(
   request: Request,
-  { params }: { params: { property_id: string } }
+  { params }: { params: Promise<{ property_id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -17,10 +17,12 @@ export async function GET(
       );
     }
 
+    const { property_id } = await params;
+
     // Έλεγχος αν υπάρχει ήδη ενδιαφέρον
     const existingInterest = await prisma.transaction.findFirst({
       where: {
-        propertyId: params.property_id,
+        propertyId: property_id,
         buyerId: session.user.id,
         status: 'INTERESTED'
       }

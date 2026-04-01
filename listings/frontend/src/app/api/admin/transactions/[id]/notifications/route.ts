@@ -6,7 +6,7 @@ import { generateId } from '@/lib/utils/id';
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -14,12 +14,13 @@ export async function POST(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const { id } = await params;
     const { message } = await request.json();
 
     const notification = await prisma.transactionNotification.create({
       data: {
         id: generateId(),
-        transactionId: params.id,
+        transactionId: id,
         message,
         type: 'NOTIFICATION'
       }

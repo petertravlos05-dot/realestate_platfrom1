@@ -6,7 +6,7 @@ import { prisma } from '@/lib/prisma';
 // PATCH - Ενημέρωση status του ticket (μόνο για admin)
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -28,6 +28,7 @@ export async function PATCH(
       return NextResponse.json({ error: 'Access denied' }, { status: 403 });
     }
 
+    const { id } = await params;
     const body = await request.json();
     const { status, priority } = body;
 
@@ -36,7 +37,7 @@ export async function PATCH(
     }
 
     const ticket = await prisma.supportTicket.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         status,
         priority: priority || undefined,
@@ -81,7 +82,7 @@ export async function PATCH(
 // GET - Λήψη συγκεκριμένου ticket
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -98,8 +99,9 @@ export async function GET(
       return NextResponse.json({ error: 'User not found' }, { status: 404 });
     }
 
+    const { id } = await params;
     const ticket = await prisma.supportTicket.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         user: {
           select: {

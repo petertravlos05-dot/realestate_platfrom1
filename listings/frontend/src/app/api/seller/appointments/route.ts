@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
 
 export async function GET(req: NextRequest) {
   try {
@@ -23,7 +24,7 @@ export async function GET(req: NextRequest) {
 
       const token = authHeader.split(' ')[1];
       try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'Agapao_ton_stivo05') as { userId: string; role: string };
+        const decoded = jwt.verify(token, getJwtSecret()) as { userId: string; role: string };
         userId = decoded.userId;
         userRole = decoded.role;
       } catch (error) {
@@ -40,7 +41,7 @@ export async function GET(req: NextRequest) {
       where: { userId: userId },
       select: { id: true, title: true, price: true, city: true }
     });
-    const propertyIds = properties.map(p => p.id);
+    const propertyIds = properties.map((p: typeof properties[0]) => p.id);
     console.log('propertyIds:', propertyIds);
 
     // --- ΝΕΟ: πάρε τα query params ---

@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/auth';
 
 export async function POST(
   request: Request,
-  { params }: { params: { property_id: string } }
+  { params }: { params: Promise<{ property_id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -17,9 +17,11 @@ export async function POST(
       );
     }
 
+    const { property_id } = await params;
+
     // Έλεγχος αν το ακίνητο υπάρχει
     const property = await prisma.property.findUnique({
-      where: { id: params.property_id },
+      where: { id: property_id },
     });
 
     if (!property) {
@@ -33,7 +35,7 @@ export async function POST(
     const existingFavorite = await prisma.favorite.findFirst({
       where: {
         userId: session.user.id,
-        propertyId: params.property_id,
+        propertyId: property_id,
       },
     });
 
@@ -45,7 +47,7 @@ export async function POST(
 
       // Ενημέρωση του αριθμού ενδιαφερόμενων
       await prisma.propertyStats.update({
-        where: { propertyId: params.property_id },
+        where: { propertyId: property_id },
         data: { interestedCount: { decrement: 1 } },
       });
 
@@ -55,13 +57,13 @@ export async function POST(
       await prisma.favorite.create({
         data: {
           userId: session.user.id,
-          propertyId: params.property_id,
+          propertyId: property_id,
         },
       });
 
       // Ενημέρωση του αριθμού ενδιαφερόμενων
       await prisma.propertyStats.update({
-        where: { propertyId: params.property_id },
+        where: { propertyId: property_id },
         data: { interestedCount: { increment: 1 } },
       });
 

@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import { ListObjectsV2Command, S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { parse } from 'path';
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
-  const propertyId = params.id;
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id: propertyId } = await params;
   const s3 = new S3Client({
     region: process.env.AWS_REGION!,
     credentials: {
@@ -18,9 +18,10 @@ export async function GET(request: Request, { params }: { params: { id: string }
       Prefix: `${propertyId}/`,
     });
     const data = await s3.send(command);
-    const documents = (data.Contents || [])
-      .filter(obj => obj.Key && !obj.Key.endsWith('/'))
-      .map(obj => {
+    const contents = data.Contents || [];
+    const documents = contents
+      .filter((obj) => obj.Key && !obj.Key.endsWith('/'))
+      .map((obj) => {
         // Εξαγωγή τύπου εγγράφου από το key
         let type = '';
         if (obj.Key) {
@@ -39,7 +40,8 @@ export async function GET(request: Request, { params }: { params: { id: string }
           type,
           status: 'uploaded',
           uploadedAt: obj.LastModified,
-          fileUrl: `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${obj.Key}`,
+          // DO NOT return direct S3 URL - client must request signed URL via backend /api/files/download-url
+          // Frontend should call backend API to get signed URLs
           size: obj.Size,
         };
       });
@@ -50,8 +52,8 @@ export async function GET(request: Request, { params }: { params: { id: string }
   }
 }
 
-export async function POST(request: Request, { params }: { params: { id: string } }) {
-  const propertyId = params.id;
+export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id: propertyId } = await params;
   const s3 = new S3Client({
     region: process.env.AWS_REGION!,
     credentials: {
@@ -85,9 +87,13 @@ export async function POST(request: Request, { params }: { params: { id: string 
       ContentType: (file as File).type,
     }));
 
-    const fileUrl = `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${s3Key}`;
-
-    return NextResponse.json({ success: true, fileUrl });
+    // DO NOT return direct S3 URL - client must request signed URL via backend /api/files/download-url
+    // Return S3 key instead - client will request signed URL separately
+    return NextResponse.json({ 
+      success: true, 
+      s3Key,
+      message: 'File uploaded successfully. Use backend /api/files/download-url?key=<s3Key> to get signed URL.'
+    });
   } catch (error) {
     console.error('Error uploading document to S3:', error);
     return NextResponse.json({ error: 'Σφάλμα κατά το ανέβασμα στο S3' }, { status: 500 });

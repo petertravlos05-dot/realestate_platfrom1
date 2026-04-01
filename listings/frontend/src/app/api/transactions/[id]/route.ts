@@ -5,12 +5,13 @@ import { authOptions } from '@/lib/auth';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const transaction = await prisma.transaction.findUnique({
       where: {
-        id: params.id,
+        id,
       },
       include: {
         property: true,
@@ -38,15 +39,16 @@ export async function GET(
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
     const { stage, ...updateData } = body;
 
     const transaction = await prisma.transaction.update({
       where: {
-        id: params.id,
+        id,
       },
       data: {
         ...updateData,
@@ -76,9 +78,10 @@ export async function PUT(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     // Έλεγχος session
     const session = await getServerSession(authOptions);
     if (!session || session.user.role !== 'BUYER') {
@@ -87,7 +90,7 @@ export async function DELETE(
 
     // Βρες τη συναλλαγή
     const transaction = await prisma.transaction.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
     if (!transaction) {
       return NextResponse.json({ error: 'Transaction not found' }, { status: 404 });
@@ -97,8 +100,8 @@ export async function DELETE(
     }
 
     // Hard delete
-    await prisma.transaction.delete({ where: { id: params.id } });
-    console.log(`[DELETE] Transaction ${params.id} deleted by buyer ${session.user.id}`);
+    await prisma.transaction.delete({ where: { id } });
+    console.log(`[DELETE] Transaction ${id} deleted by buyer ${session.user.id}`);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error deleting transaction:', error);

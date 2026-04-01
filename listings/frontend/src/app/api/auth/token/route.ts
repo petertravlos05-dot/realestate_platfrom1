@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function GET() {
   try {
@@ -30,13 +34,22 @@ export async function GET() {
         email: session.user.email,
         role: (session.user as any).role,
       },
-      process.env.JWT_SECRET || 'Agapao_ton_stivo05',
+      getJwtSecret(),
       { expiresIn: '7d' }
     );
 
     console.log('[DEBUG] /api/auth/token - Generated token for userId:', session.user.id);
 
-    return NextResponse.json({ token });
+    return NextResponse.json(
+      { token },
+      {
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          Pragma: 'no-cache',
+          Expires: '0',
+        },
+      }
+    );
   } catch (error) {
     console.error('[DEBUG] /api/auth/token - Token generation error:', error);
     return NextResponse.json(

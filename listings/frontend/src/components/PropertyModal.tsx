@@ -1,5 +1,15 @@
 import { toast } from 'react-hot-toast';
-import { Property } from '@prisma/client';
+import * as Sentry from '@sentry/nextjs';
+
+interface Property {
+  id: string;
+  title?: string;
+  description?: string;
+  price?: number;
+  status?: string;
+  images?: string[];
+  [key: string]: any;
+}
 
 interface PropertyWithProgress extends Property {
   progress: {
@@ -75,6 +85,7 @@ const PropertyModal: React.FC<PropertyModalProps> = ({ property, onClose, onUpda
       });
     } catch (error) {
       console.error('❌ Error in handleProgressUpdate:', error);
+      Sentry.captureException(error);
       toast.error('Σφάλμα κατά την ενημέρωση της προόδου');
     }
   };
@@ -92,6 +103,7 @@ const PropertyModal: React.FC<PropertyModalProps> = ({ property, onClose, onUpda
       console.log('Status change completed successfully');
     } catch (error) {
       console.error('❌ Error in handleStatusChange:', error);
+      Sentry.captureException(error);
       toast.error('Σφάλμα κατά την αλλαγή της κατάστασης');
     }
   };

@@ -3,11 +3,19 @@ import { prisma } from '@/lib/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { validateJwtToken } from '@/middleware';
+import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
+import { generateId } from '@/lib/utils/id';
+import * as Sentry from '@sentry/nextjs';
 
 export async function POST(
   request: Request,
-  { params }: { params: { property_id: string } }
+  { params }: { params: Promise<{ property_id: string }> }
 ) {
+  const { property_id } = await params;
+  console.log(`\n[express-interest] ===== POST /api/buyer/properties/${property_id}/express-interest =====`);
+  console.log(`[express-interest] Request received at: ${new Date().toISOString()}`);
+  
   try {
     // Πρώτα δοκιμάζουμε το JWT token (για το mobile app)
     const jwtUser = await validateJwtToken(request as any);
@@ -29,7 +37,8 @@ export async function POST(
       );
     }
 
-    const { property_id } = params;
+    // property_id already extracted above
+    console.log(`[express-interest] User authenticated: userId=${userId}`);
 
     // Έλεγχος αν το ακίνητο υπάρχει
     const property = await prisma.property.findUnique({
@@ -89,12 +98,7 @@ export async function POST(
     });
 
     // Δημιουργία ειδοποίησης για τον πωλητή (SELLER_INTEREST)
-    console.log('=== DEBUG: Creating SELLER_INTEREST notification ===');
-    console.log('Property userId:', property.userId);
-    console.log('Property title:', property.title);
-    console.log('Buyer name:', lead.buyer.name);
-    
-    const sellerNotification = await prisma.notification.create({
+    await prisma.notification.create({
       data: {
         userId: property.userId,
         type: 'SELLER_INTEREST',
@@ -111,11 +115,6 @@ export async function POST(
         }
       }
     });
-    
-    console.log('=== DEBUG: SELLER_INTEREST notification created ===');
-    console.log('Notification ID:', sellerNotification.id);
-    console.log('Notification userId:', sellerNotification.userId);
-    console.log('Notification type:', sellerNotification.type);
 
     // Έλεγχος αν υπάρχει ήδη transaction
     let transaction = await prisma.transaction.findFirst({
@@ -154,19 +153,12 @@ export async function POST(
             leadId: lead.id
           }
         });
-        console.log('✅ Restored cancelled transaction:', {
-          id: transaction.id,
-          status: transaction.status,
-          stage: transaction.stage,
-          interestCancelled: transaction.interestCancelled
-        });
         
         // Ενημερώνουμε το lead με το transaction ID
         await prisma.propertyLead.update({
           where: { id: lead.id },
           data: { transactionId: transaction.id }
         });
-        console.log('✅ Lead updated with restored transaction ID:', lead.id);
         
         // Δημιουργούμε progress entry για την επαναφορά
         await prisma.transactionProgress.create({
@@ -177,23 +169,6 @@ export async function POST(
             createdById: userId
           }
         });
-        
-        // Ενημερώνουμε και το τελευταίο progress entry ώστε να εμφανίζει το σωστό στάδιο
-        const lastProgress = await prisma.transactionProgress.findFirst({
-          where: { transactionId: transaction.id },
-          orderBy: { createdAt: 'desc' }
-        });
-        
-        if (lastProgress && lastProgress.stage === 'CANCELLED') {
-          await prisma.transactionProgress.update({
-            where: { id: lastProgress.id },
-            data: {
-              stage: 'PENDING',
-              notes: 'Η συναλλαγή επαναφέρθηκε από τον αγοραστή'
-            }
-          });
-        }
-        
       } else {
         // Δημιουργία νέου transaction
         let agentId = null;
@@ -206,30 +181,304 @@ export async function POST(
             propertyId: property_id,
             buyerId: userId,
             agentId: agentId ?? null,
+            sellerId: property.userId,
             status: 'INTERESTED',
             stage: 'PENDING',
             leadId: lead.id
           }
         });
-        console.log('✅ Created new transaction:', transaction.id);
 
         // Ενημερώνουμε το lead με το transaction ID
         await prisma.propertyLead.update({
           where: { id: lead.id },
           data: { transactionId: transaction.id }
         });
-        console.log('✅ Lead updated with new transaction ID:', lead.id);
       }
+    }
+
+    // Create Deal Room - Use backend API /api/deals POST endpoint
+    // This backend route creates deal room with Prisma (EXACTLY like buyer-agent/connect)
+    // We call it to ensure deal room is created correctly without creating duplicate lead/transaction
+    let dealRoomId = null;
+    try {
+      const backendUrl = process.env.NEXT_PUBLIC_API_URL || process.env.BACKEND_URL || 'http://localhost:3001';
+      console.log(`[express-interest] Backend URL: ${backendUrl}`);
+      
+      // Get session to create JWT token for backend authentication
+      const session = await getServerSession(authOptions);
+      console.log(`[express-interest] Session for deal room creation:`, {
+        hasSession: !!session,
+        userId: session?.user?.id,
+        email: session?.user?.email
+      });
+      
+      if (!session?.user?.id) {
+        console.error('[express-interest] ❌ No session found for deal room creation');
+      } else {
+        // Create JWT token from session for backend authentication
+        const token = jwt.sign(
+          {
+            userId: session.user.id,
+            email: session.user.email,
+            role: (session.user as any).role,
+          },
+          getJwtSecret(),
+          { expiresIn: '7d' }
+        );
+
+        const headers: Record<string, string> = {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        };
+        
+        // Call backend /api/deals POST which creates deal room with Prisma
+        // This is the same endpoint used by other parts of the app (EXACTLY like buyer-agent/connect)
+        const fetchUrl = `${backendUrl}/api/deals`;
+        console.log(`[express-interest] ===== CALLING BACKEND TO CREATE DEAL ROOM =====`);
+        console.log(`[express-interest] POST ${fetchUrl}`, {
+          propertyId: property_id,
+          userId: session.user.id,
+          hasToken: !!token,
+          tokenLength: token.length
+        });
+        
+        const response = await fetch(fetchUrl, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ propertyId: property_id }),
+          credentials: 'include',
+        });
+
+        console.log(`[express-interest] Backend response status: ${response.status} ${response.statusText}`);
+        console.log(`[express-interest] Response ok: ${response.ok}`);
+
+        if (response.ok) {
+          const data = await response.json();
+          dealRoomId = data.dealRoomId;
+          console.log('[express-interest] ✅✅✅ DEAL ROOM CREATED SUCCESSFULLY ✅✅✅');
+          console.log('[express-interest] Deal room details:', {
+            dealRoomId,
+            isNew: data.isNew,
+            status: data.status,
+            propertyId: data.propertyId,
+            buyerId: data.buyerId,
+            sellerId: data.sellerId,
+            agentId: data.agentId,
+            participants: data.participants?.map((p: any) => ({
+              userId: p.userId,
+              role: p.role,
+              email: p.user?.email
+            }))
+          });
+        } else {
+          const errorText = await response.text();
+          console.error(`[express-interest] ❌❌❌ BACKEND DEAL ROOM CREATION FAILED ❌❌❌`);
+          console.error(`[express-interest] Status: ${response.status} ${response.statusText}`);
+          console.error(`[express-interest] Error:`, errorText);
+          console.error(`[express-interest] Request details:`, {
+            url: fetchUrl,
+            propertyId: property_id,
+            userId: session.user.id,
+            headers: Object.keys(headers)
+          });
+          
+          // Fallback: Try to create deal room directly with Prisma (like buyer-agent/connect)
+          console.log('[express-interest] Attempting fallback: Create deal room directly with Prisma');
+          try {
+            // Find agent via PropertyLead
+            let agentId: string | null = null;
+            const leadForAgent = await prisma.propertyLead.findFirst({
+              where: {
+                propertyId: property_id,
+                buyerId: session.user.id,
+              },
+              select: { agentId: true },
+            });
+            if (leadForAgent?.agentId) {
+              agentId = leadForAgent.agentId;
+            }
+
+            // Check if deal room already exists
+            const existingDealRoom = await (prisma as any).dealRoom?.findUnique({
+              where: {
+                propertyId_buyerId: {
+                  propertyId: property_id,
+                  buyerId: session.user.id,
+                },
+              },
+            });
+
+            if (existingDealRoom) {
+              dealRoomId = existingDealRoom.id;
+              console.log('[express-interest] ✅ Fallback: Deal room already exists:', dealRoomId);
+            } else {
+              // Create new deal room with Prisma (EXACTLY like backend /api/buyer-agent/connect)
+              const newDealRoom = await (prisma as any).dealRoom?.create({
+                data: {
+                  propertyId: property_id,
+                  buyerId: session.user.id,
+                  sellerId: property.userId,
+                  agentId,
+                  status: 'DRAFT',
+                  participants: {
+                    create: [
+                      { userId: session.user.id, role: 'BUYER' as const },
+                      { userId: property.userId, role: 'SELLER' as const },
+                      ...(agentId ? [{ userId: agentId, role: 'AGENT' as const }] : []),
+                    ],
+                  },
+                  threads: {
+                    create: [
+                      {
+                        type: 'GROUP',
+                        title: 'Group Chat',
+                        members: {
+                          create: [
+                            { userId: session.user.id },
+                            { userId: property.userId },
+                            ...(agentId ? [{ userId: agentId }] : []),
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              });
+              dealRoomId = newDealRoom?.id;
+              console.log('[express-interest] ✅✅✅ FALLBACK: Deal room created with Prisma:', dealRoomId);
+            }
+          } catch (fallbackError: any) {
+            console.error('[express-interest] ❌ Fallback Prisma creation also failed:', {
+              error: fallbackError?.message || fallbackError,
+              stack: fallbackError?.stack
+            });
+          }
+        }
+      }
+    } catch (dealRoomError: any) {
+      // Log error but don't fail the request - Deal Room creation is optional
+      // Same error handling as backend /api/buyer-agent/connect
+      console.error('[express-interest] ❌❌❌ EXCEPTION CALLING BACKEND FOR DEAL ROOM ❌❌❌');
+      console.error('[express-interest] Error:', {
+        message: dealRoomError?.message || dealRoomError,
+        stack: dealRoomError?.stack,
+        propertyId: property_id
+      });
+      
+      // Try fallback Prisma creation even on exception
+      try {
+        const session = await getServerSession(authOptions);
+        if (session?.user?.id) {
+          let agentId: string | null = null;
+          const leadForAgent = await prisma.propertyLead.findFirst({
+            where: {
+              propertyId: property_id,
+              buyerId: session.user.id,
+            },
+            select: { agentId: true },
+          });
+          if (leadForAgent?.agentId) {
+            agentId = leadForAgent.agentId;
+          }
+
+          const existingDealRoom = await (prisma as any).dealRoom?.findUnique({
+            where: {
+              propertyId_buyerId: {
+                propertyId: property_id,
+                buyerId: session.user.id,
+              },
+            },
+          });
+
+          if (!existingDealRoom) {
+            const newDealRoom = await (prisma as any).dealRoom?.create({
+              data: {
+                propertyId: property_id,
+                buyerId: session.user.id,
+                sellerId: property.userId,
+                agentId,
+                status: 'DRAFT',
+                participants: {
+                  create: [
+                    { userId: session.user.id, role: 'BUYER' as const },
+                    { userId: property.userId, role: 'SELLER' as const },
+                    ...(agentId ? [{ userId: agentId, role: 'AGENT' as const }] : []),
+                  ],
+                },
+                threads: {
+                  create: [
+                    {
+                      type: 'GROUP',
+                      title: 'Group Chat',
+                      members: {
+                        create: [
+                          { userId: session.user.id },
+                          { userId: property.userId },
+                          ...(agentId ? [{ userId: agentId }] : []),
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+            });
+            dealRoomId = newDealRoom?.id;
+            console.log('[express-interest] ✅✅✅ EXCEPTION FALLBACK: Deal room created:', dealRoomId);
+          }
+        }
+      } catch (fallbackError2: any) {
+        console.error('[express-interest] ❌ Exception fallback also failed:', fallbackError2);
+      }
+    }
+
+    console.log(`[express-interest] ✅ Express interest completed:`, {
+      propertyId: property_id,
+      leadId: lead.id,
+      transactionId: transaction.id,
+      dealRoomId: dealRoomId || 'NOT_CREATED'
+    });
+
+    // Debug: Verify deal room was created by checking database
+    if (dealRoomId) {
+      try {
+        const verifyDealRoom = await (prisma as any).dealRoom?.findUnique({
+          where: { id: dealRoomId },
+          include: {
+            participants: {
+              select: {
+                userId: true,
+                role: true,
+                removedAt: true
+              }
+            }
+          }
+        });
+        console.log(`[express-interest] 🔍 VERIFICATION: Deal room exists in DB:`, {
+          dealRoomId,
+          exists: !!verifyDealRoom,
+          participants: verifyDealRoom?.participants?.map((p: any) => ({
+            userId: p.userId,
+            role: p.role,
+            removedAt: p.removedAt
+          }))
+        });
+      } catch (verifyError) {
+        console.error('[express-interest] ⚠️ Could not verify deal room:', verifyError);
+      }
+    } else {
+      console.error('[express-interest] ❌❌❌ DEAL ROOM ID IS NULL - NOT CREATED ❌❌❌');
     }
 
     return NextResponse.json({ 
       message: 'Το ενδιαφέρον σας καταγράφηκε με επιτυχία',
       lead,
-      transaction
+      transaction,
+      dealRoomId
     });
 
   } catch (error) {
     console.error('Error expressing interest:', error);
+    Sentry.captureException(error);
     return NextResponse.json(
       { error: 'Σφάλμα κατά την εκδήλωση ενδιαφέροντος' },
       { status: 500 }

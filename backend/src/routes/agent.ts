@@ -2,11 +2,13 @@ import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { Prisma } from '@prisma/client';
 import { validateJwtToken, optionalAuth, AuthRequest } from '../middleware/auth';
+import { mediumRateLimit, userRateLimit } from '../middleware/rateLimit';
+import { resolvePropertyImages } from '../lib/utils/property-images';
 
 const router = Router();
 
 // GET /api/agent/properties - Get all properties for agent
-router.get('/properties', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.get('/properties', mediumRateLimit, validateJwtToken, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
 
@@ -101,7 +103,36 @@ router.get('/properties', validateJwtToken, async (req: AuthRequest, res: Respon
 
     const properties = await prisma.property.findMany(query);
 
-    res.json(properties);
+    const propertyIds = properties.map(p => p.id);
+    const soldPropertyIds = new Set(
+      (await prisma.dealRoom.findMany({
+        where: {
+          propertyId: { in: propertyIds },
+          status: { in: ['COMPLETED', 'CLOSED'] },
+        },
+        select: { propertyId: true },
+      })).map(d => d.propertyId)
+    );
+
+    const parseIsRent = (a: unknown): boolean => {
+      if (!a) return false;
+      const obj = typeof a === 'string' ? (() => { try { return JSON.parse(a); } catch { return null; } })() : a;
+      if (!obj || typeof obj !== 'object') return false;
+      const v = (obj as Record<string, unknown>).listingType ?? (obj as Record<string, unknown>).transactionType;
+      return String(v || '').toLowerCase() === 'rent';
+    };
+
+    const propertiesWithSold = properties.map(p => {
+      const amenities = (p as { amenities?: unknown }).amenities;
+      const isRent = parseIsRent(amenities);
+      return {
+        ...p,
+        propertySold: soldPropertyIds.has(p.id) || (p as any).isSold,
+        isRent,
+      };
+    });
+
+    res.json(propertiesWithSold);
   } catch (error) {
     console.error('Error fetching agent properties:', error);
     res.status(500).json({
@@ -136,7 +167,8 @@ router.get('/properties/:property_id', optionalAuth, async (req: AuthRequest, re
       });
     }
 
-    res.json(property);
+    const images = await resolvePropertyImages(property.images || []);
+    res.json({ ...property, images });
   } catch (error) {
     console.error('Error fetching property:', error);
     res.status(500).json({
@@ -146,7 +178,7 @@ router.get('/properties/:property_id', optionalAuth, async (req: AuthRequest, re
 });
 
 // GET /api/agents/clients - Get agent clients (MUST be before /:id route)
-router.get('/clients', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.get('/clients', mediumRateLimit, validateJwtToken, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
 
@@ -272,6 +304,7 @@ router.get('/clients', validateJwtToken, async (req: AuthRequest, res: Response)
 
       return {
         id: client.id,
+        buyerId: client.buyer.id,
         name: client.buyer.name,
         email: client.buyer.email,
         phone: client.buyer.phone,

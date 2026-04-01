@@ -41,9 +41,12 @@ export async function POST(request: Request) {
       ContentType: file.type
     }));
 
-    const fileUrl = `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
-
-    return NextResponse.json({ fileUrl });
+    // DO NOT return direct S3 URL - client must request signed URL via backend /api/files/download-url
+    // Return S3 key instead - client will request signed URL separately
+    return NextResponse.json({ 
+      s3Key: fileName,
+      message: 'File uploaded successfully. Use backend /api/files/download-url?key=<s3Key> to get signed URL.'
+    });
   } catch (error) {
     console.error('Error uploading image:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });

@@ -1,10 +1,11 @@
 import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { validateJwtToken, AuthRequest } from '../middleware/auth';
+import { resolvePropertyImages } from '../lib/utils/property-images';
 
 const router = Router();
 
-// GET /api/favorites - Get all favorites
+// GET /api/favorites - Get all favorites (with resolved image URLs like /properties)
 router.get('/', validateJwtToken, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
@@ -41,7 +42,47 @@ router.get('/', validateJwtToken, async (req: AuthRequest, res: Response) => {
       },
     });
 
-    res.json(favorites);
+    const propertyIds = favorites.map((f) => f.property?.id).filter(Boolean) as string[];
+
+    // Sold: COMPLETED or CLOSED
+    const soldPropertyIds = new Set(
+      propertyIds.length > 0
+        ? (await prisma.dealRoom.findMany({
+            where: {
+              propertyId: { in: propertyIds },
+              status: { in: ['COMPLETED', 'CLOSED', 'CLOSED_PROPERTY_SOLD'] },
+            },
+            select: { propertyId: true },
+          })).map((d) => d.propertyId)
+        : []
+    );
+
+    // Deposit locked: ACTIVE with lawyerApprovedBasicDocumentsAt
+    const depositLockedPropertyIds = new Set(
+      propertyIds.length > 0
+        ? (await prisma.dealRoom.findMany({
+            where: {
+              propertyId: { in: propertyIds },
+              status: 'ACTIVE',
+              lawyerApprovedBasicDocumentsAt: { not: null },
+            },
+            select: { propertyId: true },
+          })).map((d) => d.propertyId)
+        : []
+    );
+
+    // Resolve property images and add depositLocked
+    const favoritesWithResolvedImages = await Promise.all(
+      favorites.map(async (f) => {
+        if (!f.property) return f;
+        const images = await resolvePropertyImages(f.property.images || []);
+        const sold = soldPropertyIds.has(f.property.id);
+        const depositLocked = !sold && depositLockedPropertyIds.has(f.property.id);
+        return { ...f, property: { ...f.property, images, depositLocked } };
+      })
+    );
+
+    res.json(favoritesWithResolvedImages);
   } catch (error) {
     console.error('Error fetching favorites:', error);
     res.status(500).json({
@@ -150,6 +191,12 @@ router.delete('/', validateJwtToken, async (req: AuthRequest, res: Response) => 
 });
 
 export default router;
+
+
+
+
+
+
 
 
 

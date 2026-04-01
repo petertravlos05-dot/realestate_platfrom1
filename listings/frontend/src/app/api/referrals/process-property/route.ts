@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     // Bonus πόντου για συγκεκριμένες περιοχές
     const premiumAreas = ['Αθήνα', 'Θεσσαλονίκη', 'Πειραιάς', 'Πάτρα'];
-    if (location && premiumAreas.some(area => location.includes(area))) {
+    if (location && premiumAreas.some((area: string) => location.includes(area))) {
       points = Math.floor(points * 1.5); // +50% για premium περιοχές
     }
 
@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
       breakdown: {
         basePoints: area ? Math.floor(area / 10) : 0,
         areaBonus: area > 200 ? Math.floor((area - 200) / 20) * 2 : 0,
-        locationBonus: location && premiumAreas.some(area => location.includes(area)) ? '50%' : '0%',
+        locationBonus: location && premiumAreas.some((area: string) => location.includes(area)) ? '50%' : '0%',
         minimumPoints: 50
       }
     });

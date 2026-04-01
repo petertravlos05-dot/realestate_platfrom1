@@ -8,6 +8,7 @@ import { HeartIcon, HeartIcon as HeartIconSolid } from '@heroicons/react/24/soli
 import { useSession } from 'next-auth/react';
 import { toast } from 'react-hot-toast';
 import { apiClient, fetchFromBackend } from '@/lib/api/client';
+import * as Sentry from '@sentry/nextjs';
 
 interface Property {
   id: string;
@@ -144,6 +145,7 @@ export default function PropertyDetailsModal({
       setIsFavorite(data.some((favorite: any) => favorite.propertyId === property.id));
     } catch (error) {
       console.error('Error checking favorite status:', error);
+      Sentry.captureException(error);
     }
   };
 
@@ -169,6 +171,7 @@ export default function PropertyDetailsModal({
       );
     } catch (error) {
       console.error('Error toggling favorite:', error);
+      Sentry.captureException(error);
       toast.error('Σφάλμα κατά την ενημέρωση των αγαπημένων');
     } finally {
       setIsLoading(false);
@@ -200,6 +203,7 @@ export default function PropertyDetailsModal({
       onClose();
     } catch (error) {
       console.error('Error expressing interest:', error);
+      Sentry.captureException(error);
       const errorMessage = error instanceof Error ? error.message : 'Σφάλμα κατά την έκφραση ενδιαφέροντος';
       
       // Ειδική διαχείριση για το μήνυμα του seller
@@ -238,6 +242,8 @@ export default function PropertyDetailsModal({
         return 'Ανακαινισμένο';
       case 'needsRenovation':
         return 'Χρήζει ανακαίνισης';
+      case 'new':
+        return 'Αριστη';
       default:
         return 'Δεν έχει οριστεί';
     }

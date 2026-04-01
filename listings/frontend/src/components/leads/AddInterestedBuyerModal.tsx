@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes, FaUser, FaEnvelope, FaPhone, FaBuilding, FaPaperPlane, FaKey, FaHandshake, FaEye, FaInfoCircle } from 'react-icons/fa';
-
-interface PropertyOption {
-  id: string;
-  title: string;
-}
+import { FaTimes, FaUser, FaEnvelope, FaPhone, FaBuilding, FaPaperPlane, FaKey, FaHandshake, FaEye, FaInfoCircle, FaChevronDown, FaSpinner, FaArrowLeft, FaCheck } from 'react-icons/fa';
+import PropertyPickerModal, { type PropertyOptionExtended } from './PropertyPickerModal';
+import { apiClient } from '@/lib/api/client';
 
 interface AddInterestedBuyerModalProps {
   open: boolean;
@@ -13,7 +10,7 @@ interface AddInterestedBuyerModalProps {
   onSuccess: (connectionId: string) => void;
   agentId: string;
   propertyId: string;
-  properties: PropertyOption[];
+  properties: PropertyOptionExtended[];
 }
 
 const AddInterestedBuyerModal: React.FC<AddInterestedBuyerModalProps> = ({ 
@@ -40,10 +37,18 @@ const AddInterestedBuyerModal: React.FC<AddInterestedBuyerModalProps> = ({
   const [otpError, setOtpError] = useState<string | null>(null);
   const [propertyViewedError, setPropertyViewedError] = useState<any>(null);
   const [interestCancelled, setInterestCancelled] = useState(false);
+  const [isPropertyPickerOpen, setIsPropertyPickerOpen] = useState(false);
 
   useEffect(() => {
     setSelectedPropertyId(propertyId);
   }, [propertyId]);
+
+  // Auto-select first property when only one available and none pre-selected
+  useEffect(() => {
+    if (properties.length === 1 && !propertyId && !selectedPropertyId) {
+      setSelectedPropertyId(properties[0].id);
+    }
+  }, [properties, propertyId, selectedPropertyId]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -158,24 +163,16 @@ const AddInterestedBuyerModal: React.FC<AddInterestedBuyerModalProps> = ({
     setOtpLoading(true);
     setOtpError(null);
     try {
-      const res = await fetch('/api/buyer-agent/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          buyerId,
-          agentId: agentIdForOtp,
-          propertyId: propertyIdForOtp,
-          otpCode,
-        }),
+      const { data } = await apiClient.post('/buyer-agent/verify-otp', {
+        buyerId,
+        agentId: agentIdForOtp,
+        propertyId: propertyIdForOtp,
+        otpCode,
       });
-      const data = await res.json();
-      if (!res.ok) {
-        setOtpError(data.error || data.message || 'Λάθος OTP.');
-      } else {
-        onSuccess(data.connection?.id || '');
-      }
-    } catch (err) {
-      setOtpError('Σφάλμα δικτύου.');
+      onSuccess(data.connection?.id || '');
+    } catch (err: any) {
+      const msg = err?.response?.data?.error || err?.response?.data?.message || 'Λάθος OTP.';
+      setOtpError(msg);
     } finally {
       setOtpLoading(false);
     }
@@ -183,22 +180,24 @@ const AddInterestedBuyerModal: React.FC<AddInterestedBuyerModalProps> = ({
 
   if (interestCancelled) {
     return (
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden p-8 text-center">
-          <div className="mb-6">
-            <span className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100">
-              <FaHandshake className="w-10 h-10 text-blue-600" />
-            </span>
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden p-8 text-center"
+        >
+          <div className="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-indigo-100">
+            <FaHandshake className="w-10 h-10 text-indigo-600" />
           </div>
-          <h2 className="text-2xl font-bold mb-2">Είχατε εκδηλώσει ενδιαφέρον για αυτό το ακίνητο και το αφαιρέσατε</h2>
-          <p className="text-gray-700 mb-6">Αν θέλετε να ξαναενδιαφερθείτε, επικοινωνήστε με τους admin.</p>
+          <h2 className="text-xl font-bold text-gray-900 mb-2">Είχατε αφαιρέσει το ενδιαφέρον</h2>
+          <p className="text-gray-600 mb-8 leading-relaxed">Για να ξαναενδιαφερθείτε, επικοινωνήστε με την υποστήριξη.</p>
           <button
             onClick={() => { setInterestCancelled(false); onClose(); }}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-indigo-600 transition-all duration-200"
           >
             Κλείσιμο
           </button>
-        </div>
+        </motion.div>
       </div>
     );
   }
@@ -206,62 +205,48 @@ const AddInterestedBuyerModal: React.FC<AddInterestedBuyerModalProps> = ({
   if (propertyViewedError) {
     const isOwnerError = propertyViewedError.code === 'PROPERTY_OWNER';
     return (
-      <AnimatePresence>
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden p-8 text-center"
         >
-          <motion.div 
-            initial={{ scale: 0.8, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.8, opacity: 0, y: 20 }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 300, 
-              damping: 30,
-              duration: 0.4
-            }}
-            className="bg-white rounded-xl shadow-lg w-full max-w-md overflow-hidden p-6 text-center"
-          >
-            <div className="mb-4">
-              <span className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${
-                isOwnerError ? 'bg-red-100 text-red-600' : 'bg-orange-100 text-orange-600'
-              }`}>
-                {isOwnerError ? (
-                  <FaInfoCircle className="w-8 h-8" />
-                ) : (
-                  <FaEye className="w-8 h-8" />
-                )}
-              </span>
-            </div>
-            <h2 className="text-xl font-semibold mb-3 text-gray-900">
-              {isOwnerError ? 'Δεν μπορείτε να καταχωρήσετε αυτόν τον ενδιαφερόμενο' : 'Ο ενδιαφερόμενος έχει δει ήδη αυτό το ακίνητο'}
-            </h2>
-            <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-              {propertyViewedError.message}
-            </p>
-            <div className="space-y-3">
-              <button
-                onClick={() => { setPropertyViewedError(null); onClose(); }}
-                className="w-full bg-blue-600 text-white py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
-              >
-                Κατάλαβα
-              </button>
-              <button
-                onClick={() => { setPropertyViewedError(null); }}
-                className="w-full bg-gray-600 text-white py-2.5 rounded-lg hover:bg-gray-700 transition-colors font-medium text-sm"
-              >
-                Δοκιμάστε με άλλον ενδιαφερόμενο
-              </button>
-            </div>
-          </motion.div>
+          <div className={`mb-5 inline-flex items-center justify-center w-16 h-16 rounded-2xl ${
+            isOwnerError ? 'bg-red-50' : 'bg-amber-50'
+          }`}>
+            {isOwnerError ? (
+              <FaInfoCircle className="w-8 h-8 text-red-600" />
+            ) : (
+              <FaEye className="w-8 h-8 text-amber-600" />
+            )}
+          </div>
+          <h2 className="text-lg font-bold text-gray-900 mb-2">
+            {isOwnerError ? 'Δεν μπορείτε να τον καταχωρήσετε' : 'Έχει δει ήδη το ακίνητο'}
+          </h2>
+          <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+            {propertyViewedError.message}
+          </p>
+          <div className="space-y-3">
+            <button
+              onClick={() => { setPropertyViewedError(null); onClose(); }}
+              className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-indigo-600 transition-all"
+            >
+              Κατάλαβα
+            </button>
+            <button
+              onClick={() => { setPropertyViewedError(null); }}
+              className="w-full py-3 rounded-xl font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 transition-all"
+            >
+              Δοκιμάστε με άλλον ενδιαφερόμενο
+            </button>
+          </div>
         </motion.div>
-      </AnimatePresence>
+      </div>
     );
   }
+
+  const inputBase = 'w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all duration-200 placeholder:text-gray-400';
+  const selectedProp = properties.find(p => p.id === selectedPropertyId);
 
   return (
     <AnimatePresence>
@@ -270,211 +255,244 @@ const AddInterestedBuyerModal: React.FC<AddInterestedBuyerModalProps> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={onClose}
+          className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4"
         >
           <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            className="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden"
+            initial={{ scale: 0.96, opacity: 0, y: 8 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.96, opacity: 0 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="bg-[#001f3f] text-white p-6 flex justify-between items-center">
-              <h2 className="text-xl font-semibold">Προσθήκη Ενδιαφερόμενου</h2>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={onClose}
-                className="text-white/80 hover:text-white transition-colors"
-              >
-                <FaTimes className="w-5 h-5" />
-              </motion.button>
+            <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-5 flex-shrink-0">
+              <div className="flex justify-between items-start">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-white/20 text-sm font-bold">
+                      {step === 'form' ? '1' : '2'}
+                    </span>
+                    <span className="text-sm text-white/80">
+                      {step === 'form' ? 'Στοιχεία ενδιαφερομένου' : 'Επαλήθευση OTP'}
+                    </span>
+                  </div>
+                  <h2 className="text-xl font-bold">Προσθήκη Ενδιαφερόμενου</h2>
+                </div>
+                <button
+                  onClick={onClose}
+                  className="p-2 -m-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors"
+                  aria-label="Κλείσιμο"
+                >
+                  <FaTimes className="w-5 h-5" />
+                </button>
+              </div>
+              {/* Step progress */}
+              <div className="flex gap-2 mt-4">
+                <div className={`h-1 flex-1 rounded-full ${step === 'form' ? 'bg-white' : 'bg-white/40'}`} />
+                <div className={`h-1 flex-1 rounded-full ${step === 'otp' ? 'bg-white' : 'bg-white/40'}`} />
+              </div>
             </div>
 
-            {/* Form */}
-            {step === 'form' && (
-              <form onSubmit={handleSubmit} className="p-6 space-y-6">
-                {properties.length > 1 && (
-                  <div className="space-y-2">
-                    <label className="block text-sm font-medium text-gray-700">
-                      <FaBuilding className="inline-block mr-2" />
-                      Επιλέξτε Ακίνητο
-                    </label>
-                    <select
-                      value={selectedPropertyId}
-                      onChange={e => setSelectedPropertyId(e.target.value)}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f3f] focus:border-[#001f3f] outline-none transition-all duration-200"
-                    >
-                      <option value="">Επιλέξτε ακίνητο</option>
-                      {properties.map(p => (
-                        <option key={p.id} value={p.id}>{p.title}</option>
-                      ))}
-                    </select>
-                  </div>
-                )}
-
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <FaUser className="inline-block mr-2" />
-                    Ονοματεπώνυμο
-                  </label>
-                  <input
-                    type="text"
-                    value={buyerName}
-                    onChange={e => setBuyerName(e.target.value)}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f3f] focus:border-[#001f3f] outline-none transition-all duration-200"
-                    placeholder="Εισάγετε το ονοματεπώνυμο"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <FaEnvelope className="inline-block mr-2" />
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    value={buyerEmail}
-                    onChange={e => setBuyerEmail(e.target.value)}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f3f] focus:border-[#001f3f] outline-none transition-all duration-200"
-                    placeholder="Εισάγετε το email"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <FaPhone className="inline-block mr-2" />
-                    Κινητό
-                  </label>
-                  <input
-                    type="tel"
-                    value={buyerPhone}
-                    onChange={e => setBuyerPhone(e.target.value)}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f3f] focus:border-[#001f3f] outline-none transition-all duration-200"
-                    placeholder="Εισάγετε το κινητό"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <FaPaperPlane className="inline-block mr-2" />
-                    Αποστολή OTP μέσω:
-                  </label>
-                  <div className="flex space-x-4">
-                    <label className="flex items-center space-x-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="otpMethod"
-                        value="email"
-                        checked={otpMethod === 'email'}
-                        onChange={() => setOtpMethod('email')}
-                        className="w-4 h-4 text-[#001f3f] focus:ring-[#001f3f]"
+            {/* Scrollable content */}
+            <div className="flex-1 overflow-y-auto min-h-0">
+              {step === 'form' && (
+                <form onSubmit={handleSubmit} className="p-6 space-y-5">
+                  {properties.length > 0 && (
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Ακίνητο</label>
+                      <button
+                        type="button"
+                        onClick={() => setIsPropertyPickerOpen(true)}
+                        className={`w-full px-4 py-3 rounded-xl border-2 text-left flex items-center justify-between gap-3 transition-all ${selectedPropertyId ? 'border-indigo-300 bg-indigo-50/50' : 'border-gray-200 bg-gray-50/50 hover:border-indigo-200'}`}
+                      >
+                        <span className={`truncate ${selectedPropertyId ? 'text-gray-900 font-medium' : 'text-gray-500'}`}>
+                          {selectedPropertyId ? (selectedProp?.title ?? 'Επιλέξτε') : 'Επιλέξτε ακίνητο (αναζήτηση, φίλτρα, χάρτης)'}
+                        </span>
+                        <FaChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                      </button>
+                      <PropertyPickerModal
+                        open={isPropertyPickerOpen}
+                        onClose={() => setIsPropertyPickerOpen(false)}
+                        properties={properties}
+                        selectedId={selectedPropertyId}
+                        onSelect={(id) => { setSelectedPropertyId(id); setIsPropertyPickerOpen(false); }}
                       />
-                      <span className="text-sm text-gray-700">Email</span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="otpMethod"
-                        value="sms"
-                        checked={otpMethod === 'sms'}
-                        onChange={() => setOtpMethod('sms')}
-                        className="w-4 h-4 text-[#001f3f] focus:ring-[#001f3f]"
-                      />
-                      <span className="text-sm text-gray-700">SMS</span>
-                    </label>
-                  </div>
-                </div>
-
-                {error && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="bg-gradient-to-r from-red-50 to-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-xl text-sm font-medium shadow-md"
-                  >
-                    <div className="flex items-center space-x-3">
-                      <span className="text-red-500 text-lg">⚠️</span>
-                      <span>{error}</span>
                     </div>
-                  </motion.div>
-                )}
+                  )}
 
-                <div className="flex space-x-4 pt-4">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="submit"
-                    disabled={loading || (properties.length > 1 && !selectedPropertyId)}
-                    className="flex-1 px-6 py-3 bg-[#001f3f] text-white rounded-lg font-medium hover:bg-[#001f3f]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001f3f] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-                  >
-                    {loading ? 'Αποστολή...' : 'Καταχώρηση'}
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="button"
-                    onClick={onClose}
-                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001f3f] transition-all duration-200"
-                  >
-                    Άκυρο
-                  </motion.button>
-                </div>
-              </form>
-            )}
-            {step === 'otp' && (
-              <form onSubmit={handleVerifyOtp} className="p-6 space-y-6">
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <FaKey className="inline-block mr-2" />
-                    Εισάγετε τον 8-ψήφιο OTP κωδικό που στάλθηκε στον αγοραστή
-                  </label>
-                  <input
-                    type="text"
-                    value={otpCode}
-                    onChange={e => setOtpCode(e.target.value)}
-                    required
-                    maxLength={8}
-                    minLength={8}
-                    pattern="[0-9]{8}"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f3f] focus:border-[#001f3f] outline-none transition-all duration-200 tracking-widest text-lg text-center"
-                    placeholder="π.χ. 12345678"
-                  />
-                </div>
-                {otpError && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="bg-red-50 text-red-600 p-3 rounded-lg text-sm"
-                  >
-                    {otpError}
-                  </motion.div>
-                )}
-                <div className="flex space-x-4 pt-4">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="submit"
-                    disabled={otpLoading || otpCode.length !== 8}
-                    className="flex-1 px-6 py-3 bg-[#001f3f] text-white rounded-lg font-medium hover:bg-[#001f3f]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001f3f] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-                  >
-                    {otpLoading ? 'Επαλήθευση...' : 'Επαλήθευση OTP'}
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="button"
-                    onClick={onClose}
-                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001f3f] transition-all duration-200"
-                  >
-                    Άκυρο
-                  </motion.button>
-                </div>
-              </form>
-            )}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Ονοματεπώνυμο</label>
+                    <div className="relative">
+                      <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                      <input
+                        type="text"
+                        value={buyerName}
+                        onChange={e => setBuyerName(e.target.value)}
+                        required
+                        className={`${inputBase} pl-11`}
+                        placeholder="π.χ. Γιάννης Παπαδόπουλος"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                    <div className="relative">
+                      <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                      <input
+                        type="email"
+                        value={buyerEmail}
+                        onChange={e => setBuyerEmail(e.target.value)}
+                        required
+                        className={`${inputBase} pl-11`}
+                        placeholder="email@παράδειγμα.gr"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Τηλέφωνο</label>
+                    <div className="relative">
+                      <FaPhone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                      <input
+                        type="tel"
+                        value={buyerPhone}
+                        onChange={e => setBuyerPhone(e.target.value)}
+                        required
+                        className={`${inputBase} pl-11`}
+                        placeholder="69X XXX XXXX"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">Αποστολή κωδικού OTP</label>
+                    <div className="grid grid-cols-2 gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setOtpMethod('email')}
+                        className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 font-medium transition-all ${
+                          otpMethod === 'email'
+                            ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                            : 'border-gray-200 bg-gray-50/50 text-gray-600 hover:border-gray-300'
+                        }`}
+                      >
+                        <FaEnvelope className="w-4 h-4" />
+                        Email
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setOtpMethod('sms')}
+                        className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 font-medium transition-all ${
+                          otpMethod === 'sms'
+                            ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                            : 'border-gray-200 bg-gray-50/50 text-gray-600 hover:border-gray-300'
+                        }`}
+                      >
+                        <FaPhone className="w-4 h-4" />
+                        SMS
+                      </button>
+                    </div>
+                  </div>
+
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-start gap-3 p-4 rounded-xl bg-red-50 border border-red-100 text-red-700 text-sm"
+                    >
+                      <span className="text-red-500 text-lg flex-shrink-0">⚠</span>
+                      <span>{error}</span>
+                    </motion.div>
+                  )}
+
+                  <div className="flex gap-3 pt-2">
+                    <motion.button
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                      type="submit"
+                      disabled={loading || (properties.length > 0 && !selectedPropertyId)}
+                      className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl font-semibold hover:from-blue-600 hover:to-indigo-600 focus:ring-2 focus:ring-indigo-500/30 outline-none disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                    >
+                      {loading ? <><FaSpinner className="w-4 h-4 animate-spin" /> Αποστολή...</> : <><FaCheck /> Καταχώρηση</>}
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                      type="button"
+                      onClick={onClose}
+                      className="px-5 py-3.5 rounded-xl font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 transition-all"
+                    >
+                      Άκυρο
+                    </motion.button>
+                  </div>
+                </form>
+              )}
+
+              {step === 'otp' && (
+                <form onSubmit={handleVerifyOtp} className="p-6 space-y-5">
+                  <div className="p-4 rounded-xl bg-gray-50 border border-gray-100 mb-2">
+                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">Ο κωδικός εστάλη σε</p>
+                    <p className="font-semibold text-gray-900">{buyerName}</p>
+                    <p className="text-sm text-gray-600">{otpMethod === 'email' ? buyerEmail : buyerPhone}</p>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      8-ψήφιος κωδικός OTP
+                    </label>
+                    <div className="relative">
+                      <FaKey className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                      <input
+                        type="text"
+                        inputMode="numeric"
+                        autoComplete="one-time-code"
+                        value={otpCode}
+                        onChange={e => setOtpCode(e.target.value.replace(/\D/g, '').slice(0, 8))}
+                        required
+                        maxLength={8}
+                        className={`${inputBase} pl-11 tracking-[0.4em] text-center text-lg font-mono`}
+                        placeholder="12345678"
+                      />
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1.5">Ζητήστε από τον ενδιαφερόμενο τον κωδικό που έλαβε</p>
+                  </div>
+
+                  {otpError && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="p-3 rounded-xl bg-red-50 text-red-600 text-sm"
+                    >
+                      {otpError}
+                    </motion.div>
+                  )}
+
+                  <div className="flex gap-3 pt-2">
+                    <motion.button
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                      type="button"
+                      onClick={() => setStep('form')}
+                      className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 transition-all"
+                    >
+                      <FaArrowLeft /> Πίσω
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                      type="submit"
+                      disabled={otpLoading || otpCode.length !== 8}
+                      className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl font-semibold hover:from-blue-600 hover:to-indigo-600 focus:ring-2 focus:ring-indigo-500/30 outline-none disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                    >
+                      {otpLoading ? <><FaSpinner className="w-4 h-4 animate-spin" /> Επαλήθευση...</> : 'Επαλήθευση OTP'}
+                    </motion.button>
+                  </div>
+                </form>
+              )}
+            </div>
           </motion.div>
         </motion.div>
       )}

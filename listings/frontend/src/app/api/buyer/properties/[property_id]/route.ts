@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/auth';
 
 export async function GET(
   request: Request,
-  { params }: { params: { property_id: string } }
+  { params }: { params: Promise<{ property_id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -17,8 +17,9 @@ export async function GET(
       );
     }
 
+    const { property_id } = await params;
     const property = await prisma.property.findUnique({
-      where: { id: params.property_id },
+      where: { id: property_id },
       include: {
         user: {
           select: {
@@ -43,16 +44,16 @@ export async function GET(
     const favorite = await prisma.favorite.findFirst({
       where: {
         userId: session.user.id,
-        propertyId: params.property_id,
+        propertyId: property_id,
       },
     });
 
     // Αύξηση του αριθμού προβολών
     await prisma.propertyStats.upsert({
-      where: { propertyId: params.property_id },
+      where: { propertyId: property_id },
       update: { views: { increment: 1 } },
       create: {
-        propertyId: params.property_id,
+        propertyId: property_id,
         views: 1,
         interestedCount: 0,
         viewingCount: 0,
@@ -61,11 +62,11 @@ export async function GET(
 
     // Υπολογισμός του αριθμού αγαπημένων και ερωτημάτων
     const favoritesCount = await prisma.favorite.count({
-      where: { propertyId: params.property_id },
+      where: { propertyId: property_id },
     });
 
     const inquiriesCount = await prisma.inquiry.count({
-      where: { propertyId: params.property_id },
+      where: { propertyId: property_id },
     });
 
     // Προσθήκη των επιπλέον πεδίων στο ακίνητο
@@ -91,7 +92,7 @@ export async function GET(
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { property_id: string } }
+  { params }: { params: Promise<{ property_id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -101,11 +102,12 @@ export async function PATCH(
         { status: 401 }
       );
     }
+    const { property_id } = await params;
     const body = await request.json();
     // Ενημέρωση του interestCancelled σε false
     const updatedLead = await prisma.propertyLead.updateMany({
       where: {
-        propertyId: params.property_id,
+        propertyId: property_id,
         buyerId: session.user.id,
         interestCancelled: true
       },
@@ -116,7 +118,7 @@ export async function PATCH(
     // Ενημέρωση και στο transaction
     const updatedTransaction = await prisma.transaction.updateMany({
       where: {
-        propertyId: params.property_id,
+        propertyId: property_id,
         buyerId: session.user.id,
         interestCancelled: true
       },
@@ -125,7 +127,7 @@ export async function PATCH(
       }
     });
     console.log('PATCH restore-interest:', {
-      propertyId: params.property_id,
+        propertyId: property_id,
       buyerId: session.user.id,
       updatedLeadCount: updatedLead.count,
       updatedTransactionCount: updatedTransaction.count

@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/auth';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -14,8 +14,9 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const { id } = await params;
     console.log('=== Seller Transaction Details Debug ===');
-    console.log('Requested transaction ID:', params.id);
+    console.log('Requested transaction ID:', id);
     console.log('Session user:', {
       id: session.user.id,
       email: session.user.email,
@@ -25,7 +26,7 @@ export async function GET(
     // Βρίσκουμε το transaction και ελέγχουμε αν ανήκει στον χρήστη
     const transaction = await prisma.transaction.findFirst({
       where: {
-        id: params.id,
+        id,
         property: {
           userId: session.user.id // Ελέγχουμε αν το property ανήκει στον χρήστη
         },
@@ -77,7 +78,7 @@ export async function GET(
 
     if (!transaction) {
       console.log('❌ Transaction not found or unauthorized');
-      console.log('Transaction ID:', params.id);
+      console.log('Transaction ID:', id);
       console.log('Seller ID:', session.user.id);
       return NextResponse.json({ error: 'Transaction not found' }, { status: 404 });
     }
@@ -100,7 +101,7 @@ export async function GET(
         stage: transaction.stage || 'PENDING',
         status: transaction.status || 'PENDING',
         updatedAt: transaction.updatedAt,
-        notifications: transaction.progress.map(p => ({
+        notifications: transaction.progress.map((p: typeof transaction.progress[0]) => ({
           id: p.id,
           message: p.notes || '',
           recipient: p.createdBy?.email === transaction.buyer.email ? 'buyer' :

@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { clearAuthStorage } from '@/lib/api/client';
 
 interface User {
   id: string;
@@ -36,6 +37,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const logout = async () => {
+    clearAuthStorage();
     await signOut({ redirect: false });
   };
 

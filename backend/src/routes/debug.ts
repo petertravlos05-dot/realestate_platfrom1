@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { validateJwtToken, requireRole, AuthRequest } from '../middleware/auth';
+import { Sentry } from '../lib/sentry';
 
 const router = Router();
 
@@ -212,6 +213,27 @@ router.get('/stats', validateJwtToken, requireRole('ADMIN'), async (req: AuthReq
     console.error('Error fetching debug stats:', error);
     res.status(500).json({
       error: 'Internal server error'
+    });
+  }
+});
+
+// GET /api/debug/test-sentry - Test Sentry error capturing
+router.get('/test-sentry', async (req: Request, res: Response) => {
+  try {
+    // Test error that should be captured by Sentry
+    throw new Error('Test Sentry error - This is a test error to verify Sentry integration');
+  } catch (error) {
+    // Capture in Sentry
+    if (error instanceof Error) {
+      Sentry.captureException(error);
+    }
+    
+    // Return error response
+    res.status(500).json({
+      error: 'Test error captured',
+      message: 'This error was sent to Sentry for testing purposes',
+      sentryEnabled: process.env.SENTRY_ENABLE === 'true',
+      nodeEnv: process.env.NODE_ENV || 'not set',
     });
   }
 });

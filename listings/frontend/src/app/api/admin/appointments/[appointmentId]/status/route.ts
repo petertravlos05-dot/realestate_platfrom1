@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 
-export async function PUT(req: NextRequest, { params }: { params: { appointmentId: string } }) {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ appointmentId: string }> }) {
   try {
     const session = await getServerSession(authOptions);
     
@@ -11,7 +11,7 @@ export async function PUT(req: NextRequest, { params }: { params: { appointmentI
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const { appointmentId } = params;
+    const { appointmentId } = await params;
     const { status } = await req.json();
 
     // Έλεγχος αν το status είναι έγκυρο

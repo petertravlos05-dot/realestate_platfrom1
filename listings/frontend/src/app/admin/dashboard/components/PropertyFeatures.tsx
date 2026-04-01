@@ -9,7 +9,12 @@ interface PropertyFeaturesProps {
 
 // Constants for select options
 const PROPERTY_TYPES = ['apartment', 'house', 'villa', 'commercial', 'plot'];
-const CONDITIONS = ['underConstruction', 'renovated', 'needsRenovation'];
+const CONDITION_OPTIONS = [
+  { id: 'underConstruction', label: 'Υπό κατασκευή' },
+  { id: 'renovated', label: 'Ανακαινισμένο' },
+  { id: 'needsRenovation', label: 'Χρήζει ανακαίνισης' },
+  { id: 'new', label: 'Αριστη' }
+];
 const HEATING_TYPES = ['autonomous', 'central', 'heatpump'];
 const HEATING_SYSTEMS = ['gas', 'oil', 'electricity'];
 const WINDOW_TYPES = ['pvc', 'wooden', 'aluminum'];
@@ -32,7 +37,7 @@ export default function PropertyFeatures({
           <div>
             <h4 className="font-medium text-gray-700 mb-4">Βασικά Στοιχεία</h4>
             <ul className="space-y-2">
-              <li>Κατάσταση: {property.condition || '-'}</li>
+              <li>Κατάσταση: {property.condition ? CONDITION_OPTIONS.find(o => o.id === property.condition)?.label || property.condition : '-'}</li>
               <li>Υπνοδωμάτια: {property.bedrooms || '-'}</li>
               <li>Μπάνια: {property.bathrooms || '-'}</li>
               <li>Όροφος: {property.floor || '-'}</li>
@@ -94,8 +99,8 @@ export default function PropertyFeatures({
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               >
                 <option value="">Επιλέξτε κατάσταση</option>
-                {CONDITIONS.map(condition => (
-                  <option key={condition} value={condition}>{condition}</option>
+                {CONDITION_OPTIONS.map(opt => (
+                  <option key={opt.id} value={opt.id}>{opt.label}</option>
                 ))}
               </select>
             </div>

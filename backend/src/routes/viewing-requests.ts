@@ -1,11 +1,14 @@
 import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { validateJwtToken, requireRole, AuthRequest } from '../middleware/auth';
+import { requireViewingRequestAccess } from '../middleware/authorization';
+import { validateBody } from '../middleware/validation';
+import { createViewingRequestSchema, updateViewingRequestSchema } from '../lib/validation/schemas';
 
 const router = Router();
 
 // POST /api/viewing-requests - Create viewing request
-router.post('/', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.post('/', validateJwtToken, validateBody(createViewingRequestSchema), async (req: AuthRequest, res: Response) => {
   try {
     const { propertyId, buyerId, date, time, endTime } = req.body;
 
@@ -154,15 +157,8 @@ router.get('/', validateJwtToken, async (req: AuthRequest, res: Response) => {
 });
 
 // GET /api/viewing-requests/:id - Get specific viewing request
-router.get('/:id', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.get('/:id', validateJwtToken, requireViewingRequestAccess, async (req: AuthRequest, res: Response) => {
   try {
-    const userId = req.userId;
-    const userRole = req.userRole;
-
-    if (!userId) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
-
     const viewingRequest = await prisma.viewingRequest.findUnique({
       where: { id: req.params.id },
       include: {
@@ -191,16 +187,6 @@ router.get('/:id', validateJwtToken, async (req: AuthRequest, res: Response) => 
 
     if (!viewingRequest) {
       return res.status(404).json({ error: 'Viewing request not found' });
-    }
-
-    // Authorization check
-    if (userRole !== 'ADMIN') {
-      if (userRole === 'BUYER' && viewingRequest.buyerId !== userId) {
-        return res.status(403).json({ error: 'Forbidden' });
-      }
-      if (userRole === 'SELLER' && viewingRequest.property.userId !== userId) {
-        return res.status(403).json({ error: 'Forbidden' });
-      }
     }
 
     res.json({ viewingRequest });
@@ -401,38 +387,14 @@ router.patch('/:id/status', validateJwtToken, async (req: AuthRequest, res: Resp
 });
 
 // DELETE /api/viewing-requests/:id - Delete viewing request
-router.delete('/:id', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.delete('/:id', validateJwtToken, requireViewingRequestAccess, async (req: AuthRequest, res: Response) => {
   try {
-    const userId = req.userId;
-    const userRole = req.userRole;
-
-    if (!userId) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
-
     const viewingRequest = await prisma.viewingRequest.findUnique({
       where: { id: req.params.id },
-      include: {
-        property: {
-          select: {
-            userId: true
-          }
-        }
-      }
     });
 
     if (!viewingRequest) {
       return res.status(404).json({ error: 'Viewing request not found' });
-    }
-
-    // Authorization check
-    if (userRole !== 'ADMIN') {
-      if (userRole === 'BUYER' && viewingRequest.buyerId !== userId) {
-        return res.status(403).json({ error: 'Forbidden' });
-      }
-      if (userRole === 'SELLER' && viewingRequest.property.userId !== userId) {
-        return res.status(403).json({ error: 'Forbidden' });
-      }
     }
 
     await prisma.viewingRequest.delete({

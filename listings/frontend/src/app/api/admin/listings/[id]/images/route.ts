@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -14,6 +14,7 @@ export async function POST(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const { id } = await params;
     const formData = await request.formData();
     const files = formData.getAll('images') as File[];
 
@@ -33,7 +34,7 @@ export async function POST(
 
     // Update the property with the new image URLs
     const property = await prisma.property.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         images: {
           push: imageUrls

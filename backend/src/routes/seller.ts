@@ -2,6 +2,9 @@ import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { Prisma } from '@prisma/client';
 import { validateJwtToken, AuthRequest } from '../middleware/auth';
+import { mediumRateLimit, userRateLimit } from '../middleware/rateLimit';
+import { requirePropertyOwnership } from '../middleware/authorization';
+import { resolvePropertyImages } from '../lib/utils/property-images';
 
 const router = Router();
 
@@ -9,7 +12,7 @@ const router = Router();
 router.use(validateJwtToken);
 
 // GET /api/seller/properties - Get all seller's properties
-router.get('/properties', async (req: AuthRequest, res: Response) => {
+router.get('/properties', mediumRateLimit, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
 
@@ -79,6 +82,165 @@ router.get('/properties', async (req: AuthRequest, res: Response) => {
     res.status(500).json({
       error: 'Σφάλμα κατά την ανάκτηση των ακινήτων'
     });
+  }
+});
+
+// GET /api/seller/properties/:property_id/overview - Property overview for seller (must be before :property_id)
+router.get('/properties/:property_id/overview', mediumRateLimit, async (req: AuthRequest, res: Response) => {
+  try {
+    const userId = req.userId;
+    const { property_id } = req.params;
+
+    if (!userId) {
+      return res.status(401).json({ error: 'Μη εξουσιοδοτημένη πρόσβαση' });
+    }
+
+    const property = await prisma.property.findUnique({
+      where: { id: property_id },
+      select: { id: true, title: true, userId: true, price: true },
+    });
+
+    if (!property || property.userId !== userId) {
+      return res.status(404).json({ error: 'Το ακίνητο δεν βρέθηκε' });
+    }
+
+    const [leads, connections, dealRoomsRaw, completedDealRoomsRaw, sellerDocsRaw] = await Promise.all([
+      prisma.propertyLead.findMany({
+        where: { propertyId: property_id, interestCancelled: false },
+        include: { buyer: { select: { id: true, name: true } } },
+      }),
+      prisma.buyerAgentConnection.findMany({
+        where: { propertyId: property_id },
+        include: { agent: { select: { id: true, name: true } }, buyer: { select: { id: true, name: true } } },
+      }),
+      prisma.dealRoom.findMany({
+        where: { propertyId: property_id, status: { in: ['ACTIVE', 'DRAFT'] } },
+        include: {
+          property: { select: { id: true, title: true, price: true } },
+          buyer: { select: { id: true, name: true } },
+          offers: { where: { status: 'ACCEPTED' }, select: { amount: true, role: true } },
+          requests: { select: { type: true, status: true, requestedById: true } },
+          appointments: { select: { status: true, type: true, startAt: true, endAt: true } },
+        },
+      }),
+      prisma.dealRoom.findMany({
+        where: {
+          propertyId: property_id,
+          status: { in: ['COMPLETED', 'CLOSED', 'CLOSED_PROPERTY_SOLD'] },
+        },
+        include: {
+          buyer: { select: { id: true, name: true } },
+          offers: { where: { status: 'ACCEPTED' }, select: { amount: true, role: true } },
+        },
+      }),
+      prisma.dealDocument.findMany({
+        where: {
+          dealRoom: { propertyId: property_id },
+          uploadedById: property.userId,
+          status: { in: ['UPLOADED', 'UNDER_REVIEW', 'APPROVED'] },
+        },
+        select: { id: true, category: true, fileName: true, mimeType: true, sizeBytes: true, dealRoomId: true },
+        orderBy: { createdAt: 'desc' },
+      }),
+    ]);
+
+    const agentsPromotedCount = new Set(connections.map(c => c.agentId)).size;
+    const agentLinkClicksNoInterest = connections.filter(c => c.interestCancelled).length;
+
+    const mapDealRoom = (dr: any, isCompleted = false) => {
+      const acceptedOffer = dr.offers?.[0] ?? null;
+      const agreedPrice = acceptedOffer ? Number(acceptedOffer.amount) : null;
+      if (isCompleted) {
+        return {
+          id: dr.id,
+          status: dr.status,
+          buyerName: dr.buyer?.name,
+          agreedPrice,
+          stage: 8,
+          stageLabel: 'Ολοκληρώθηκε',
+        };
+      }
+      const sellerId = dr.sellerId || property.userId;
+      const hasLawyer = dr.requests?.some((r: any) => r.status === 'ACCEPTED' && r.type === 'LAWYER' && r.requestedById === sellerId);
+      const hasEngineer = dr.requests?.some((r: any) => r.status === 'ACCEPTED' && r.type === 'ENGINEER' && r.requestedById === sellerId);
+      const signingApt = dr.appointments?.find((a: any) => a.status === 'CONFIRMED' && a.type === 'IN_PERSON');
+      let stage = 1;
+      if (dr.buyerSkippedViewingAt || dr.buyerConfirmedInterestAt) stage = 2;
+      if (acceptedOffer) stage = 3;
+      if (hasLawyer && hasEngineer) stage = 4;
+      if (dr.engineerApprovedSellerDocumentsAt && (!hasLawyer || dr.lawyerApprovedSellerDocumentsAt)) stage = 5;
+      if (dr.notaryApprovedDocumentsAt) stage = 6;
+      if (signingApt && new Date(signingApt.endAt) <= new Date()) stage = 7;
+      if (dr.sellerSigningConfirmed || dr.status === 'CLOSED') stage = 8;
+      return {
+        id: dr.id,
+        status: dr.status,
+        buyerName: dr.buyer?.name,
+        agreedPrice,
+        stage,
+        stageLabel: ['', 'Διαχείριση Επισκεψής', 'Αποδοχή Προσφοράς', 'Επιλογή Επαγγελματιών', 'Συλλογή Εγγράφων', 'Έγκριση Συμβολαιογράφου', 'Υπογραφή Συμβολαίων', 'Ολοκληρώθηκε'][stage],
+      };
+    };
+
+    const dealRooms = dealRoomsRaw.map((dr) => mapDealRoom(dr, false));
+
+    // Completed deal = the one that actually sold (COMPLETED, CLOSED_PROPERTY_SOLD, or CLOSED with sellerSigningConfirmed)
+    const soldDeal = completedDealRoomsRaw.find(
+      (dr: any) =>
+        dr.status === 'COMPLETED' ||
+        dr.status === 'CLOSED_PROPERTY_SOLD' ||
+        (dr.status === 'CLOSED' && dr.sellerSigningConfirmed)
+    );
+    const completedDealRoom = soldDeal ? mapDealRoom(soldDeal, true) : null;
+    const propertySold = !!completedDealRoom;
+
+    // Other deal rooms: open + closed_because_sold (for expandable list in modal)
+    const otherDealRooms = [
+      ...dealRooms,
+      ...completedDealRoomsRaw
+        .filter((dr: any) => dr.id !== soldDeal?.id)
+        .map((dr: any) => mapDealRoom(dr, true)),
+    ];
+
+    const stats = await prisma.propertyStats.findUnique({
+      where: { propertyId: property_id },
+    });
+
+    // Deduplicate seller documents by category+fileName (same doc in multiple deal rooms → show once)
+    const docsSeen = new Set<string>();
+    const sellerDocuments: Array<{ id: string; category: string; fileName: string | null; mimeType: string | null; sizeBytes: number | null; dealRoomId: string }> = [];
+    for (const doc of sellerDocsRaw) {
+      const key = `${doc.category}|${doc.fileName ?? ''}`;
+      if (!docsSeen.has(key)) {
+        docsSeen.add(key);
+        sellerDocuments.push({
+          id: doc.id,
+          category: doc.category,
+          fileName: doc.fileName,
+          mimeType: doc.mimeType,
+          sizeBytes: doc.sizeBytes,
+          dealRoomId: doc.dealRoomId,
+        });
+      }
+    }
+
+    res.json({
+      property: { id: property.id, title: property.title, price: property.price },
+      interestedCount: leads.length,
+      agentsPromotedCount,
+      agentLinkClicksNoInterest,
+      openDealRoomsCount: dealRooms.length,
+      dealRooms,
+      sellerDocuments,
+      views: stats?.views ?? 0,
+      hasDepositPaidDealRoom: false,
+      propertySold,
+      completedDealRoom,
+      otherDealRooms,
+    });
+  } catch (error) {
+    console.error('Error fetching property overview:', error);
+    res.status(500).json({ error: 'Σφάλμα κατά την ανάκτηση της επισκόπησης' });
   }
 });
 
@@ -157,27 +319,21 @@ router.get('/properties/:property_id', async (req: AuthRequest, res: Response) =
 });
 
 // PUT /api/seller/properties/:property_id/visit-settings - Update visit settings
-router.put('/properties/:property_id/visit-settings', async (req: AuthRequest, res: Response) => {
+router.put('/properties/:property_id/visit-settings', requirePropertyOwnership, async (req: AuthRequest, res: Response) => {
   try {
-    const userId = req.userId;
     const { property_id } = req.params;
     const data = req.body;
 
-    if (!userId) {
-      return res.status(401).json({ error: 'Μη εξουσιοδοτημένη πρόσβαση' });
-    }
-
-    // Check if property belongs to user
-    const property = await prisma.property.findFirst({
+    // Verify property exists (ownership already checked by middleware)
+    const property = await prisma.property.findUnique({
       where: {
-        id: property_id,
-        userId: userId
+        id: property_id
       }
     });
 
     if (!property) {
       return res.status(404).json({
-        error: 'Το ακίνητο δεν βρέθηκε ή δεν ανήκει σε εσάς'
+        error: 'Το ακίνητο δεν βρέθηκε'
       });
     }
 
@@ -237,7 +393,7 @@ router.get('/properties/:property_id/visit-settings', async (req: AuthRequest, r
 });
 
 // GET /api/seller/leads - Get all seller's leads
-router.get('/leads', async (req: AuthRequest, res: Response) => {
+router.get('/leads', mediumRateLimit, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
 
@@ -293,6 +449,25 @@ router.get('/leads', async (req: AuthRequest, res: Response) => {
     const allBuyerIds = properties.flatMap(p => p.leads?.map(l => l.buyer?.id) || []);
     const allAgentIds = properties.flatMap(p => p.leads?.map(l => l.agent?.id).filter(Boolean) || []);
 
+    // Properties with completed/closed deal rooms (sold or rented)
+    const completedDeals = await prisma.dealRoom.findMany({
+      where: {
+        propertyId: { in: allPropertyIds },
+        status: { in: ['COMPLETED', 'CLOSED', 'CLOSED_PROPERTY_SOLD'] },
+      },
+      select: { propertyId: true, status: true, sellerSigningConfirmed: true },
+    });
+    // Ολοκληρωμένα = COMPLETED ή CLOSED (ίδιο κριτήριο με το tab "Ολοκληρωμένες Συναλλαγές")
+    const soldPropertyIds = new Set(
+      completedDeals
+        .filter(d =>
+          d.status === 'COMPLETED' ||
+          d.status === 'CLOSED' ||
+          d.status === 'CLOSED_PROPERTY_SOLD'
+        )
+        .map(d => d.propertyId)
+    );
+
     const transactions = await prisma.transaction.findMany({
       where: {
         propertyId: { in: allPropertyIds },
@@ -320,9 +495,10 @@ router.get('/leads', async (req: AuthRequest, res: Response) => {
       }
     });
 
-    // Map each lead to include transaction
+    // Map each lead to include transaction and propertySold
     const propertiesWithTransactions = properties.map(property => ({
       ...property,
+      propertySold: soldPropertyIds.has(property.id),
       leads: property.leads?.map(lead => {
         let transaction = transactions.find(t =>
           t.propertyId === property.id &&
@@ -380,7 +556,13 @@ router.get('/leads', async (req: AuthRequest, res: Response) => {
       })
     }));
 
-    res.json(propertiesWithTransactions);
+    // Resolve property images (local paths → full URLs, S3 keys → signed URLs) for display
+    const withResolvedImages = await Promise.all(propertiesWithTransactions.map(async (p) => {
+      const images = await resolvePropertyImages(p.images || []);
+      return { ...p, images };
+    }));
+
+    res.json(withResolvedImages);
   } catch (error) {
     console.error('Error fetching seller leads:', error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -943,6 +1125,106 @@ router.get('/transactions/:id', async (req: AuthRequest, res: Response) => {
   } catch (error) {
     console.error('Error fetching transaction:', error);
     res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ============ Listing Drafts ============
+
+// GET /api/seller/listing-drafts - List all drafts for the user
+router.get('/listing-drafts', mediumRateLimit, async (req: AuthRequest, res: Response) => {
+  try {
+    const userId = req.userId;
+    if (!userId) {
+      return res.status(401).json({ error: 'Μη εξουσιοδοτημένη πρόσβαση' });
+    }
+    const drafts = await prisma.propertyListingDraft.findMany({
+      where: { userId },
+      orderBy: { updatedAt: 'desc' },
+    });
+    res.json({ drafts });
+  } catch (error) {
+    console.error('Error listing drafts:', error);
+    res.status(500).json({ error: 'Σφάλμα κατά την ανάκτηση των drafts' });
+  }
+});
+
+// POST /api/seller/listing-drafts - Create or update draft
+router.post('/listing-drafts', mediumRateLimit, async (req: AuthRequest, res: Response) => {
+  try {
+    const userId = req.userId;
+    if (!userId) {
+      return res.status(401).json({ error: 'Μη εξουσιοδοτημένη πρόσβαση' });
+    }
+    const { id, progressPercent, activeTab, data, name } = req.body;
+    const payload = {
+      progressPercent: typeof progressPercent === 'number' ? progressPercent : 0,
+      activeTab: typeof activeTab === 'string' ? activeTab : null,
+      data: data && typeof data === 'object' ? data : {},
+      name: typeof name === 'string' && name.trim() ? name.trim() : 'draft-1',
+    };
+    let draft;
+    if (id && typeof id === 'string') {
+      const existing = await prisma.propertyListingDraft.findFirst({
+        where: { id, userId },
+      });
+      if (existing) {
+        draft = await prisma.propertyListingDraft.update({
+          where: { id },
+          data: payload,
+        });
+      } else {
+        draft = await prisma.propertyListingDraft.create({
+          data: { ...payload, userId },
+        });
+      }
+    } else {
+      draft = await prisma.propertyListingDraft.create({
+        data: { ...payload, userId },
+      });
+    }
+    res.json({ draft });
+  } catch (error) {
+    console.error('Error saving draft:', error);
+    res.status(500).json({ error: 'Σφάλμα κατά την αποθήκευση του draft' });
+  }
+});
+
+// GET /api/seller/listing-drafts/:id - Get single draft
+router.get('/listing-drafts/:id', mediumRateLimit, async (req: AuthRequest, res: Response) => {
+  try {
+    const userId = req.userId;
+    const { id } = req.params;
+    if (!userId) {
+      return res.status(401).json({ error: 'Μη εξουσιοδοτημένη πρόσβαση' });
+    }
+    const draft = await prisma.propertyListingDraft.findFirst({
+      where: { id, userId },
+    });
+    if (!draft) {
+      return res.status(404).json({ error: 'Το draft δεν βρέθηκε' });
+    }
+    res.json({ draft });
+  } catch (error) {
+    console.error('Error fetching draft:', error);
+    res.status(500).json({ error: 'Σφάλμα κατά την ανάκτηση του draft' });
+  }
+});
+
+// DELETE /api/seller/listing-drafts/:id - Delete draft
+router.delete('/listing-drafts/:id', mediumRateLimit, async (req: AuthRequest, res: Response) => {
+  try {
+    const userId = req.userId;
+    const { id } = req.params;
+    if (!userId) {
+      return res.status(401).json({ error: 'Μη εξουσιοδοτημένη πρόσβαση' });
+    }
+    await prisma.propertyListingDraft.deleteMany({
+      where: { id, userId },
+    });
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error deleting draft:', error);
+    res.status(500).json({ error: 'Σφάλμα κατά τη διαγραφή του draft' });
   }
 });
 

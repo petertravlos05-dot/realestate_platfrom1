@@ -51,7 +51,7 @@ export async function GET(request: NextRequest) {
     });
 
     // Parse metadata for each message
-    const messagesWithMetadata = messages.map(message => ({
+    const messagesWithMetadata = messages.map((message: typeof messages[0]) => ({
       ...message,
       metadata: (message as any).metadata ? JSON.parse((message as any).metadata as string) : null
     }));
@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
 
     // Προσθήκη δεδομένων πολλαπλής επιλογής αν υπάρχουν
     if (isMultipleChoice && options && options.length >= 2) {
-      const validOptions = options.filter((option: string) => option.trim() !== '');
+      const validOptions = options.filter((option: string) => option && option.trim() !== '');
       if (validOptions.length >= 2) {
         messageData.metadata = JSON.stringify({
           isMultipleChoice: true,

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Dialog } from '@headlessui/react';
 import { apiClient } from '@/lib/api/client';
+import * as Sentry from '@sentry/nextjs';
 
 interface ConfirmAgentConnectionClientProps {
   isOpen: boolean;
@@ -36,6 +37,7 @@ export default function ConfirmAgentConnectionClient({
       router.push('/dashboard/buyer');
     } catch (error) {
       console.error('Error connecting with agent:', error);
+      Sentry.captureException(error);
     } finally {
       setIsLoading(false);
     }

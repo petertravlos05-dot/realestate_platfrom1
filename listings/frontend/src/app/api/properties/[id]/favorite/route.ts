@@ -6,7 +6,7 @@ import { validateJwtToken } from '@/middleware';
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Πρώτα δοκιμάζουμε το JWT token (για το mobile app)
@@ -29,7 +29,7 @@ export async function POST(
       );
     }
 
-    const { id: propertyId } = params;
+    const { id: propertyId } = await params;
 
     // Έλεγχος αν το ακίνητο υπάρχει
     const property = await prisma.property.findUnique({

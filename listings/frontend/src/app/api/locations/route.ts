@@ -26,7 +26,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ suggestions: [] });
   }
 
-  const suggestions = mockLocations.filter(location => 
+  const suggestions = mockLocations.filter((location: string) => 
     location.toLowerCase().includes(query)
   );
 

@@ -6,7 +6,7 @@ import crypto from 'crypto';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -16,7 +16,7 @@ export async function POST(
     }
 
     const { points, reason } = await request.json();
-    const { userId } = params;
+    const { userId } = await params;
 
     if (!points || !reason || !userId) {
       return NextResponse.json({ 

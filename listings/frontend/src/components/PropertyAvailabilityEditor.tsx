@@ -4,6 +4,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { format } from 'date-fns';
 import { el } from 'date-fns/locale';
 import { apiClient } from '@/lib/api/client';
+import * as Sentry from '@sentry/nextjs';
 
 interface PropertyAvailabilityEditorProps {
   isOpen: boolean;
@@ -48,6 +49,7 @@ export default function PropertyAvailabilityEditor({
       setAvailabilities(data);
     } catch (error) {
       console.error('Error fetching availabilities:', error);
+      Sentry.captureException(error);
     } finally {
       setLoading(false);
     }
@@ -74,6 +76,7 @@ export default function PropertyAvailabilityEditor({
       setSelectedEndTime('');
     } catch (error) {
       console.error('Error adding availability:', error);
+      Sentry.captureException(error);
     }
   };
 

@@ -10,6 +10,7 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useNotifications } from '@/contexts/NotificationContext';
 import { apiClient } from '@/lib/api/client';
+import * as Sentry from '@sentry/nextjs';
 
 interface Appointment {
   id: string;
@@ -97,6 +98,7 @@ export default function AppointmentManagementModal({
         }
       } catch (err) {
         console.error('Error fetching last appointment:', err);
+        Sentry.captureException(err);
         setLastAppointment(null);
       }
     };
@@ -116,6 +118,7 @@ export default function AppointmentManagementModal({
       console.log('AppointmentManagementModal - Λήψη visitSettings:', data);
     } catch (err) {
       console.error('AppointmentManagementModal - fetch error', err);
+      Sentry.captureException(err);
       setVisitSettings(null);
     } finally {
       setLoadingSettings(false);
@@ -705,6 +708,7 @@ export default function AppointmentManagementModal({
                                   alert('Σφάλμα κατά την αποθήκευση του ραντεβού!');
                                 }
                               } catch (e) {
+                                Sentry.captureException(e);
                                 alert('Σφάλμα δικτύου!');
                               }
                               setIsSubmitting(false);
@@ -944,6 +948,7 @@ export default function AppointmentManagementModal({
                       onClose();
                     } catch (error) {
                       console.error('Error cancelling appointment:', error);
+                      Sentry.captureException(error);
                       alert('Σφάλμα κατά την ακύρωση του ραντεβού');
                     } finally {
                       setIsSubmitting(false);

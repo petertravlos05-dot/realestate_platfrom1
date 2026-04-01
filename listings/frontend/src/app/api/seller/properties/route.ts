@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
-import { Prisma } from '@prisma/client';
 import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
 
 export async function GET(request: Request) {
   try {
@@ -24,7 +24,7 @@ export async function GET(request: Request) {
 
       const token = authHeader.split(' ')[1];
       try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'Agapao_ton_stivo05') as { userId: string; role: string };
+        const decoded = jwt.verify(token, getJwtSecret()) as { userId: string; role: string };
         userId = decoded.userId;
         userRole = decoded.role;
       } catch (error) {
@@ -39,7 +39,7 @@ export async function GET(request: Request) {
       );
     }
 
-    const query: Prisma.PropertyFindManyArgs = {
+    const query = {
       where: {
         OR: [
           // Διαθέσιμα ακίνητα
@@ -90,11 +90,11 @@ export async function GET(request: Request) {
         }
       },
       orderBy: {
-        createdAt: 'desc'
+        createdAt: 'desc' as const
       }
     };
 
-    const properties = await prisma.property.findMany(query);
+    const properties = await prisma.property.findMany(query as any);
     return NextResponse.json(properties);
   } catch (error) {
     console.error('Error fetching seller properties:', error);

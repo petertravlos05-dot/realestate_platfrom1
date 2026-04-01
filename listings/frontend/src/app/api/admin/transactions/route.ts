@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
+import { isAdminSession } from '@/lib/auth/admin-helpers';
 import { prisma } from '@/lib/prisma';
 import { Prisma } from '@prisma/client';
 
@@ -150,7 +151,7 @@ export async function GET(request: Request) {
 
     console.log('Found transactions:', {
       total: transactions.length,
-      cancelled: transactions.filter(t => t.interestCancelled).length
+      cancelled: transactions.filter((t: typeof transactions[0]) => t.interestCancelled).length
     });
 
     // Ελέγχουμε αν ο χρήστης είναι admin στη βάση
@@ -296,7 +297,7 @@ export async function GET(request: Request) {
         progress: {
           stage: transaction.progress[0]?.stage ?? transaction.status ?? "",
           updatedAt: transaction.progress[0]?.createdAt?.toISOString() || transaction.updatedAt?.toISOString() || transaction.createdAt.toISOString(),
-          notifications: transaction.progress.map(p => ({
+          notifications: transaction.progress.map((p: typeof transaction.progress[0]) => ({
             id: p.id,
             message: p.notes ?? "",
             recipient: p.createdBy.email === transaction.buyer.email ? 'buyer' :
@@ -323,7 +324,7 @@ export async function GET(request: Request) {
 export async function PUT(request: Request) {
   try {
     const session = await getServerSession(authOptions);
-    if (!session?.user?.id || session.user.role !== 'ADMIN') {
+    if (!session?.user?.id || !isAdminSession(session)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 

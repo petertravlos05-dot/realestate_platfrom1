@@ -4,8 +4,7 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 
 export async function POST(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: Request
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -14,8 +13,7 @@ export async function POST(
     }
 
     const body = await request.json();
-    const { agentId, date, time } = body;
-    const propertyId = params.id;
+    const { agentId, date, time, propertyId } = body;
 
     // Verify availability
     const availability = await prisma.propertyAvailability.findFirst({

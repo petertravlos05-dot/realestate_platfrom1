@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/auth';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -17,9 +17,10 @@ export async function GET(
       );
     }
 
+    const { id } = await params;
     const transaction = await prisma.transaction.findUnique({
       where: {
-        id: params.id,
+        id,
       },
       include: {
         property: {
@@ -103,7 +104,7 @@ export async function GET(
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -111,15 +112,16 @@ export async function PATCH(
       return new NextResponse('Unauthorized', { status: 401 });
     }
 
+    const { id } = await params;
     const { interestCancelled } = await request.json();
     
     console.log('=== Updating Transaction ===', {
-      transactionId: params.id,
+      transactionId: id,
       interestCancelled
     });
 
     const updatedTransaction = await prisma.transaction.update({
-      where: { id: params.id },
+      where: { id },
       data: { interestCancelled }
     });
 

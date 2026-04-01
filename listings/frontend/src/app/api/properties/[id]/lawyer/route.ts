@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
-  const propertyId = params.id;
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id: propertyId } = await params;
   try {
     const property = await prisma.property.findUnique({
       where: { id: propertyId },
@@ -22,8 +22,8 @@ export async function GET(request: Request, { params }: { params: { id: string }
   }
 }
 
-export async function POST(request: Request, { params }: { params: { id: string } }) {
-  const propertyId = params.id;
+export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id: propertyId } = await params;
   try {
     const body = await request.json();
     const { name, email, phone, taxId } = body;

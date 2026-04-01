@@ -60,42 +60,11 @@ interface Property {
   }[];
 }
 
-interface PropertyWithRelations extends Prisma.PropertyGetPayload<{
-  include: {
-    user: true;
-    interests: {
-      include: {
-        user: {
-          select: {
-            id: true;
-          };
-        };
-      };
-    };
-    agentListings: {
-      include: {
-        agent: {
-          select: {
-            id: true;
-            connections: {
-              include: {
-                buyer: {
-                  select: {
-                    id: true;
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
-    };
-  };
-}> {}
+// Removed PropertyWithRelations interface - using inferred types from Prisma queries
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Πρώτα δοκιμάζουμε το JWT token (για το mobile app)
@@ -114,8 +83,9 @@ export async function GET(
       userRole = session?.user?.role;
     }
 
+    const { id } = await params;
     const property = await prisma.property.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         user: true,
         favorites: {
@@ -166,11 +136,11 @@ export async function GET(
         // 2. Είναι admin
         userRole === 'admin' ||
         // 3. Είναι ενδιαφερόμενος buyer
-        property.favorites.some(favorite => favorite.user.id === userId) ||
+        property.favorites.some((favorite: typeof property.favorites[0]) => favorite.user.id === userId) ||
         // 4. Είναι agent που έχει προωθήσει το ακίνητο ή έχει συνδεδεμένο buyer
-        property.connections.some(conn => 
+        property.connections.some((conn: typeof property.connections[0]) => 
           conn.agent.id === userId || 
-          conn.agent.buyerConnections.some(bc => bc.buyer.id === userId)
+          conn.agent.buyerConnections.some((bc: typeof conn.agent.buyerConnections[0]) => bc.buyer.id === userId)
         );
 
       if (!canView) {
@@ -187,12 +157,13 @@ export async function GET(
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
     const body = await request.json();
     const property = await prisma.property.update({
-      where: { id: params.id },
+      where: { id },
       data: body,
     });
 
@@ -205,11 +176,12 @@ export async function PATCH(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
     await prisma.property.delete({
-      where: { id: params.id },
+      where: { id },
     });
 
     return NextResponse.json({ success: true });

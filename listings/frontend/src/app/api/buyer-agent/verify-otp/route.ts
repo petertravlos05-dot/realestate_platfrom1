@@ -5,8 +5,31 @@ import { prisma } from '@/lib/prisma';
 import { validateJwtToken } from '@/middleware';
 import { generateId } from '@/lib/utils/id';
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export async function POST(request: Request) {
   try {
+    // Όταν υπάρχει backend, προωθούμε το αίτημα εκεί γιατί δημιουργεί DealRoom
+    if (BACKEND_URL) {
+      const body = await request.text();
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json',
+      };
+      const authHeader = request.headers.get('Authorization');
+      if (authHeader) headers['Authorization'] = authHeader;
+      const cookie = request.headers.get('Cookie');
+      if (cookie) headers['Cookie'] = cookie;
+
+      const res = await fetch(`${BACKEND_URL}/api/buyer-agent/verify-otp`, {
+        method: 'POST',
+        headers,
+        body,
+        credentials: 'include',
+      });
+      const data = await res.json();
+      return NextResponse.json(data, { status: res.status });
+    }
+
     // Πρώτα δοκιμάζουμε το JWT token (για το mobile app)
     const jwtUser = await validateJwtToken(request as any);
     let userId: string | undefined;
@@ -106,6 +129,50 @@ export async function POST(request: Request) {
         leadId: leadId,
       },
     });
+
+    // Δημιουργία DealRoom με raw SQL (το frontend schema δεν έχει DealRoom model)
+    try {
+      const existingRoom = await prisma.$queryRawUnsafe<{ id: string }[]>(
+        `SELECT id FROM deal_rooms WHERE "propertyId" = $1 AND "buyerId" = $2`,
+        connection.propertyId,
+        connection.buyerId
+      );
+      if (existingRoom.length === 0) {
+        const roomId = generateId();
+        await prisma.$executeRawUnsafe(
+          `INSERT INTO deal_rooms (id, "propertyId", "buyerId", "sellerId", "agentId", status, "createdAt", "updatedAt")
+           VALUES ($1, $2, $3, $4, $5, 'DRAFT', NOW(), NOW())`,
+          roomId,
+          connection.propertyId,
+          connection.buyerId,
+          property.userId,
+          connection.agentId
+        );
+        const p1 = generateId(), p2 = generateId(), p3 = generateId();
+        await prisma.$executeRawUnsafe(
+          `INSERT INTO deal_participants (id, "dealRoomId", "userId", role, "joinedAt")
+           VALUES ($1, $6, $2, 'BUYER'::"DealRole", NOW()),
+                  ($3, $6, $4, 'SELLER'::"DealRole", NOW()),
+                  ($5, $6, $7, 'AGENT'::"DealRole", NOW())`,
+          p1, connection.buyerId, p2, property.userId, p3, roomId, connection.agentId
+        );
+        const threadId = generateId();
+        await prisma.$executeRawUnsafe(
+          `INSERT INTO deal_threads (id, "dealRoomId", type, title, "createdAt")
+           VALUES ($1, $2, 'GROUP', 'Group Chat', NOW())`,
+          threadId,
+          roomId
+        );
+        const m1 = generateId(), m2 = generateId(), m3 = generateId();
+        await prisma.$executeRawUnsafe(
+          `INSERT INTO deal_thread_members (id, "threadId", "userId", "joinedAt")
+           VALUES ($1, $5, $2, NOW()), ($3, $5, $4, NOW()), ($6, $5, $7, NOW())`,
+          m1, connection.buyerId, m2, property.userId, threadId, m3, connection.agentId
+        );
+      }
+    } catch (drErr) {
+      console.error('Error creating deal room:', drErr);
+    }
 
     // Ενημέρωση PropertyStats
     const statsId = generateId();

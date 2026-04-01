@@ -9,7 +9,11 @@ export enum UserRole {
   ADMIN = 'ADMIN',
   AGENT = 'AGENT',
   BUYER = 'BUYER',
-  SELLER = 'SELLER'
+  SELLER = 'SELLER',
+  LAWYER = 'LAWYER',
+  NOTARY = 'NOTARY',
+  ENGINEER = 'ENGINEER',
+  ACCOUNTANT = 'ACCOUNTANT'
 }
 
 interface User {
@@ -17,6 +21,7 @@ interface User {
   email: string;
   name: string;
   role: UserRole;
+  userType?: string | null;
 }
 
 export const authOptions: NextAuthOptions = {
@@ -71,6 +76,11 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
+        // Check if account is deleted
+        if (user.isDeleted) {
+          return null; // Don't allow login for deleted accounts
+        }
+
         const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
 
         if (!isPasswordValid) {
@@ -82,6 +92,7 @@ export const authOptions: NextAuthOptions = {
           email: user.email, // Always return the main email for session
           name: user.name,
           role: user.role as UserRole,
+          userType: user.userType || 'INDIVIDUAL',
         };
       }
     })
@@ -91,6 +102,13 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.id = user.id;
         token.role = user.role;
+        token.userType = (user as User).userType || 'INDIVIDUAL';
+      } else if (token.id != null && token.userType === undefined) {
+        const dbUser = await prisma.user.findUnique({
+          where: { id: token.id as string },
+          select: { userType: true },
+        });
+        token.userType = dbUser?.userType || 'INDIVIDUAL';
       }
       return token;
     },
@@ -98,6 +116,7 @@ export const authOptions: NextAuthOptions = {
       if (token && session.user) {
         session.user.id = token.id as string;
         session.user.role = token.role as UserRole;
+        session.user.userType = (token.userType as string) || 'INDIVIDUAL';
       }
       return session;
     }

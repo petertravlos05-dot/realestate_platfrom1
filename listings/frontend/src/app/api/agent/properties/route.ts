@@ -15,7 +15,7 @@ export async function GET(request: Request) {
       );
     }
 
-    const query: Prisma.PropertyFindManyArgs = {
+    const query = {
       where: {
         OR: [
           // Διαθέσιμα ακίνητα
@@ -96,7 +96,7 @@ export async function GET(request: Request) {
         }
       },
       orderBy: {
-        createdAt: Prisma.SortOrder.desc
+        createdAt: 'desc' as const
       }
     };
 

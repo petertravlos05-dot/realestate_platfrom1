@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { FaBed, FaBath, FaRuler, FaHeart, FaRegHeart, FaRulerCombined, FaTag, FaBolt } from 'react-icons/fa';
+import { FaBed, FaBath, FaRulerCombined, FaHeart, FaRegHeart } from 'react-icons/fa';
+import { getPropertyImageUrl } from '@/lib/utils/propertyImageUrl';
 import { Property } from '@/types/property';
 import PropertyDetailsModal from './PropertyDetailsModal';
 
@@ -13,16 +14,22 @@ interface PropertyCardProps {
   viewMode: 'grid' | 'list';
   onFavoriteClick: (propertyId: string) => void;
   isAuthenticated: boolean;
+  isFavorite?: boolean;
   onPromote?: (propertyId: string) => void;
   userRole: 'buyer' | 'seller' | 'agent';
 }
 
-export default function PropertyCard({ property, viewMode, onFavoriteClick, isAuthenticated, onPromote, userRole }: PropertyCardProps) {
+export default function PropertyCard({ property, viewMode, onFavoriteClick, isAuthenticated, isFavorite = false, onPromote, userRole }: PropertyCardProps) {
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCardClick = () => {
     setIsModalOpen(true);
+  };
+
+  const handleFavoriteClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onFavoriteClick(property.id);
   };
 
   const handleViewDetails = (e: React.MouseEvent) => {
@@ -36,84 +43,79 @@ export default function PropertyCard({ property, viewMode, onFavoriteClick, isAu
     }
   };
 
-  // Badge logic
-  const isNew = property.createdAt && (new Date().getTime() - new Date(property.createdAt).getTime()) < 7 * 24 * 60 * 60 * 1000;
-  const hasOffer = property.features && property.features.includes('Προσφορά');
+  const isSoldOrRented = property.propertySold || property.isSold;
+  const isDepositLocked = (property as any).depositLocked;
+  const getListingType = () => {
+    const a = (property as any).amenities;
+    if (a && typeof a === 'object' && (a.listingType || a.transactionType)) {
+      const t = (a.listingType || a.transactionType || '').toLowerCase();
+      return t === 'rent' ? 'rent' : 'sale';
+    }
+    return 'sale';
+  };
+
+  const getStatusBanner = (): { label: string; className: string } => {
+    const isRent = getListingType() === 'rent';
+    if (isSoldOrRented) return { label: isRent ? 'Ενοικιάστηκε' : 'Πουλημένο', className: 'bg-slate-700/90 text-white' };
+    if (isDepositLocked || property.isReserved || property.status !== 'ACTIVE') return { label: 'Μη διαθεσίμο', className: 'bg-amber-600/90 text-white' };
+    return { label: isRent ? 'Ενοικιάζεται' : 'Πωλείται', className: userRole === 'agent' ? 'bg-indigo-600/90 text-white' : 'bg-emerald-600/90 text-white' };
+  };
+
+  const isAgent = userRole === 'agent';
+  const priceClass = isAgent ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 bg-clip-text text-transparent' : 'bg-gradient-to-r from-blue-800 to-slate-700 bg-clip-text text-transparent';
+  const iconClass = isAgent ? 'text-indigo-600' : 'text-blue-800';
+  const btnClass = isAgent ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white hover:from-indigo-700 hover:to-indigo-800' : 'bg-gradient-to-r from-blue-800 to-slate-700 text-white hover:from-blue-900 hover:to-slate-800';
 
   if (viewMode === 'list') {
     return (
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 flex flex-col md:flex-row gap-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative">
-        {property.images && property.images[0] && (
-          <div className="relative w-full md:w-56 h-40 md:h-32 flex-shrink-0 overflow-hidden rounded-xl">
-            <Image
-              src={property.images[0]}
-              alt={property.title}
-              fill
-              className="object-cover"
-            />
-            {isNew && (
-              <span className="absolute top-2 left-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
-                <FaBolt className="w-3 h-3" /> Νέο
-              </span>
-            )}
-            {hasOffer && (
-              <span className="absolute top-2 right-2 bg-gradient-to-r from-pink-500 to-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
-                <FaTag className="w-3 h-3" /> Προσφορά
-              </span>
-            )}
-          </div>
-        )}
+        <div className="relative w-full md:w-56 h-40 md:h-32 flex-shrink-0 overflow-hidden rounded-xl">
+          <Image
+            src={getPropertyImageUrl(property.images?.[0])}
+            alt={property.title}
+            fill
+            className="object-cover"
+          />
+          <span className={`absolute top-2 left-2 ${getStatusBanner().className} text-xs font-bold px-3 py-1 rounded-full shadow-md`}>
+            {getStatusBanner().label}
+          </span>
+        </div>
         <div className="flex-grow flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-1 line-clamp-1">{property.title}</h3>
             <p className="text-gray-500 mb-2 line-clamp-1">{property.location}</p>
-            <div className="flex items-center gap-4 mb-2">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                {property.price.toLocaleString('el-GR')} €
+            <div className="flex items-center gap-2 mb-2">
+              <span className={`text-2xl font-bold bg-clip-text text-transparent ${userRole === 'agent' ? 'bg-gradient-to-r from-indigo-600 to-indigo-700' : 'bg-gradient-to-r from-blue-800 to-slate-700'}`}>
+                {property.price.toLocaleString('el-GR')} €{getListingType() === 'rent' ? '/μήνα' : ''}
               </span>
-              <span
-                className={`px-3 py-1 rounded-full text-xs font-semibold shadow-sm ${
-                  property.status === 'ACTIVE'
-                    ? 'bg-green-100 text-green-700'
-                    : 'bg-red-100 text-red-700'
-                }`}
+              <button
+                onClick={handleFavoriteClick}
+                className="p-1.5 rounded-full text-red-500 hover:bg-red-50 transition-all duration-200 flex-shrink-0"
+                title={isFavorite ? 'Αφαίρεση από αγαπημένα' : 'Προσθήκη στα αγαπημένα'}
+                aria-label={isFavorite ? 'Αφαίρεση από αγαπημένα' : 'Προσθήκη στα αγαπημένα'}
               >
-                {property.status === 'ACTIVE' ? 'Διαθέσιμο' : 'Μη Διαθέσιμο'}
-              </span>
+                {isFavorite ? <FaHeart className="w-4 h-4 fill-red-500 text-red-500" /> : <FaRegHeart className="w-4 h-4 text-red-500" />}
+              </button>
             </div>
             <div className="flex items-center gap-6 text-gray-600 mb-2">
               <div className="flex items-center gap-1">
-                <FaBed className="text-blue-400" />
+                <FaBed className={userRole === 'agent' ? 'text-indigo-600' : 'text-blue-800'} />
                 <span>{property.bedrooms}</span>
               </div>
               <div className="flex items-center gap-1">
-                <FaBath className="text-blue-400" />
+                <FaBath className={userRole === 'agent' ? 'text-indigo-600' : 'text-blue-800'} />
                 <span>{property.bathrooms}</span>
               </div>
               <div className="flex items-center gap-1">
-                <FaRulerCombined className="text-blue-400" />
+                <FaRulerCombined className={userRole === 'agent' ? 'text-indigo-600' : 'text-blue-800'} />
                 <span>{property.area} τ.μ.</span>
               </div>
             </div>
           </div>
           <div className="flex items-center gap-2 mt-2">
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onFavoriteClick(property.id);
-              }}
-              className="p-2 text-gray-400 hover:text-red-500 transition-colors"
-              title="Αγαπημένο"
-            >
-              {property.isFavorite ? (
-                <FaHeart className="w-5 h-5 text-red-500" />
-              ) : (
-                <FaRegHeart className="w-5 h-5 text-gray-600" />
-              )}
-            </button>
-            <button
               onClick={handleViewDetails}
-              className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg hover:from-blue-600 hover:to-indigo-600 shadow-md font-semibold transition-all duration-300"
+              className={`flex-1 px-4 py-2 text-white rounded-lg shadow-md font-semibold transition-all duration-300 ${userRole === 'agent' ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800' : 'bg-gradient-to-r from-blue-800 to-slate-700 hover:from-blue-900 hover:to-slate-800'}`}
             >
               Προβολή
             </button>
@@ -125,74 +127,58 @@ export default function PropertyCard({ property, viewMode, onFavoriteClick, isAu
 
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative group">
-      {property.images && property.images[0] && (
-        <div className="relative h-56 w-full overflow-hidden">
-          <Image
-            src={property.images[0]}
-            alt={property.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-          {isNew && (
-            <span className="absolute top-2 left-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
-              <FaBolt className="w-3 h-3" /> Νέο
-            </span>
-          )}
-          {hasOffer && (
-            <span className="absolute top-2 right-2 bg-gradient-to-r from-pink-500 to-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
-              <FaTag className="w-3 h-3" /> Προσφορά
-            </span>
-          )}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onFavoriteClick(property.id);
-            }}
-            className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md text-gray-400 hover:text-red-500 transition-colors"
-            title="Αγαπημένο"
-          >
-            {property.isFavorite ? (
-              <FaHeart className="w-5 h-5 text-red-500" />
-            ) : (
-              <FaRegHeart className="w-5 h-5 text-gray-600" />
-            )}
-          </button>
-        </div>
-      )}
+      <div className="relative h-56 w-full overflow-hidden">
+        <Image
+          src={getPropertyImageUrl(property.images?.[0])}
+          alt={property.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <span className={`absolute top-2 left-2 ${getStatusBanner().className} text-xs font-bold px-3 py-1 rounded-full shadow-md`}>
+          {getStatusBanner().label}
+        </span>
+        <button
+          onClick={handleFavoriteClick}
+          className="absolute top-2 right-2 p-2 rounded-full bg-white/90 shadow-md text-red-500 hover:bg-red-50 hover:scale-110 transition-all duration-200 z-10"
+          title={isFavorite ? 'Αφαίρεση από αγαπημένα' : 'Προσθήκη στα αγαπημένα'}
+          aria-label={isFavorite ? 'Αφαίρεση από αγαπημένα' : 'Προσθήκη στα αγαπημένα'}
+        >
+          {isFavorite ? <FaHeart className="w-4 h-4 fill-red-500 text-red-500" /> : <FaRegHeart className="w-4 h-4 text-red-500" />}
+        </button>
+      </div>
       <div className="p-5">
         <h3 className="text-lg font-bold text-gray-900 mb-1 line-clamp-1">{property.title}</h3>
         <p className="text-gray-500 mb-2 line-clamp-1">{property.location}</p>
         <div className="flex items-center justify-between mb-3">
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            {property.price.toLocaleString('el-GR')} €
+          <span className={`text-xl font-bold bg-clip-text text-transparent ${priceClass}`}>
+            {property.price.toLocaleString('el-GR')} €{getListingType() === 'rent' ? '/μήνα' : ''}
           </span>
-          <span
-            className={`px-3 py-1 rounded-full text-xs font-semibold shadow-sm ${
-              property.status === 'ACTIVE'
-                ? 'bg-green-100 text-green-700'
-                : 'bg-red-100 text-red-700'
-            }`}
+          <button
+            onClick={handleFavoriteClick}
+            className="p-1.5 rounded-full text-red-500 hover:bg-red-50 transition-all duration-200 flex-shrink-0"
+            title={isFavorite ? 'Αφαίρεση από αγαπημένα' : 'Προσθήκη στα αγαπημένα'}
+            aria-label={isFavorite ? 'Αφαίρεση από αγαπημένα' : 'Προσθήκη στα αγαπημένα'}
           >
-            {property.status === 'ACTIVE' ? 'Διαθέσιμο' : 'Μη Διαθέσιμο'}
-          </span>
+            {isFavorite ? <FaHeart className="w-4 h-4 fill-red-500 text-red-500" /> : <FaRegHeart className="w-4 h-4 text-red-500" />}
+          </button>
         </div>
         <div className="flex justify-between items-center text-gray-600 mb-4">
           <div className="flex items-center gap-1">
-            <FaBed className="text-blue-400" />
+            <FaBed className={userRole === 'agent' ? 'text-indigo-600' : 'text-blue-800'} />
             <span>{property.bedrooms}</span>
           </div>
           <div className="flex items-center gap-1">
-            <FaBath className="text-blue-400" />
+            <FaBath className={userRole === 'agent' ? 'text-indigo-600' : 'text-blue-800'} />
             <span>{property.bathrooms}</span>
           </div>
           <div className="flex items-center gap-1">
-            <FaRulerCombined className="text-blue-400" />
+            <FaRulerCombined className={userRole === 'agent' ? 'text-indigo-600' : 'text-blue-800'} />
             <span>{property.area} τ.μ.</span>
           </div>
         </div>
         <button
           onClick={handleViewDetails}
-          className="w-full py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg hover:from-blue-600 hover:to-indigo-600 shadow-md font-semibold transition-all duration-300"
+          className={`w-full py-2 text-white rounded-lg shadow-md font-semibold transition-all duration-300 ${userRole === 'agent' ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800' : 'bg-gradient-to-r from-blue-800 to-slate-700 hover:from-blue-900 hover:to-slate-800'}`}
         >
           Προβολή Λεπτομερειών
         </button>

@@ -5,8 +5,9 @@ import { prisma } from '@/lib/prisma';
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
     const session = await getServerSession(authOptions);
 
@@ -22,7 +23,7 @@ export async function PUT(
 
     // Βρίσκουμε το ακίνητο
     const property = await prisma.property.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: { user: true }
     });
 
@@ -32,7 +33,7 @@ export async function PUT(
 
     // Ενημερώνουμε το ακίνητο
     const updatedProperty = await prisma.property.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         removalRequested: action === 'approve' ? true : false,
         status: action === 'approve' ? 'unavailable' : 'approved'

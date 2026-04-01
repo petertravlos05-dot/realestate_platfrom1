@@ -2,15 +2,16 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
-import { Property, PropertyProgress, Notification } from '@prisma/client';
 import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   console.log('=== GET Progress API Call START ===', {
-    propertyId: params.id,
+    propertyId: id,
     timestamp: new Date().toISOString()
   });
 
@@ -31,7 +32,7 @@ export async function GET(
 
       const token = authHeader.split(' ')[1];
       try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'Agapao_ton_stivo05') as { userId: string };
+        const decoded = jwt.verify(token, getJwtSecret()) as { userId: string };
         userId = decoded.userId;
       } catch (error) {
         console.log('❌ Invalid token:', error);
@@ -45,7 +46,7 @@ export async function GET(
     }
 
     const property = await prisma.property.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         progress: {
           include: {
@@ -56,7 +57,7 @@ export async function GET(
     });
 
     if (!property) {
-      console.log('❌ Property not found:', params.id);
+      console.log('❌ Property not found:', id);
       return NextResponse.json({ error: 'Property not found' }, { status: 404 });
     }
 
@@ -77,10 +78,11 @@ export async function GET(
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   console.log('=== PUT Progress API Call START ===', {
-    propertyId: params.id,
+    propertyId: id,
     timestamp: new Date().toISOString()
   });
 
@@ -92,7 +94,7 @@ export async function PUT(
     }
 
     const { stage, status, message } = await request.json();
-    const propertyId = params.id;
+    const propertyId = id;
 
     console.log('Request data:', {
       stage,

@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       console.log('Created referral record with code:', referralCode);
     }
 
-    const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3004';
+    const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
     const referralLink = `${baseUrl}/register?ref=${referralCode}`;
 
     return NextResponse.json({ 

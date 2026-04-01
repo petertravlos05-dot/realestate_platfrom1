@@ -79,9 +79,9 @@ export async function GET(request: Request) {
     }) as unknown as BuyerAgentConnection[];
 
     // Debug log
-    console.log('buyerAgentConnections:', connections.map(c => ({ id: c.id, propertyId: c.propertyId, buyerId: c.buyerId, agentId: c.agentId })));
+    console.log('buyerAgentConnections:', connections.map((c: typeof connections[0]) => ({ id: c.id, propertyId: c.propertyId, buyerId: c.buyerId, agentId: c.agentId })));
 
-    const properties = connections.map((connection: BuyerAgentConnection) => ({
+    const properties = connections.map((connection: typeof connections[0]) => ({
       id: connection.property.id,
       title: connection.property.title,
       shortDescription: connection.property.shortDescription,

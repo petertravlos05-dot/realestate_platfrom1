@@ -4,6 +4,7 @@ import { validateJwtToken, optionalAuth, AuthRequest } from '../middleware/auth'
 import { generateOTP } from '../lib/utils/otp';
 import { sendOtpEmail, sendOtpSms } from '../lib/utils/send-otp';
 import { generateId } from '../lib/utils/id';
+import { otpRateLimit } from '../middleware/rateLimit';
 
 const router = Router();
 
@@ -73,7 +74,7 @@ router.post('/check', optionalAuth, async (req: AuthRequest, res: Response) => {
 });
 
 // POST /api/buyer-agent/connect - Connect buyer with agent
-router.post('/connect', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.post('/connect', otpRateLimit, validateJwtToken, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
     const { agentId, propertyId, buyerName, buyerEmail, buyerPhone, otpMethod } = req.body;
@@ -145,6 +146,58 @@ router.post('/connect', validateJwtToken, async (req: AuthRequest, res: Response
             leadId: lead.id,
           },
         });
+
+        // Create Deal Room
+        let dealRoom = null;
+        try {
+          // Check if deal room already exists
+          dealRoom = await prisma.dealRoom.findUnique({
+            where: {
+              propertyId_buyerId: {
+                propertyId: connection.propertyId,
+                buyerId: connection.buyerId,
+              },
+            },
+          });
+
+          if (!dealRoom) {
+            // Create new deal room with agent
+            dealRoom = await prisma.dealRoom.create({
+              data: {
+                propertyId: connection.propertyId,
+                buyerId: connection.buyerId,
+                sellerId: propertyDetails.userId,
+                agentId: connection.agentId,
+                status: 'DRAFT',
+                participants: {
+                  create: [
+                    { userId: connection.buyerId, role: 'BUYER' as const },
+                    { userId: propertyDetails.userId, role: 'SELLER' as const },
+                    { userId: connection.agentId, role: 'AGENT' as const },
+                  ],
+                },
+                threads: {
+                  create: [
+                    {
+                      type: 'GROUP',
+                      title: 'Group Chat',
+                      members: {
+                        create: [
+                          { userId: connection.buyerId },
+                          { userId: propertyDetails.userId },
+                          { userId: connection.agentId },
+                        ],
+                      },
+                    },
+                  ],
+                },
+              },
+            });
+          }
+        } catch (dealRoomError) {
+          // Log error but don't fail the request - Deal Room creation is optional
+          console.error('Error creating deal room:', dealRoomError);
+        }
 
         // Create notification for seller
         const buyer = await prisma.user.findUnique({
@@ -283,7 +336,7 @@ router.post('/connect', validateJwtToken, async (req: AuthRequest, res: Response
 });
 
 // POST /api/buyer-agent/verify-otp - Verify OTP
-router.post('/verify-otp', optionalAuth, async (req: AuthRequest, res: Response) => {
+router.post('/verify-otp', otpRateLimit, optionalAuth, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
     const { buyerId, agentId, propertyId, otpCode } = req.body;
@@ -373,6 +426,58 @@ router.post('/verify-otp', optionalAuth, async (req: AuthRequest, res: Response)
         leadId: leadId,
       },
     });
+
+    // Create Deal Room
+    let dealRoom = null;
+    try {
+      // Check if deal room already exists
+      dealRoom = await prisma.dealRoom.findUnique({
+        where: {
+          propertyId_buyerId: {
+            propertyId: connection.propertyId,
+            buyerId: connection.buyerId,
+          },
+        },
+      });
+
+      if (!dealRoom) {
+        // Create new deal room with agent
+        dealRoom = await prisma.dealRoom.create({
+          data: {
+            propertyId: connection.propertyId,
+            buyerId: connection.buyerId,
+            sellerId: property.userId,
+            agentId: connection.agentId,
+            status: 'DRAFT',
+            participants: {
+              create: [
+                { userId: connection.buyerId, role: 'BUYER' as const },
+                { userId: property.userId, role: 'SELLER' as const },
+                { userId: connection.agentId, role: 'AGENT' as const },
+              ],
+            },
+            threads: {
+              create: [
+                {
+                  type: 'GROUP',
+                  title: 'Group Chat',
+                  members: {
+                    create: [
+                      { userId: connection.buyerId },
+                      { userId: property.userId },
+                      { userId: connection.agentId },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        });
+      }
+    } catch (dealRoomError) {
+      // Log error but don't fail the request - Deal Room creation is optional
+      console.error('Error creating deal room:', dealRoomError);
+    }
 
     // Update PropertyStats
     await prisma.propertyStats.upsert({

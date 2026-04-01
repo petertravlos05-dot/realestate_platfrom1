@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
+import { isAdminSession } from '@/lib/auth/admin-helpers';
 import { prisma } from '@/lib/prisma';
+import * as Sentry from '@sentry/nextjs';
 
 interface Seller {
   id: string;
@@ -18,7 +20,7 @@ export async function GET() {
   try {
     const session = await getServerSession(authOptions);
 
-    if (!session || session.user.role !== 'admin') {
+    if (!session || !isAdminSession(session)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
@@ -59,6 +61,7 @@ export async function GET() {
     return NextResponse.json(formattedSellers);
   } catch (error) {
     console.error('Error fetching sellers:', error);
+    Sentry.captureException(error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 } 

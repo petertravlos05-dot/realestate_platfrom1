@@ -125,6 +125,14 @@ export default function AgentDashboard() {
   const [loadingReferralStats, setLoadingReferralStats] = useState(false);
 
   useEffect(() => {
+    try {
+      sessionStorage.setItem('deals_cameFromAgent', '1');
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  useEffect(() => {
     const fetchClients = async () => {
       if (!session?.user) {
         console.log('No session found');
@@ -553,11 +561,11 @@ export default function AgentDashboard() {
     setClients((prev: Client[]) => prev.filter((client: Client) => client.transactionId !== leadId));
   };
 
-  // Fetch properties από το /api/properties (όπως στη σελίδα agent/properties)
+  // Fetch agent properties for AddInterestedBuyerModal (with full data for picker)
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const { data } = await apiClient.get('/properties');
+        const { data } = await apiClient.get('/agent/properties');
         if (Array.isArray(data)) {
           setAllProperties(data);
         }
@@ -911,7 +919,7 @@ export default function AgentDashboard() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8"
         >
           <motion.div 
             whileHover={{ scale: 1.02 }}
@@ -993,6 +1001,24 @@ export default function AgentDashboard() {
                 </p>
               </div>
             </div>
+          </motion.div>
+
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-white rounded-xl shadow-sm border border-gray-100 p-6"
+          >
+            <Link href="/deals?from=agent&tab=overview" className="block">
+              <div className="flex items-center">
+                <div className="p-3 rounded-full bg-purple-100 text-purple-600">
+                  <FaExchangeAlt className="w-6 h-6" />
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-sm font-medium text-gray-500">Συναλλαγές</h3>
+                  <p className="text-2xl font-bold text-gray-900 mt-1">Δείτε όλες</p>
+                </div>
+              </div>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -1518,7 +1544,17 @@ export default function AgentDashboard() {
         }}
         agentId={session?.user?.id || ''}
         propertyId={''}
-        properties={allProperties.map(p => ({ id: p.id, title: p.title }))}
+        properties={allProperties.map((p: any) => ({
+          id: p.id,
+          title: p.title,
+          city: p.city,
+          price: p.price,
+          coordinates: p.coordinates && typeof p.coordinates?.lat === 'number' ? p.coordinates : undefined,
+          status: p.status,
+          propertySold: p.propertySold ?? p.isSold,
+          isReserved: p.isReserved,
+          amenities: p.amenities,
+        }))}
       />
     </div>
   );

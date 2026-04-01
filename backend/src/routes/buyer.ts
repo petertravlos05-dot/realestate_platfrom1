@@ -1,6 +1,9 @@
 import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { validateJwtToken, optionalAuth, AuthRequest } from '../middleware/auth';
+import { mediumRateLimit } from '../middleware/rateLimit';
+import { checkPropertyLeadAccess } from '../lib/utils/authorization';
+import { publishDealEvent } from '../services/realtime/eventBus';
 
 const router = Router();
 
@@ -54,8 +57,20 @@ router.get('/interested-properties', optionalAuth, async (req: AuthRequest, res:
       }
     });
 
+    const propertyIds = propertyLeads.map(l => l.propertyId);
+    const soldPropertyIds = new Set(
+      (await prisma.dealRoom.findMany({
+        where: {
+          propertyId: { in: propertyIds },
+          status: { in: ['COMPLETED', 'CLOSED'] },
+        },
+        select: { propertyId: true },
+      })).map(d => d.propertyId)
+    );
+
     const properties = propertyLeads.map(l => {
       const property = l.property as any;
+      property.propertySold = soldPropertyIds.has(l.propertyId) || property.isSold;
       if (property.transactions && property.transactions.length > 0) {
         const transaction = property.transactions[0];
         // Find the most recent progress
@@ -103,7 +118,7 @@ router.get('/interested-properties', optionalAuth, async (req: AuthRequest, res:
 });
 
 // POST /api/buyer/interested-properties - Express interest
-router.post('/interested-properties', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.post('/interested-properties', mediumRateLimit, validateJwtToken, async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.userId;
     const { propertyId } = req.body;
@@ -299,7 +314,72 @@ router.post('/interested-properties', validateJwtToken, async (req: AuthRequest,
       });
     }
 
-    res.json({ success: true, lead, transaction });
+    // Create or get Deal Room automatically when interest is expressed
+    let dealRoom = null;
+    try {
+      // Check if deal room already exists
+      dealRoom = await prisma.dealRoom.findUnique({
+        where: {
+          propertyId_buyerId: {
+            propertyId,
+            buyerId: userId,
+          },
+        },
+      });
+
+      if (!dealRoom) {
+        // Find agent via PropertyLead or BuyerAgentConnection
+        let agentId: string | undefined;
+        const leadForAgent = await prisma.propertyLead.findFirst({
+          where: {
+            propertyId,
+            buyerId: userId,
+          },
+          select: { agentId: true },
+        });
+        if (leadForAgent?.agentId) {
+          agentId = leadForAgent.agentId;
+        }
+
+        // Create new deal room
+        dealRoom = await prisma.dealRoom.create({
+          data: {
+            propertyId,
+            buyerId: userId,
+            sellerId: property.userId,
+            agentId,
+            status: 'DRAFT',
+            participants: {
+              create: [
+                { userId, role: 'BUYER' as const },
+                { userId: property.userId, role: 'SELLER' as const },
+                ...(agentId ? [{ userId: agentId, role: 'AGENT' as const }] : []),
+              ],
+            },
+            threads: {
+              create: [
+                {
+                  type: 'GROUP',
+                  title: 'Group Chat',
+                  members: {
+                    create: [
+                      { userId },
+                      { userId: property.userId },
+                      ...(agentId ? [{ userId: agentId }] : []),
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        });
+      }
+    } catch (dealRoomError) {
+      // Log error but don't fail the request - Deal Room creation is optional
+      console.error('Error creating deal room:', dealRoomError);
+    }
+
+    res.json({ success: true, lead, transaction, dealRoomId: dealRoom?.id });
   } catch (error) {
     console.error('Error expressing interest:', error);
     res.status(500).json({
@@ -434,6 +514,47 @@ router.delete('/interested-properties/:id', validateJwtToken, async (req: AuthRe
       }
     }
 
+    // Mark related deal room as CANCELLED so all participants see it as cancelled
+    const dealRoom = await prisma.dealRoom.findUnique({
+      where: {
+        propertyId_buyerId: {
+          propertyId,
+          buyerId: userId,
+        },
+      },
+      select: {
+        id: true,
+        status: true,
+        property: {
+          select: {
+            amenities: true,
+          },
+        },
+      },
+    });
+
+    if (dealRoom && dealRoom.status !== 'CANCELLED') {
+      const previousDealStatus = dealRoom.status;
+      await prisma.dealRoom.update({
+        where: { id: dealRoom.id },
+        data: { status: 'CANCELLED' },
+      });
+
+      const amenities = (dealRoom.property?.amenities || {}) as Record<string, unknown>;
+      const listingType = String(amenities.listingType || amenities.transactionType || '').toLowerCase();
+      const cancelledByLabel = listingType === 'rent' ? 'ενοικιαστή' : 'αγοραστή';
+
+      publishDealEvent(dealRoom.id, {
+        type: 'deal_cancelled',
+        actorUserId: userId,
+        summary: `Η συναλλαγή ακυρώθηκε από τον ${cancelledByLabel}`,
+        metadata: {
+          cancelledByRole: 'BUYER',
+          previousDealStatus,
+        },
+      });
+    }
+
     // Create notification for buyer
     await prisma.notification.create({
       data: {
@@ -445,6 +566,8 @@ router.delete('/interested-properties/:id', validateJwtToken, async (req: AuthRe
         metadata: {
           leadId: propertyLead.id,
           transactionId: transaction?.id,
+          dealRoomId: dealRoom?.id,
+          previousDealStatus: dealRoom?.status,
           shouldOpenModal: false
         }
       }
@@ -643,10 +766,76 @@ router.post('/properties/:property_id/express-interest', optionalAuth, async (re
       }
     }
 
+    // Create or get Deal Room automatically when interest is expressed
+    let dealRoom = null;
+    try {
+      // Check if deal room already exists
+      dealRoom = await prisma.dealRoom.findUnique({
+        where: {
+          propertyId_buyerId: {
+            propertyId: property_id,
+            buyerId: userId,
+          },
+        },
+      });
+
+      if (!dealRoom) {
+        // Find agent via PropertyLead
+        let agentId: string | undefined;
+        const leadForAgent = await prisma.propertyLead.findFirst({
+          where: {
+            propertyId: property_id,
+            buyerId: userId,
+          },
+          select: { agentId: true },
+        });
+        if (leadForAgent?.agentId) {
+          agentId = leadForAgent.agentId;
+        }
+
+        // Create new deal room
+        dealRoom = await prisma.dealRoom.create({
+          data: {
+            propertyId: property_id,
+            buyerId: userId,
+            sellerId: property.userId,
+            agentId,
+            status: 'DRAFT',
+            participants: {
+              create: [
+                { userId, role: 'BUYER' as const },
+                { userId: property.userId, role: 'SELLER' as const },
+                ...(agentId ? [{ userId: agentId, role: 'AGENT' as const }] : []),
+              ],
+            },
+            threads: {
+              create: [
+                {
+                  type: 'GROUP',
+                  title: 'Group Chat',
+                  members: {
+                    create: [
+                      { userId },
+                      { userId: property.userId },
+                      ...(agentId ? [{ userId: agentId }] : []),
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        });
+      }
+    } catch (dealRoomError) {
+      // Log error but don't fail the request - Deal Room creation is optional
+      console.error('Error creating deal room:', dealRoomError);
+    }
+
     res.json({
       message: 'Το ενδιαφέρον σας καταγράφηκε με επιτυχία',
       lead,
-      transaction
+      transaction,
+      dealRoomId: dealRoom?.id
     });
   } catch (error) {
     console.error('Error expressing interest:', error);
@@ -882,37 +1071,217 @@ router.patch('/properties/:property_id', validateJwtToken, async (req: AuthReque
       });
     }
 
-    // Update interestCancelled to false
-    const updatedLead = await prisma.propertyLead.updateMany({
+    const cancelledLead = await prisma.propertyLead.findFirst({
       where: {
         propertyId: property_id,
         buyerId: userId,
         interestCancelled: true
       },
-      data: {
-        interestCancelled: false
-      }
-    });
-
-    // Update transaction
-    const updatedTransaction = await prisma.transaction.updateMany({
-      where: {
-        propertyId: property_id,
-        buyerId: userId,
-        interestCancelled: true
+      include: {
+        property: {
+          select: {
+            id: true,
+            title: true,
+            userId: true,
+            amenities: true,
+          },
+        },
       },
-      data: {
-        interestCancelled: false
-      }
     });
 
-    if (updatedLead.count === 0) {
+    if (!cancelledLead) {
       return res.status(404).json({
         error: 'Δεν βρέθηκε ακυρωμένο ενδιαφέρον για επαναφορά'
       });
     }
 
-    res.json({ success: true });
+    const dealRoom = await prisma.dealRoom.findUnique({
+      where: {
+        propertyId_buyerId: {
+          propertyId: property_id,
+          buyerId: userId,
+        },
+      },
+      include: {
+        property: {
+          select: {
+            userId: true,
+            amenities: true,
+          },
+        },
+        offers: {
+          select: {
+            status: true,
+          },
+        },
+      },
+    });
+
+    if (!dealRoom) {
+      return res.status(404).json({
+        error: 'Δεν βρέθηκε deal room για αυτό το ακίνητο'
+      });
+    }
+
+    const amenities = (dealRoom.property?.amenities || {}) as Record<string, unknown>;
+    const listingType = String(amenities.listingType || amenities.transactionType || '').toLowerCase();
+    const actorLabel = listingType === 'rent' ? 'ενοικιαστή' : 'αγοραστή';
+
+    const hasAcceptedOffer = dealRoom.offers.some((o) => o.status === 'ACCEPTED');
+    const hasReachedCriticalStage = Boolean(
+      hasAcceptedOffer ||
+      dealRoom.lawyerApprovedBasicDocumentsAt ||
+      dealRoom.lawyerApprovedSellerDocumentsAt ||
+      dealRoom.engineerApprovedSellerDocumentsAt ||
+      dealRoom.notaryApprovedDocumentsAt ||
+      dealRoom.buyerSigningConfirmed ||
+      dealRoom.sellerSigningConfirmed
+    );
+
+    const sellerId = dealRoom.sellerId || dealRoom.property?.userId;
+    if (!sellerId) {
+      return res.status(400).json({ error: 'Δεν βρέθηκε πωλητής για το deal room' });
+    }
+
+    if (hasReachedCriticalStage) {
+      const sellerRestoreNotifications = await prisma.notification.findMany({
+        where: {
+          userId: sellerId,
+          type: 'DEAL_RESTORE_REQUEST',
+        },
+        orderBy: { createdAt: 'desc' },
+        take: 100,
+      });
+
+      const existingPending = sellerRestoreNotifications.find((n) => {
+        const metadata = (n.metadata || {}) as Record<string, unknown>;
+        return metadata.dealRoomId === dealRoom.id && metadata.status === 'PENDING';
+      });
+
+      if (existingPending) {
+        return res.json({ success: true, mode: 'request_pending' });
+      }
+
+      await prisma.notification.create({
+        data: {
+          userId: sellerId,
+          type: 'DEAL_RESTORE_REQUEST',
+          title: 'Αίτημα επαναφοράς συναλλαγής',
+          message: `Ο ${actorLabel} ζητά επαναφορά της ακυρωμένης συναλλαγής για το ακίνητο "${cancelledLead.property.title}".`,
+          propertyId: property_id,
+          metadata: {
+            recipient: 'seller',
+            dealRoomId: dealRoom.id,
+            buyerId: userId,
+            status: 'PENDING',
+            requestedAt: new Date().toISOString(),
+          },
+        },
+      });
+
+      await prisma.notification.create({
+        data: {
+          userId: userId,
+          type: 'DEAL_RESTORE_REQUEST',
+          title: 'Το αίτημα στάλθηκε',
+          message: 'Το αίτημα επαναφοράς στάλθηκε στον πωλητή και περιμένει απάντηση.',
+          propertyId: property_id,
+          metadata: {
+            recipient: 'buyer',
+            dealRoomId: dealRoom.id,
+            status: 'PENDING',
+            requestedAt: new Date().toISOString(),
+          },
+        },
+      });
+
+      publishDealEvent(dealRoom.id, {
+        type: 'deal_restore_requested',
+        actorUserId: userId,
+        summary: `Ο ${actorLabel} ζήτησε επαναφορά της ακυρωμένης συναλλαγής`,
+        metadata: {
+          requestedByRole: 'BUYER',
+          status: 'PENDING',
+        },
+      });
+
+      return res.json({ success: true, mode: 'request_sent' });
+    }
+
+    // Auto-restore path (before critical stage)
+    await prisma.propertyLead.updateMany({
+      where: {
+        propertyId: property_id,
+        buyerId: userId,
+        interestCancelled: true,
+      },
+      data: {
+        interestCancelled: false,
+        status: 'PENDING',
+      },
+    });
+
+    await prisma.transaction.updateMany({
+      where: {
+        propertyId: property_id,
+        buyerId: userId,
+        interestCancelled: true,
+      },
+      data: {
+        interestCancelled: false,
+        status: 'INTERESTED',
+        stage: 'PENDING',
+      },
+    });
+
+    await prisma.dealRoom.update({
+      where: { id: dealRoom.id },
+      data: { status: 'ACTIVE' },
+    });
+
+    await prisma.notification.create({
+      data: {
+        userId: sellerId,
+        type: 'DEAL_RESTORE_REQUEST',
+        title: 'Αυτόματη επαναφορά συναλλαγής',
+        message: `Ο ${actorLabel} επανέφερε τη συναλλαγή για το ακίνητο "${cancelledLead.property.title}".`,
+        propertyId: property_id,
+        metadata: {
+          recipient: 'seller',
+          dealRoomId: dealRoom.id,
+          status: 'AUTO_RESTORED',
+          restoredAt: new Date().toISOString(),
+        },
+      },
+    });
+
+    await prisma.notification.create({
+      data: {
+        userId: userId,
+        type: 'DEAL_RESTORE_REQUEST',
+        title: 'Η συναλλαγή επανήλθε',
+        message: 'Η συναλλαγή επανήλθε στις ενεργές συναλλαγές.',
+        propertyId: property_id,
+        metadata: {
+          recipient: 'buyer',
+          dealRoomId: dealRoom.id,
+          status: 'AUTO_RESTORED',
+          restoredAt: new Date().toISOString(),
+        },
+      },
+    });
+
+    publishDealEvent(dealRoom.id, {
+      type: 'deal_restored',
+      actorUserId: userId,
+      summary: `Η συναλλαγή επανήλθε από τον ${actorLabel}`,
+      metadata: {
+        restoredByRole: 'BUYER',
+        mode: 'AUTO',
+      },
+    });
+
+    res.json({ success: true, mode: 'restored' });
   } catch (error) {
     console.error('Error restoring interest:', error);
     res.status(500).json({

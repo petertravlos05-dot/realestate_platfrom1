@@ -5,8 +5,9 @@ import { prisma } from '@/lib/prisma';
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
     const session = await getServerSession(authOptions);
 
@@ -16,7 +17,7 @@ export async function PUT(
 
     // Update property status to unavailable
     const property = await prisma.property.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         status: 'unavailable'
       },

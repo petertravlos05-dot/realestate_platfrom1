@@ -5,10 +5,10 @@ import { prisma } from '@/lib/prisma';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const propertyId = await params.id;
+    const { id: propertyId } = await params;
     
     const availabilities = await prisma.propertyAvailability.findMany({
       where: {
@@ -35,8 +35,9 @@ export async function GET(
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user) {
@@ -45,7 +46,7 @@ export async function POST(
 
     // Verify that the user is the property owner
     const property = await prisma.property.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: { user: true },
     });
 
@@ -58,7 +59,7 @@ export async function POST(
 
     const availability = await prisma.propertyAvailability.create({
       data: {
-        propertyId: params.id,
+        propertyId: id,
         date: new Date(date),
         startTime,
         endTime,
@@ -75,8 +76,9 @@ export async function POST(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user) {
@@ -85,7 +87,7 @@ export async function DELETE(
 
     // Verify that the user is the property owner
     const property = await prisma.property.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: { user: true },
     });
 

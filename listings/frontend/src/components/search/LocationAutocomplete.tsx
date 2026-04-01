@@ -1,40 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaMapMarkerAlt, FaDrawPolygon, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { searchGreekLocations } from '@/data/greekLocations';
 
 interface LocationAutocompleteProps {
   onLocationSelect: (locations: string[]) => void;
   onDrawAreaClick: () => void;
+  initialSelectedLocations?: string[];
 }
 
 const LocationAutocomplete: React.FC<LocationAutocompleteProps> = ({
   onLocationSelect,
-  onDrawAreaClick
+  onDrawAreaClick,
+  initialSelectedLocations = []
 }) => {
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>(initialSelectedLocations);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
-
-  // Προσομοίωση αναζήτησης τοποθεσιών
-  const mockLocations = [
-    'Αθήνα, Κέντρο',
-    'Αθήνα, Κολωνάκι',
-    'Αθήνα, Παγκράτι',
-    'Αθήνα, Περιστέρι',
-    'Αθήνα, Γλυφάδα',
-    'Αθήνα, Μαρούσι',
-    'Θεσσαλονίκη, Κέντρο',
-    'Θεσσαλονίκη, Καλαμαριά',
-    'Θεσσαλονίκη, Τούμπα',
-    'Πάτρα, Κέντρο',
-    'Πάτρα, Ρίο',
-    'Ηράκλειο, Κρήτη',
-    'Λάρισα, Κέντρο'
-  ];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -53,15 +39,20 @@ const LocationAutocomplete: React.FC<LocationAutocompleteProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (initialSelectedLocations.length > 0) {
+      setSelectedLocations(initialSelectedLocations);
+    }
+  }, [(initialSelectedLocations || []).join(',')]);
+
   const handleSearch = (searchQuery: string) => {
     setQuery(searchQuery);
     if (searchQuery.length > 0) {
-      const filtered = mockLocations.filter(location =>
-        location.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        !selectedLocations.includes(location)
+      const results = searchGreekLocations(searchQuery, 10).filter(
+        (loc) => !selectedLocations.includes(loc)
       );
-      setSuggestions(filtered);
-      setIsOpen(true);
+      setSuggestions(results);
+      setIsOpen(results.length > 0);
     } else {
       setSuggestions([]);
       setIsOpen(false);

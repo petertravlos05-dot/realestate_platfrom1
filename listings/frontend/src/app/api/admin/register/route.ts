@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         name,
         email,
         password: hashedPassword,
-        role: 'admin'
+        role: 'ADMIN' // Use uppercase to match backend expectations
       }
     });
 

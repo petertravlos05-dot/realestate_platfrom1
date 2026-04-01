@@ -20,6 +20,7 @@ import SellerNotificationBell from '@/components/notifications/SellerNotificatio
 import SupportCenter from '@/components/support/SupportCenter';
 import RemovePropertyModal from '@/components/properties/RemovePropertyModal';
 import { apiClient, fetchFromBackend } from '@/lib/api/client';
+import * as Sentry from '@sentry/nextjs';
 
 interface Update {
   id: number;
@@ -134,6 +135,7 @@ interface PropertyWithLeads {
   updatedAt: string;
   userId: string;
   removalRequested?: boolean;
+  propertySold?: boolean;
   uploadMethod?: 'self' | 'lawyer';
   lawyerInfo?: {
     name: string;
@@ -569,6 +571,14 @@ export default function SellerDashboard() {
       }
     });
   };
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('deals_cameFromSeller', '1');
+    } catch {
+      // ignore
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1117,6 +1127,7 @@ export default function SellerDashboard() {
           }
         } catch (userError) {
           console.error('Error fetching user profile:', userError);
+          Sentry.captureException(userError);
         }
 
         const { data: subscription } = await apiClient.get('/subscriptions');
@@ -1142,6 +1153,7 @@ export default function SellerDashboard() {
         }
       } catch (error) {
         console.error('Error fetching subscription info:', error);
+        Sentry.captureException(error);
         // Set basic info on error
         setSubscriptionInfo({
           userType: 'INDIVIDUAL',
@@ -1246,6 +1258,7 @@ export default function SellerDashboard() {
       setProperties(updatedData);
     } catch (err) {
       console.error('Error updating lead status:', err);
+      Sentry.captureException(err);
     }
   };
 
@@ -1334,7 +1347,7 @@ export default function SellerDashboard() {
         ...lead,
         transaction: updatedTransaction,
         notes: lead.notes || '',
-        updates: updatedTransaction?.progress?.notifications?.map((n) => {
+        updates: updatedTransaction?.progress?.notifications?.map((n: NonNullable<NonNullable<typeof updatedTransaction>['progress']>['notifications'][0]) => {
           return {
             id: typeof n.id === 'string' ? parseInt(n.id) : Number(n.id),
             text: n.message,
@@ -1951,7 +1964,7 @@ export default function SellerDashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
         >
           <motion.div 
             whileHover={{ scale: 1.02 }}
@@ -1975,7 +1988,7 @@ export default function SellerDashboard() {
               <div>
                 <p className="text-sm font-medium text-gray-600">Ενεργοί Ενδιαφερόμενοι</p>
                 <p className="text-2xl font-bold text-gray-900 mt-1">
-                  {properties.reduce((sum, prop) => sum + prop.leads.length, 0)}
+                  {properties.reduce((sum: number, prop: PropertyWithLeads) => sum + prop.leads.length, 0)}
                 </p>
               </div>
               <div className="p-3 bg-green-50 rounded-lg">
@@ -1991,13 +2004,29 @@ export default function SellerDashboard() {
               <div>
                 <p className="text-sm font-medium text-gray-600">Συνολικές Προβολές</p>
                 <p className="text-2xl font-bold text-gray-900 mt-1">
-                  {properties.reduce((sum, prop) => sum + (prop.stats?.views || 0), 0)}
+                  {properties.reduce((sum: number, prop: PropertyWithLeads) => sum + (prop.stats?.views || 0), 0)}
                 </p>
               </div>
               <div className="p-3 bg-green-50 rounded-lg">
                 <FaEye className="w-6 h-6 text-green-600" />
               </div>
             </div>
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="bg-white rounded-lg shadow-sm p-6 border border-gray-200"
+          >
+            <Link href="/deals?from=seller&tab=deals" className="block">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-600">Συναλλαγές</p>
+                  <p className="text-2xl font-bold text-gray-900 mt-1">Δείτε όλες</p>
+                </div>
+                <div className="p-3 bg-purple-50 rounded-lg">
+                  <FaExchangeAlt className="w-6 h-6 text-purple-600" />
+                </div>
+              </div>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -2196,6 +2225,11 @@ export default function SellerDashboard() {
                               className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            {property.propertySold && (
+                              <span className="absolute top-2 left-2 bg-gradient-to-r from-teal-600 to-cyan-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                Πουλημένο
+                              </span>
+                            )}
                           </div>
                         )}
                         <div className="p-6">
@@ -2209,19 +2243,23 @@ export default function SellerDashboard() {
                               {property.price.toLocaleString('el-GR')} €
                             </span>
                             <div className="flex items-center space-x-2">
-                              {property.removalRequested && (
+                              {property.removalRequested && !property.propertySold && (
                                 <span className="px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-800 border border-yellow-300">
                                   Αφαίρεση Ζητήθηκε
                                 </span>
                               )}
                               <span className={`px-4 py-2 rounded-full text-sm font-medium ${
-                                property.status === 'available' 
+                                property.propertySold
+                                  ? 'bg-gradient-to-r from-teal-100 to-cyan-100 text-teal-800'
+                                  : property.status === 'available' 
                                   ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-800'
                                   : property.status === 'unavailable'
                                   ? 'bg-gradient-to-r from-red-100 to-pink-100 text-red-800'
                                   : 'bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-800'
                               }`}>
-                                {property.status === 'available' 
+                                {property.propertySold
+                                  ? 'Πουλημένο'
+                                  : property.status === 'available' 
                                   ? 'Διαθέσιμο' 
                                   : property.status === 'unavailable'
                                   ? 'Αφαιρέθηκε'
@@ -2967,7 +3005,7 @@ export default function SellerDashboard() {
                               <td className="px-6 py-4 whitespace-nowrap">
                                 {(() => {
                                   // Βρίσκουμε το αντίστοιχο lead για να προσδιορίσουμε το στάδιο
-                                  const relatedLead = properties.flatMap(prop => prop.leads).find(lead => 
+                                  const relatedLead = properties.flatMap((prop: PropertyWithLeads) => prop.leads).find((lead: Lead) => 
                                     lead.buyer?.id === appointment.buyerId || 
                                     lead.buyer?.email === appointment.buyer.email
                                   );
@@ -3163,7 +3201,7 @@ export default function SellerDashboard() {
                 features: selectedProperty.features,
                 images: selectedProperty.images
               }}
-              updates={selectedLead.transaction?.progress?.notifications?.map((n) => ({
+              updates={selectedLead.transaction?.progress?.notifications?.map((n: NonNullable<NonNullable<typeof selectedLead.transaction>['progress']>['notifications'][0]) => ({
                 id: typeof n.id === 'string' ? parseInt(n.id) : Number(n.id),
                 text: n.message,
                 date: new Date(n.createdAt).toLocaleDateString('el-GR'),
@@ -3277,7 +3315,17 @@ export default function SellerDashboard() {
           }}
           agentId={session?.user?.id || ''}
           propertyId={selectedPropertyIdForBuyer || (properties.length === 1 ? properties[0].id : '')}
-          properties={properties.map(p => ({ id: p.id, title: p.title }))}
+          properties={properties.map(p => ({
+            id: p.id,
+            title: p.title,
+            city: (p as any).city,
+            price: (p as any).price,
+            coordinates: (p as any).coordinates && typeof (p as any).coordinates?.lat === 'number' ? (p as any).coordinates : undefined,
+            status: (p as any).status,
+            propertySold: (p as any).propertySold ?? (p as any).isSold,
+            isReserved: (p as any).isReserved,
+            amenities: (p as any).amenities,
+          }))}
         />
         <VerifyOtpModal
           open={isVerifyOtpModalOpen}

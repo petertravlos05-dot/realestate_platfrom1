@@ -59,7 +59,7 @@ export async function GET(request: NextRequest) {
           }
         }
       });
-      properties = connections.map(c => c.property).filter(Boolean);
+      properties = connections.map((c: typeof connections[0]) => c.property).filter(Boolean);
     } else if (userRole === 'BUYER') {
       // Buyer sees properties they're interested in (όπως στο buyer dashboard)
       const interestedProperties = await prisma.propertyLead.findMany({
@@ -76,7 +76,7 @@ export async function GET(request: NextRequest) {
           }
         }
       });
-      properties = interestedProperties.map(p => p.property).filter(Boolean);
+      properties = interestedProperties.map((p: typeof interestedProperties[0]) => p.property).filter(Boolean);
     }
 
     // Fetch transactions based on requested role
@@ -136,12 +136,12 @@ export async function GET(request: NextRequest) {
     }
 
     const result = {
-      properties: properties.map(p => ({
+      properties: properties.map((p: typeof properties[0]) => ({
         id: p.id,
         title: p.title,
         address: `${p.city}, ${p.street} ${p.number}`
       })),
-      transactions: transactions.map(t => ({
+      transactions: transactions.map((t: typeof transactions[0]) => ({
         id: t.id,
         status: t.status,
         property: t.property

@@ -6,7 +6,7 @@ import { validateJwtToken } from '@/middleware';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Πρώτα δοκιμάζουμε το JWT token (για το mobile app)
@@ -22,8 +22,9 @@ export async function GET(
       userId = session?.user?.id;
     }
 
+    const { id } = await params;
     const agent = await prisma.user.findUnique({
-      where: { id: params.id },
+      where: { id },
       select: {
         id: true,
         name: true,

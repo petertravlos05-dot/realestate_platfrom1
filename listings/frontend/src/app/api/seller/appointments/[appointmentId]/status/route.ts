@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
-export async function PUT(req: NextRequest, { params }: { params: { appointmentId: string } }) {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ appointmentId: string }> }) {
   try {
-    const { appointmentId } = params;
+    const { appointmentId } = await params;
     const { status } = await req.json();
 
     // Ενημέρωση ViewingRequest στη βάση

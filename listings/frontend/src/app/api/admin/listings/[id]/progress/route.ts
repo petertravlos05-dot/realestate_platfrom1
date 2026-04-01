@@ -2,14 +2,14 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
-import { Property, PropertyProgress, Notification } from '@prisma/client';
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   console.log('=== Progress API Call START ===', {
-    propertyId: params.id,
+    propertyId: id,
     timestamp: new Date().toISOString()
   });
 
@@ -21,7 +21,7 @@ export async function PUT(
     }
 
     const { stage, status, message } = await request.json();
-    const propertyId = params.id;
+    const propertyId = id;
 
     console.log('Request data:', {
       stage,
@@ -74,7 +74,7 @@ export async function PUT(
       include: {
         progress: true
       }
-    }) as Property & { progress: PropertyProgress };
+    });
 
     // Δημιουργία ειδοποίησης στον seller για κάθε ενημέρωση προόδου
     if (property.userId) {

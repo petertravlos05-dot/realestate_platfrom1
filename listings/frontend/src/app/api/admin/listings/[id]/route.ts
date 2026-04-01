@@ -5,8 +5,9 @@ import { prisma } from '@/lib/prisma';
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   try {
     const session = await getServerSession(authOptions);
 
@@ -17,7 +18,7 @@ export async function PUT(
     const data = await request.json();
 
     const property = await prisma.property.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         title: data.title,
         shortDescription: data.shortDescription,
@@ -59,7 +60,7 @@ export async function PUT(
 
     // Βρες το base URL από το request headers
     const baseUrl = request.headers.get('origin') || process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    await fetch(`${baseUrl}/api/revalidate?path=/properties/${params.id}`, {
+    await fetch(`${baseUrl}/api/revalidate?path=/properties/${id}`, {
       method: 'POST'
     });
 

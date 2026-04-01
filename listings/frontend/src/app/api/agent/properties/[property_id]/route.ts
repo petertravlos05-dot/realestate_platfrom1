@@ -4,10 +4,11 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { UserRole } from '@/lib/auth';
 import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
 
 export async function GET(
   request: Request,
-  { params }: { params: { property_id: string } }
+  { params }: { params: Promise<{ property_id: string }> }
 ) {
   try {
     // 1. Προσπάθησε να πάρεις session (web)
@@ -21,7 +22,7 @@ export async function GET(
       if (authHeader?.startsWith('Bearer ')) {
         try {
           const token = authHeader.split(' ')[1];
-          const decoded = jwt.verify(token, process.env.JWT_SECRET || 'Agapao_ton_stivo05') as { userId: string; role: string };
+          const decoded = jwt.verify(token, getJwtSecret()) as { userId: string; role: string };
           userId = decoded.userId;
           userRole = decoded.role;
         } catch (err) {
@@ -48,8 +49,9 @@ export async function GET(
       );
     } */
 
+    const { property_id } = await params;
     const property = await prisma.property.findUnique({
-      where: { id: params.property_id },
+      where: { id: property_id },
       include: {
         user: {
           select: {

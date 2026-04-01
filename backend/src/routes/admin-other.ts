@@ -12,7 +12,14 @@ router.get('/companies', validateJwtToken, requireRole('ADMIN'), async (req: Aut
   try {
     const companies = await prisma.user.findMany({
       where: {
-        userType: 'COMPANY'
+        role: 'SELLER',
+        isDeleted: false,
+        OR: [
+          { userType: 'COMPANY' },
+          {
+            AND: [{ companyName: { not: null } }, { NOT: { companyName: '' } }],
+          },
+        ],
       },
       orderBy: { createdAt: 'desc' },
       select: {
@@ -21,8 +28,10 @@ router.get('/companies', validateJwtToken, requireRole('ADMIN'), async (req: Aut
         email: true,
         role: true,
         userType: true,
-        createdAt: true
-      }
+        companyName: true,
+        companyEmail: true,
+        createdAt: true,
+      },
     });
 
     res.json(companies);
@@ -70,7 +79,7 @@ router.post('/register', async (req: Request, res: Response) => {
         name,
         email,
         password: hashedPassword,
-        role: 'admin'
+        role: 'ADMIN' // Use uppercase to match backend expectations
       }
     });
 

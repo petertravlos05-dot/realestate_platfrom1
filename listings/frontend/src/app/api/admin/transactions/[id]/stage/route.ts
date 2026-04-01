@@ -22,11 +22,12 @@ const CUID_REGEX = /^[a-z0-9]+$/i;
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     console.log('=== Stage Update API Call START ===', {
-      id: params.id,
+      id,
       timestamp: new Date().toISOString()
     });
 
@@ -36,8 +37,6 @@ export async function PUT(
       console.log('❌ Unauthorized access attempt');
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-
-    const { id } = params;
     const { stage } = await request.json();
     const normalizedStage = stage.toUpperCase();
     

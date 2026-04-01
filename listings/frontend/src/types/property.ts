@@ -70,6 +70,8 @@ export interface Property {
   isVerified?: boolean;
   isReserved?: boolean;
   isSold?: boolean;
+  propertySold?: boolean; // True when deal room completed for this property
+  depositLocked?: boolean; // True when active deal has completed deposit stage (lawyer approved basic docs)
   removalRequested?: boolean;
   keywords?: string[];
   user: {

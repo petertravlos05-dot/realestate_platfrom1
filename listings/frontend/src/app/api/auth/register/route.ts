@@ -68,26 +68,11 @@ export async function POST(req: Request) {
       where: { email }
     });
 
-    if (existingUser) {
-      console.log('Existing user found:', { id: existingUser.id, hasPassword: !!existingUser.password });
-      // Ενημερώνουμε τον υπάρχοντα χρήστη με το νέο password
-      const hashedPassword = await hash(password, 12);
-      const updatedUser = await prisma.user.update({
-        where: { id: existingUser.id },
-        data: { password: hashedPassword }
-      });
-      const { password: _, ...userWithoutPassword } = updatedUser;
-      return NextResponse.json({
-        user: userWithoutPassword,
-        message: 'Η εγγραφή ολοκληρώθηκε με επιτυχία'
-      });
-    }
-
-    // Hash password
+    // Hash password (νέος ή ενημέρωση υπάρχοντος)
     const hashedPassword = await hash(password, 12);
 
-    // Create user with only the fields that exist in the schema
-    const userData = {
+    // Create user (userType ρητά ώστε οι μεσιτικές εταιρείες να εμφανίζονται στο admin tab «Εταιρείες»)
+    const userData: Record<string, unknown> = {
       email,
       password: hashedPassword,
       name,
@@ -108,8 +93,14 @@ export async function POST(req: Request) {
       ...(companyLogo && { companyLogo }),
       ...(licenseNumber && { licenseNumber }),
       ...(businessAddress && { businessAddress }),
-      ...(userType && { userType: userType.toUpperCase() })
     };
+    const normalizedUserType =
+      userType !== undefined && userType !== null && String(userType).trim() !== ''
+        ? String(userType).trim().toUpperCase()
+        : '';
+    if (normalizedUserType === 'COMPANY' || normalizedUserType === 'INDIVIDUAL') {
+      userData.userType = normalizedUserType;
+    }
 
     console.log('Creating user with data:', { ...userData, password: '[HIDDEN]' }); // Προσθήκη logging
 
@@ -216,10 +207,19 @@ export async function POST(req: Request) {
       );
     }
 
-    // Create user
-    const user = await prisma.user.create({
-      data: userData
-    });
+    let user;
+    if (existingUser) {
+      console.log('Existing user found — merge registration fields:', { id: existingUser.id });
+      const { email: _omitEmail, ...updatePayload } = userData;
+      user = await prisma.user.update({
+        where: { id: existingUser.id },
+        data: updatePayload as any,
+      });
+    } else {
+      user = await prisma.user.create({
+        data: userData as any,
+      });
+    }
 
     // Έλεγχος αν υπάρχει lead με αυτά τα στοιχεία (name, email, phone)
     const matchingLeads = await prisma.propertyLead.findMany({

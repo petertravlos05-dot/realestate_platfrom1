@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { validateJwtToken, requireRole, AuthRequest } from '../middleware/auth';
 import { randomUUID } from 'crypto';
+import { buildAdminUserInsights } from '../lib/utils/admin-user-insights';
 
 const router = Router();
 
@@ -59,6 +60,20 @@ router.get('/', validateJwtToken, requireRole('ADMIN'), async (req: AuthRequest,
     res.status(500).json({
       error: 'Internal Server Error'
     });
+  }
+});
+
+// GET /api/admin/users/:id/insights — πλήρη στατιστικά χρήστη για admin dashboard (πριν το /:id)
+router.get('/:id/insights', validateJwtToken, requireRole('ADMIN'), async (req: AuthRequest, res: Response) => {
+  try {
+    const data = await buildAdminUserInsights(req.params.id);
+    if (!data) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(data);
+  } catch (error) {
+    console.error('Error building user insights:', error);
+    res.status(500).json({ error: 'Failed to load user insights' });
   }
 });
 
@@ -251,6 +266,12 @@ router.post('/:id/points', validateJwtToken, requireRole('ADMIN'), async (req: A
 });
 
 export default router;
+
+
+
+
+
+
 
 
 

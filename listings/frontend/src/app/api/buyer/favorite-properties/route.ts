@@ -36,7 +36,7 @@ export async function GET(request: Request) {
     });
 
     return NextResponse.json({
-      properties: favorites.map(favorite => favorite.property)
+      properties: favorites.map((favorite: typeof favorites[0]) => favorite.property)
     });
   } catch (error) {
     console.error('Error fetching favorite properties:', error);

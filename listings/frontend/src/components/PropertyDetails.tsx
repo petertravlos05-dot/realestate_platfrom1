@@ -145,6 +145,8 @@ export default function PropertyDetails({ property }: PropertyDetailsProps) {
         return 'Ανακαινισμένο';
       case 'needsRenovation':
         return 'Χρήζει ανακαίνισης';
+      case 'new':
+        return 'Αριστη';
       default:
         return 'Δεν έχει οριστεί';
     }

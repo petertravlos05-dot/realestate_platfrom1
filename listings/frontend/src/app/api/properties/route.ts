@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
-import { Prisma } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
 
 export async function POST(request: Request) {
   try {
@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     if (authHeader && authHeader.startsWith('Bearer ')) {
       const token = authHeader.replace('Bearer ', '');
       try {
-        const decoded: any = jwt.verify(token, process.env.JWT_SECRET || 'Agapao_ton_stivo05');
+        const decoded: any = jwt.verify(token, getJwtSecret());
         userId = decoded.userId;
       } catch (err) {
         console.error('Invalid token:', err);
@@ -204,7 +204,11 @@ export async function POST(request: Request) {
       // Συστημικά πεδία
       images: photoUrls,
       keywords: description.keywords || [],
-      amenities: amenities,
+      amenities: {
+        ...(amenities || {}),
+        gardenArea: basicDetails.gardenArea ? (parseFloat(basicDetails.gardenArea) || null) : null,
+        floorsCount: basicDetails.floorsCount || null,
+      },
       status: 'PENDING',
       isVerified: false,
       isReserved: false,
@@ -248,7 +252,7 @@ export async function GET(request: Request) {
     const userId = session?.user?.id;
 
     // Βασικό query για όλα τα ακίνητα
-    const baseQuery: Prisma.PropertyFindManyArgs = {
+    const baseQuery = {
       where: {
         AND: [
           // Μόνο τα εγκεκριμένα ακίνητα
@@ -313,7 +317,7 @@ export async function GET(request: Request) {
         stats: true
       },
       orderBy: {
-        createdAt: Prisma.SortOrder.desc
+        createdAt: 'desc' as const
       }
     };
 
@@ -328,7 +332,7 @@ export async function GET(request: Request) {
       }
     } : baseQuery;
 
-    const properties = await prisma.property.findMany(query);
+    const properties = await prisma.property.findMany(query as any);
 
     return NextResponse.json(properties);
   } catch (error) {

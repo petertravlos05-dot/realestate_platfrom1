@@ -113,7 +113,7 @@ const BuyerHeader = () => {
                 Αρχική
               </Link>
               <Link
-                href="http://localhost:3004/properties"
+                href="/properties"
                 className="flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium"
               >
                 <FaSearch className="mr-2" />

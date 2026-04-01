@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -15,10 +15,11 @@ export async function PUT(
     }
 
     const data = await request.json();
+    const { id } = await params;
 
     // Update property with all the latest changes
     const property = await prisma.property.update({
-      where: { id: params.id },
+      where: { id },
       data: {
         // Βασικά στοιχεία
         title: data.title,

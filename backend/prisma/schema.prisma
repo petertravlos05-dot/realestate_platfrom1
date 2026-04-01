@@ -40,185 +40,230 @@ model Session {
 }
 
 model User {
-  id                 String                @id @default(cuid())
-  name               String
-  email              String                @unique
-  emailVerified      DateTime?
-  image              String?
-  password           String
-  role               String                @default("BUYER")
-  phone              String?
-  companyName        String?
-  companyTitle       String?
-  companyTaxId       String?
-  companyDou         String?
-  companyPhone       String?
-  companyEmail       String?
+  id                  String                 @id @default(cuid())
+  name                String
+  email               String                 @unique
+  emailVerified       DateTime?
+  image               String?
+  password            String
+  role                String                 @default("BUYER")
+  phone               String?
+  taxId               String? // ΑΦΜ (προσωπικός φορολογικός αριθμός)
+  country             String? // Country of origin
+  companyName         String?
+  companyTitle        String?
+  companyTaxId        String?
+  companyDou          String?
+  companyPhone        String?
+  companyEmail        String?
   companyHeadquarters String?
-  companyWebsite     String?
+  companyWebsite      String?
   companyWorkingHours String?
-  contactPersonName  String?
-  contactPersonEmail String?
-  contactPersonPhone String?
-  companyLogo        String?
-  licenseNumber      String?
-  businessAddress    String?
-  userType           String                @default("INDIVIDUAL") // INDIVIDUAL, COMPANY
-  createdAt          DateTime              @default(now())
-  updatedAt          DateTime              @updatedAt
-  accounts           Account[]
-  sessions           Session[]
-  properties         Property[]
-  favorites          Favorite[]
-  inquiries          Inquiry[]
-  buyerTransactions  Transaction[]         @relation("BuyerTransactions")
-  agentTransactions  Transaction[]         @relation("AgentTransactions")
-  progressUpdates    TransactionProgress[] @relation("CreatedByUser")
-  messages           Message[]
-  buyerConnections   BuyerAgentConnection[] @relation("BuyerConnections")
-  agentConnections   BuyerAgentConnection[] @relation("AgentConnections")
-  buyerLeads         PropertyLead[]        @relation("BuyerLeads")
-  agentLeads         PropertyLead[]        @relation("AgentLeads")
-  notifications      Notification[]
-  buyerViewings      ViewingRequest[]      @relation("BuyerViewings")
-  agentViewings      ViewingRequest[]      @relation("AgentViewings")
-  sellerTransactions Transaction[]         @relation("SellerTransactions")
-  propertyViews      PropertyView[]
-  propertyDocuments  PropertyDocument[] @relation("UserPropertyDocuments")
-  referralsMade      Referral[]           @relation("Referrer")
-  referralsReceived  Referral[]           @relation("Referred")
-  referralPoints     ReferralPoints[]
-  supportTickets     SupportTicket[]
-  supportMessages    SupportMessage[]
-  ticketsCreated     SupportTicket[]      @relation("TicketCreator")
-  subscription       Subscription?
+  contactPersonName   String?
+  contactPersonEmail  String?
+  contactPersonPhone  String?
+  companyLogo         String?
+  licenseNumber       String?
+  businessAddress     String?
+  payoutIban          String? // IBAN για εκταμιεύσεις προμηθειών (μεσίτες)
+  /// True when account was created via /professional/join (X-Professional-Registration)
+  registeredViaProfessionalJoin Boolean        @default(false)
+  userType            String                 @default("INDIVIDUAL") // INDIVIDUAL, COMPANY
+  isDeleted           Boolean                @default(false)
+  deletedAt           DateTime?
+  anonymizedAt        DateTime?
+  createdAt           DateTime               @default(now())
+  updatedAt           DateTime               @updatedAt
+  accounts            Account[]
+  sessions            Session[]
+  properties          Property[]
+  favorites           Favorite[]
+  inquiries           Inquiry[]
+  buyerTransactions   Transaction[]          @relation("BuyerTransactions")
+  agentTransactions   Transaction[]          @relation("AgentTransactions")
+  progressUpdates     TransactionProgress[]  @relation("CreatedByUser")
+  messages            Message[]
+  buyerConnections    BuyerAgentConnection[] @relation("BuyerConnections")
+  agentConnections    BuyerAgentConnection[] @relation("AgentConnections")
+  buyerLeads          PropertyLead[]         @relation("BuyerLeads")
+  agentLeads          PropertyLead[]         @relation("AgentLeads")
+  notifications       Notification[]
+  buyerViewings       ViewingRequest[]       @relation("BuyerViewings")
+  agentViewings       ViewingRequest[]       @relation("AgentViewings")
+  sellerTransactions  Transaction[]          @relation("SellerTransactions")
+  propertyViews       PropertyView[]
+  propertyDocuments   PropertyDocument[]     @relation("UserPropertyDocuments")
+  referralsMade       Referral[]             @relation("Referrer")
+  referralsReceived   Referral[]             @relation("Referred")
+  referralPoints      ReferralPoints[]
+  supportTickets      SupportTicket[]
+  supportMessages     SupportMessage[]
+  ticketsCreated      SupportTicket[]        @relation("TicketCreator")
+  subscription        Subscription?
+  consents            UserConsent[]
+
+  // Deal Room relations
+  professionalProfile      ProfessionalProfile?  @relation("ProfessionalProfile")
+  dealRoomsAsBuyer         DealRoom[]            @relation("DealBuyer")
+  dealRoomsAsSeller        DealRoom[]            @relation("DealSeller")
+  dealRoomsAsAgent         DealRoom[]            @relation("DealAgent")
+  dealParticipants         DealParticipant[]     @relation("DealParticipant")
+  professionalRequestsMade ProfessionalRequest[] @relation("ProfessionalRequestRequester")
+  professionalInvitesMade  ProfessionalInvite[]  @relation("ProfessionalInviteRequester")
+  dealThreadMembers        DealThreadMember[]    @relation("DealThreadMember")
+  dealMessages             DealMessage[]         @relation("DealMessageSender")
+  dealDocumentsRequested   DealDocument[]        @relation("DealDocumentRequester")
+  dealDocumentsUploaded    DealDocument[]        @relation("DealDocumentUploader")
+  dealDocumentsReviewed    DealDocument[]        @relation("DealDocumentReviewer")
+  dealAppointmentsBooked   DealAppointment[]     @relation("DealAppointmentBooker")
+  dealOffers               DealOffer[]          @relation("DealOfferUser")
+  hiddenDealRooms          DealRoomHiddenByUser[]
+  listingDrafts            PropertyListingDraft[]
 
   @@map("users")
 }
 
+model PropertyListingDraft {
+  id              String   @id @default(cuid())
+  userId          String
+  name            String   @default("draft-1")
+  progressPercent Int      @default(0)
+  activeTab       String?
+  data            Json     @default("{}")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("property_listing_drafts")
+}
+
 model Property {
-  id          String    @id @default(cuid())
-  
+  id String @id @default(cuid())
+
   // Βασικά στοιχεία
-  title       String
+  title            String
   shortDescription String?
-  fullDescription String    @default("")
-  propertyType String       @default("HOUSE")
-  condition   String?
-  yearBuilt   Int?
-  renovationYear Int?
+  fullDescription  String  @default("")
+  propertyType     String  @default("HOUSE")
+  condition        String?
+  yearBuilt        Int?
+  renovationYear   Int?
 
   // Βασικά χαρακτηριστικά
-  area        Float
-  bedrooms    Int?
-  bathrooms   Int?
-  floor       String?
-  parkingSpaces Int?
-  garden      Boolean   @default(false)
+  area           Float
+  bedrooms       Int?
+  bathrooms      Int?
+  floor          String?
+  parkingSpaces  Int?
+  garden         Boolean @default(false)
   multipleFloors Boolean @default(false)
 
   // Εμπορικά χαρακτηριστικά
   commercialType String?
-  rooms       Int?
+  rooms          Int?
 
   // Χαρακτηριστικά οικοπέδου
-  plotCategory String?
+  plotCategory      String?
   plotOwnershipType String?
 
   // Χαρακτηριστικά
-  heatingType String?
+  heatingType   String?
   heatingSystem String?
-  windows     String?
-  windowsType String?
-  flooring    String?
-  energyClass String?
+  windows       String?
+  windowsType   String?
+  flooring      String?
+  energyClass   String?
 
   // Επιπλέον χαρακτηριστικά
-  elevator    Boolean   @default(false)
-  furnished   Boolean   @default(false)
-  securityDoor Boolean  @default(false)
-  alarm       Boolean   @default(false)
-  disabledAccess Boolean @default(false)
-  soundproofing Boolean @default(false)
+  elevator          Boolean @default(false)
+  furnished         Boolean @default(false)
+  securityDoor      Boolean @default(false)
+  alarm             Boolean @default(false)
+  disabledAccess    Boolean @default(false)
+  soundproofing     Boolean @default(false)
   thermalInsulation Boolean @default(false)
-  pool        String?
-  balconyArea Float?
-  hasBalcony  Boolean   @default(false)
+  pool              String?
+  balconyArea       Float?
+  hasBalcony        Boolean @default(false)
 
   // Χαρακτηριστικά οικοπέδου
-  plotArea    Float?
+  plotArea            Float?
   buildingCoefficient Float?
-  coverageRatio Float?
-  facadeLength Float?
-  sides       Int?
-  buildableArea Float?
-  buildingPermit Boolean @default(false)
-  roadAccess  String?
-  terrain     String?
-  shape       String?
-  suitability String?
+  coverageRatio       Float?
+  facadeLength        Float?
+  sides               Int?
+  buildableArea       Float?
+  buildingPermit      Boolean @default(false)
+  roadAccess          String?
+  terrain             String?
+  shape               String?
+  suitability         String?
 
   // Εμπορικά χαρακτηριστικά
-  storageType String?
-  elevatorType String?
+  storageType   String?
+  elevatorType  String?
   fireproofDoor Boolean @default(false)
 
   // Τοποθεσία
-  state       String    @default("")
-  city        String    @default("")
+  state        String  @default("")
+  city         String  @default("")
   neighborhood String?
-  street      String    @default("")
-  number      String    @default("")
-  postalCode  String?
-  coordinates Json?
+  street       String  @default("")
+  number       String  @default("")
+  postalCode   String?
+  coordinates  Json?
 
   // Τιμή
-  price       Float
-  pricePerSquareMeter Float?
-  negotiable  Boolean   @default(false)
+  price                Float
+  pricePerSquareMeter  Float?
+  negotiable           Boolean @default(false)
   additionalPriceNotes String?
 
   // Συστημικά πεδία
-  status      String    @default("PENDING")
-  isVerified  Boolean   @default(false)
-  isReserved  Boolean   @default(false)
-  isSold      Boolean   @default(false)
-  removalRequested Boolean @default(false)
-  images      String[]
-  keywords    String[]  @default([])
-  amenities   Json?     @default("{}")
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  views       PropertyView[]
+  status           String         @default("PENDING")
+  isVerified       Boolean        @default(false)
+  isReserved       Boolean        @default(false)
+  isSold           Boolean        @default(false)
+  removalRequested Boolean        @default(false)
+  images           String[]
+  keywords         String[]       @default([])
+  amenities        Json?          @default("{}")
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  views            PropertyView[]
 
   // Νομικά έγγραφα
-  uploadMethod String? @default("self")
-  lawyerInfo Json?
-  assignmentType String? @default("platform")
+  uploadMethod       String? @default("self")
+  lawyerInfo         Json?
+  assignmentType     String? @default("platform")
   assignmentDocument Json?
-  lawyerName   String?
-  lawyerEmail  String?
-  lawyerPhone  String?
-  lawyerTaxId  String?
+  lawyerName         String?
+  lawyerEmail        String?
+  lawyerPhone        String?
+  lawyerTaxId        String?
+  engineerInfo       Json?   // Seller's custom engineer (name, email, phone, registrationNumber)
 
   // Σχέσεις
-  userId      String
-  user        User      @relation(fields: [userId], references: [id])
-  availabilities PropertyAvailability[]
-  viewingRequests ViewingRequest[]
-  notifications Notification[]
-  favorites   Favorite[]
-  inquiryList Inquiry[]
-  transactions Transaction[]
-  messages    Message[]
-  connections BuyerAgentConnection[]
-  leads       PropertyLead[]
-  stats       PropertyStats?
-  visitSettings Json? @default("{}")
-  progress    PropertyProgress?
+  userId            String
+  user              User                   @relation(fields: [userId], references: [id])
+  availabilities    PropertyAvailability[]
+  viewingRequests   ViewingRequest[]
+  notifications     Notification[]
+  favorites         Favorite[]
+  inquiryList       Inquiry[]
+  transactions      Transaction[]
+  messages          Message[]
+  connections       BuyerAgentConnection[]
+  leads             PropertyLead[]
+  stats             PropertyStats?
+  visitSettings     Json?                  @default("{}")
+  progress          PropertyProgress?
   propertyDocuments PropertyDocument[]
-  referralPoints ReferralPoints[]
-  supportTickets SupportTicket[]
+  referralPoints    ReferralPoints[]
+  supportTickets    SupportTicket[]
+  dealRooms         DealRoom[]             @relation("DealRoomProperty")
 
   @@index([userId])
   @@map("properties")
@@ -267,29 +312,29 @@ model Message {
 
 // Support Messaging System
 model SupportTicket {
-  id          String   @id @default(cuid())
-  title       String
-  description String
-  status      TicketStatus @default(OPEN)
-  priority    TicketPriority @default(MEDIUM)
-  category    TicketCategory
+  id           String         @id @default(cuid())
+  title        String
+  description  String
+  status       TicketStatus   @default(OPEN)
+  priority     TicketPriority @default(MEDIUM)
+  category     TicketCategory
   selectedRole String? // The role selected by the user when creating the ticket
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
   // Relations
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  createdBy   String   // ID of user who created the ticket (can be admin or user)
-  createdByUser User   @relation("TicketCreator", fields: [createdBy], references: [id])
-  propertyId  String?
-  property    Property? @relation(fields: [propertyId], references: [id])
+  userId        String
+  user          User         @relation(fields: [userId], references: [id])
+  createdBy     String // ID of user who created the ticket (can be admin or user)
+  createdByUser User         @relation("TicketCreator", fields: [createdBy], references: [id])
+  propertyId    String?
+  property      Property?    @relation(fields: [propertyId], references: [id])
   transactionId String?
-  transaction Transaction? @relation(fields: [transactionId], references: [id])
-  
+  transaction   Transaction? @relation(fields: [transactionId], references: [id])
+
   // Messages in this ticket
-  messages    SupportMessage[]
-  
+  messages SupportMessage[]
+
   @@index([userId])
   @@index([createdBy])
   @@index([propertyId])
@@ -299,18 +344,18 @@ model SupportTicket {
 }
 
 model SupportMessage {
-  id        String   @id @default(cuid())
-  content   String
-  isFromAdmin Boolean @default(false)
-  metadata  Json?
-  createdAt DateTime @default(now())
-  
+  id          String   @id @default(cuid())
+  content     String
+  isFromAdmin Boolean  @default(false)
+  metadata    Json?
+  createdAt   DateTime @default(now())
+
   // Relations
-  ticketId  String
-  ticket    SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-  
+  ticketId String
+  ticket   SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  userId   String
+  user     User          @relation(fields: [userId], references: [id])
+
   @@index([ticketId])
   @@index([userId])
   @@map("support_messages")
@@ -340,19 +385,19 @@ enum TicketCategory {
 }
 
 model BuyerAgentConnection {
-  id         String   @id @default(cuid())
-  buyerId    String
-  agentId    String
-  propertyId String
-  status     String   @default("PENDING")
-  otpCode    String?
-  otpExpires DateTime?
-  interestCancelled Boolean @default(false)
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  buyer      User     @relation("BuyerConnections", fields: [buyerId], references: [id])
-  agent      User     @relation("AgentConnections", fields: [agentId], references: [id])
-  property   Property @relation(fields: [propertyId], references: [id])
+  id                String    @id @default(cuid())
+  buyerId           String
+  agentId           String
+  propertyId        String
+  status            String    @default("PENDING")
+  otpCode           String?
+  otpExpires        DateTime?
+  interestCancelled Boolean   @default(false)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  buyer             User      @relation("BuyerConnections", fields: [buyerId], references: [id])
+  agent             User      @relation("AgentConnections", fields: [agentId], references: [id])
+  property          Property  @relation(fields: [propertyId], references: [id])
 
   @@unique([buyerId, agentId, propertyId])
   @@map("buyer_agent_connections")
@@ -384,21 +429,21 @@ enum NotificationCategory {
 }
 
 model PropertyLead {
-  id          String   @id @default(cuid())
-  propertyId  String
-  buyerId     String
-  agentId     String?
-  status      String   @default("PENDING") // PENDING, VIEWING_SCHEDULED, NEGOTIATING, CLOSED
-  notes       String?
-  interestCancelled Boolean @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  transactionId String?  @unique
-  transaction Transaction? @relation(fields: [transactionId], references: [id])
+  id                String       @id @default(cuid())
+  propertyId        String
+  buyerId           String
+  agentId           String?
+  status            String       @default("PENDING") // PENDING, VIEWING_SCHEDULED, NEGOTIATING, CLOSED
+  notes             String?
+  interestCancelled Boolean      @default(false)
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+  transactionId     String?      @unique
+  transaction       Transaction? @relation(fields: [transactionId], references: [id])
 
-  property    Property @relation(fields: [propertyId], references: [id])
-  buyer       User     @relation("BuyerLeads", fields: [buyerId], references: [id])
-  agent       User?    @relation("AgentLeads", fields: [agentId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+  buyer    User     @relation("BuyerLeads", fields: [buyerId], references: [id])
+  agent    User?    @relation("AgentLeads", fields: [agentId], references: [id])
 
   @@index([propertyId])
   @@index([buyerId])
@@ -417,7 +462,7 @@ model PropertyStats {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  property        Property @relation(fields: [propertyId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
 
   @@map("property_stats")
 }
@@ -427,8 +472,8 @@ model PropertyAvailability {
   propertyId  String
   property    Property @relation(fields: [propertyId], references: [id])
   date        DateTime
-  startTime   String   // Format: "HH:mm"
-  endTime     String   // Format: "HH:mm"
+  startTime   String // Format: "HH:mm"
+  endTime     String // Format: "HH:mm"
   isAvailable Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -438,39 +483,39 @@ model PropertyAvailability {
 }
 
 model Notification {
-  id          String   @id @default(cuid())
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  title       String
-  message     String
-  type        String   // "VIEWING_REQUEST", "VIEWING_CONFIRMED", etc.
-  isRead      Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  propertyId  String?
-  property    Property? @relation(fields: [propertyId], references: [id])
+  id                 String            @id @default(cuid())
+  userId             String
+  user               User              @relation(fields: [userId], references: [id])
+  title              String
+  message            String
+  type               String // "VIEWING_REQUEST", "VIEWING_CONFIRMED", etc.
+  isRead             Boolean           @default(false)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  propertyId         String?
+  property           Property?         @relation(fields: [propertyId], references: [id])
   propertyProgressId String?
-  propertyProgress PropertyProgress? @relation(fields: [propertyProgressId], references: [id])
-  metadata    Json?
+  propertyProgress   PropertyProgress? @relation(fields: [propertyProgressId], references: [id])
+  metadata           Json?
 
   @@index([userId])
   @@index([propertyId])
 }
 
 model ViewingRequest {
-  id          String   @id @default(cuid())
-  propertyId  String
-  property    Property @relation(fields: [propertyId], references: [id])
-  buyerId     String
-  buyer       User     @relation("BuyerViewings", fields: [buyerId], references: [id])
-  agentId     String?
-  agent       User?    @relation("AgentViewings", fields: [agentId], references: [id])
-  date        DateTime
-  time        String
-  endTime     String
-  status      String   @default("PENDING")
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id         String   @id @default(cuid())
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id])
+  buyerId    String
+  buyer      User     @relation("BuyerViewings", fields: [buyerId], references: [id])
+  agentId    String?
+  agent      User?    @relation("AgentViewings", fields: [agentId], references: [id])
+  date       DateTime
+  time       String
+  endTime    String
+  status     String   @default("PENDING")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
   @@index([propertyId])
   @@index([buyerId])
@@ -481,7 +526,7 @@ model ViewingRequest {
 model TransactionNotification {
   id            String      @id @default(cuid())
   transactionId String
-  type          String      // EMAIL, SMS, SYSTEM
+  type          String // EMAIL, SMS, SYSTEM
   message       String
   status        String      @default("PENDING") // PENDING, SENT, FAILED
   createdAt     DateTime    @default(now())
@@ -493,16 +538,16 @@ model TransactionNotification {
 }
 
 model TransactionProgress {
-  id            String      @id @default(cuid())
+  id            String           @id @default(cuid())
   transactionId String
   stage         TransactionStage
   completedAt   DateTime?
   notes         String?
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
   createdById   String
-  transaction   Transaction @relation(fields: [transactionId], references: [id])
-  createdBy     User       @relation("CreatedByUser", fields: [createdById], references: [id])
+  transaction   Transaction      @relation(fields: [transactionId], references: [id])
+  createdBy     User             @relation("CreatedByUser", fields: [createdById], references: [id])
 
   @@index([transactionId])
   @@index([createdById])
@@ -510,26 +555,26 @@ model TransactionProgress {
 }
 
 model Transaction {
-  id          String   @id @default(cuid())
-  propertyId  String
-  buyerId     String
-  agentId     String?
-  sellerId    String?
-  status      String   @default("PENDING")
-  stage       TransactionStage?
-  interestCancelled Boolean @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  leadId      String?  @unique
-  lead        PropertyLead?
+  id                String            @id @default(cuid())
+  propertyId        String
+  buyerId           String
+  agentId           String?
+  sellerId          String?
+  status            String            @default("PENDING")
+  stage             TransactionStage?
+  interestCancelled Boolean           @default(false)
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  leadId            String?           @unique
+  lead              PropertyLead?
 
-  property    Property @relation(fields: [propertyId], references: [id])
-  buyer       User     @relation("BuyerTransactions", fields: [buyerId], references: [id])
-  agent       User?    @relation("AgentTransactions", fields: [agentId], references: [id])
-  seller      User?    @relation("SellerTransactions", fields: [sellerId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+  buyer    User     @relation("BuyerTransactions", fields: [buyerId], references: [id])
+  agent    User?    @relation("AgentTransactions", fields: [agentId], references: [id])
+  seller   User?    @relation("SellerTransactions", fields: [sellerId], references: [id])
 
-  notifications TransactionNotification[]
-  progress    TransactionProgress[]
+  notifications  TransactionNotification[]
+  progress       TransactionProgress[]
   supportTickets SupportTicket[]
 
   @@index([propertyId])
@@ -553,129 +598,544 @@ model PropertyView {
 }
 
 model PropertyProgress {
-  id          String        @id @default(cuid())
-  legalDocumentsStatus String @default("pending")
-  legalDocumentsCompletedAt DateTime?
-  platformReviewStatus String @default("pending")
-  platformReviewCompletedAt DateTime?
-  platformAssignmentStatus String @default("pending")
+  id                            String         @id @default(cuid())
+  legalDocumentsStatus          String         @default("pending")
+  legalDocumentsCompletedAt     DateTime?
+  platformReviewStatus          String         @default("pending")
+  platformReviewCompletedAt     DateTime?
+  platformAssignmentStatus      String         @default("pending")
   platformAssignmentCompletedAt DateTime?
-  listingStatus String @default("pending")
-  listingCompletedAt DateTime?
-  updatedAt   DateTime      @updatedAt
-  propertyId  String        @unique
-  property    Property      @relation(fields: [propertyId], references: [id])
-  notifications Notification[]
+  listingStatus                 String         @default("pending")
+  listingCompletedAt            DateTime?
+  updatedAt                     DateTime       @updatedAt
+  propertyId                    String         @unique
+  property                      Property       @relation(fields: [propertyId], references: [id])
+  notifications                 Notification[]
 }
 
 model PropertyDocument {
-  id          String   @id @default(cuid())
-  propertyId  String
-  type        String   // title, building_permit, topographic, energy_certificate, coverage_diagram
-  fileUrl     String
-  status      String   // pending, approved, rejected
-  uploadedAt  DateTime
-  uploadedBy  String
+  id           String   @id @default(cuid())
+  propertyId   String
+  type         String // title, building_permit, topographic, energy_certificate, coverage_diagram
+  fileUrl      String
+  status       String // pending, approved, rejected
+  uploadedAt   DateTime
+  uploadedBy   String
   adminComment String?
-  property    Property @relation(fields: [propertyId], references: [id])
-  user        User     @relation("UserPropertyDocuments", fields: [uploadedBy], references: [id])
+  property     Property @relation(fields: [propertyId], references: [id])
+  user         User     @relation("UserPropertyDocuments", fields: [uploadedBy], references: [id])
 
   @@index([propertyId])
   @@index([uploadedBy])
 }
 
 model Referral {
-  id            String   @id @default(cuid())
-  referrerId    String   // Ο χρήστης που κάνει το referral
-  referredId    String   // Ο χρήστης που εγγράφεται μέσω του referral
-  referralCode  String   @unique // Μοναδικός κωδικός referral
-  isActive      Boolean  @default(true)
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-  
+  id           String   @id @default(cuid())
+  referrerId   String // Ο χρήστης που κάνει το referral
+  referredId   String // Ο χρήστης που εγγράφεται μέσω του referral
+  referralCode String   @unique // Μοναδικός κωδικός referral
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
   // Σχέσεις
-  referrer      User     @relation("Referrer", fields: [referrerId], references: [id])
-  referred      User     @relation("Referred", fields: [referredId], references: [id])
-  
+  referrer User @relation("Referrer", fields: [referrerId], references: [id])
+  referred User @relation("Referred", fields: [referredId], references: [id])
+
   // Στατιστικά
-  totalPoints   Int      @default(0)
-  propertiesAdded Int    @default(0)
-  totalArea     Float    @default(0)
-  
-  points        ReferralPoints[]
-  
+  totalPoints     Int   @default(0)
+  propertiesAdded Int   @default(0)
+  totalArea       Float @default(0)
+
+  points ReferralPoints[]
+
   @@map("referrals")
 }
 
 model ReferralPoints {
-  id          String   @id @default(cuid())
-  referralId  String
-  referral    Referral @relation(fields: [referralId], references: [id], onDelete: Cascade)
-  userId      String   // Ο χρήστης στον οποίο ανήκουν οι πόντοι
-  user        User     @relation(fields: [userId], references: [id])
-  propertyId  String?
-  property    Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
-  points      Int
-  reason      String   // "registration", "property_added", "property_sold"
-  area        Float?   // Τετραγωνικά του ακινήτου
-  location    String?  // Περιοχή του ακινήτου
-  createdAt   DateTime @default(now())
-  
+  id         String    @id @default(cuid())
+  referralId String
+  referral   Referral  @relation(fields: [referralId], references: [id], onDelete: Cascade)
+  userId     String // Ο χρήστης στον οποίο ανήκουν οι πόντοι
+  user       User      @relation(fields: [userId], references: [id])
+  propertyId String?
+  property   Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  points     Int
+  reason     String // "registration", "property_added", "property_sold"
+  area       Float? // Τετραγωνικά του ακινήτου
+  location   String? // Περιοχή του ακινήτου
+  createdAt  DateTime  @default(now())
+
   @@index([userId])
   @@map("referral_points")
 }
 
 // Συνδρομητικά Πλάνα
 model SubscriptionPlan {
-  id                String   @id @default(cuid())
-  name              String   // "Basic", "Pro", "Enterprise"
-  description       String?
-  price             Float    // Τιμή ανά μήνα
-  priceQuarterly    Float?   // Τιμή ανά τρίμηνο (προαιρετική)
-  maxProperties     Int      // Μέγιστος αριθμός ακινήτων
-  benefits          String[] // Λίστα με τα benefits
-  stripePriceId     String?  // Stripe Price ID για μηνιαία συνδρομή
+  id                     String         @id @default(cuid())
+  name                   String // "Basic", "Pro", "Enterprise"
+  description            String?
+  price                  Float // Τιμή ανά μήνα
+  priceQuarterly         Float? // Τιμή ανά τρίμηνο (προαιρετική)
+  maxProperties          Int // Μέγιστος αριθμός ακινήτων
+  benefits               String[] // Λίστα με τα benefits
+  stripePriceId          String? // Stripe Price ID για μηνιαία συνδρομή
   stripePriceIdQuarterly String? // Stripe Price ID για τριμηνιαία συνδρομή
-  isActive          Boolean  @default(true)
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
-  subscriptions     Subscription[]
+  isActive               Boolean        @default(true)
+  createdAt              DateTime       @default(now())
+  updatedAt              DateTime       @updatedAt
+  subscriptions          Subscription[]
 
   @@map("subscription_plans")
 }
 
 model Subscription {
-  id                String   @id @default(cuid())
-  userId            String   @unique
-  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  planId            String
-  plan              SubscriptionPlan @relation(fields: [planId], references: [id])
-  status            String   @default("ACTIVE") // ACTIVE, CANCELLED, EXPIRED, PENDING
-  billingCycle      String   @default("MONTHLY") // MONTHLY, QUARTERLY
-  stripeSubscriptionId String? @unique
-  stripeCustomerId  String?
-  currentPeriodStart DateTime?
-  currentPeriodEnd   DateTime?
-  cancelAtPeriodEnd Boolean  @default(false)
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  id                   String           @id @default(cuid())
+  userId               String           @unique
+  user                 User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planId               String
+  plan                 SubscriptionPlan @relation(fields: [planId], references: [id])
+  status               String           @default("ACTIVE") // ACTIVE, CANCELLED, EXPIRED, PENDING
+  billingCycle         String           @default("MONTHLY") // MONTHLY, QUARTERLY
+  stripeSubscriptionId String?          @unique
+  stripeCustomerId     String?
+  currentPeriodStart   DateTime?
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean          @default(false)
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime         @updatedAt
 
   @@index([userId])
   @@index([planId])
   @@map("subscriptions")
 }
 
+model WebhookEvent {
+  id            String   @id @default(cuid())
+  stripeEventId String   @unique // Stripe event ID for idempotency
+  eventType     String // checkout.session.completed, customer.subscription.updated, etc.
+  processedAt   DateTime @default(now())
+  status        String   @default("PROCESSED") // PROCESSED, FAILED, RETRYING
+  errorMessage  String?  @db.Text
+  metadata      Json? // Store event metadata for debugging
+  createdAt     DateTime @default(now())
 
+  @@index([stripeEventId])
+  @@index([eventType])
+  @@index([processedAt])
+  @@map("webhook_events")
+}
 
+enum ConsentType {
+  TERMS
+  PRIVACY
+  MARKETING
+}
 
+model UserConsent {
+  id          String      @id @default(cuid())
+  userId      String
+  consentType ConsentType
+  version     String // Version identifier (e.g., "2026-01-01")
+  acceptedAt  DateTime    @default(now())
+  ip          String? // IP address at time of consent
+  userAgent   String? // User agent at time of consent
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  @@unique([userId, consentType, version])
+  @@index([userId, consentType])
+  @@index([consentType, version])
+  @@map("user_consents")
+}
 
+enum FileDeletionStatus {
+  QUEUED
+  PROCESSING
+  DELETED
+  FAILED
+}
 
+model FileDeletionJob {
+  id        String             @id @default(cuid())
+  userId    String
+  s3Key     String // S3 object key (e.g., "properties/image.jpg" or "propertyId/documentType/file.pdf")
+  status    FileDeletionStatus @default(QUEUED)
+  attempts  Int                @default(0)
+  lastError String?            @db.Text
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+  deletedAt DateTime? // When the file was successfully deleted
 
+  @@unique([userId, s3Key])
+  @@index([userId])
+  @@index([status])
+  @@index([status, createdAt])
+  @@map("file_deletion_jobs")
+}
 
+model OpsAlertState {
+  key           String    @id // e.g. "ops.queue.stuck_queued"
+  lastStatus    String // "ok" | "alert"
+  lastSentAt    DateTime? // When last alert was sent
+  lastValueJson String?   @db.Text // Optional snapshot (capped length)
+  updatedAt     DateTime  @updatedAt
 
+  @@map("ops_alert_states")
+}
 
+// ============================================
+// DEAL ROOM MODELS
+// ============================================
 
+enum ProfessionalType {
+  LAWYER
+  NOTARY
+  ENGINEER
+}
 
+enum VerificationStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
 
+model ProfessionalProfile {
+  id                 String             @id @default(cuid())
+  userId             String             @unique
+  type               ProfessionalType
+  displayName        String
+  officeName         String?
+  phone              String?
+  city               String?
+  areaTags           String[] // e.g. ["Athens", "Palaio Faliro"]
+  address            String?
+  bio                String?
+  languages          String[]
+  services           Json?
+  verificationStatus VerificationStatus @default(PENDING)
+  verifiedAt         DateTime?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
 
+  user         User                      @relation("ProfessionalProfile", fields: [userId], references: [id], onDelete: Cascade)
+  availability ProfessionalAvailability?
+  requests     ProfessionalRequest[]
+  appointments DealAppointment[]
+
+  @@index([type])
+  @@index([verificationStatus])
+  @@index([city])
+  @@map("professional_profiles")
+}
+
+model ProfessionalAvailability {
+  id             String   @id @default(cuid())
+  professionalId String   @unique
+  timezone       String   @default("Europe/Athens")
+  weeklyRules    Json // ex: [{ weekday: 1, start: "10:00", end: "14:00" }, ...]
+  exceptions     Json? // ex: [{ date: "2026-01-12", unavailable: true }, ...]
+  meetingTypes   String[] // ["ONLINE", "IN_PERSON"]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  professional ProfessionalProfile @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+
+  @@map("professional_availability")
+}
+
+enum DealStatus {
+  DRAFT
+  ACTIVE
+  CLOSED
+  CANCELLED
+  COMPLETED
+  CLOSED_PROPERTY_SOLD  // Auto-closed when another deal for same property completed
+}
+
+enum DealRole {
+  BUYER
+  SELLER
+  AGENT
+  LAWYER
+  NOTARY
+  ENGINEER
+  ADMIN
+}
+
+model DealRoom {
+  id                   String     @id @default(cuid())
+  propertyId           String
+  buyerId              String
+  sellerId             String? // optional (derived from Property.userId)
+  agentId              String? // optional if agent is attached via referral/lead
+  status               DealStatus @default(DRAFT)
+  buyerSigningConfirmed Boolean   @default(false)
+  sellerSigningConfirmed Boolean   @default(false)
+  notarySigningConfirmed Boolean   @default(false) // When notary confirms purchase/sale completion
+  engineerApprovedSellerDocumentsAt DateTime? // When engineer approved seller documents (step 4)
+  lawyerApprovedSellerDocumentsAt   DateTime? // When lawyer approved seller documents (step 4)
+  notaryApprovedDocumentsAt        DateTime? // When notary approved documents (step 5 - buyer & seller)
+  lawyerApprovedBasicDocumentsAt   DateTime? // When lawyer approved basic buyer docs for deposit (step 1 of lawyer guide)
+  buyerLawyerCompletedBuyerFolderAt DateTime? // When buyer's lawyer marked buyer folder complete (unlocks seller lawyer step 2)
+  buyerCompletedDepositStepAt      DateTime? // Buyer completed ActionsTab step 5 (deposit / continue after lawyer approval)
+  buyerSkippedViewingAt            DateTime? // When buyer chose to continue without appointment (step 1)
+  buyerConfirmedInterestAt         DateTime? // When buyer confirmed interest (step 2 - continue)
+  rentSigningProposal             Json?     // { startAt, endAt, buyerId } when buyer proposes in-person signing
+  rentSigningMetadata             Json?     // { landlordNotifiedTenantGovGrAt } when seller notifies tenant about gov.gr
+  rentCompletionMetadata          Json?     // { buyerMyAadeConfirmedAt?, sellerCompletionConfirmedAt?, buyerCompletionConfirmedAt? }
+  createdAt            DateTime   @default(now())
+  updatedAt            DateTime   @updatedAt
+
+  property Property @relation("DealRoomProperty", fields: [propertyId], references: [id], onDelete: Cascade)
+  buyer    User     @relation("DealBuyer", fields: [buyerId], references: [id], onDelete: Cascade)
+  seller   User?    @relation("DealSeller", fields: [sellerId], references: [id], onDelete: SetNull)
+  agent    User?    @relation("DealAgent", fields: [agentId], references: [id], onDelete: SetNull)
+
+  participants     DealParticipant[]
+  requests         ProfessionalRequest[]
+  professionalInvites ProfessionalInvite[]
+  threads          DealThread[]
+  documents        DealDocument[]
+  appointments     DealAppointment[]
+  offers           DealOffer[]
+  hiddenByUsers    DealRoomHiddenByUser[]
+
+  @@unique([propertyId, buyerId]) // prevent duplicate rooms per buyer-property
+  @@index([buyerId])
+  @@index([propertyId])
+  @@index([status])
+  @@map("deal_rooms")
+}
+
+model DealOffer {
+  id         String   @id @default(cuid())
+  dealRoomId String
+  offeredBy  String   // userId
+  role       String   // BUYER or SELLER
+  amount     Decimal  @db.Decimal(12, 2)
+  message    String?  @db.Text
+  status     String   @default("PENDING") // PENDING, ACCEPTED, REJECTED, COUNTERED
+  createdAt  DateTime @default(now())
+
+  dealRoom DealRoom @relation(fields: [dealRoomId], references: [id], onDelete: Cascade)
+  user     User     @relation("DealOfferUser", fields: [offeredBy], references: [id], onDelete: Cascade)
+
+  @@index([dealRoomId])
+  @@index([offeredBy])
+  @@map("deal_offers")
+}
+
+model DealRoomHiddenByUser {
+  id         String   @id @default(cuid())
+  dealRoomId String
+  userId     String
+  hiddenAt   DateTime @default(now())
+
+  dealRoom DealRoom @relation(fields: [dealRoomId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([dealRoomId, userId])
+  @@index([userId])
+  @@index([dealRoomId])
+  @@map("deal_room_hidden_by_user")
+}
+
+model DealParticipant {
+  id          String    @id @default(cuid())
+  dealRoomId  String
+  userId      String
+  role        DealRole
+  permissions Json? // e.g. { canSeeSellerDocs: true, canSeeBuyerDocs: true } - keep minimal first
+  joinedAt    DateTime  @default(now())
+  removedAt   DateTime?
+
+  dealRoom DealRoom @relation(fields: [dealRoomId], references: [id], onDelete: Cascade)
+  user     User     @relation("DealParticipant", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([dealRoomId, userId])
+  @@index([userId])
+  @@index([dealRoomId])
+  @@map("deal_participants")
+}
+
+enum RequestStatus {
+  REQUESTED
+  ACCEPTED
+  DECLINED
+  CANCELLED
+}
+
+model ProfessionalRequest {
+  id             String           @id @default(cuid())
+  dealRoomId     String
+  professionalId String
+  requestedById  String
+  type           ProfessionalType
+  status         RequestStatus    @default(REQUESTED)
+  message        String?
+  respondedAt    DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  dealRoom     DealRoom            @relation(fields: [dealRoomId], references: [id], onDelete: Cascade)
+  professional ProfessionalProfile @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+  requestedBy  User                @relation("ProfessionalRequestRequester", fields: [requestedById], references: [id], onDelete: Cascade)
+
+  @@unique([dealRoomId, professionalId]) // prevent duplicates
+  @@index([dealRoomId])
+  @@index([professionalId])
+  @@index([requestedById])
+  @@map("professional_requests")
+}
+
+// Pending professional invite (seller adds lawyer/engineer by details, OTP verification)
+model ProfessionalInvite {
+  id                String           @id @default(cuid())
+  dealRoomId        String
+  type              ProfessionalType // LAWYER or ENGINEER
+  name              String
+  email             String
+  phone             String?
+  registrationNumber  String?
+  sendOtpTo         String           // 'email' | 'phone'
+  otpCode           String?
+  otpExpires        DateTime?
+  requestedById     String
+  linkedUserId      String?          // Set when OTP verified and user created/found
+  linkedProfessionalId String?       // Set when OTP verified and professional profile linked
+  verifiedAt        DateTime?
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+
+  dealRoom    DealRoom @relation(fields: [dealRoomId], references: [id], onDelete: Cascade)
+  requestedBy User     @relation("ProfessionalInviteRequester", fields: [requestedById], references: [id], onDelete: Cascade)
+
+  @@index([dealRoomId])
+  @@index([email])
+  @@index([requestedById])
+  @@map("professional_invites")
+}
+
+enum ThreadType {
+  GROUP
+  DIRECT
+}
+
+model DealThread {
+  id         String     @id @default(cuid())
+  dealRoomId String
+  type       ThreadType @default(GROUP)
+  title      String?
+  createdAt  DateTime   @default(now())
+
+  dealRoom DealRoom           @relation(fields: [dealRoomId], references: [id], onDelete: Cascade)
+  members  DealThreadMember[]
+  messages DealMessage[]
+
+  @@index([dealRoomId])
+  @@index([type])
+  @@map("deal_threads")
+}
+
+model DealThreadMember {
+  id       String   @id @default(cuid())
+  threadId String
+  userId   String
+  joinedAt DateTime @default(now())
+
+  thread DealThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  user   User       @relation("DealThreadMember", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([threadId, userId])
+  @@index([userId])
+  @@index([threadId])
+  @@map("deal_thread_members")
+}
+
+model DealMessage {
+  id        String   @id @default(cuid())
+  threadId  String
+  senderId  String
+  body      String
+  createdAt DateTime @default(now())
+  // future: editedAt, deletedAt, attachments
+
+  thread DealThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  sender User       @relation("DealMessageSender", fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@index([threadId, createdAt])
+  @@map("deal_messages")
+}
+
+enum DocumentStatus {
+  REQUESTED
+  UPLOADED
+  UNDER_REVIEW
+  APPROVED
+  CHANGES_REQUESTED
+}
+
+model DealDocument {
+  id                String         @id @default(cuid())
+  dealRoomId        String
+  category          String // Changed from DocumentCategory enum to String to support Greek document names
+  status            DocumentStatus @default(REQUESTED)
+  requestedById     String? // lawyer/notary who requested
+  requestedFromRole DealRole? // BUYER/SELLER
+  uploadedById      String?
+  reviewById        String?
+  reviewNote        String?
+  guideWhere        String? // Where to find the document (for custom documents)
+  guideInstructions String? // Instructions on how to get the document (for custom documents)
+  s3Key             String?
+  fileName          String?
+  mimeType          String?
+  sizeBytes         Int?
+  visibility        Json? // { visibleToRoles: ["BUYER","LAWYER","NOTARY"] } minimal
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  dealRoom    DealRoom @relation(fields: [dealRoomId], references: [id], onDelete: Cascade)
+  requestedBy User?    @relation("DealDocumentRequester", fields: [requestedById], references: [id], onDelete: SetNull)
+  uploadedBy  User?    @relation("DealDocumentUploader", fields: [uploadedById], references: [id], onDelete: SetNull)
+  reviewedBy  User?    @relation("DealDocumentReviewer", fields: [reviewById], references: [id], onDelete: SetNull)
+
+  @@index([dealRoomId])
+  @@index([status])
+  @@index([category])
+  @@map("deal_documents")
+}
+
+enum AppointmentStatus {
+  REQUESTED
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+model DealAppointment {
+  id             String            @id @default(cuid())
+  dealRoomId     String
+  professionalId String
+  bookedById     String // buyer or seller
+  startAt        DateTime
+  endAt          DateTime
+  type           String // "ONLINE" | "IN_PERSON"
+  location       String?
+  meetingLink    String?
+  status         AppointmentStatus @default(REQUESTED)
+  note           String?
+  sellerApprovedAt DateTime?        // When seller approved this proposal (for buyer-proposed slots)
+  buyerApprovedAt  DateTime?        // When buyer approved seller-proposed signing slot
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  dealRoom     DealRoom            @relation(fields: [dealRoomId], references: [id], onDelete: Cascade)
+  professional ProfessionalProfile @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+  bookedBy     User                @relation("DealAppointmentBooker", fields: [bookedById], references: [id], onDelete: Cascade)
+
+  @@index([dealRoomId])
+  @@index([professionalId, startAt])
+  @@index([bookedById])
+  @@map("deal_appointments")
+}

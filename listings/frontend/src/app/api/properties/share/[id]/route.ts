@@ -5,11 +5,12 @@ import { prisma } from '@/lib/prisma';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const property = await prisma.property.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         user: {
           select: {
@@ -40,9 +41,10 @@ export async function GET(
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const { agentId } = await request.json();
     const session = await getServerSession(authOptions);
 
@@ -72,7 +74,7 @@ export async function POST(
       where: {
         buyerId: session.user.id,
         agentId: agentId,
-        propertyId: params.id,
+        propertyId: id,
       },
     });
 
@@ -88,7 +90,7 @@ export async function POST(
       data: {
         buyerId: session.user.id,
         agentId: agentId,
-        propertyId: params.id,
+        propertyId: id,
         status: 'PENDING',
       },
     });

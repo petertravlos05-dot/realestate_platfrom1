@@ -104,6 +104,10 @@ export async function POST(request: Request) {
               },
           });
 
+          // Note: Deal room creation is handled automatically by backend
+          // when transaction is created via /buyer/interested-properties or
+          // when buyer-agent connection is confirmed
+
                 // Δημιουργία ειδοποίησης στον seller για νέο ενδιαφέρον
       const buyer = await prisma.user.findUnique({
           where: { id: connection.buyerId },

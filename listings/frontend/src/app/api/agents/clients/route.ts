@@ -3,6 +3,8 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
+import * as Sentry from '@sentry/nextjs';
 
 interface Property {
   id: string;
@@ -59,7 +61,7 @@ export async function GET(request: Request) {
 
       const token = authHeader.split(' ')[1];
       try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'Agapao_ton_stivo05') as { userId: string };
+        const decoded = jwt.verify(token, getJwtSecret()) as { userId: string };
         userId = decoded.userId;
       } catch (error) {
         return NextResponse.json({ error: 'Μη έγκυρο token' }, { status: 401 });
@@ -147,8 +149,8 @@ export async function GET(request: Request) {
     });
 
     // Φέρε όλα τα propertyId και buyerId από leads και connections
-    const allPropertyIds = [...clients, ...connections].map(c => c.property.id);
-    const allBuyerIds = [...clients, ...connections].map(c => c.buyer.id);
+    const allPropertyIds = [...clients, ...connections].map((c: typeof clients[0] | typeof connections[0]) => c.property.id);
+    const allBuyerIds = [...clients, ...connections].map((c: typeof clients[0] | typeof connections[0]) => c.buyer.id);
 
     // Φέρε όλα τα transactions που έχουν propertyId και buyerId στα παραπάνω
     const transactions = await prisma.transaction.findMany({
@@ -157,30 +159,30 @@ export async function GET(request: Request) {
         buyerId: { in: allBuyerIds }
       },
       include: {
-        progress: { orderBy: { createdAt: 'desc' } }
+        progress: { orderBy: { createdAt: 'desc' as const } }
       }
     });
 
     // Για κάθε γραμμή, βρες το transaction που έχει το ίδιο propertyId, buyerId και agentId (αν υπάρχει)
-    const transformedClients = [...clients, ...connections].map(client => {
+    const transformedClients = [...clients, ...connections].map((client: typeof clients[0] | typeof connections[0]) => {
       // Βρες όλα τα transactions με propertyId, buyerId, agentId
-      const allTransactions = transactions.filter(t =>
+      const allTransactions = transactions.filter((t: typeof transactions[0]) =>
         t.propertyId === client.property.id &&
         t.buyerId === client.buyer.id &&
         t.agentId === userId
       );
       // Πάρε το πιο πρόσφατο (με βάση updatedAt)
-      let transaction = allTransactions.sort((a, b) =>
+      let transaction = allTransactions.sort((a: typeof allTransactions[0], b: typeof allTransactions[0]) =>
         new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
       )[0];
 
       if (!transaction) {
         // Αν δεν υπάρχει με agentId, πάρε το πιο πρόσφατο μόνο με propertyId + buyerId
-        const fallbackTransactions = transactions.filter(t =>
+        const fallbackTransactions = transactions.filter((t: typeof transactions[0]) =>
           t.propertyId === client.property.id &&
           t.buyerId === client.buyer.id
         );
-        transaction = fallbackTransactions.sort((a, b) =>
+        transaction = fallbackTransactions.sort((a: typeof fallbackTransactions[0], b: typeof fallbackTransactions[0]) =>
           new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
         )[0];
       }
@@ -218,7 +220,7 @@ export async function GET(request: Request) {
           progress: {
             stage: transaction.progress[0]?.stage || 'PENDING',
             updatedAt: transaction.progress[0]?.createdAt.toISOString() || client.updatedAt.toISOString(),
-            notifications: transaction.progress.map((p: any) => ({
+            notifications: transaction.progress.map((p: typeof transaction.progress[0]) => ({
               id: p.id,
               stage: p.stage,
               notes: p.notes,
@@ -233,6 +235,7 @@ export async function GET(request: Request) {
     return NextResponse.json(transformedClients);
   } catch (error) {
     console.error('Error fetching clients:', error);
+    Sentry.captureException(error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 } 

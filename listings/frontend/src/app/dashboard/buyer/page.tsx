@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
-import { FaHome, FaUser, FaSignOutAlt, FaBuilding, FaUserTie, FaPhone, FaEnvelope, FaCalendarAlt, FaChartBar, FaSearch, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaInfoCircle, FaQuestionCircle, FaCog, FaComments, FaExchangeAlt, FaChartLine, FaHeart, FaChevronDown, FaCalendar, FaTrash, FaExclamationCircle, FaMapMarkerAlt, FaBed, FaBath, FaRulerCombined, FaStar, FaBell, FaUserCircle, FaEye, FaUsers, FaEllipsisV } from 'react-icons/fa';
+import { FaHome, FaUser, FaSignOutAlt, FaBuilding, FaUserTie, FaPhone, FaEnvelope, FaCalendarAlt, FaChartBar, FaSearch, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaInfoCircle, FaQuestionCircle, FaCog, FaComments, FaExchangeAlt, FaChartLine, FaHeart, FaChevronDown, FaCalendar, FaTrash, FaExclamationCircle, FaMapMarkerAlt, FaBed, FaBath, FaRulerCombined, FaStar, FaBell, FaUserCircle, FaEye, FaUsers, FaEllipsisV, FaFileAlt, FaSpinner } from 'react-icons/fa';
 import TransactionProgressModal from '@/components/TransactionProgressModal';
 import ViewingScheduleModal from '@/components/ViewingScheduleModal';
 import PropertyDetailsModal from '@/components/properties/PropertyDetailsModal';
@@ -17,6 +18,7 @@ import { useNotifications } from '@/contexts/NotificationContext';
 import NotificationBell from '@/components/notifications/NotificationBell';
 import SupportCenter from '@/components/support/SupportCenter';
 import { apiClient, fetchFromBackend } from '@/lib/api/client';
+import { DealRoom } from '@/lib/api/deals';
 
 interface Update {
   id: number;
@@ -127,6 +129,7 @@ const getTransactionStage = (property: PropertyWithTransaction) => {
 };
 
 export default function BuyerDashboard() {
+  const router = useRouter();
   const { data: session } = useSession();
   const [properties, setProperties] = useState<PropertyWithTransaction[]>([]);
   const [loading, setLoading] = useState(true);
@@ -134,7 +137,9 @@ export default function BuyerDashboard() {
   const [showProgressModal, setShowProgressModal] = useState(false);
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<'properties' | 'favorites' | 'messages' | 'support'>('properties');
+  const [activeTab, setActiveTab] = useState<'properties' | 'favorites' | 'messages' | 'support' | 'deals'>('properties');
+  const [selectedDealId, setSelectedDealId] = useState<string | null>(null);
+  const [isDealModalOpen, setIsDealModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [isRoleMenuOpen, setIsRoleMenuOpen] = useState(false);
@@ -149,10 +154,22 @@ export default function BuyerDashboard() {
   const [selectedTicketId, setSelectedTicketId] = useState<string | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [showCancelConfirmation, setShowCancelConfirmation] = useState<{ show: boolean; property: any | null }>({ show: false, property: null });
+  const [deals, setDeals] = useState<DealRoom[]>([]);
+  const [dealsLoading, setDealsLoading] = useState(false);
 
   const handleSignOut = async () => {
     await signOut({ redirect: false });
     window.location.href = '/buyer';
+  };
+
+  const handleRoleChange = (role: string) => {
+    localStorage.setItem('selectedRole', role);
+    window.dispatchEvent(new Event('selectedRoleChange'));
+    if (role === 'AGENT') {
+      router.push('/agent');
+    } else if (role === 'SELLER') {
+      router.push('/seller');
+    }
   };
 
   const fetchData = async () => {
@@ -788,7 +805,7 @@ export default function BuyerDashboard() {
                     <Link
                       href="/agent"
                           className="flex items-center px-6 py-4 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-200 group"
-                      onClick={() => handleSignOut()}
+                      onClick={(e) => { e.preventDefault(); setIsRoleMenuOpen(false); handleRoleChange('AGENT'); }}
                     >
                           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-200">
                             <FaUserCircle className="w-5 h-5 text-white" />
@@ -807,7 +824,7 @@ export default function BuyerDashboard() {
                     <Link
                       href="/seller"
                           className="flex items-center px-6 py-4 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-200 group"
-                      onClick={() => handleSignOut()}
+                      onClick={(e) => { e.preventDefault(); setIsRoleMenuOpen(false); handleRoleChange('SELLER'); }}
                     >
                           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-200">
                             <FaUserCircle className="w-5 h-5 text-white" />
@@ -986,7 +1003,7 @@ export default function BuyerDashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
         >
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <div className="flex items-center justify-between">
@@ -1013,6 +1030,21 @@ export default function BuyerDashboard() {
               </div>
             </div>
           </div>
+          
+          <Link
+            href="/deals"
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow cursor-pointer"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-600">Συναλλαγές</p>
+                <p className="text-2xl font-bold text-gray-900">Δείτε όλες</p>
+              </div>
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                <FaExchangeAlt className="w-6 h-6 text-purple-600" />
+              </div>
+            </div>
+          </Link>
           
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <div className="flex items-center justify-between">
@@ -1144,6 +1176,11 @@ export default function BuyerDashboard() {
                               className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            {property.propertySold && (
+                              <span className="absolute top-2 left-2 bg-gradient-to-r from-teal-600 to-cyan-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                Πουλημένο
+                              </span>
+                            )}
                             
                             {/* Test Cancel Button */}
                             <div className="absolute top-3 right-3">
@@ -1172,11 +1209,13 @@ export default function BuyerDashboard() {
                               {property.price.toLocaleString('el-GR')} €
                             </span>
                             <span className={`px-4 py-2 rounded-full text-sm font-medium ${
-                              property.status === 'available'
+                              property.propertySold
+                                ? 'bg-gradient-to-r from-teal-100 to-cyan-100 text-teal-800'
+                                : property.status === 'available'
                                 ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-800'
                                 : 'bg-gradient-to-r from-red-100 to-pink-100 text-red-800'
                             }`}>
-                              {property.status === 'available' ? 'Διαθέσιμο' : 'Μη Διαθέσιμο'}
+                              {property.propertySold ? 'Πουλημένο' : property.status === 'available' ? 'Διαθέσιμο' : 'Μη Διαθέσιμο'}
                             </span>
                           </div>
                           <div className="flex items-center justify-between text-sm text-gray-500 mb-6">

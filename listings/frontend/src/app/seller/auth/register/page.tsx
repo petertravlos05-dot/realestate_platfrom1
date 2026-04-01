@@ -1,14 +1,16 @@
 'use client';
 
-import { useState, useEffect, useRef, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { signIn, useSession, signOut } from 'next-auth/react';
 import { motion } from 'framer-motion';
-import { FaUser, FaLock, FaEye, FaEyeSlash, FaHome, FaArrowRight, FaShieldAlt, FaCheckCircle, FaSearch, FaEnvelope, FaInfoCircle, FaQuestionCircle, FaUserCircle, FaChevronDown, FaExchangeAlt, FaCog, FaComments, FaSignOutAlt, FaPhone, FaBuilding, FaUserPlus, FaCrown, FaCheck, FaTimes, FaCreditCard } from 'react-icons/fa';
+import { FaUser, FaLock, FaEye, FaEyeSlash, FaHome, FaArrowRight, FaShieldAlt, FaCheckCircle, FaSearch, FaEnvelope, FaQuestionCircle, FaUserCircle, FaChevronDown, FaExchangeAlt, FaCog, FaComments, FaSignOutAlt, FaPhone, FaBuilding, FaUserPlus, FaCheck, FaTimes, FaGlobe } from 'react-icons/fa';
 import Image from 'next/image';
-import SellerNotificationBell from '@/components/notifications/SellerNotificationBell';
+import SellerMarketingHeader from '@/components/layout/SellerMarketingHeader';
+import SellerMarketingFooter from '@/components/layout/SellerMarketingFooter';
 import { apiClient } from '@/lib/api/client';
+import { countries } from '@/lib/countries';
 
 function SellerRegisterForm() {
   const router = useRouter();
@@ -18,50 +20,12 @@ function SellerRegisterForm() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-  const profileMenuRef = useRef<HTMLDivElement>(null);
-  const [isRoleMenuOpen, setIsRoleMenuOpen] = useState(false);
-  const roleMenuRef = useRef<HTMLDivElement>(null);
   
-  // Νέα state για τον τύπο χρήστη και τα πλάνα
   const [userType, setUserType] = useState<'INDIVIDUAL' | 'COMPANY'>('INDIVIDUAL');
-  const [subscriptionPlans, setSubscriptionPlans] = useState<any[]>([]);
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
-  const [billingCycle, setBillingCycle] = useState<'MONTHLY' | 'QUARTERLY'>('MONTHLY');
-  const [showPlans, setShowPlans] = useState(false);
 
-  // Λήψη του callback URL από τα query parameters
-  const callbackUrl = searchParams?.get('callbackUrl') || '/dashboard/seller';
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target as Node)) {
-        setIsProfileMenuOpen(false);
-      }
-      if (roleMenuRef.current && !roleMenuRef.current.contains(event.target as Node)) {
-        setIsRoleMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  // Φόρτωση συνδρομητικών πλάνων
-  useEffect(() => {
-    const fetchPlans = async () => {
-      try {
-        const { data: plans } = await apiClient.get('/subscription-plans');
-        setSubscriptionPlans(plans);
-      } catch (error) {
-        console.error('Error fetching subscription plans:', error);
-      }
-    };
-
-    fetchPlans();
-  }, []);
+  const rawCallbackUrl = searchParams?.get('callbackUrl') || '/deals?from=seller&tab=deals';
+  const callbackUrl =
+    rawCallbackUrl === '/dashboard/seller' ? '/deals?from=seller&tab=deals' : rawCallbackUrl;
 
   const handleSignOut = async () => {
     await signOut({ redirect: false });
@@ -70,26 +34,6 @@ function SellerRegisterForm() {
 
   const handleChangeRole = () => {
     router.push('/');
-  };
-
-  const handleStripeCheckout = async (planId: string) => {
-    try {
-      setLoading(true);
-      const { data } = await apiClient.post('/stripe/create-checkout-session', {
-        planId,
-        billingCycle,
-      });
-
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        setError(data.error || 'Σφάλμα κατά τη δημιουργία της πληρωμής');
-      }
-    } catch (error: any) {
-      setError(error?.response?.data?.error || 'Σφάλμα κατά τη σύνδεση με το σύστημα πληρωμών');
-    } finally {
-      setLoading(false);
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -113,6 +57,7 @@ function SellerRegisterForm() {
       phone: userType === 'COMPANY'
         ? formData.get('contactPersonPhone')?.toString() || ''
         : formData.get('phone')?.toString() || '',
+      country: formData.get('country')?.toString() || '',
       companyName: formData.get('companyName')?.toString() || '',
       companyTitle: formData.get('companyTitle')?.toString() || '',
       companyTaxId: formData.get('companyTaxId')?.toString() || '',
@@ -147,8 +92,47 @@ function SellerRegisterForm() {
         // Ανακατεύθυνση στο callback URL ή στο dashboard
         router.push(callbackUrl);
       }
-    } catch (error) {
-      if (error instanceof Error) {
+    } catch (error: any) {
+      // Extract error message from axios response
+      if (error.response?.data) {
+        const errorData = error.response.data;
+        
+        // Check if there are validation details (Zod errors)
+        if (errorData.details && Array.isArray(errorData.details.issues)) {
+          // Extract the first validation error message
+          const firstIssue = errorData.details.issues[0];
+          if (firstIssue.path && firstIssue.path.length > 0) {
+            const field = firstIssue.path[0];
+            const message = firstIssue.message;
+            
+            // Translate common field names to Greek
+            const fieldTranslations: Record<string, string> = {
+              'password': 'κωδικός',
+              'confirmPassword': 'επιβεβαίωση κωδικού',
+              'email': 'email',
+              'name': 'όνομα',
+            };
+            
+            const fieldName = fieldTranslations[field] || field;
+            
+            // Translate common messages to Greek
+            if (message.includes('at least 12 characters')) {
+              setError(`Ο ${fieldName} πρέπει να έχει τουλάχιστον 12 χαρακτήρες.`);
+            } else if (message.includes('do not match')) {
+              setError('Οι κωδικοί δεν ταιριάζουν.');
+            } else {
+              setError(`${fieldName}: ${message}`);
+            }
+          } else {
+            setError(errorData.error || 'Προέκυψε σφάλμα επικύρωσης.');
+          }
+        } else if (errorData.error) {
+          // Use the error message from backend
+          setError(errorData.error);
+        } else {
+          setError('Προέκυψε κάποιο σφάλμα. Παρακαλώ δοκιμάστε ξανά.');
+        }
+      } else if (error instanceof Error) {
         setError(error.message);
       } else {
         setError('Προέκυψε κάποιο σφάλμα. Παρακαλώ δοκιμάστε ξανά.');
@@ -178,181 +162,7 @@ function SellerRegisterForm() {
 
   return (
     <div className="min-h-screen">
-      {/* Enhanced Header */}
-      <header className="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-6">
-              <Link href="/seller" className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
-                  <FaHome className="text-white text-sm" />
-                </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                  RealEstate
-                </span>
-              </Link>
-              
-              <div className="relative" ref={roleMenuRef}>
-                <button
-                  onClick={() => setIsRoleMenuOpen(!isRoleMenuOpen)}
-                  className="flex items-center px-4 py-2 text-sm font-medium rounded-full shadow-md transition-all duration-300 bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600"
-                >
-                  <FaUserCircle className="mr-2" />
-                  Seller Mode
-                  <FaChevronDown className="ml-2 text-xs" />
-                </button>
-                {isRoleMenuOpen && (
-                  <div className="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-xl py-2 border border-gray-100 z-50">
-                    <div className="px-4 py-3 border-b border-gray-100">
-                      <p className="text-sm font-semibold text-gray-900">Αλλαγή Ρόλου</p>
-                    </div>
-                    <Link
-                      href="/buyer"
-                      className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 transition-colors duration-200"
-                    >
-                      <FaExchangeAlt className="mr-3 text-green-500" />
-                      Buyer Mode
-                    </Link>
-                    <Link
-                      href="/agent"
-                      className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 transition-colors duration-200"
-                    >
-                      <FaExchangeAlt className="mr-3 text-green-500" />
-                      Agent Mode
-                    </Link>
-                    <Link
-                      href="/"
-                      className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 transition-colors duration-200"
-                    >
-                      <FaExchangeAlt className="mr-3 text-green-500" />
-                      Επιλογή Ρόλου
-                    </Link>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <nav className="hidden md:flex items-center space-x-1">
-              <Link
-                href="/seller"
-                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-700 hover:bg-green-50 hover:text-green-600"
-              >
-                <FaHome className="mr-2" />
-                Αρχική
-              </Link>
-              <Link
-                href="/add-listing"
-                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-700 hover:bg-green-50 hover:text-green-600"
-              >
-                <FaSearch className="mr-2" />
-                Προσθήκη Ακινήτου
-              </Link>
-              <Link
-                href="/seller/contact"
-                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-700 hover:bg-green-50 hover:text-green-600"
-              >
-                <FaEnvelope className="mr-2" />
-                Επικοινωνία
-              </Link>
-              <Link
-                href="/seller/about"
-                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-700 hover:bg-green-50 hover:text-green-600"
-              >
-                <FaInfoCircle className="mr-2" />
-                Σχετικά
-              </Link>
-              <Link
-                href="/seller/how-it-works"
-                className="flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-700 hover:bg-green-50 hover:text-green-600"
-              >
-                <FaQuestionCircle className="mr-2" />
-                Πώς Λειτουργεί
-              </Link>
-            </nav>
-
-            <div className="flex items-center space-x-3">
-              {status === 'authenticated' ? (
-                <>
-                  <Link
-                    href="/dashboard/seller"
-                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-md bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600"
-                  >
-                    Dashboard
-                  </Link>
-                  <SellerNotificationBell />
-                  <div className="relative" ref={profileMenuRef}>
-                    <button
-                      onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
-                      className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 shadow-md bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600"
-                    >
-                      <FaUser className="w-4 h-4" />
-                    </button>
-                    {isProfileMenuOpen && (
-                      <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-2 border border-gray-100">
-                        <div className="px-4 py-3 border-b border-gray-100">
-                          <p className="text-sm font-semibold text-gray-900">{session?.user?.name || 'Χρήστης'}</p>
-                          <p className="text-xs text-gray-500">{session?.user?.email}</p>
-                        </div>
-                        <Link
-                          href="/dashboard/seller/profile"
-                          className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 transition-colors duration-200"
-                        >
-                          <FaCog className="mr-3 text-green-500" />
-                          Ρυθμίσεις
-                        </Link>
-                        <Link
-                          href="/dashboard/seller/messages"
-                          className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 transition-colors duration-200"
-                        >
-                          <FaComments className="mr-3 text-green-500" />
-                          Μηνύματα
-                        </Link>
-                        <Link
-                          href="/seller/how-it-works#faq"
-                          className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 transition-colors duration-200"
-                        >
-                          <FaQuestionCircle className="mr-3 text-green-500" />
-                          Συχνές Ερωτήσεις
-                        </Link>
-                        <div className="border-t border-gray-100 my-1"></div>
-                        <Link
-                          href="/"
-                          className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 transition-colors duration-200"
-                        >
-                          <FaExchangeAlt className="mr-3 text-green-500" />
-                          Αλλαγή Ρόλων
-                        </Link>
-                        <button
-                          onClick={handleSignOut}
-                          className="flex items-center w-full px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors duration-200"
-                        >
-                          <FaSignOutAlt className="mr-3" />
-                          Αποσύνδεση
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/seller/auth/login"
-                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-700 hover:bg-gray-100"
-                  >
-                    Σύνδεση
-                  </Link>
-                  <Link
-                    href="/seller/auth/register"
-                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-md bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600"
-                  >
-                    Εγγραφή
-                  </Link>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </header>
+      <SellerMarketingHeader solidFromStart />
 
       {/* Main Content */}
       <main className="pt-16">
@@ -424,10 +234,7 @@ function SellerRegisterForm() {
                         type="button"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={() => {
-                          setUserType('INDIVIDUAL');
-                          setShowPlans(false);
-                        }}
+                        onClick={() => setUserType('INDIVIDUAL')}
                         className={`relative p-8 rounded-2xl border-2 transition-all duration-300 ${
                           userType === 'INDIVIDUAL'
                             ? 'border-green-500 bg-gradient-to-br from-green-50 to-emerald-50 shadow-2xl transform scale-105'
@@ -470,10 +277,7 @@ function SellerRegisterForm() {
                         type="button"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={() => {
-                          setUserType('COMPANY');
-                          setShowPlans(true);
-                        }}
+                        onClick={() => setUserType('COMPANY')}
                         className={`relative p-8 rounded-2xl border-2 transition-all duration-300 ${
                           userType === 'COMPANY'
                             ? 'border-green-500 bg-gradient-to-br from-green-50 to-emerald-50 shadow-2xl transform scale-105'
@@ -492,16 +296,16 @@ function SellerRegisterForm() {
                           <p className="text-sm text-gray-600 mb-4">Εγγραφή ως μεσιτική εταιρεία</p>
                           <div className="space-y-2 text-sm text-gray-500">
                             <div className="flex items-center justify-center">
-                              <FaCrown className="w-4 h-4 text-purple-500 mr-2" />
-                              <span>Συνδρομητικά πλάνα</span>
+                              <FaCheck className="w-4 h-4 text-blue-600 mr-2 shrink-0" />
+                              <span>Πλήρη στοιχεία εταιρείας (ΑΦΜ, ΔΟΥ, έδρα κ.λπ.)</span>
                             </div>
                             <div className="flex items-center justify-center">
-                              <FaCrown className="w-4 h-4 text-purple-500 mr-2" />
-                              <span>Προηγμένα χαρακτηριστικά</span>
+                              <FaCheck className="w-4 h-4 text-blue-600 mr-2 shrink-0" />
+                              <span>Υπεύθυνος επικοινωνίας για σύνδεση και ειδοποιήσεις</span>
                             </div>
                             <div className="flex items-center justify-center">
-                              <FaCrown className="w-4 h-4 text-purple-500 mr-2" />
-                              <span>Επαγγελματική υποστήριξη</span>
+                              <FaCheck className="w-4 h-4 text-blue-600 mr-2 shrink-0" />
+                              <span>Ίδια πρόσβαση στην πλατφόρμα με τον ιδιώτη πωλητή</span>
                             </div>
                           </div>
                         </div>
@@ -514,245 +318,6 @@ function SellerRegisterForm() {
                       </div>
                     </motion.div>
 
-                  {/* Εξήγηση για το μοντέλο συνδρομής */}
-                  {userType === 'COMPANY' && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 shadow-lg"
-                    >
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                            <FaInfoCircle className="w-6 h-6 text-blue-600" />
-                          </div>
-                        </div>
-                        <div className="ml-4">
-                          <h4 className="text-lg font-semibold text-blue-900 mb-2">Συνδρομητικό Μοντέλο</h4>
-                          <p className="text-blue-800 mb-3">
-                            Η πλατφόρμα μας λειτουργεί με σύγχρονο συνδρομητικό μοντέλο αντί για παραδοσιακή μεσιτική προμήθεια.
-                          </p>
-                          <div className="space-y-2 text-sm text-blue-700">
-                            <div className="flex items-center">
-                              <FaCheck className="w-4 h-4 text-blue-600 mr-2" />
-                              <span>Σταθερή μηνιαία/τριμηνιαία συνδρομή</span>
-                            </div>
-                            <div className="flex items-center">
-                              <FaCheck className="w-4 h-4 text-blue-600 mr-2" />
-                              <span>Χωρίς κρυφά κόστη ή προμήθειες</span>
-                            </div>
-                            <div className="flex items-center">
-                              <FaCheck className="w-4 h-4 text-blue-600 mr-2" />
-                              <span>Προβλέψιμα έξοδα για την επιχείρησή σας</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  {/* Συνδρομητικά Πλάνα */}
-                  {userType === 'COMPANY' && showPlans && (
-                    subscriptionPlans.length > 0 ? (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="bg-gradient-to-br from-white via-green-50/30 to-emerald-50/30 backdrop-blur-sm rounded-2xl p-8 border border-green-200/50 shadow-xl"
-                    >
-                      <div className="text-center mb-8">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Επιλέξτε Συνδρομητικό Πλάνο</h3>
-                        <p className="text-gray-600">Επιλέξτε το πλάνο που ταιριάζει καλύτερα στις ανάγκες της εταιρείας σας</p>
-                      </div>
-                      
-                      {/* Billing Cycle Toggle */}
-                      <div className="flex justify-center mb-8">
-                        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-1 shadow-lg border border-gray-200">
-                          <button
-                            type="button"
-                            onClick={() => setBillingCycle('MONTHLY')}
-                            className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${
-                              billingCycle === 'MONTHLY'
-                                ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg transform scale-105'
-                                : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                            }`}
-                          >
-                            Μηνιαία
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setBillingCycle('QUARTERLY')}
-                            className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ${
-                              billingCycle === 'QUARTERLY'
-                                ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg transform scale-105'
-                                : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                            }`}
-                          >
-                            Τριμηνιαία
-                            <span className="ml-2 bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
-                              -10%
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Plans Grid */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-8 max-w-6xl mx-auto">
-                        {subscriptionPlans.map((plan, index) => (
-                          <motion.div
-                            key={plan.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`relative group cursor-pointer ${
-                              selectedPlan === plan.id
-                                ? 'transform scale-105'
-                                : 'hover:scale-102'
-                            } transition-all duration-300`}
-                            onClick={() => setSelectedPlan(plan.id)}
-                          >
-                            <div className={`relative p-8 rounded-2xl border-2 transition-all duration-300 ${
-                              selectedPlan === plan.id
-                                ? 'border-green-500 bg-gradient-to-br from-green-50 to-emerald-50 shadow-2xl'
-                                : plan.name === 'Pro'
-                                ? 'border-emerald-300 bg-gradient-to-br from-white to-emerald-50/50 shadow-lg hover:shadow-xl'
-                                : 'border-gray-200 bg-white shadow-lg hover:shadow-xl hover:border-gray-300'
-                            }`}>
-                              
-                              {/* Popular Badge */}
-                              {plan.name === 'Pro' && (
-                                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                                  <span className="bg-gradient-to-r from-emerald-500 to-green-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                                    ⭐ Δημοφιλές
-                                  </span>
-                                </div>
-                              )}
-                              
-                              {/* Plan Icon */}
-                              <div className="text-center mb-6">
-                                <div className={`w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 ${
-                                  plan.name === 'Basic' 
-                                    ? 'bg-blue-100 text-blue-600' 
-                                    : plan.name === 'Pro'
-                                    ? 'bg-emerald-100 text-emerald-600'
-                                    : 'bg-purple-100 text-purple-600'
-                                }`}>
-                                  {plan.name === 'Basic' && <FaUser className="w-8 h-8" />}
-                                  {plan.name === 'Pro' && <FaCrown className="w-8 h-8" />}
-                                  {plan.name === 'Enterprise' && <FaBuilding className="w-8 h-8" />}
-                                </div>
-                                <h4 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h4>
-                                {plan.description && (
-                                  <p className="text-sm text-gray-600 mb-4">{plan.description}</p>
-                                )}
-                              </div>
-                              
-                              {/* Price */}
-                              <div className="text-center mb-6">
-                                <div className="flex items-center justify-center">
-                                  <span className="text-4xl font-bold text-gray-900">
-                                    €{billingCycle === 'QUARTERLY' ? plan.priceQuarterly : plan.price}
-                                  </span>
-                                  <div className="ml-2">
-                                    <div className="text-sm text-gray-500">
-                                      /{billingCycle === 'QUARTERLY' ? 'τρίμηνο' : 'μήνα'}
-                                    </div>
-                                    {billingCycle === 'QUARTERLY' && (
-                                      <div className="text-xs text-green-600 font-medium">
-                                        Εξοικονόμηση 10%
-                                      </div>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              {/* Features */}
-                              <div className="space-y-3 mb-8">
-                                <div className="flex items-center text-sm text-gray-700">
-                                  <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                    <FaCheck className="w-3 h-3 text-green-600" />
-                                  </div>
-                                  <span className="font-medium">{plan.maxProperties} ακίνητα</span>
-                                </div>
-                                {plan.benefits.map((benefit: string, benefitIndex: number) => (
-                                  <div key={benefitIndex} className="flex items-center text-sm text-gray-600">
-                                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                      <FaCheck className="w-3 h-3 text-green-600" />
-                                    </div>
-                                    {benefit}
-                                  </div>
-                                ))}
-                              </div>
-                              
-                              {/* Select Button */}
-                              <button
-                                type="button"
-                                className={`w-full py-3 px-4 rounded-xl font-semibold transition-all duration-300 ${
-                                  selectedPlan === plan.id
-                                    ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
-                                    : plan.name === 'Pro'
-                                    ? 'bg-gradient-to-r from-emerald-500 to-green-500 text-white hover:from-emerald-600 hover:to-green-600 shadow-lg'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-300'
-                                }`}
-                              >
-                                {selectedPlan === plan.id ? '✓ Επιλεγμένο' : 'Επιλογή'}
-                              </button>
-                </div>
-              </motion.div>
-                        ))}
-                      </div>
-
-                      {/* Payment Section */}
-                      {selectedPlan && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.5 }}
-                          className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-green-200 shadow-lg max-w-4xl mx-auto"
-                        >
-                          <div className="text-center">
-                            <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                              Έτοιμοι να ξεκινήσετε;
-                            </h4>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                              <button
-                                type="button"
-                                onClick={() => handleStripeCheckout(selectedPlan)}
-                                disabled={loading}
-                                className="inline-flex items-center px-8 py-4 border border-transparent text-base font-semibold rounded-xl text-white bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                              >
-                                <FaCreditCard className="mr-3" />
-                                {loading ? 'Προετοιμασία...' : 'Πληρωμή με Stripe'}
-                              </button>
-                              <div className="text-center sm:text-left">
-                                <p className="text-sm text-gray-600">
-                                  Ή προχωρήστε με την εγγραφή τώρα
-                                </p>
-                                <p className="text-xs text-gray-500">
-                                  και πληρώστε αργότερα
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </motion.div>
-                    ) : (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="bg-gradient-to-br from-white via-green-50/30 to-emerald-50/30 backdrop-blur-sm rounded-2xl p-8 border border-green-200/50 shadow-xl"
-                      >
-                        <div className="text-center py-12">
-                          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500 mx-auto mb-4"></div>
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">Φόρτωση Πλάνων</h3>
-                          <p className="text-gray-600">Παρακαλώ περιμένετε...</p>
-                        </div>
-                      </motion.div>
-                    )
-                  )}
               {error && (
                 <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
@@ -856,6 +421,38 @@ function SellerRegisterForm() {
                                bg-white/70 backdrop-blur-sm transition-all duration-200"
                       placeholder="Εισάγετε το τηλέφωνό σας"
                     />
+                  </div>
+                </div>
+                      )}
+
+                      {/* Country Field - Only for Individual */}
+                      {userType === 'INDIVIDUAL' && (
+                <div>
+                    <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
+                    Χώρα Καταγωγής <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+                      <FaGlobe className="h-5 w-5 text-gray-400" />
+                    </div>
+                    <select
+                      id="country"
+                      name="country"
+                      required
+                      className="appearance-none block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl
+                               placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent
+                               bg-white/70 backdrop-blur-sm transition-all duration-200 cursor-pointer"
+                    >
+                      <option value="">Επιλέξτε χώρα...</option>
+                      {countries.map((country) => (
+                        <option key={country.code} value={country.name}>
+                          {country.flag} {country.name}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                      <FaChevronDown className="h-4 w-4 text-gray-400" />
+                    </div>
                   </div>
                 </div>
                       )}
@@ -1132,6 +729,36 @@ function SellerRegisterForm() {
                         </div>
                       </div>
 
+                      {/* Country Field - Only for Company */}
+                      <div>
+                        <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
+                          Χώρα Καταγωγής <span className="text-red-500">*</span>
+                        </label>
+                        <div className="relative">
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+                            <FaGlobe className="h-5 w-5 text-gray-400" />
+                          </div>
+                          <select
+                            id="country"
+                            name="country"
+                            required
+                            className="appearance-none block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl
+                                     placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent
+                                     bg-white/70 backdrop-blur-sm transition-all duration-200 cursor-pointer"
+                          >
+                            <option value="">Επιλέξτε χώρα...</option>
+                            {countries.map((country) => (
+                              <option key={country.code} value={country.name}>
+                                {country.flag} {country.name}
+                              </option>
+                            ))}
+                          </select>
+                          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <FaChevronDown className="h-4 w-4 text-gray-400" />
+                          </div>
+                        </div>
+                      </div>
+
                       {/* Company Logo Upload */}
                       <div className="md:col-span-2">
                         <label htmlFor="companyLogo" className="block text-sm font-medium text-gray-700 mb-2">
@@ -1270,6 +897,8 @@ function SellerRegisterForm() {
           </div>
         </div>
       </main>
+
+      <SellerMarketingFooter />
       </div>
   );
 }

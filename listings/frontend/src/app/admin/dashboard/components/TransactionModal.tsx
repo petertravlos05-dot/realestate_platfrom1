@@ -3,11 +3,11 @@
 import { Fragment, useState, useEffect } from 'react';
 import { Tab } from '@headlessui/react';
 import Image from 'next/image';
-import { FaTimes, FaUser, FaEnvelope, FaPhone, FaHome, FaCalendar, FaMoneyBill, FaFileContract, FaCheckCircle, FaTimesCircle, FaClock, FaEye, FaHandshake, FaFileAlt, FaFileSignature, FaCreditCard, FaExchangeAlt } from 'react-icons/fa';
+import { FaTimes, FaUser, FaEnvelope, FaPhone, FaHome, FaCalendar, FaMoneyBill, FaFileContract, FaCheckCircle, FaTimesCircle, FaClock, FaEye, FaHandshake, FaFileAlt, FaFileSignature, FaCreditCard, FaExchangeAlt, FaExternalLinkAlt } from 'react-icons/fa';
 import React from 'react';
 import type { IconType } from 'react-icons';
 import { toast } from 'react-hot-toast';
-import { generateId } from '@/lib/utils/id';
+import { apiClient } from '@/lib/api/client';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -25,18 +25,37 @@ interface Update {
   createdAt?: string;
 }
 
+interface DealRoomParticipants {
+  buyerLawyer: { name: string; email: string; phone?: string } | null;
+  sellerLawyer: { name: string; email: string; phone?: string } | null;
+  engineers: { name: string; email: string; phone?: string }[];
+  notaries: { name: string; email: string; phone?: string }[];
+}
+
+function formatProLine(p: { name: string; email: string; phone?: string } | null | undefined) {
+  if (!p) return '—';
+  const label = (p.name && p.name.trim()) || p.email || '—';
+  const extra = [p.email && p.name?.trim() ? p.email : null, p.phone].filter(Boolean).join(' · ');
+  return extra ? `${label} (${extra})` : label;
+}
+
+function formatProLines(list: { name: string; email: string; phone?: string }[] | undefined) {
+  if (!list?.length) return '—';
+  return list.map((x) => formatProLine(x)).join('; ');
+}
+
 interface Transaction {
   id: string;
   buyer: {
     name: string;
     email: string;
     phone?: string;
-  };
+  } | null;
   seller: {
     name: string;
     email: string;
     phone?: string;
-  };
+  } | null;
   agent?: {
     name: string;
     email: string;
@@ -61,6 +80,8 @@ interface Transaction {
     updatedAt: string;
     notifications: Update[];
   };
+  dealRoomParticipants?: DealRoomParticipants | null;
+  dealRoomId?: string | null;
 }
 
 interface TransactionModalProps {
@@ -260,18 +281,17 @@ export default function TransactionModal({ isOpen, onClose, transaction, onUpdat
     return currentStageOrder < 2;
   };
 
-  // Fetch latest transaction data
+  // Ανανέωση από Express backend (ίδιο API με τη λίστα συναλλαγών) — όχι Next /api (χωρίς DealRoom στο Prisma του frontend)
   useEffect(() => {
     const fetchTransactionData = async () => {
       if (!transaction.id) return;
 
       try {
-        const response = await fetch(`/api/admin/transactions/${transaction.id}`);
-        if (!response.ok) throw new Error('Failed to fetch transaction data');
-        
-        const data = await response.json();
-        setTransactionData(data);
-        setSelectedStage(data.stage as StageType);
+        const { data } = await apiClient.get<Transaction & { stage?: string }>(
+          `/admin/transactions/${transaction.id}`
+        );
+        setTransactionData(data as Transaction);
+        if (data.stage) setSelectedStage(data.stage as StageType);
       } catch (error) {
         console.error('Error fetching transaction data:', error);
       }
@@ -344,16 +364,31 @@ export default function TransactionModal({ isOpen, onClose, transaction, onUpdat
 
         <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
           <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center mb-4 gap-3 flex-wrap">
               <h3 className="text-lg font-medium text-gray-900">
                 Λεπτομέρειες Συναλλαγής
               </h3>
-              <button
-                onClick={onClose}
-                className="text-gray-400 hover:text-gray-500"
-              >
-                <FaTimes />
-              </button>
+              <div className="flex items-center gap-2">
+                {(effectiveTransaction.dealRoomId || transaction.dealRoomId) && (
+                  <a
+                    href={`/deals/${effectiveTransaction.dealRoomId || transaction.dealRoomId}?from=admin`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md bg-indigo-600 text-white hover:bg-indigo-700"
+                  >
+                    <FaExternalLinkAlt className="text-xs" />
+                    Deal room
+                  </a>
+                )}
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="text-gray-400 hover:text-gray-500 p-1"
+                  aria-label="Κλείσιμο"
+                >
+                  <FaTimes />
+                </button>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -400,32 +435,38 @@ export default function TransactionModal({ isOpen, onClose, transaction, onUpdat
                   </div>
                 )}
                 <div className="space-y-2">
-                  <p>
-                    <strong>Όνομα:</strong> 
-                    <span className={`ml-2 ${effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? 'blur-sm select-none' : ''}`}>
-                      {effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? '••••••••' : effectiveTransaction.buyer.name}
-                    </span>
-                  </p>
-                  <p>
-                    <strong>Email:</strong> 
-                    <span className={`ml-2 ${effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? 'blur-sm select-none' : ''}`}>
-                      {effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? '••••••••••••••••••••••••••••••••' : effectiveTransaction.buyer.email}
-                    </span>
-                  </p>
-                  {effectiveTransaction.buyer.phone && (
-                    <p>
-                      <strong>Τηλέφωνο:</strong> 
-                      <span className={`ml-2 ${effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? 'blur-sm select-none' : ''}`}>
-                        {effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? '••••••••••••••••••••••••••••••••' : effectiveTransaction.buyer.phone}
-                      </span>
-                    </p>
-                  )}
-                  {effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) && (
-                    <div className="mt-2">
-                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800">
-                        🔒 Τα στοιχεία είναι κρυφά μέχρι να προχωρήσει η συναλλαγή
-                      </span>
-                    </div>
+                  {effectiveTransaction.buyer ? (
+                    <>
+                      <p>
+                        <strong>Όνομα:</strong>
+                        <span className={`ml-2 ${effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? 'blur-sm select-none' : ''}`}>
+                          {effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? '••••••••' : effectiveTransaction.buyer.name}
+                        </span>
+                      </p>
+                      <p>
+                        <strong>Email:</strong>
+                        <span className={`ml-2 ${effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? 'blur-sm select-none' : ''}`}>
+                          {effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? '••••••••••••••••••••••••••••••••' : effectiveTransaction.buyer.email}
+                        </span>
+                      </p>
+                      {effectiveTransaction.buyer.phone && (
+                        <p>
+                          <strong>Τηλέφωνο:</strong>
+                          <span className={`ml-2 ${effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? 'blur-sm select-none' : ''}`}>
+                            {effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) ? '••••••••••••••••••••••••••••••••' : effectiveTransaction.buyer.phone}
+                          </span>
+                        </p>
+                      )}
+                      {effectiveTransaction.stage && shouldBlurLeadInfo(effectiveTransaction.stage) && (
+                        <div className="mt-2">
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800">
+                            🔒 Τα στοιχεία είναι κρυφά μέχρι να προχωρήσει η συναλλαγή
+                          </span>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <p className="text-sm text-gray-600">Δεν υπάρχουν καταχωρημένα στοιχεία αγοραστή.</p>
                   )}
                 </div>
               </div>
@@ -434,10 +475,18 @@ export default function TransactionModal({ isOpen, onClose, transaction, onUpdat
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-medium mb-2">Στοιχεία Πωλητή</h4>
                 <div className="space-y-2">
-                  <p><strong>Όνομα:</strong> {effectiveTransaction.seller.name}</p>
-                  <p><strong>Email:</strong> {effectiveTransaction.seller.email}</p>
-                  {effectiveTransaction.seller.phone && (
-                    <p><strong>Τηλέφωνο:</strong> {effectiveTransaction.seller.phone}</p>
+                  {effectiveTransaction.seller ? (
+                    <>
+                      <p><strong>Όνομα:</strong> {effectiveTransaction.seller.name}</p>
+                      <p><strong>Email:</strong> {effectiveTransaction.seller.email}</p>
+                      {effectiveTransaction.seller.phone && (
+                        <p><strong>Τηλέφωνο:</strong> {effectiveTransaction.seller.phone}</p>
+                      )}
+                    </>
+                  ) : (
+                    <p className="text-sm text-gray-600">
+                      Δεν υπάρχει συνδεδεμένος πωλητής στο αντικείμενο συναλλαγής (π.χ. μόνο ιδιοκτήτης ακινήτου στη βάση).
+                    </p>
                   )}
                 </div>
               </div>
@@ -455,6 +504,44 @@ export default function TransactionModal({ isOpen, onClose, transaction, onUpdat
                   </div>
                 </div>
               )}
+
+              {/* Deal room: δικηγόροι, μηχανικός, συμβολαιογράφος (από backend) */}
+              <div className="bg-gray-50 p-4 rounded-lg md:col-span-2">
+                <h4 className="font-medium mb-2">Συμμετέχοντες deal room</h4>
+                <p className="text-xs text-gray-500 mb-3">
+                  Δικηγόροι διακρίνονται από αίτημα που έκανε ο αγοραστής ή ο πωλητής· μηχανικός / συμβολαιογράφος από ρόλο στο δωμάτιο ή αποδεκτό αίτημα.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <p>
+                    <strong>Δικηγόρος αγοραστή:</strong>
+                    <br />
+                    <span className="text-gray-700">
+                      {formatProLine(effectiveTransaction.dealRoomParticipants?.buyerLawyer)}
+                    </span>
+                  </p>
+                  <p>
+                    <strong>Δικηγόρος πωλητή:</strong>
+                    <br />
+                    <span className="text-gray-700">
+                      {formatProLine(effectiveTransaction.dealRoomParticipants?.sellerLawyer)}
+                    </span>
+                  </p>
+                  <p>
+                    <strong>Μηχανικός:</strong>
+                    <br />
+                    <span className="text-gray-700">
+                      {formatProLines(effectiveTransaction.dealRoomParticipants?.engineers)}
+                    </span>
+                  </p>
+                  <p>
+                    <strong>Συμβολαιογράφος:</strong>
+                    <br />
+                    <span className="text-gray-700">
+                      {formatProLines(effectiveTransaction.dealRoomParticipants?.notaries)}
+                    </span>
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Transaction Progress */}

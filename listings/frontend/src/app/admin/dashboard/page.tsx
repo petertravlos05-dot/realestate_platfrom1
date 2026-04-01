@@ -3,10 +3,16 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { signOut } from 'next-auth/react';
-import { FiHome, FiUsers, FiMessageSquare, FiLogOut, FiCheck, FiX, FiUser, FiDollarSign, FiCalendar } from 'react-icons/fi';
+import { FiHome, FiUsers, FiMessageSquare, FiLogOut, FiCheck, FiX, FiUser, FiDollarSign, FiCalendar, FiBriefcase } from 'react-icons/fi';
 import { FaGift, FaUser, FaBuilding, FaHeadset, FaSearch, FaComments, FaEnvelope, FaExchangeAlt, FaPaperPlane, FaTimes, FaSave, FaRocket, FaCreditCard } from 'react-icons/fa';
 import PropertyModal from './components/PropertyModal';
 import { default as TransactionModal } from './components/TransactionModal';
+import AdminUserInsightsModal, { type AdminUserInsights } from './components/AdminUserInsightsModal';
+import AdminUserInsightsPanels from './components/AdminUserInsightsPanels';
+import AdminProfessionalDetailModal, {
+  type AdminProfessionalJoinListItem,
+  type AdminProfessionalDetail,
+} from './components/AdminProfessionalDetailModal';
 import { toast } from 'react-hot-toast';
 import { useSession } from 'next-auth/react';
 import { useNotifications } from '@/contexts/NotificationContext';
@@ -225,6 +231,28 @@ interface TransactionProgress {
   notifications: Update[];
 }
 
+/** Συμμετέχοντες deal room (δικηγόροι, μηχανικός, συμβολαιογράφος) — από backend admin/transactions */
+interface DealRoomParticipants {
+  buyerLawyer: { name: string; email: string; phone?: string } | null;
+  sellerLawyer: { name: string; email: string; phone?: string } | null;
+  engineers: { name: string; email: string; phone?: string }[];
+  notaries: { name: string; email: string; phone?: string }[];
+}
+
+function formatDealRoomParticipant(
+  p: { name: string; email: string; phone?: string } | null | undefined
+): string {
+  if (!p) return '—';
+  return (p.name && p.name.trim()) || p.email || '—';
+}
+
+function formatDealRoomParticipantList(
+  list: { name: string; email: string; phone?: string }[] | undefined
+): string {
+  if (!list?.length) return '—';
+  return list.map((x) => (x.name && x.name.trim()) || x.email || '—').join(', ');
+}
+
 interface Transaction {
   id: string;
   buyer: {
@@ -257,6 +285,9 @@ interface Transaction {
   status: string;
   createdAt: string;
   progress: TransactionProgress;
+  dealRoomParticipants?: DealRoomParticipants | null;
+  /** ID deal room (ίδιο ζεύγος ακίνητο–αγοραστής) — για είσοδο admin στο /deals/[id] */
+  dealRoomId?: string | null;
 }
 
 // Mapping για όλα τα στάδια συναλλαγής
@@ -329,6 +360,9 @@ export default function AdminDashboard() {
   const [isCompanyModalOpen, setIsCompanyModalOpen] = useState(false);
   const [companyModalTab, setCompanyModalTab] = useState<'details' | 'subscription'>('details');
   const [companySubscription, setCompanySubscription] = useState<any>(null);
+  const [companyInsights, setCompanyInsights] = useState<AdminUserInsights | null>(null);
+  const [companyInsightsLoading, setCompanyInsightsLoading] = useState(false);
+  const [companyReferralStats, setCompanyReferralStats] = useState<any>(null);
   const [isEditingSubscription, setIsEditingSubscription] = useState(false);
   const [subscriptionForm, setSubscriptionForm] = useState({
     planName: '',
@@ -379,6 +413,14 @@ export default function AdminDashboard() {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [isUserModalOpen, setIsUserModalOpen] = useState(false);
   const [userReferralStats, setUserReferralStats] = useState<any>(null);
+  const [userInsights, setUserInsights] = useState<AdminUserInsights | null>(null);
+  const [userInsightsLoading, setUserInsightsLoading] = useState(false);
+  const [professionalsJoin, setProfessionalsJoin] = useState<AdminProfessionalJoinListItem[]>([]);
+  const [professionalsJoinLoading, setProfessionalsJoinLoading] = useState(false);
+  const [selectedProfessionalJoin, setSelectedProfessionalJoin] = useState<AdminProfessionalJoinListItem | null>(null);
+  const [professionalJoinDetail, setProfessionalJoinDetail] = useState<AdminProfessionalDetail | null>(null);
+  const [professionalJoinDetailLoading, setProfessionalJoinDetailLoading] = useState(false);
+  const [isProfessionalJoinModalOpen, setIsProfessionalJoinModalOpen] = useState(false);
   const [isEditingPoints, setIsEditingPoints] = useState(false);
   const [newPoints, setNewPoints] = useState<number>(0);
   const [pointsReason, setPointsReason] = useState<string>('');
@@ -437,8 +479,9 @@ export default function AdminDashboard() {
       return;
     }
 
-    // Check if user is admin
-    if (session.user.role !== 'admin') {
+    // Check if user is admin (support both 'admin' and 'ADMIN' for backward compatibility)
+    const userRole = session.user.role?.toUpperCase();
+    if (userRole !== 'ADMIN') {
       router.push('/admin/login');
       return;
     }
@@ -459,6 +502,31 @@ export default function AdminDashboard() {
       fetchAppointments().catch(console.error);
     }
   }, [appointmentFilters, activeTab, session]);
+
+  useEffect(() => {
+    if (activeTab !== 'professionals' || !session?.user?.id) return;
+    let cancelled = false;
+    (async () => {
+      setProfessionalsJoinLoading(true);
+      try {
+        const { data } = await apiClient.get<{ professionals: AdminProfessionalJoinListItem[] }>(
+          '/admin/professionals/from-join'
+        );
+        if (!cancelled) setProfessionalsJoin(data.professionals ?? []);
+      } catch (e) {
+        console.error(e);
+        if (!cancelled) {
+          setProfessionalsJoin([]);
+          toast.error('Αποτυχία φόρτωσης επαγγελματιών (πύλη εγγραφής).');
+        }
+      } finally {
+        if (!cancelled) setProfessionalsJoinLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [activeTab, session?.user?.id]);
 
   const fetchUsers = async () => {
     const { data: users } = await apiClient.get('/admin/users');
@@ -507,8 +575,9 @@ export default function AdminDashboard() {
   };
 
   const fetchCompanies = async () => {
-    const { data: companies } = await apiClient.get('/admin/companies');
-    
+    const { data } = await apiClient.get('/admin/companies');
+    const companies = Array.isArray(data) ? data : [];
+
     // Φέρνουμε τα referral δεδομένα για κάθε εταιρεία
     const companiesWithReferrals = await Promise.all(
       companies.map(async (company: User) => {
@@ -690,16 +759,14 @@ export default function AdminDashboard() {
       setLoading(true);
       setError('');
 
-      const [usersData, sellersData, companiesData, listingsData] = await Promise.all([
+      const [usersData, sellersData, listingsData] = await Promise.all([
         fetchUsers(),
         fetchSellers(),
-        fetchCompanies(),
-        fetchListings()
+        fetchListings(),
       ]);
 
       setUsers(usersData);
       setSellers(sellersData);
-      setCompanies(companiesData);
       setListings(listingsData);
       
       // Αρχικοποιούμε με κενή λίστα - τα μηνύματα θα φορτωθούν όταν αλλάξουμε στο messages tab
@@ -713,6 +780,31 @@ export default function AdminDashboard() {
       setLoading(false);
     }
   };
+
+  // Μεσιτικές εταιρείες (SELLER + userType COMPANY): φόρτωση μόνο όταν ανοίγει το tab
+  useEffect(() => {
+    if (status === 'loading') return;
+    if (activeTab !== 'companies' || !session?.user?.id) return;
+    const userRole = session.user.role?.toUpperCase();
+    if (userRole !== 'ADMIN') return;
+
+    let cancelled = false;
+    (async () => {
+      try {
+        const companiesData = await fetchCompanies();
+        if (!cancelled) setCompanies(companiesData);
+      } catch (e) {
+        console.error(e);
+        if (!cancelled) {
+          setCompanies([]);
+          toast.error('Αποτυχία φόρτωσης εταιρειών.');
+        }
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [activeTab, session?.user?.id, session?.user?.role, status]);
 
   const handleSignOut = async () => {
     await signOut({ redirect: false });
@@ -904,6 +996,11 @@ export default function AdminDashboard() {
   const handleTransactionClick = (transaction: Transaction) => {
     setSelectedTransaction(transaction);
     setIsTransactionModalOpen(true);
+    // Άνοιγμα deal room σε νέα καρτέλα (το modal παραμένει στο dashboard)· απαιτείται user gesture για popup.
+    if (typeof window !== 'undefined' && transaction.dealRoomId) {
+      const url = `${window.location.origin}/deals/${transaction.dealRoomId}?from=admin`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
   };
 
   const handleSellerClick = (seller: Seller) => {
@@ -911,55 +1008,83 @@ export default function AdminDashboard() {
     setIsSellerModalOpen(true);
   };
 
+  const closeCompanyModal = () => {
+    setIsCompanyModalOpen(false);
+    setSelectedCompany(null);
+    setCompanyInsights(null);
+    setCompanyReferralStats(null);
+    setCompanyInsightsLoading(false);
+    setCompanySubscription(null);
+  };
+
   const handleCompanyClick = async (company: User) => {
     setSelectedCompany(company);
     setIsCompanyModalOpen(true);
     setCompanyModalTab('details');
     setIsEditingSubscription(false);
-    
-    // Φέρνουμε τα δεδομένα της συνδρομής
+    setCompanyInsights(null);
+    setCompanyInsightsLoading(true);
+    setCompanyReferralStats(null);
+
     try {
-      console.log('=== Fetching subscription for company ===', {
-        companyId: company.id,
-        companyName: company.name
-      });
-      
-      const { data: subscriptionData } = await apiClient.get(`/subscriptions?userId=${company.id}`);
-      console.log('=== Subscription Data ===', subscriptionData);
-      setCompanySubscription(subscriptionData);
-      
-      // Προετοιμάζουμε το form με τα υπάρχοντα δεδομένα
-      if (subscriptionData) {
-        setSubscriptionForm({
-          planName: subscriptionData.plan?.name || '',
-          status: subscriptionData.status || 'ACTIVE',
-          billingCycle: subscriptionData.billingCycle || 'MONTHLY',
-          currentPeriodStart: subscriptionData.currentPeriodStart ? 
-            new Date(subscriptionData.currentPeriodStart).toISOString().split('T')[0] : '',
-          currentPeriodEnd: subscriptionData.currentPeriodEnd ? 
-            new Date(subscriptionData.currentPeriodEnd).toISOString().split('T')[0] : ''
-        });
+      const [subRes, insightsRes, statsRes] = await Promise.allSettled([
+        apiClient.get(`/subscriptions?userId=${company.id}`),
+        apiClient.get<AdminUserInsights>(`/admin/users/${company.id}/insights`),
+        apiClient.get(`/referrals/stats?userId=${company.id}`),
+      ]);
+
+      if (subRes.status === 'fulfilled') {
+        const subscriptionData = subRes.value.data;
+        setCompanySubscription(subscriptionData);
+        if (subscriptionData) {
+          setSubscriptionForm({
+            planName: subscriptionData.plan?.name || '',
+            status: subscriptionData.status || 'ACTIVE',
+            billingCycle: subscriptionData.billingCycle || 'MONTHLY',
+            currentPeriodStart: subscriptionData.currentPeriodStart
+              ? new Date(subscriptionData.currentPeriodStart).toISOString().split('T')[0]
+              : '',
+            currentPeriodEnd: subscriptionData.currentPeriodEnd
+              ? new Date(subscriptionData.currentPeriodEnd).toISOString().split('T')[0]
+              : '',
+          });
+        } else {
+          setCompanySubscription(null);
+          setSubscriptionForm({
+            planName: '',
+            status: 'ACTIVE',
+            billingCycle: 'MONTHLY',
+            currentPeriodStart: '',
+            currentPeriodEnd: '',
+          });
+        }
       } else {
-        // Αν δεν υπάρχει συνδρομή, αρχικοποιούμε με default values
+        console.error('Error fetching company subscription:', subRes.reason);
         setCompanySubscription(null);
         setSubscriptionForm({
           planName: '',
           status: 'ACTIVE',
           billingCycle: 'MONTHLY',
           currentPeriodStart: '',
-          currentPeriodEnd: ''
+          currentPeriodEnd: '',
         });
       }
-    } catch (error) {
-      console.error('Error fetching company subscription:', error);
-      setCompanySubscription(null);
-      setSubscriptionForm({
-        planName: '',
-        status: 'ACTIVE',
-        billingCycle: 'MONTHLY',
-        currentPeriodStart: '',
-        currentPeriodEnd: ''
-      });
+
+      if (insightsRes.status === 'fulfilled') {
+        setCompanyInsights(insightsRes.value.data);
+      } else {
+        console.error('Error fetching company insights:', insightsRes.reason);
+        toast.error('Αποτυχία φόρτωσης πληροφοριών εταιρείας');
+        setCompanyInsights(null);
+      }
+      if (statsRes.status === 'fulfilled') {
+        setCompanyReferralStats(statsRes.value.data);
+      } else {
+        setCompanyReferralStats(null);
+        console.error('Error fetching company referral stats:', statsRes.reason);
+      }
+    } finally {
+      setCompanyInsightsLoading(false);
     }
   };
 
@@ -1020,16 +1145,73 @@ export default function AdminDashboard() {
   const handleUserClick = async (user: User) => {
     setSelectedUser(user);
     setIsUserModalOpen(true);
+    setUserInsights(null);
+    setUserInsightsLoading(true);
     setIsEditingPoints(false);
     setNewPoints(0);
     setPointsReason('');
-    
-    // Φέρνουμε τα referral stats του χρήστη
+
     try {
-      const { data: stats } = await apiClient.get(`/referrals/stats?userId=${user.id}`);
-      setUserReferralStats(stats);
-    } catch (error) {
-      console.error('Error fetching user referral stats:', error);
+      const [insightsRes, statsRes] = await Promise.allSettled([
+        apiClient.get<AdminUserInsights>(`/admin/users/${user.id}/insights`),
+        apiClient.get(`/referrals/stats?userId=${user.id}`),
+      ]);
+      if (insightsRes.status === 'fulfilled') {
+        setUserInsights(insightsRes.value.data);
+      } else {
+        console.error('Error fetching user insights:', insightsRes.reason);
+        toast.error('Αποτυχία φόρτωσης πληροφοριών χρήστη');
+      }
+      if (statsRes.status === 'fulfilled') {
+        setUserReferralStats(statsRes.value.data);
+      } else {
+        setUserReferralStats(null);
+        console.error('Error fetching user referral stats:', statsRes.reason);
+      }
+    } finally {
+      setUserInsightsLoading(false);
+    }
+  };
+
+  const handleProfessionalJoinClick = async (row: AdminProfessionalJoinListItem) => {
+    setSelectedProfessionalJoin(row);
+    setIsProfessionalJoinModalOpen(true);
+    setProfessionalJoinDetail(null);
+    setProfessionalJoinDetailLoading(true);
+    try {
+      const { data } = await apiClient.get<AdminProfessionalDetail>(`/admin/professionals/${row.id}/detail`);
+      setProfessionalJoinDetail(data);
+    } catch (e) {
+      console.error(e);
+      toast.error('Αποτυχία φόρτωσης λεπτομερειών επαγγελματία.');
+    } finally {
+      setProfessionalJoinDetailLoading(false);
+    }
+  };
+
+  const refreshProfessionalJoinDetail = async () => {
+    if (!selectedProfessionalJoin) return;
+    try {
+      const { data } = await apiClient.get<AdminProfessionalDetail>(
+        `/admin/professionals/${selectedProfessionalJoin.id}/detail`
+      );
+      setProfessionalJoinDetail(data);
+      setProfessionalsJoin((prev) =>
+        prev.map((row) =>
+          row.id === selectedProfessionalJoin.id && row.professionalProfile && data.profile
+            ? {
+                ...row,
+                professionalProfile: {
+                  ...row.professionalProfile,
+                  verificationStatus: data.profile.verificationStatus,
+                },
+              }
+            : row
+        )
+      );
+    } catch (e) {
+      console.error(e);
+      toast.error('Αποτυχία ανανέωσης στοιχείων επαγγελματία.');
     }
   };
 
@@ -1850,12 +2032,17 @@ export default function AdminDashboard() {
                         <td className="px-6 py-4 whitespace-nowrap">{user.email}</td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                            user.role === 'admin' ? 'bg-purple-100 text-purple-800' :
-                            user.role === 'agent' ? 'bg-blue-100 text-blue-800' :
+                            String(user.role).toLowerCase() === 'admin' ? 'bg-purple-100 text-purple-800' :
+                            String(user.role).toLowerCase() === 'agent' ? 'bg-blue-100 text-blue-800' :
+                            String(user.role).toLowerCase() === 'seller' ? 'bg-emerald-100 text-emerald-800' :
+                            String(user.role).toLowerCase() === 'buyer' ? 'bg-slate-100 text-slate-800' :
                             'bg-gray-100 text-gray-800'
                           }`}>
-                            {user.role === 'admin' ? 'Διαχειριστής' :
-                             user.role === 'agent' ? 'Μεσίτης' : 'Χρήστης'}
+                            {String(user.role).toLowerCase() === 'admin' ? 'Διαχειριστής' :
+                             String(user.role).toLowerCase() === 'agent' ? 'Μεσίτης' :
+                             String(user.role).toLowerCase() === 'seller' ? 'Πωλητής' :
+                             String(user.role).toLowerCase() === 'buyer' ? 'Αγοραστής' :
+                             user.role}
                           </span>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">{formatDate(user.createdAt)}</td>
@@ -1884,6 +2071,57 @@ export default function AdminDashboard() {
                             </span>
                           )}
                         </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        );
+      case 'professionals':
+        return (
+          <div className="bg-white rounded-lg shadow p-6">
+            <h2 className="text-xl font-semibold mb-2">Επαγγελματίες</h2>
+            <p className="text-sm text-gray-600 mb-4">
+              Επαγγελματίες με ρόλο δικηγόρου / συμβολαιογράφου / μηχανικού / λογιστή και ενεργό{' '}
+              <code className="text-xs bg-gray-100 px-1 rounded">ProfessionalProfile</code> (κυρίως μέσω{' '}
+              <code className="text-xs bg-gray-100 px-1 rounded">/professional/join</code>).
+            </p>
+            {professionalsJoinLoading ? (
+              <div className="flex justify-center py-12">
+                <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-teal-600" />
+              </div>
+            ) : professionalsJoin.length === 0 ? (
+              <p className="text-gray-600">Δεν βρέθηκαν επαγγελματίες με προφίλ.</p>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead>
+                    <tr>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Όνομα</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ρόλος</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Προφίλ</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Εγγραφή</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    {professionalsJoin.map((row) => (
+                      <tr
+                        key={row.id}
+                        onClick={() => handleProfessionalJoinClick(row)}
+                        className="cursor-pointer hover:bg-gray-50"
+                      >
+                        <td className="px-6 py-4 whitespace-nowrap">{row.name}</td>
+                        <td className="px-6 py-4 whitespace-nowrap">{row.email}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm">{row.role}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                          {row.professionalProfile
+                            ? `${row.professionalProfile.displayName} · ${row.professionalProfile.verificationStatus}`
+                            : '—'}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm">{formatDate(row.createdAt)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -2139,6 +2377,10 @@ export default function AdminDashboard() {
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Αγοραστής</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Πωλητής</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Μεσίτης</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Δικ. αγοραστή</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Δικ. πωλητή</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Μηχανικός</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Συμβολαιογράφος</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Τίτλος Ακινήτου</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Κατάσταση Ακινήτου</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Στάδιο Συναλλαγής</th>
@@ -2156,6 +2398,18 @@ export default function AdminDashboard() {
                             <td className="px-6 py-4 whitespace-nowrap">{transaction.seller.name}</td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               {transaction.agent ? transaction.agent.name : '—'}
+                            </td>
+                            <td className="px-6 py-4 text-sm max-w-[9rem] truncate" title={transaction.dealRoomParticipants?.buyerLawyer?.email}>
+                              {formatDealRoomParticipant(transaction.dealRoomParticipants?.buyerLawyer)}
+                            </td>
+                            <td className="px-6 py-4 text-sm max-w-[9rem] truncate" title={transaction.dealRoomParticipants?.sellerLawyer?.email}>
+                              {formatDealRoomParticipant(transaction.dealRoomParticipants?.sellerLawyer)}
+                            </td>
+                            <td className="px-6 py-4 text-sm max-w-[9rem] truncate" title={formatDealRoomParticipantList(transaction.dealRoomParticipants?.engineers)}>
+                              {formatDealRoomParticipantList(transaction.dealRoomParticipants?.engineers)}
+                            </td>
+                            <td className="px-6 py-4 text-sm max-w-[9rem] truncate" title={formatDealRoomParticipantList(transaction.dealRoomParticipants?.notaries)}>
+                              {formatDealRoomParticipantList(transaction.dealRoomParticipants?.notaries)}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">{transaction.property.title}</td>
                             <td className="px-6 py-4 whitespace-nowrap">
@@ -2196,6 +2450,10 @@ export default function AdminDashboard() {
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Αγοραστής</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Πωλητής</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Μεσίτης</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Δικ. αγοραστή</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Δικ. πωλητή</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Μηχανικός</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Συμβολαιογράφος</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Τίτλος Ακινήτου</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Κατάσταση Ακινήτου</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Στάδιο Συναλλαγής</th>
@@ -2213,6 +2471,18 @@ export default function AdminDashboard() {
                             <td className="px-6 py-4 whitespace-nowrap">{transaction.seller.name}</td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               {transaction.agent ? transaction.agent.name : '—'}
+                            </td>
+                            <td className="px-6 py-4 text-sm max-w-[9rem] truncate" title={transaction.dealRoomParticipants?.buyerLawyer?.email}>
+                              {formatDealRoomParticipant(transaction.dealRoomParticipants?.buyerLawyer)}
+                            </td>
+                            <td className="px-6 py-4 text-sm max-w-[9rem] truncate" title={transaction.dealRoomParticipants?.sellerLawyer?.email}>
+                              {formatDealRoomParticipant(transaction.dealRoomParticipants?.sellerLawyer)}
+                            </td>
+                            <td className="px-6 py-4 text-sm max-w-[9rem] truncate" title={formatDealRoomParticipantList(transaction.dealRoomParticipants?.engineers)}>
+                              {formatDealRoomParticipantList(transaction.dealRoomParticipants?.engineers)}
+                            </td>
+                            <td className="px-6 py-4 text-sm max-w-[9rem] truncate" title={formatDealRoomParticipantList(transaction.dealRoomParticipants?.notaries)}>
+                              {formatDealRoomParticipantList(transaction.dealRoomParticipants?.notaries)}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">{transaction.property.title}</td>
                             <td className="px-6 py-4 whitespace-nowrap">
@@ -2520,6 +2790,15 @@ export default function AdminDashboard() {
               Χρήστες
             </button>
             <button
+              onClick={() => setActiveTab('professionals')}
+              className={`w-full flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 ${
+                activeTab === 'professionals' ? 'bg-gray-100' : ''
+              }`}
+            >
+              <FiBriefcase className="mr-2" />
+              Επαγγελματίες
+            </button>
+            <button
               onClick={() => setActiveTab('companies')}
               className={`w-full flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 ${
                 activeTab === 'companies' ? 'bg-gray-100' : ''
@@ -2603,6 +2882,32 @@ export default function AdminDashboard() {
           onSendNotification={handleSendTransactionNotification}
         />
       )}
+
+      <AdminUserInsightsModal
+        isOpen={isUserModalOpen}
+        onClose={() => {
+          setIsUserModalOpen(false);
+          setSelectedUser(null);
+          setUserInsights(null);
+          setUserReferralStats(null);
+        }}
+        insights={userInsights}
+        loading={userInsightsLoading}
+        referralStats={userReferralStats}
+      />
+
+      <AdminProfessionalDetailModal
+        isOpen={isProfessionalJoinModalOpen}
+        onClose={() => {
+          setIsProfessionalJoinModalOpen(false);
+          setSelectedProfessionalJoin(null);
+          setProfessionalJoinDetail(null);
+        }}
+        listItem={selectedProfessionalJoin}
+        detail={professionalJoinDetail}
+        loading={professionalJoinDetailLoading}
+        onVerificationChanged={refreshProfessionalJoinDetail}
+      />
 
       {/* Appointment Settings Modal */}
       {isAppointmentSettingsModalOpen && selectedAppointmentForSettings && (
@@ -3646,7 +3951,8 @@ export default function AdminDashboard() {
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-900">Λεπτομέρειες Εταιρείας</h2>
                 <button
-                  onClick={() => setIsCompanyModalOpen(false)}
+                  type="button"
+                  onClick={closeCompanyModal}
                   className="text-gray-400 hover:text-gray-600"
                 >
                   <FaTimes className="w-6 h-6" />
@@ -3684,87 +3990,17 @@ export default function AdminDashboard() {
 
               {/* Tab Content */}
               {companyModalTab === 'details' && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Βασικές Πληροφορίες */}
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Βασικές Πληροφορίες</h3>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700">Όνομα Εταιρείας</label>
-                      <p className="mt-1 text-sm text-gray-900">{selectedCompany.name}</p>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700">Email</label>
-                      <p className="mt-1 text-sm text-gray-900">{selectedCompany.email}</p>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700">Τύπος Χρήστη</label>
-                      <p className="mt-1 text-sm text-gray-900">COMPANY</p>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700">Ρόλος</label>
-                      <p className="mt-1 text-sm text-gray-900">{selectedCompany.role}</p>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700">Ημερομηνία Εγγραφής</label>
-                      <p className="mt-1 text-sm text-gray-900">
-                        {new Date(selectedCompany.createdAt).toLocaleDateString('el-GR', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                          hour: '2-digit',
-                          minute: '2-digit'
-                        })}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Referral Πληροφορίες */}
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Referral Πληροφορίες</h3>
-                    
-                    {selectedCompany.referralInfo?.hasReferral ? (
-                      <div className="space-y-3">
-                        <div className="flex items-center">
-                          <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
-                            ✓ Έχει Referral
-                          </span>
-                        </div>
-                        
-                        {selectedCompany.referralInfo.referrerName && (
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700">Από:</label>
-                            <p className="mt-1 text-sm text-gray-900">{selectedCompany.referralInfo.referrerName}</p>
-                          </div>
-                        )}
-                        
-                        {selectedCompany.referralInfo.referralCode && (
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700">Κωδικός Referral:</label>
-                            <p className="mt-1 text-sm text-gray-900 font-mono">{selectedCompany.referralInfo.referralCode}</p>
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="flex items-center">
-                        <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">
-                          Δεν έχει Referral
-                        </span>
-                      </div>
-                    )}
-
-                    {selectedCompany.isReferrer && (
-                      <div className="mt-4">
-                        <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                          🎯 Είναι Referrer
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                <div className="max-h-[min(70vh,720px)] overflow-y-auto pr-1 -mr-1">
+                  <p className="text-xs text-gray-500 mb-4">
+                    Πλήρη στοιχεία εγγραφής και προβολή δραστηριότητας ως πωλητής (καταχωρήσεις ακινήτων).
+                  </p>
+                  <AdminUserInsightsPanels
+                    insights={companyInsights}
+                    loading={companyInsightsLoading}
+                    referralStats={companyReferralStats}
+                    showAccountAndCompanySections
+                    showOnlySellerActivity
+                  />
                 </div>
               )}
 
@@ -4067,7 +4303,8 @@ export default function AdminDashboard() {
 
               <div className="mt-6 flex justify-end">
                 <button
-                  onClick={() => setIsCompanyModalOpen(false)}
+                  type="button"
+                  onClick={closeCompanyModal}
                   className="px-4 py-2 text-gray-600 border rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   Κλείσιμο

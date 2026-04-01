@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes } from 'react-icons/fa';
 
 interface FilterModalProps {
   isOpen: boolean;
@@ -12,6 +11,13 @@ interface FilterModalProps {
 }
 
 type PropertyType = 'ΚΑΤΟΙΚΙΑ' | 'ΟΙΚΟΠΕΔΟ' | 'ΕΠΑΓΓΕΛΜΑΤΙΚΟ' | 'VILLA';
+
+const CATEGORY_TO_PROPERTY_TYPES: Record<PropertyType, string[]> = {
+  ΚΑΤΟΙΚΙΑ: ['APARTMENT', 'HOUSE'],
+  VILLA: ['VILLA'],
+  ΟΙΚΟΠΕΔΟ: ['LAND'],
+  ΕΠΑΓΓΕΛΜΑΤΙΚΟ: ['OFFICE', 'STORE'],
+};
 
 const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, initialFilters }) => {
   const [selectedType, setSelectedType] = useState<PropertyType>('ΚΑΤΟΙΚΙΑ');
@@ -45,6 +51,19 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
     securityFeatures: []
   });
 
+  useEffect(() => {
+    if (isOpen && initialFilters) {
+      setFilters(prev => ({ ...prev, ...initialFilters }));
+      if (initialFilters.propertyType?.length > 0) {
+        const first = initialFilters.propertyType[0]?.toUpperCase?.();
+        if (['APARTMENT', 'HOUSE'].includes(first)) setSelectedType('ΚΑΤΟΙΚΙΑ');
+        else if (first === 'VILLA') setSelectedType('VILLA');
+        else if (first === 'LAND') setSelectedType('ΟΙΚΟΠΕΔΟ');
+        else if (['OFFICE', 'STORE'].includes(first)) setSelectedType('ΕΠΑΓΓΕΛΜΑΤΙΚΟ');
+      }
+    }
+  }, [isOpen, initialFilters]);
+
   const propertyTypes = [
     'Διαμέρισμα',
     'Μονοκατοικία',
@@ -73,14 +92,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
                   <input
                     type="number"
                     placeholder="Από"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
                     value={filters.priceRange.min}
               onChange={(e) => setFilters({...filters, priceRange: {...filters.priceRange, min: e.target.value}})}
                   />
                   <input
                     type="number"
                     placeholder="Έως"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
                     value={filters.priceRange.max}
               onChange={(e) => setFilters({...filters, priceRange: {...filters.priceRange, max: e.target.value}})}
                   />
@@ -92,14 +111,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
                   <input
                     type="number"
                     placeholder="Από"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.area.min}
               onChange={(e) => setFilters({...filters, area: {...filters.area, min: e.target.value}})}
                   />
                   <input
                     type="number"
                     placeholder="Έως"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.area.max}
               onChange={(e) => setFilters({...filters, area: {...filters.area, max: e.target.value}})}
             />
@@ -115,8 +134,8 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
             {['-', '1+', '2+', '3+', '4+', '5+'].map((num) => (
                     <button
                 key={num}
-                className={`px-3 py-1 border rounded ${
-                  filters.bedrooms === num ? 'bg-[#001f3f] text-white' : 'bg-white'
+                className={`px-3 py-1 border rounded-lg transition-colors ${
+                  filters.bedrooms === num ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'
                 }`}
                 onClick={() => setFilters({...filters, bedrooms: num})}
               >
@@ -131,8 +150,8 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
             {['-', '1+', '2+', '3+', '4+', '5+'].map((num) => (
                     <button
                 key={num}
-                className={`px-3 py-1 border rounded ${
-                  filters.bathrooms === num ? 'bg-[#001f3f] text-white' : 'bg-white'
+                className={`px-3 py-1 border rounded-lg transition-colors ${
+                  filters.bathrooms === num ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'
                 }`}
                 onClick={() => setFilters({...filters, bathrooms: num})}
               >
@@ -182,25 +201,25 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
         <label className="block text-sm font-medium text-gray-700 mb-2">Επιπλέον Χαρακτηριστικά</label>
         <div className="grid grid-cols-2 gap-4">
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.parking ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.parking ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, parking: !filters.parking})}
           >
             Parking
           </button>
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.furnished ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.furnished ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, furnished: !filters.furnished})}
           >
             Επιπλωμένο
           </button>
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.nearMetro ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.nearMetro ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, nearMetro: !filters.nearMetro})}
           >
             Κοντά σε Μετρό
           </button>
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.view ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.view ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, view: !filters.view})}
           >
             Θέα
@@ -220,14 +239,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
             <input
               type="number"
               placeholder="Από"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.priceRange.min}
               onChange={(e) => setFilters({...filters, priceRange: {...filters.priceRange, min: e.target.value}})}
             />
             <input
               type="number"
               placeholder="Έως"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.priceRange.max}
               onChange={(e) => setFilters({...filters, priceRange: {...filters.priceRange, max: e.target.value}})}
             />
@@ -239,14 +258,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
                   <input
                     type="number"
               placeholder="Από"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.area.min}
               onChange={(e) => setFilters({...filters, area: {...filters.area, min: e.target.value}})}
                   />
                   <input
                     type="number"
               placeholder="Έως"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.area.max}
               onChange={(e) => setFilters({...filters, area: {...filters.area, max: e.target.value}})}
                   />
@@ -259,13 +278,13 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
         <label className="block text-sm font-medium text-gray-700 mb-2">Χαρακτηριστικά Οικοπέδου</label>
         <div className="grid grid-cols-2 gap-4">
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.inSettlement ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.inSettlement ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, inSettlement: !filters.inSettlement})}
           >
             Εντός Οικισμού
           </button>
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.inCityPlan ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.inCityPlan ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, inCityPlan: !filters.inCityPlan})}
           >
             Εντός Σχεδίου
@@ -300,14 +319,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
             <input
               type="number"
               placeholder="Από"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.priceRange.min}
               onChange={(e) => setFilters({...filters, priceRange: {...filters.priceRange, min: e.target.value}})}
             />
             <input
               type="number"
               placeholder="Έως"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.priceRange.max}
               onChange={(e) => setFilters({...filters, priceRange: {...filters.priceRange, max: e.target.value}})}
             />
@@ -319,14 +338,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
                   <input
                     type="number"
               placeholder="Από"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.area.min}
               onChange={(e) => setFilters({...filters, area: {...filters.area, min: e.target.value}})}
                   />
                   <input
                     type="number"
               placeholder="Έως"
-              className="w-full px-3 py-2 border rounded-lg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-800 focus:border-blue-800"
               value={filters.area.max}
               onChange={(e) => setFilters({...filters, area: {...filters.area, max: e.target.value}})}
                   />
@@ -354,19 +373,19 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
         <label className="block text-sm font-medium text-gray-700 mb-2">Χαρακτηριστικά</label>
         <div className="grid grid-cols-2 gap-4">
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.usageLicense ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.usageLicense ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, usageLicense: !filters.usageLicense})}
           >
             Άδεια Χρήσης
           </button>
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.streetFacing ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.streetFacing ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, streetFacing: !filters.streetFacing})}
           >
             Προβολή σε Δρόμο
           </button>
           <button
-            className={`px-4 py-2 border rounded-lg ${filters.parking ? 'bg-[#001f3f] text-white' : 'bg-white'}`}
+            className={`px-4 py-2 border rounded-lg transition-colors ${filters.parking ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white border-transparent' : 'bg-white border-gray-300 hover:border-blue-300'}`}
             onClick={() => setFilters({...filters, parking: !filters.parking})}
           >
             Parking
@@ -392,9 +411,9 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl relative z-10"
+              className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-2xl relative z-10 border border-gray-100"
             >
-              <h2 className="text-2xl font-bold mb-6">Φίλτρα Αναζήτησης</h2>
+              <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-800 to-slate-700 bg-clip-text text-transparent">Φίλτρα Αναζήτησης</h2>
               
               {/* Επιλογή Τύπου Ακινήτου */}
               <div className="mb-6">
@@ -404,14 +423,13 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
               <button
                       key={type}
                       className={`px-4 py-2 rounded-lg ${
-                        selectedType === type ? 'bg-[#001f3f] text-white' : 'bg-gray-100 text-gray-700'
+                        selectedType === type ? 'bg-gradient-to-r from-blue-800 to-slate-700 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                       onClick={() => {
                         setSelectedType(type);
-                        // Ενημέρωση του propertyType στα φίλτρα
                         setFilters(prev => ({
                           ...prev,
-                          propertyType: type === 'VILLA' ? ['Villa'] : []
+                          propertyType: CATEGORY_TO_PROPERTY_TYPES[type] || []
                         }));
                       }}
                     >
@@ -436,10 +454,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, onApply, ini
                 </button>
                 <button
                   onClick={() => {
-                    onApply(filters);
+                    const toApply = { ...filters };
+                    if (!toApply.propertyType?.length && selectedType) {
+                      toApply.propertyType = CATEGORY_TO_PROPERTY_TYPES[selectedType] || [];
+                    }
+                    onApply(toApply);
                     onClose();
                   }}
-                  className="px-6 py-2 bg-[#001f3f] text-white rounded-lg hover:bg-[#002b5c]"
+                  className="px-6 py-2 bg-gradient-to-r from-blue-800 to-slate-700 text-white rounded-lg hover:from-blue-900 hover:to-slate-800 transition-colors font-medium"
                 >
                   Εφαρμογή
                 </button>

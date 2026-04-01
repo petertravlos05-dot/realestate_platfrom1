@@ -22,6 +22,7 @@ out/
 .env.development.local
 .env.test.local
 .env.production.local
+# Note: .env.example files SHOULD be committed (they contain no secrets)
 
 # IDE
 .vscode/

@@ -6,7 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNotifications } from '@/contexts/NotificationContext';
 import { useRouter } from 'next/navigation';
 
-export default function SellerNotificationBell() {
+interface SellerNotificationBellProps {
+  /** When true, use light/white styling (for transparent navbar over dark hero) */
+  light?: boolean;
+}
+
+export default function SellerNotificationBell({ light = false }: SellerNotificationBellProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { notifications, markAsRead } = useNotifications();
@@ -426,7 +431,11 @@ export default function SellerNotificationBell() {
     <div className="relative" ref={dropdownRef}>
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-3 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-full transition-all duration-200 hover:bg-gray-100"
+        className={`relative p-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
+          light
+            ? 'text-white hover:text-white hover:bg-white/20'
+            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+        }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >

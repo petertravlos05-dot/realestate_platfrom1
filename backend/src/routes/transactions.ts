@@ -2,6 +2,9 @@ import { Router, Request, Response } from 'express';
 import { prisma } from '../lib/prisma';
 import { validateJwtToken, requireRole, AuthRequest } from '../middleware/auth';
 import { generateId } from '../lib/utils/id';
+import { requireTransactionAccess } from '../middleware/authorization';
+import { validateBody } from '../middleware/validation';
+import { updateTransactionSchema } from '../lib/validation/schemas';
 
 const router = Router();
 
@@ -21,7 +24,7 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 const CUID_REGEX = /^[a-z0-9]+$/i;
 
 // GET /api/transactions/:id - Get transaction by ID
-router.get('/:id', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.get('/:id', validateJwtToken, requireTransactionAccess, async (req: AuthRequest, res: Response) => {
   try {
     const transaction = await prisma.transaction.findUnique({
       where: {
@@ -84,7 +87,7 @@ router.get('/:id', validateJwtToken, async (req: AuthRequest, res: Response) => 
 });
 
 // PUT /api/transactions/:id - Update transaction
-router.put('/:id', validateJwtToken, async (req: AuthRequest, res: Response) => {
+router.put('/:id', validateJwtToken, requireTransactionAccess, validateBody(updateTransactionSchema), async (req: AuthRequest, res: Response) => {
   try {
     const { stage, ...updateData } = req.body;
 
@@ -162,6 +165,8 @@ router.delete('/:id', validateJwtToken, async (req: AuthRequest, res: Response) 
 });
 
 export default router;
+
+
 
 
 

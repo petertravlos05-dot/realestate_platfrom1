@@ -3,7 +3,7 @@
 import { ReactNode } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { FaHome, FaUser, FaBuilding, FaChartLine, FaCog } from 'react-icons/fa';
+import { FaHome, FaUser, FaBuilding, FaChartLine, FaCog, FaHandshake } from 'react-icons/fa';
 import Link from 'next/link';
 
 interface AgentLayoutProps {
@@ -21,6 +21,7 @@ export default function AgentLayout({ children }: AgentLayoutProps) {
 
   const menuItems = [
     { href: '/dashboard/agent', icon: <FaHome />, label: 'Αρχική' },
+    { href: '/deals?from=agent&tab=overview', icon: <FaHandshake />, label: 'Συναλλαγές' },
     { href: '/agent/profile', icon: <FaUser />, label: 'Προφίλ' },
     { href: '/agent/properties', icon: <FaBuilding />, label: 'Ακίνητα' },
     { href: '/agent/analytics', icon: <FaChartLine />, label: 'Αναλύσεις' },

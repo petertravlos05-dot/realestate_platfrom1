@@ -4,8 +4,7 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 
 export async function POST(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: Request
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -15,13 +14,13 @@ export async function POST(
 
     const body = await request.json();
     const {
+      propertyId,
       availabilityId,
       customDate,
       customStartTime,
       customEndTime,
       isCustomRequest,
     } = body;
-    const propertyId = params.id;
 
     // Έλεγχος αν το ακίνητο υπάρχει
     const property = await prisma.property.findUnique({

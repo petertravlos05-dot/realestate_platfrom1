@@ -3,6 +3,29 @@ import axios from 'axios';
 // Backend API URL - must be set via NEXT_PUBLIC_API_URL environment variable
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL;
 
+// Global handler for ACCOUNT_DELETED errors
+let accountDeletedHandler: (() => void) | null = null;
+
+export function setAccountDeletedHandler(handler: () => void) {
+  accountDeletedHandler = handler;
+}
+
+/** Clear auth-related storage (call on logout to prevent cross-user data) */
+export function clearAuthStorage() {
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('token');
+  }
+}
+
+async function handleAccountDeletedError() {
+  if (typeof window !== 'undefined' && accountDeletedHandler) {
+    accountDeletedHandler();
+  } else if (typeof window !== 'undefined') {
+    // Fallback: redirect to login
+    window.location.href = '/login?message=account_deleted';
+  }
+}
+
 if (!BACKEND_URL) {
   console.error('NEXT_PUBLIC_API_URL is not set! Please configure it in your environment variables.');
 }
@@ -16,15 +39,64 @@ export const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true, // Send cookies with cross-origin requests
 });
 
-// Προσθήκη interceptor για το authentication token
+// Helper function to get CSRF token from cookie
+function getCsrfToken(): string | null {
+  if (typeof document === 'undefined') return null;
+  const cookies = document.cookie.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'csrf_token') {
+      return decodeURIComponent(value);
+    }
+  }
+  return null;
+}
+
+async function ensureCsrfToken(): Promise<string | null> {
+  const token = getCsrfToken();
+  if (token) return token;
+  if (typeof window === 'undefined' || !BACKEND_URL) return null;
+
+  try {
+    // Trigger a safe backend request so CSRF middleware can set csrf_token cookie.
+    await fetch(`${BACKEND_URL}/health`, {
+      method: 'GET',
+      credentials: 'include',
+      cache: 'no-store',
+    });
+  } catch (error) {
+    console.error('Error ensuring CSRF token:', error);
+  }
+
+  return getCsrfToken();
+}
+
+// Προσθήκη interceptor για το authentication token και CSRF token
 apiClient.interceptors.request.use(async (config) => {
-  // Πάντα ενημερώνουμε το token από το session για να εξασφαλίσουμε ότι είναι συγχρονισμένο
-  if (typeof window !== 'undefined') {
+  // Add CSRF token to state-changing requests
+  const method = config.method?.toUpperCase();
+  const isStateChanging = ['POST', 'PUT', 'PATCH', 'DELETE'].includes(method || '');
+  if (isStateChanging && typeof window !== 'undefined') {
+    const csrfToken = await ensureCsrfToken();
+    if (csrfToken) {
+      config.headers['X-CSRF-Token'] = csrfToken;
+    }
+  }
+
+  // Prefer cookie-based auth (cookies are sent automatically with withCredentials: true)
+  // Fallback to Bearer token for backward compatibility
+  // TODO: Remove Bearer token fallback once cookie auth is confirmed working
+  const ALLOW_BEARER_TOKENS = true; // Migration flag - set to false once cookies are working
+
+  if (ALLOW_BEARER_TOKENS && typeof window !== 'undefined') {
     try {
-      const response = await fetch('/api/auth/token');
-      if (response.ok) {
+      const response = await fetch('/api/auth/token', { cache: 'no-store' });
+      if (response.status === 401) {
+        localStorage.removeItem('token');
+      } else if (response.ok) {
         const { token: newToken } = await response.json();
         if (newToken) {
           localStorage.setItem('token', newToken);
@@ -34,35 +106,45 @@ apiClient.interceptors.request.use(async (config) => {
       }
     } catch (error) {
       console.error('Error fetching token:', error);
-      // Fallback στο παλιό token αν υπάρχει
-      const oldToken = localStorage.getItem('token');
-      if (oldToken) {
-        config.headers.Authorization = `Bearer ${oldToken}`;
-      }
-    }
-  } else {
-    // Server-side: χρησιμοποιούμε το token από localStorage αν υπάρχει
-    const token = localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
     }
   }
   
   return config;
 });
 
+// Response interceptor για ACCOUNT_DELETED errors
+apiClient.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    if (error.response?.status === 403 && error.response?.data?.error === 'ACCOUNT_DELETED') {
+      await handleAccountDeletedError();
+    }
+    return Promise.reject(error);
+  }
+);
+
 // Helper function για fetch calls που χρησιμοποιούν το backend
 export const fetchFromBackend = async (
   endpoint: string,
   options: RequestInit = {}
 ): Promise<Response> => {
-  let token = localStorage.getItem('token');
+  // Add CSRF token to state-changing requests
+  const method = options.method?.toUpperCase();
+  const isStateChanging = ['POST', 'PUT', 'PATCH', 'DELETE'].includes(method || '');
+  
+  let token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  
+  // TODO: Remove Bearer token fallback once cookie auth is confirmed working
+  const ALLOW_BEARER_TOKENS = true; // Migration flag
   
   // Πάντα ενημερώνουμε το token από το session για να εξασφαλίσουμε ότι είναι συγχρονισμένο
-  if (typeof window !== 'undefined') {
+  if (ALLOW_BEARER_TOKENS && typeof window !== 'undefined') {
     try {
-      const response = await fetch('/api/auth/token');
-      if (response.ok) {
+      const response = await fetch('/api/auth/token', { cache: 'no-store' });
+      if (response.status === 401) {
+        localStorage.removeItem('token');
+        token = null;
+      } else if (response.ok) {
         const { token: newToken } = await response.json();
         if (newToken) {
           localStorage.setItem('token', newToken);
@@ -71,7 +153,7 @@ export const fetchFromBackend = async (
       }
     } catch (error) {
       console.error('Error fetching token:', error);
-      // Fallback στο παλιό token αν υπάρχει
+      token = null;
     }
   }
   
@@ -80,7 +162,15 @@ export const fetchFromBackend = async (
     ...(options.headers as Record<string, string> || {}),
   };
 
-  if (token) {
+  // Add CSRF token for state-changing requests
+  if (isStateChanging && typeof window !== 'undefined') {
+    const csrfToken = await ensureCsrfToken();
+    if (csrfToken) {
+      headers['X-CSRF-Token'] = csrfToken;
+    }
+  }
+
+  if (ALLOW_BEARER_TOKENS && token) {
     headers['Authorization'] = `Bearer ${token}`;
   }
 
@@ -95,10 +185,25 @@ export const fetchFromBackend = async (
     ? endpoint 
     : `/${endpoint}`;
 
-  return fetch(`${BACKEND_URL}/api${cleanEndpoint}`, {
+  const response = await fetch(`${BACKEND_URL}/api${cleanEndpoint}`, {
     ...options,
     headers,
+    credentials: 'include', // Send cookies with cross-origin requests
   });
+
+  // Check for ACCOUNT_DELETED error
+  if (response.status === 403) {
+    try {
+      const errorData = await response.json();
+      if (errorData.error === 'ACCOUNT_DELETED') {
+        await handleAccountDeletedError();
+      }
+    } catch (e) {
+      // Not JSON or parse error - continue
+    }
+  }
+
+  return response;
 };
 
 // Helper function για FormData uploads
@@ -107,13 +212,22 @@ export const uploadToBackend = async (
   formData: FormData,
   options: RequestInit = {}
 ): Promise<Response> => {
-  let token = localStorage.getItem('token');
+  // Add CSRF token (uploads are POST requests)
+  const csrfToken = typeof window !== 'undefined' ? await ensureCsrfToken() : null;
   
-  // Πάντα ενημερώνουμε το token από το session για να εξασφαλίσουμε ότι είναι συγχρονισμένο
-  if (typeof window !== 'undefined') {
+  let token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  
+  // TODO: Remove Bearer token fallback once cookie auth is confirmed working
+  const ALLOW_BEARER_TOKENS = true; // Migration flag
+  
+  // Πάντα ενημερώνουμε το token από το session
+  if (ALLOW_BEARER_TOKENS && typeof window !== 'undefined') {
     try {
-      const response = await fetch('/api/auth/token');
-      if (response.ok) {
+      const response = await fetch('/api/auth/token', { cache: 'no-store' });
+      if (response.status === 401) {
+        localStorage.removeItem('token');
+        token = null;
+      } else if (response.ok) {
         const { token: newToken } = await response.json();
         if (newToken) {
           localStorage.setItem('token', newToken);
@@ -122,7 +236,7 @@ export const uploadToBackend = async (
       }
     } catch (error) {
       console.error('Error fetching token:', error);
-      // Fallback στο παλιό token αν υπάρχει
+      token = null;
     }
   }
   
@@ -130,7 +244,12 @@ export const uploadToBackend = async (
     ...(options.headers as Record<string, string> || {}),
   };
 
-  if (token) {
+  // Add CSRF token
+  if (csrfToken) {
+    headers['X-CSRF-Token'] = csrfToken;
+  }
+
+  if (ALLOW_BEARER_TOKENS && token) {
     headers['Authorization'] = `Bearer ${token}`;
   }
 
@@ -150,6 +269,7 @@ export const uploadToBackend = async (
     method: options.method || 'POST',
     headers,
     body: formData,
+    credentials: 'include', // Send cookies with cross-origin requests
   });
 };
 

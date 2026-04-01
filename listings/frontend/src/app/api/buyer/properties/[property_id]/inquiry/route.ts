@@ -5,7 +5,7 @@ import { authOptions } from '@/lib/auth';
 
 export async function POST(
   request: Request,
-  { params }: { params: { property_id: string } }
+  { params }: { params: Promise<{ property_id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -26,9 +26,11 @@ export async function POST(
       );
     }
 
+    const { property_id } = await params;
+
     // Έλεγχος αν το ακίνητο υπάρχει
     const property = await prisma.property.findUnique({
-      where: { id: params.property_id },
+      where: { id: property_id },
       include: {
         user: {
           select: {
@@ -51,14 +53,14 @@ export async function POST(
     const inquiry = await prisma.inquiry.create({
       data: {
         message,
-        propertyId: params.property_id,
+        propertyId: property_id,
         userId: session.user.id,
       },
     });
 
     // Ενημέρωση του αριθμού ενδιαφερόμενων
     await prisma.propertyStats.update({
-      where: { propertyId: params.property_id },
+      where: { propertyId: property_id },
       data: { interestedCount: { increment: 1 } },
     });
 
@@ -69,7 +71,7 @@ export async function POST(
         type: 'INQUIRY',
         message: `Νέο ερώτημα για το ακίνητο ${property.title}`,
         userId: property.user.id,
-        propertyId: params.property_id,
+        propertyId: property_id,
       },
     });
 

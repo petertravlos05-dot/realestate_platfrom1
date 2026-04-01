@@ -17,7 +17,7 @@ interface TransactionProgress {
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -25,7 +25,8 @@ export async function GET(
       return new NextResponse('Unauthorized', { status: 401 });
     }
 
-    const transactionId = parseInt(params.id);
+    const { id } = await params;
+    const transactionId = parseInt(id);
     if (isNaN(transactionId)) {
       return new NextResponse('Invalid transaction ID', { status: 400 });
     }
@@ -47,7 +48,7 @@ export async function GET(
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -55,12 +56,13 @@ export async function POST(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const { id } = await params;
     const { stage, notes } = await request.json();
 
     const progress = await prisma.transactionProgress.create({
       data: {
         id: generateId(),
-        transactionId: params.id,
+        transactionId: id,
         stage,
         notes,
         createdById: session.user.id

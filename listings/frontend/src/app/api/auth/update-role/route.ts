@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import jwt from 'jsonwebtoken';
+import { getJwtSecret } from '@/lib/utils/jwt-secret';
 
 export async function PUT(request: Request) {
   try {
@@ -21,7 +22,7 @@ export async function PUT(request: Request) {
 
       const token = authHeader.split(' ')[1];
       try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'Agapao_ton_stivo05') as { userId: string };
+        const decoded = jwt.verify(token, getJwtSecret()) as { userId: string };
         userId = decoded.userId;
       } catch (error) {
         return NextResponse.json({ error: 'Μη έγκυρο token' }, { status: 401 });
@@ -47,7 +48,7 @@ export async function PUT(request: Request) {
         email: updatedUser.email,
         role: updatedUser.role 
       },
-      process.env.JWT_SECRET || 'Agapao_ton_stivo05',
+      getJwtSecret(),
       { expiresIn: '24h' }
     );
 

@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -17,7 +17,7 @@ export async function POST(
       );
     }
 
-    const propertyId = params.id;
+    const { id: propertyId } = await params;
 
     // Ελέγχουμε αν το ακίνητο υπάρχει και αν ανήκει στον χρήστη
     const property = await prisma.property.findFirst({
@@ -69,7 +69,7 @@ export async function POST(
 
     // Δημιουργούμε ειδοποιήσεις για τους admins
     await Promise.all(
-      admins.map((admin) =>
+      admins.map((admin: typeof admins[0]) =>
         prisma.notification.create({
           data: {
             userId: admin.id,

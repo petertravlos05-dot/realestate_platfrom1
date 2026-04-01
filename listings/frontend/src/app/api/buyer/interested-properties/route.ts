@@ -2,22 +2,8 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
-import { Transaction, TransactionProgress } from '@prisma/client';
 import { validateJwtToken } from '@/middleware';
-
-interface ExtendedTransaction extends Transaction {
-  buyer: { 
-    name: string; 
-    email: string; 
-    phone: string | null 
-  };
-  agent: { 
-    name: string; 
-    email: string; 
-    phone: string | null 
-  };
-  progress: TransactionProgress[];
-}
+import * as Sentry from '@sentry/nextjs';
 
 export async function GET(request: Request) {
   try {
@@ -67,12 +53,12 @@ export async function GET(request: Request) {
                   { AND: [{ status: 'CANCELLED' }, { interestCancelled: false }] }
                 ]
               },
-              orderBy: { createdAt: 'desc' },
+              orderBy: { createdAt: 'desc' as const },
               take: 1,
               include: {
                 buyer: { select: { name: true, email: true, phone: true } },
                 agent: { select: { name: true, email: true, phone: true } },
-                progress: { orderBy: { createdAt: 'desc' } }
+                progress: { orderBy: { createdAt: 'desc' as const } }
               }
             }
           }
@@ -82,7 +68,7 @@ export async function GET(request: Request) {
 
     // Debug logs
     console.log('=== Buyer Interested Properties Debug ===');
-    console.log('Property Leads:', propertyLeads.map(l => ({
+    console.log('Property Leads:', propertyLeads.map((l: typeof propertyLeads[0]) => ({
       id: l.id,
       propertyId: l.propertyId,
       buyerId: l.buyerId,
@@ -90,9 +76,9 @@ export async function GET(request: Request) {
     })));
 
     // Log transactions για κάθε property
-    propertyLeads.forEach(lead => {
+    propertyLeads.forEach((lead: typeof propertyLeads[0]) => {
       console.log(`Transactions for property ${lead.propertyId}:`, 
-        lead.property.transactions?.map(t => ({
+        lead.property.transactions?.map((t: typeof lead.property.transactions[0]) => ({
           id: t.id,
           status: t.status,
           stage: t.stage,
@@ -110,14 +96,14 @@ export async function GET(request: Request) {
         interestCancelled: false
       }
     });
-    console.log('All buyer transactions:', allBuyerTransactions.map(t => ({
+    console.log('All buyer transactions:', allBuyerTransactions.map((t: typeof allBuyerTransactions[0]) => ({
       id: t.id,
       propertyId: t.propertyId,
       status: t.status,
       stage: t.stage
     })));
 
-    const properties = propertyLeads.map(l => {
+    const properties = propertyLeads.map((l: typeof propertyLeads[0]) => {
       const property = l.property as any;
       if (property.transactions && property.transactions.length > 0) {
         const transaction = property.transactions[0];
@@ -156,11 +142,12 @@ export async function GET(request: Request) {
       }
       return property;
     });
-    console.log('properties:', properties.map(p => ({ id: p.id, title: p.title })));
+    console.log('properties:', properties.map((p: typeof properties[0]) => ({ id: p.id, title: p.title })));
 
     return NextResponse.json({ properties });
   } catch (error) {
     console.error('Error fetching interested properties:', error);
+    Sentry.captureException(error);
     return NextResponse.json(
       { error: 'Σφάλμα κατά την ανάκτηση των ακινήτων' },
       { status: 500 }
@@ -321,7 +308,7 @@ export async function POST(request: Request) {
         // Ενημερώνουμε και το τελευταίο progress entry ώστε να εμφανίζει το σωστό στάδιο
         const lastProgress = await prisma.transactionProgress.findFirst({
           where: { transactionId: transaction.id },
-          orderBy: { createdAt: 'desc' }
+          orderBy: { createdAt: 'desc' as const }
         });
         
         if (lastProgress && lastProgress.stage === 'CANCELLED') {
@@ -362,6 +349,7 @@ export async function POST(request: Request) {
           console.log('✅ Lead updated with new transaction ID:', lead.id);
         } catch (err) {
           console.error('❌ Error creating transaction:', err);
+          Sentry.captureException(err);
         }
       }
     }
@@ -388,6 +376,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true, lead, transaction });
   } catch (error) {
     console.error('Error expressing interest:', error);
+    Sentry.captureException(error);
     return NextResponse.json({ error: 'Σφάλμα κατά την εκδήλωση ενδιαφέροντος' }, { status: 500 });
   }
 } 

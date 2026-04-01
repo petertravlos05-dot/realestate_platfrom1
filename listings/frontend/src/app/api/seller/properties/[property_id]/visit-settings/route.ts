@@ -4,8 +4,9 @@ import { VisitSettings } from '@/types/visit-settings';
 
 const prisma = new PrismaClient();
 
-export async function PUT(req: NextRequest, { params }: { params: { property_id: string } }) {
-  const propertyId = params.property_id.split('=')[1] || params.property_id;
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ property_id: string }> }) {
+  const { property_id: rawPropertyId } = await params;
+  const propertyId = rawPropertyId.split('=')[1] || rawPropertyId;
   console.log('Updating visit settings for property:', propertyId);
   
   const data: VisitSettings = await req.json();
@@ -32,8 +33,9 @@ export async function PUT(req: NextRequest, { params }: { params: { property_id:
   }
 }
 
-export async function GET(req: NextRequest, { params }: { params: { property_id: string } }) {
-  const propertyId = params.property_id.split('=')[1] || params.property_id;
+export async function GET(req: NextRequest, { params }: { params: Promise<{ property_id: string }> }) {
+  const { property_id: rawPropertyId } = await params;
+  const propertyId = rawPropertyId.split('=')[1] || rawPropertyId;
   console.log('Fetching visit settings for property:', propertyId);
 
   try {

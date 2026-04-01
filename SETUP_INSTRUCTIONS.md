@@ -9,17 +9,30 @@ npm install
 ```
 
 ### Βήμα 2: Ρύθμιση Environment Variables
-Δημιουργήστε το `.env` file στο `backend/` directory με:
+
+**Δημιουργήστε το `.env` file από το `.env.example`:**
+
+```bash
+cd backend
+cp .env.example .env
+```
+
+Στη συνέχεια, επεξεργαστείτε το `.env` file και συμπληρώστε τις τιμές:
 
 ```env
 DATABASE_URL="postgresql://user:password@localhost:5432/realestate_db?schema=public"
-JWT_SECRET="Agapao_ton_stivo05"
+JWT_SECRET="your-super-secret-jwt-key-minimum-32-characters-long"
 PORT=3001
 NODE_ENV=development
 FRONTEND_URL="http://localhost:3000"
 ```
 
-**Σημαντικό:** Αλλάξτε το `DATABASE_URL` με τα δικά σας credentials της PostgreSQL database.
+**Σημαντικό:** 
+- Αλλάξτε το `DATABASE_URL` με τα δικά σας credentials της PostgreSQL database.
+- Το `JWT_SECRET` **ΠΡΕΠΕΙ** να είναι τουλάχιστον 32 χαρακτήρες για ασφάλεια.
+- Για να δημιουργήσετε έναν ισχυρό JWT_SECRET, δείτε: `backend/GENERATE_JWT_SECRET.md`
+- **ΠΡΟΣΟΧΗ:** Το backend δεν θα ξεκινήσει αν το JWT_SECRET είναι μικρότερο από 32 χαρακτήρες!
+- **ΜΗΝ** commit-άρετε το `.env` file στο git - είναι ήδη στο `.gitignore`
 
 ### Βήμα 3: Prisma Setup
 ```bash
@@ -43,13 +56,29 @@ npm run dev
 ## 2. Frontend Setup
 
 ### Βήμα 1: Ρύθμιση Environment Variables
-Δημιουργήστε ή ενημερώστε το `.env.local` file στο `listings/frontend/` directory:
+
+**Δημιουργήστε το `.env.local` file από το `.env.example`:**
+
+```bash
+cd listings/frontend
+cp .env.example .env.local
+```
+
+Στη συνέχεια, επεξεργαστείτε το `.env.local` file και συμπληρώστε τις τιμές:
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:3001
+DATABASE_URL=postgresql://user:password@localhost:5432/realestate_db?schema=public
+NEXTAUTH_SECRET=your-nextauth-secret-minimum-32-characters-long
+NEXTAUTH_URL=http://localhost:3000
+JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters-long
 ```
 
-Αν δεν ορίσετε αυτό, το frontend θα χρησιμοποιήσει το default `http://localhost:3001`.
+**Σημαντικό:**
+- Το `JWT_SECRET` πρέπει να είναι **το ίδιο** με το backend JWT_SECRET
+- Το `DATABASE_URL` πρέπει να είναι **το ίδιο** με το backend DATABASE_URL
+- Αν δεν ορίσετε `NEXT_PUBLIC_API_URL`, το frontend θα χρησιμοποιήσει το default `http://localhost:3001`
+- **ΜΗΝ** commit-άρετε το `.env.local` file στο git
 
 ### Βήμα 2: Εκκίνηση Frontend
 ```bash
@@ -107,6 +136,8 @@ npm run dev
 - Το backend πρέπει να ξεκινήσει **πρώτο**
 - Όλα τα API calls από το frontend πηγαίνουν στο `http://localhost:3001/api`
 - Το authentication token αποθηκεύεται στο `localStorage` ως `token`
+
+
 
 
 

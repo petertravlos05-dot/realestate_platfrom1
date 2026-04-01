@@ -1,22 +1,19 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { FaList, FaThLarge, FaMapMarked, FaFilter, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaUser, FaHome, FaEnvelope, FaInfoCircle, FaQuestionCircle, FaCog, FaComments, FaExchangeAlt, FaSearch, FaChartBar, FaHeart, FaShare, FaStar, FaMapMarkerAlt, FaBed, FaBath, FaRulerCombined, FaEuroSign, FaTimes, FaChevronDown, FaPhone } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaList, FaThLarge, FaMapMarked, FaFilter, FaSearch, FaMapMarkerAlt, FaExchangeAlt, FaChevronDown, FaHome, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { useAuth } from '@/context/AuthContext';
 import PropertyCard from '@/components/properties/PropertyCard';
 import PropertyMap from '@/components/properties/PropertyMap';
 import Link from 'next/link';
-import { useSession, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import BuyerHeader from '@/components/layout/BuyerHeader';
-import { motion, AnimatePresence } from 'framer-motion';
+import AgentNavbar from '@/components/layout/AgentNavbar';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import SearchBar from '@/components/search/SearchBar';
 import PropertyDetailsModal from '@/components/properties/PropertyDetailsModal';
-import DynamicNavbar from '@/components/navigation/DynamicNavbar';
 import LocationAutocomplete from '@/components/search/LocationAutocomplete';
 import FilterModal from '@/components/search/FilterModal';
-import NotificationBell from '@/components/notifications/NotificationBell';
 import { fetchFromBackend } from '@/lib/api/client';
 
 interface Property {
@@ -63,12 +60,9 @@ export default function AgentPropertiesPage() {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [activeFilters, setActiveFilters] = useState<any>(null);
   const [hasSearched, setHasSearched] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const { isAuthenticated } = useAuth();
   const router = useRouter();
   const { data: session, status } = useSession();
-  const profileMenuRef = useRef<HTMLDivElement>(null);
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [userRole, setUserRole] = useState<'buyer' | 'seller' | 'agent' | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -97,55 +91,34 @@ export default function AgentPropertiesPage() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target as Node)) {
-        setIsProfileMenuOpen(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  const handleSignOut = async () => {
-    await signOut({ redirect: false });
-    router.push('/');
-  };
-
-  const handleChangeRole = () => {
-    router.push('/');
-  };
-
-  useEffect(() => {
     const fetchProperties = async () => {
       try {
         console.log('Fetching properties...');
+        const { fetchFromBackend } = await import('@/lib/api/client');
         const response = await fetchFromBackend('/properties');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         
-        const data = await response.json();
-        console.log('Fetched properties:', data);
+        const responseData = await response.json();
+        console.log('Fetched properties response:', responseData);
         
-        if (!Array.isArray(data)) {
-          console.error('Expected array of properties but got:', typeof data);
+        // Handle paginated response (object with data and pagination) or direct array
+        const properties = Array.isArray(responseData) 
+          ? responseData 
+          : (responseData.data || responseData.properties || []);
+        
+        if (!Array.isArray(properties)) {
+          console.error('Expected array of properties but got:', typeof properties, properties);
           setAllProperties([]);
           setDisplayedProperties([]);
           return;
         }
         
-        setAllProperties(data);
-        setDisplayedProperties(data);
+        console.log('Setting properties:', properties.length);
+        setAllProperties(properties);
+        setDisplayedProperties(properties);
       } catch (error) {
         console.error('Error fetching properties:', error);
         setAllProperties([]);
@@ -277,9 +250,9 @@ export default function AgentPropertiesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 flex justify-center items-center">
+      <div className="min-h-screen bg-gradient-to-b from-indigo-50/50 via-white to-white flex justify-center items-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-4 border-purple-600 border-t-transparent mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-indigo-600 border-t-transparent mx-auto mb-4"></div>
           <p className="text-gray-600 text-lg font-medium">Φόρτωση ακινήτων...</p>
         </div>
       </div>
@@ -287,24 +260,30 @@ export default function AgentPropertiesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50">
-      {/* Dynamic Navigation */}
-      <DynamicNavbar />
+    <div className="min-h-screen bg-slate-50">
+      <AgentNavbar lightTextAtTop />
 
-      {/* Main Content */}
-      <main className="pt-16">
-        {/* Hero Section with Search */}
+      {/* Main Content - hero starts from top, navbar floats */}
+      <main>
+        {/* Hero Section with Search - like /properties but indigo theme */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 overflow-hidden min-h-screen flex items-center justify-center"
+          className="relative overflow-hidden min-h-screen flex items-center justify-center"
         >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-indigo-600/20"></div>
+          {/* Background Image (same as /properties) */}
+          <Image
+            src="/images/hero-1.png"
+            alt="Ακίνητα στην Ελλάδα"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Indigo overlay (agent theme instead of dark) */}
+          <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/70 via-indigo-800/65 to-indigo-900/75"></div>
           
-          <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col justify-center items-center">
+          <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 flex flex-col justify-center items-center min-h-screen">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -314,7 +293,7 @@ export default function AgentPropertiesPage() {
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 Ακίνητα για Προώθηση
               </h1>
-              <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Ανακαλύψτε χιλιάδες ακίνητα σε όλη την Ελλάδα. Επιλέξτε τα καλύτερα για να τα προωθήσετε στους πελάτες σας.
               </p>
             </motion.div>
@@ -330,6 +309,7 @@ export default function AgentPropertiesPage() {
                 <LocationAutocomplete
                   onLocationSelect={handleLocationSelect}
                   onDrawAreaClick={handleDrawArea}
+                  initialSelectedLocations={selectedLocation ? [selectedLocation] : []}
                 />
                   <div className="flex flex-col sm:flex-row gap-4">
                     <div className="flex flex-col sm:flex-row gap-3 flex-1">
@@ -345,7 +325,7 @@ export default function AgentPropertiesPage() {
                           <motion.span 
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
-                            className="ml-2 px-3 py-1 bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-sm rounded-full font-medium"
+                            className="ml-2 px-3 py-1 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-sm rounded-full font-medium"
                           >
                             {Object.keys(activeFilters).length}
                           </motion.span>
@@ -366,7 +346,7 @@ export default function AgentPropertiesPage() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     onClick={handleSearch}
-                      className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-xl hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-lg font-medium text-lg"
+                      className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-xl hover:from-indigo-700 hover:to-indigo-800 transition-all duration-300 shadow-lg font-medium text-lg"
                   >
                       <FaSearch className="mr-2" />
                       Αναζήτηση Ακινήτων
@@ -383,7 +363,7 @@ export default function AgentPropertiesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-b from-white via-purple-50 to-white rounded-3xl shadow-xl mt-[-4rem] relative z-10"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-white rounded-3xl shadow-xl border border-gray-100 mt-[-4rem] relative z-10"
         >
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
             <motion.div
@@ -403,20 +383,44 @@ export default function AgentPropertiesPage() {
                   transition={{ duration: 0.3 }}
                   className="flex items-center gap-2 text-gray-600"
                 >
-                  <FaSearch className="text-purple-500" />
+                  <FaSearch className="text-indigo-500" />
                   <span className="font-medium">
                     {sortedProperties.length} {sortedProperties.length === 1 ? 'ακίνητο βρέθηκε' : 'ακίνητα βρέθηκαν'}
                 </span>
                 </motion.div>
               )}
             </motion.div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-4 flex-wrap">
+              {/* View mode toggle - like /properties */}
+              <div className="flex items-center rounded-lg border border-gray-200 bg-white shadow-sm overflow-hidden">
+                <button
+                  onClick={() => setViewMode('grid')}
+                  className={`p-2.5 transition-all ${viewMode === 'grid' ? 'bg-indigo-600 text-white' : 'text-gray-600 hover:bg-indigo-50 hover:text-indigo-600'}`}
+                  title="Πλέγμα"
+                >
+                  <FaThLarge className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setViewMode('list')}
+                  className={`p-2.5 transition-all border-l border-gray-200 ${viewMode === 'list' ? 'bg-indigo-600 text-white' : 'text-gray-600 hover:bg-indigo-50 hover:text-indigo-600'}`}
+                  title="Λίστα"
+                >
+                  <FaList className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setViewMode('map')}
+                  className={`p-2.5 transition-all border-l border-gray-200 ${viewMode === 'map' ? 'bg-indigo-600 text-white' : 'text-gray-600 hover:bg-indigo-50 hover:text-indigo-600'}`}
+                  title="Χάρτης"
+                >
+                  <FaMapMarked className="w-5 h-5" />
+                </button>
+              </div>
               <label htmlFor="sort" className="text-gray-600 font-medium mr-2">Ταξινόμηση:</label>
               <select
                 id="sort"
                 value={sortOption}
                 onChange={e => { setSortOption(e.target.value); setCurrentPage(1); }}
-                className="px-4 py-2 rounded-lg border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 text-gray-700"
+                className="px-4 py-2 rounded-lg border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-700"
               >
                 <option value="newest">Νεότερα</option>
                 <option value="priceLow">Φθηνότερα</option>
@@ -469,7 +473,7 @@ export default function AgentPropertiesPage() {
                     <button
                       onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                       disabled={currentPage === 1}
-                      className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-full shadow-lg p-3 transition-all duration-300 hover:scale-110 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-full shadow-lg p-3 transition-all duration-300 hover:scale-110 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                       title="Προηγούμενη σελίδα"
                     >
                       <FaChevronDown className="w-5 h-5 rotate-90" />
@@ -480,8 +484,8 @@ export default function AgentPropertiesPage() {
                         onClick={() => setCurrentPage(i + 1)}
                         className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all duration-200 text-lg ${
                           currentPage === i + 1
-                            ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white shadow-lg scale-110'
-                            : 'bg-white border border-gray-200 text-purple-600 hover:bg-purple-50'
+                            ? 'bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-lg scale-110'
+                            : 'bg-white border border-gray-200 text-indigo-600 hover:bg-indigo-50'
                         }`}
                         aria-current={currentPage === i + 1 ? 'page' : undefined}
                       >
@@ -491,7 +495,7 @@ export default function AgentPropertiesPage() {
                     <button
                       onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
                       disabled={currentPage === totalPages}
-                      className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-full shadow-lg p-3 transition-all duration-300 hover:scale-110 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-full shadow-lg p-3 transition-all duration-300 hover:scale-110 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                       title="Επόμενη σελίδα"
                     >
                       <FaChevronDown className="w-5 h-5 rotate-0" />
@@ -507,8 +511,8 @@ export default function AgentPropertiesPage() {
                 className="text-center py-24"
               >
                 <div className="max-w-md mx-auto">
-                  <div className="w-28 h-28 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
-                    <FaSearch className="w-16 h-16 text-purple-400" />
+                  <div className="w-28 h-28 bg-gradient-to-r from-indigo-100 to-indigo-200 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
+                    <FaSearch className="w-16 h-16 text-indigo-400" />
                   </div>
                   <h3 className="text-3xl font-extrabold text-gray-900 mb-4">
                     {hasSearched ? 'Δεν βρέθηκαν ακίνητα' : 'Δεν υπάρχουν διαθέσιμα ακίνητα'}
@@ -524,7 +528,7 @@ export default function AgentPropertiesPage() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={handleReset}
-                      className="px-8 py-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-xl hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-lg text-lg font-semibold"
+                      className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-xl hover:from-indigo-600 hover:to-indigo-700 transition-all duration-300 shadow-lg text-lg font-semibold"
                     >
                       Επαναφορά Φίλτρων
                     </motion.button>
@@ -536,91 +540,37 @@ export default function AgentPropertiesPage() {
         </motion.div>
       </main>
 
-      {/* Footer */}
-      <motion.footer 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-        className="bg-white border-t border-gray-200 py-12 mt-16"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      {/* Footer - same as /agent */}
+      <footer className="bg-slate-900 text-slate-300 py-16 px-4 sm:px-6 lg:px-8 mt-16">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="flex flex-col items-center space-y-8">
             <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-center justify-center space-x-3 mb-3">
+                <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
                   <FaHome className="text-white text-sm" />
                 </div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  RealEstate
-                </span>
+                <span className="text-lg font-bold text-white">RealEstate</span>
               </div>
-              <p className="text-gray-600 leading-relaxed">
-                Η πλατφόρμα ακινήτων που συνδέει αγοραστές, πωλητές και μεσίτες. Βρείτε το ιδανικό σπίτι ή πουλήστε το ακίνητό σας με ευκολία.
+              <p className="text-sm max-w-md mx-auto">
+                Η πλατφόρμα που συνδέει συνεργάτες με αγοραστές και ενοικιαστές ακινήτων.
               </p>
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Γρήγοροι Σύνδεσμοι</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/agent/properties" className="text-gray-600 hover:text-purple-600 transition-colors duration-200 flex items-center">
-                    <FaSearch className="mr-2 text-purple-500" />
-                    Ακίνητα
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/agent/about" className="text-gray-600 hover:text-purple-600 transition-colors duration-200 flex items-center">
-                    <FaInfoCircle className="mr-2 text-purple-500" />
-                    Σχετικά
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/agent/contact" className="text-gray-600 hover:text-purple-600 transition-colors duration-200 flex items-center">
-                    <FaEnvelope className="mr-2 text-purple-500" />
-                    Επικοινωνία
-                  </Link>
-                </li>
-              </ul>
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+              <Link href="/agent/properties" className="hover:text-white transition-colors text-sm">Ακίνητα</Link>
+              <Link href="/agent/about" className="hover:text-white transition-colors text-sm">Σχετικά</Link>
+              <Link href="/agent/contact" className="hover:text-white transition-colors text-sm">Επικοινωνία</Link>
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Επικοινωνία</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-center">
-                  <FaEnvelope className="mr-3 text-purple-500" />
-                  info@realestate.com
-                </li>
-                <li className="flex items-center">
-                  <FaPhone className="mr-3 text-purple-500" />
-                  +30 210 1234567
-                </li>
-                <li className="flex items-center">
-                  <FaMapMarkerAlt className="mr-3 text-purple-500" />
-                  Αθήνα, Ελλάδα
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Ακολουθήστε μας</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-lg flex items-center justify-center hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-md">
-                  <FaFacebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-lg flex items-center justify-center hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-md">
-                  <FaTwitter className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-lg flex items-center justify-center hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-md">
-                  <FaInstagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-lg flex items-center justify-center hover:from-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-md">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+              <span className="flex items-center justify-center"><FaEnvelope className="mr-2 text-indigo-400" />info@realestate.com</span>
+              <span className="flex items-center justify-center"><FaPhone className="mr-2 text-indigo-400" />+30 210 1234567</span>
+              <span className="flex items-center justify-center"><FaMapMarkerAlt className="mr-2 text-indigo-400" />Αθήνα, Ελλάδα</span>
             </div>
           </div>
-          <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
-            <p>&copy; {new Date().getFullYear()} Real Estate Platform. All rights reserved.</p>
+          <div className="border-t border-slate-700 mt-10 pt-8 text-sm">
+            <p>&copy; {new Date().getFullYear()} Real Estate Platform. Με επιφύλαξη παντός δικαιώματος.</p>
           </div>
         </div>
-      </motion.footer>
+      </footer>
 
       {/* Property Details Modal */}
       {selectedProperty && (

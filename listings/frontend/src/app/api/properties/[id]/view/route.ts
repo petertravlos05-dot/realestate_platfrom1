@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -39,10 +39,12 @@ export async function GET(
       }
     }
 
+    const { id } = await params;
+
     // Έλεγχος αν το ακίνητο έχει προβληθεί από τον χρήστη (αφαιρούμε τον έλεγχο ρόλου)
     const propertyView = await prisma.propertyView.findFirst({
       where: {
-        propertyId: params.id,
+        propertyId: id,
         buyerId: userId
       }
     });
@@ -62,9 +64,10 @@ export async function GET(
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const session = await getServerSession(authOptions);
     if (!session?.user?.id) {
       return NextResponse.json(
@@ -87,7 +90,7 @@ export async function POST(
 
     // Έλεγχος αν το ακίνητο υπάρχει
     const property = await prisma.property.findUnique({
-      where: { id: params.id }
+      where: { id }
     });
 
     if (!property) {
@@ -101,12 +104,12 @@ export async function POST(
     await prisma.propertyView.upsert({
       where: {
         propertyId_buyerId: {
-          propertyId: params.id,
+          propertyId: id,
           buyerId: session.user.id
         }
       },
       create: {
-        propertyId: params.id,
+        propertyId: id,
         buyerId: session.user.id
       },
       update: {

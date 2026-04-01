@@ -6,7 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNotifications } from '@/contexts/NotificationContext';
 import { useRouter } from 'next/navigation';
 
-export default function AgentNotificationBell() {
+interface AgentNotificationBellProps {
+  /** When true, use white icon for dark hero overlay */
+  variant?: 'default' | 'onDark';
+}
+
+export default function AgentNotificationBell({ variant = 'default' }: AgentNotificationBellProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { notifications, markAsRead } = useNotifications();
@@ -394,7 +399,7 @@ export default function AgentNotificationBell() {
     <div className="relative" ref={dropdownRef}>
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-3 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-full transition-all duration-200 hover:bg-gray-100"
+        className={`relative p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-full transition-all duration-200 ${variant === 'onDark' ? 'text-white hover:text-white/90 hover:bg-white/20' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >

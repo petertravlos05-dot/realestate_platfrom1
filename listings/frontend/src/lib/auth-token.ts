@@ -14,7 +14,7 @@ export async function getAuthToken(): Promise<string | null> {
 
   // If no token in localStorage, fetch from API
   try {
-    const response = await fetch('/api/auth/token');
+    const response = await fetch('/api/auth/token', { cache: 'no-store' });
     if (!response.ok) {
       return null;
     }
